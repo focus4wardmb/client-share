@@ -11,45 +11,38 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--ink:#1E2530;--pink:#C9316E;--sand:#F5F0EB;--yellow:#F0C040;--line:#E4DCD2;--muted:#6B6560}
 body{font-family:'Space Grotesk',sans-serif;background:var(--sand);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
-.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
-
+.wrap{max-width:1240px;margin:0 auto;padding:0 28px}
 header{background:var(--ink);color:#fff;padding:44px 0 40px}
 .logo{font-size:15px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:22px}
 .logo span{color:var(--pink)}
 .eyebrow{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--yellow);margin-bottom:12px}
-header h1{font-size:36px;font-weight:700;letter-spacing:-1px;line-height:1.1;margin-bottom:12px}
-header p{font-size:16px;color:rgba(255,255,255,.72);max-width:680px}
+header h1{font-size:34px;font-weight:700;letter-spacing:-1px;line-height:1.1;margin-bottom:12px}
+header p{font-size:16px;color:rgba(255,255,255,.72);max-width:720px}
 .meta{margin-top:18px;font-size:12.5px;color:rgba(255,255,255,.5)}
-
-section{padding:48px 0}
-h2{font-size:24px;font-weight:700;letter-spacing:-.5px;margin-bottom:6px}
+section{padding:44px 0}
+h2{font-size:23px;font-weight:700;letter-spacing:-.5px;margin-bottom:4px}
 h2 .pk{color:var(--pink)}
-.sec-sub{font-size:15px;color:var(--muted);margin-bottom:26px;max-width:720px}
-
+.sec-sub{font-size:14.5px;color:var(--muted);margin-bottom:22px;max-width:740px}
 .table-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:#fff}
-table{border-collapse:collapse;width:100%;min-width:880px;font-size:13.5px}
-th,td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--line);vertical-align:top}
-thead th{position:sticky;top:0;background:var(--ink);color:#fff;font-weight:600;font-size:13px}
+table{border-collapse:collapse;width:100%;min-width:920px;font-size:13px}
+th,td{text-align:left;padding:11px 15px;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{position:sticky;top:0;background:var(--ink);color:#fff;font-weight:600;font-size:12.5px}
 thead th.client{background:var(--pink)}
-tbody th{font-weight:600;color:var(--muted);width:150px;font-size:12px;text-transform:uppercase;letter-spacing:.5px;background:#FBF8F4}
+tbody th{font-weight:600;color:var(--muted);width:140px;font-size:11.5px;text-transform:uppercase;letter-spacing:.4px;background:#FBF8F4}
 td.client{background:rgba(201,49,110,.06);font-weight:500}
 tbody tr:last-child th,tbody tr:last-child td{border-bottom:none}
-.col-note{display:block;font-size:11.5px;color:var(--muted);font-weight:400;margin-top:3px}
-
-.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px 24px}
-.card .n{font-size:12px;font-weight:700;color:var(--pink);letter-spacing:1px;margin-bottom:8px}
-.card h3{font-size:17px;font-weight:600;line-height:1.25;margin-bottom:8px}
-.card p{font-size:14px;color:#43403c;line-height:1.55}
+.src{display:block;font-size:10.5px;color:var(--muted);font-weight:400;margin-top:3px;font-style:italic}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px 22px}
+.card .n{font-size:12px;font-weight:700;color:var(--pink);letter-spacing:1px;margin-bottom:7px}
+.card h3{font-size:16px;font-weight:600;line-height:1.25;margin-bottom:7px}
+.card p{font-size:13.5px;color:#43403c;line-height:1.55}
 .card.wide{grid-column:1 / -1;background:var(--ink);color:#fff;border:none}
 .card.wide h3{color:#fff}.card.wide p{color:rgba(255,255,255,.8)}.card.wide .n{color:var(--yellow)}
-
-.sources{font-size:12.5px;color:var(--muted)}
-.sources a{color:var(--pink);text-decoration:none}
-.flag{background:rgba(240,192,64,.18);border-left:3px solid var(--yellow);padding:12px 16px;border-radius:0 8px 8px 0;font-size:13.5px;margin-top:20px}
+.sources{font-size:12px;color:var(--muted);line-height:1.7}
 footer{background:var(--ink);color:rgba(255,255,255,.5);font-size:12px;padding:24px 0;text-align:center}
 footer span{color:var(--pink)}
-@media(max-width:680px){.cards{grid-template-columns:1fr}header h1{font-size:28px}}
+@media(max-width:680px){.cards{grid-template-columns:1fr}header h1{font-size:27px}}
 </style>
 </head>
 <body>
@@ -59,120 +52,105 @@ footer span{color:var(--pink)}
     <div class="logo">focus<span>4</span>ward</div>
     <div class="eyebrow">Competitor benchmark</div>
     <h1>NP Company (Augur) vs the Physics-AI field</h1>
-    <p>Where PhysicsX, Emmi AI and Luminary Cloud are strong, where they cluster, and where the opening is for NP Company, ahead of the marketing build.</p>
-    <div class="meta">Prepared by Focus4ward · May 2026 · Figures from public sources, verify before external use · Confidential</div>
+    <p>A full read on PhysicsX, Emmi AI and Luminary Cloud, company, positioning, product, reputation and presence, and where the opening is for NP Company ahead of the marketing build.</p>
+    <div class="meta">Prepared by Focus4ward · May 2026 · Public-source figures, sourced inline, verify before external use · Confidential</div>
   </div>
 </header>
 
 <section>
   <div class="wrap">
-    <h2>The landscape <span class="pk">at a glance</span></h2>
-    <p class="sec-sub">Four companies selling AI-driven physics simulation to industrial enterprises. The closer you look, the more they say the same thing.</p>
-    <div class="table-scroll">
-      <table>
-        <thead>
-          <tr>
-            <th></th>
-            <th class="client">NP Company (Augur)</th>
-            <th>PhysicsX</th>
-            <th>Emmi AI</th>
-            <th>Luminary Cloud</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th>Positioning line</th>
-            <td class="client">Generic today (fast AI simulation)<span class="col-note">the gap this benchmark is about</span></td>
-            <td>"Accelerating Industrial Innovation with AI"</td>
-            <td>"The Future of Simulation: Large Engineering Models"</td>
-            <td>"Physics. Encoded in AI."</td>
-          </tr>
-          <tr>
-            <th>What they do</th>
-            <td class="client">AI simulators returning results in seconds vs days or weeks</td>
-            <td>AI + numerical simulation across the product lifecycle</td>
-            <td>Pre-trained Large Engineering Models that replace solvers</td>
-            <td>Encode physics into AI for near-instant predictions</td>
-          </tr>
-          <tr>
-            <th>Target & buyer</th>
-            <td class="client">Aerospace (Boeing, Airbus pilots); buyers = program / dept directors, aiming BU / comex</td>
-            <td>Enterprise: semiconductors, aero & defense, energy, automotive</td>
-            <td>Industrial enterprise, aerospace, semiconductor, Fortune 500</td>
-            <td>Aerospace, automotive, defense, industrial machinery</td>
-          </tr>
-          <tr>
-            <th>Founded / HQ</th>
-            <td class="client">~2024 · France (INRIA)</td>
-            <td>2019 · London + New York</td>
-            <td>Dec 2024 · Linz, Austria</td>
-            <td>2019 · San Mateo, USA</td>
-          </tr>
-          <tr>
-            <th>Stage & funding</th>
-            <td class="client">Early; ~€1M revenue target over 6-12m; round to announce</td>
-            <td>~$170M total (Series B + NVentures ext.)</td>
-            <td>€15M seed (largest in Austria); acquired by Mistral AI, May 2026</td>
-            <td>$187M total ($115M A + $72M B); raised to build marketing & sales</td>
-          </tr>
-          <tr>
-            <th>Team size</th>
-            <td class="client">~6</td>
-            <td>~251</td>
-            <td>~35</td>
-            <td>Not disclosed</td>
-          </tr>
-          <tr>
-            <th>Notable logos</th>
-            <td class="client">Boeing, Airbus (pilots)</td>
-            <td>Siemens, NVIDIA, Microsoft, CoreWeave</td>
-            <td>NVIDIA, Siemens, AWS, Oracle, ETH Zurich</td>
-            <td>Joby Aviation, Northrop Grumman, Honda, Otto Aviation</td>
-          </tr>
-          <tr>
-            <th>LinkedIn followers</th>
-            <td class="client">Minimal (new page)</td>
-            <td>~4,060</td>
-            <td>Small (founded Dec 2024)</td>
-            <td>~2,826</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="flag"><strong>Reality check on presence:</strong> the assumption was 10,000+ followers per competitor. The data says otherwise, PhysicsX ~4,060, Luminary ~2,826, Emmi small. The presence bar in this category is low and beatable, which makes the opening real rather than aspirational.</div>
+    <h2>1. <span class="pk">Company</span></h2>
+    <p class="sec-sub">Three well-funded players. Augur is earlier and leaner, which sets the strategy: it can't win on scale or spend.</p>
+    <div class="table-scroll"><table>
+      <thead><tr><th></th><th class="client">NP Company (Augur)</th><th>PhysicsX</th><th>Emmi AI</th><th>Luminary Cloud</th></tr></thead>
+      <tbody>
+        <tr><th>Founded</th><td class="client">~2024</td><td>2019</td><td>Dec 2024</td><td>2019</td></tr>
+        <tr><th>Origin / HQ</th><td class="client">France (INRIA founders)</td><td>London + New York</td><td>Linz, Austria (JKU / NXAI spin-off)</td><td>San Mateo, USA</td></tr>
+        <tr><th>Team size</th><td class="client">~6</td><td>~251<span class="src">CB Insights, 2026</span></td><td>~35<span class="src">Tech.eu, 2025</span></td><td>Not disclosed</td></tr>
+        <tr><th>Stage</th><td class="client">Early; round to announce</td><td>Series B (extended)</td><td>Seed, then acquired</td><td>Series B</td></tr>
+        <tr><th>Total raised</th><td class="client">~€1M revenue target over 6-12m (not funding)</td><td>~$170M<span class="src">physicsx.ai newsroom + NVentures ext., Nov 2025</span></td><td>€15M seed<span class="src">Tech.eu / JKU, Apr 2025</span></td><td>$187M ($115M A + $72M B)<span class="src">SiliconANGLE, Sep 2025</span></td></tr>
+        <tr><th>Key investors</th><td class="client">TBD</td><td>NVentures (NVIDIA), Series B leads</td><td>3VC, Speedinvest, Serena, PUSH</td><td>Sutter Hill Ventures</td></tr>
+        <tr><th>Target market</th><td class="client">Aerospace; program/dept directors, aiming BU / comex</td><td>Enterprise: semiconductors, aero & defense, energy, automotive</td><td>Industrial, aerospace, semiconductor, Fortune 500</td><td>Aerospace, automotive, defense, industrial machinery</td></tr>
+        <tr><th>Notable logos</th><td class="client">Boeing, Airbus (pilots)</td><td>Siemens, NVIDIA, Microsoft, CoreWeave</td><td>NVIDIA, Siemens, AWS, Oracle, ETH Zurich</td><td>Joby Aviation, Northrop Grumman, Honda, Otto Aviation</td></tr>
+        <tr><th>Exits / M&A</th><td class="client">—</td><td>—</td><td>Acquired by Mistral AI, May 2026<span class="src">Invest in Austria, 2026</span></td><td>—</td></tr>
+      </tbody>
+    </table></div>
   </div>
 </section>
 
-<section style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+<section style="background:#fff;border-top:1px solid var(--line)">
   <div class="wrap">
-    <h2>What the data <span class="pk">says</span></h2>
-    <p class="sec-sub">Five reads that shape where NP Company should spend its marketing energy.</p>
+    <h2>2. Positioning &amp; <span class="pk">messaging</span></h2>
+    <p class="sec-sub">The headline finding: they're converging on the same sentence. That's the opening and the risk.</p>
+    <div class="table-scroll"><table>
+      <thead><tr><th></th><th class="client">NP Company (Augur)</th><th>PhysicsX</th><th>Emmi AI</th><th>Luminary Cloud</th></tr></thead>
+      <tbody>
+        <tr><th>Tagline</th><td class="client">Generic today (rebranding in progress)</td><td>"Accelerating Industrial Innovation with AI"</td><td>"The Future of Simulation: Large Engineering Models"</td><td>"Physics. Encoded in AI."</td></tr>
+        <tr><th>Boilerplate</th><td class="client">AI simulators returning results in seconds vs days/weeks</td><td>AI + numerical simulation across the product lifecycle</td><td>Pre-trained Large Engineering Models that replace solvers</td><td>Encode physics into AI for near-instant predictions</td></tr>
+        <tr><th>Core differentiation</th><td class="client">Undefined, this is the gap</td><td>Full-lifecycle platform at enterprise scale</td><td>"Large Engineering Models" + 1000x faster on a single GPU</td><td>End-to-end "Physics AI Factory" with traceability + model registry</td></tr>
+        <tr><th>Messaging by persona/segment</th><td class="client">No</td><td>By industry vertical</td><td>By application (NeuralWing, NeuralMould)</td><td>By industry and by role</td></tr>
+        <tr><th>Content types</th><td class="client">Minimal</td><td>Thought leadership, product</td><td>Thought leadership, technical / research</td><td>Thought leadership, product, case studies</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>3. <span class="pk">Product</span></h2>
+    <p class="sec-sub">All three sell direct to enterprise; none publish pricing. Differentiation lives in the platform story, not the feature list.</p>
+    <div class="table-scroll"><table>
+      <thead><tr><th></th><th class="client">NP Company (Augur)</th><th>PhysicsX</th><th>Emmi AI</th><th>Luminary Cloud</th></tr></thead>
+      <tbody>
+        <tr><th>USP on site</th><td class="client">Results in seconds vs days/weeks</td><td>Develop, deploy and scale AI tools across the lifecycle</td><td>Real-time physics-accurate simulation, 1000x faster</td><td>Sub-second predictions, &gt;1000x faster than simulation</td></tr>
+        <tr><th>Key features</th><td class="client">AI simulators</td><td>Simulation, data management, model training, deployment</td><td>Noether framework, datasets, production-ready models</td><td>Data gen, train/validate, deploy, continuous retraining, APIs/SDKs</td></tr>
+        <tr><th>Pricing</th><td class="client">Not public</td><td>Not disclosed (enterprise)</td><td>Not disclosed</td><td>Not disclosed</td></tr>
+        <tr><th>Certifications</th><td class="client">—</td><td>—</td><td>—</td><td>SOC 2 Type 2, ISO 27001 (Dec 2025)</td></tr>
+        <tr><th>Partnerships</th><td class="client">—</td><td>NVIDIA, Siemens</td><td>NVIDIA, AWS, Oracle, Simcon</td><td>Commercial + proprietary solver support</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section style="background:#fff;border-top:1px solid var(--line)">
+  <div class="wrap">
+    <h2>4. Reviews &amp; <span class="pk">reputation</span></h2>
+    <p class="sec-sub">None of these companies are on G2, Capterra or TrustRadius. That's expected: they sell enterprise/infra through direct sales, not self-serve. So reputation is carried by customer logos and investor quality, not ratings.</p>
+    <div class="table-scroll"><table>
+      <thead><tr><th></th><th class="client">NP Company (Augur)</th><th>PhysicsX</th><th>Emmi AI</th><th>Luminary Cloud</th></tr></thead>
+      <tbody>
+        <tr><th>G2 / Capterra / TrustRadius</th><td class="client">N/A</td><td>N/A</td><td>N/A</td><td>N/A</td></tr>
+        <tr><th>Reputation signal</th><td class="client">Boeing/Airbus pilots (early)</td><td>NVIDIA-backed, marquee industrial logos</td><td>Mistral acquisition validates the tech</td><td>Defense + aero logos, SOC 2 / ISO 27001</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>5. Social <span class="pk">presence</span></h2>
+    <p class="sec-sub">Follower counts read from the live LinkedIn company pages (May 2026). This is where the real gap is.</p>
+    <div class="table-scroll"><table>
+      <thead><tr><th></th><th class="client">NP Company (Augur)</th><th>PhysicsX</th><th>Emmi AI</th><th>Luminary Cloud</th></tr></thead>
+      <tbody>
+        <tr><th>LinkedIn followers</th><td class="client">Minimal (new page)</td><td><strong>~28,000</strong><span class="src">linkedin.com/company/physicsx</span></td><td><strong>~10,000</strong><span class="src">linkedin.com/company/emmiai</span></td><td><strong>~9,000</strong><span class="src">linkedin.com/company/luminarycloud</span></td></tr>
+        <tr><th>Notable</th><td class="client">Near zero presence</td><td>Strong, built over 6 years</td><td>10k in ~18 months, presence is buildable fast</td><td>9k, actively investing in GTM</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section style="background:var(--ink)">
+  <div class="wrap">
+    <h2 style="color:#fff">What the data <span style="color:var(--yellow)">says</span></h2>
+    <p class="sec-sub" style="color:rgba(255,255,255,.7)">Six reads that set where NP Company should spend its marketing energy.</p>
     <div class="cards">
-      <div class="card">
-        <div class="n">01</div>
-        <h3>The category is converging on one sentence</h3>
-        <p>"Physics + AI, 1000x faster simulation." PhysicsX, Emmi and Luminary all say a version of it. Generic messaging here isn't just weak, it's invisible, because everyone is already standing on that ground. Differentiated positioning is the first lever, not the brand.</p>
-      </div>
-      <div class="card">
-        <div class="n">02</div>
-        <h3>Presence is winnable, not a mountain</h3>
-        <p>The direct peers sit at ~3,000-4,000 LinkedIn followers, not the 10k+ assumed. A focused 6-person team with a consistent, AI-automated content engine can match and pass that inside a year. The opening is real.</p>
-      </div>
-      <div class="card">
-        <div class="n">03</div>
-        <h3>You can't outspend, so out-position</h3>
-        <p>PhysicsX and Luminary are at ~$170M and $187M raised. NP Company will not win on budget or headcount. It wins on a sharper position and smarter presence, content and arguments that punch above the team size because they're automated.</p>
-      </div>
-      <div class="card">
-        <div class="n">04</div>
-        <h3>The US goal runs through the incumbents' home turf</h3>
-        <p>Luminary is US-based with US defense and aero logos (Northrop, Joby); PhysicsX has a New York office. A first US client won't come from a pretty site, it needs a wedge the incumbents don't own and visibility where US buyers shortlist.</p>
-      </div>
-      <div class="card wide">
-        <div class="n">05</div>
-        <h3>Even the funded leader just decided presence is the battleground</h3>
-        <p>Luminary's $72M Series B was raised explicitly to "build out a marketing and sales team." The best-funded player in the category is now investing in exactly the layer NP Company is debating. That's the strongest signal there is: the brand gets you to credible, the system around it, positioning, persona arguments, content and presence, is what gets you shortlisted. Especially for a US enterprise buying committee.</p>
-      </div>
+      <div class="card"><div class="n">01</div><h3>The presence gap is real and large</h3><p>PhysicsX 28k, Emmi 10k, Luminary 9k. Augur is near zero. This is not a logo problem a design agency solves, it's a sustained, automated content engine, the layer above the brand.</p></div>
+      <div class="card"><div class="n">02</div><h3>But it's reachable, and fast</h3><p>Emmi reached ~10k in roughly 18 months. With a focused, AI-automated content system, a small team can close this faster than it looks. The door is open; it just needs the right machine behind it.</p></div>
+      <div class="card"><div class="n">03</div><h3>The category says one sentence</h3><p>"Physics + AI, 1000x faster simulation." All three repeat a version of it. Generic messaging here is invisible, not just weak. Differentiated positioning is the first lever.</p></div>
+      <div class="card"><div class="n">04</div><h3>You can't outspend, so out-position</h3><p>$170M, $187M, and Mistral-backed. Augur will not win on budget or headcount. It wins on a sharper position and smarter presence, automated so it punches above six people.</p></div>
+      <div class="card"><div class="n">05</div><h3>The US goal runs through their home turf</h3><p>Luminary is US-based with US defense/aero logos (Northrop, Joby, Honda); PhysicsX has a New York office. A first US client needs a wedge they don't own and visibility where US buyers shortlist.</p></div>
+      <div class="card wide"><div class="n">06</div><h3>The best-funded player just bet on presence</h3><p>Luminary's $72M Series B was raised explicitly to "build out a marketing and sales team." The leader of the category is now investing in exactly the layer Augur is debating. The brand gets you to credible; the system around it, positioning, persona arguments, content and presence, is what gets you onto a US enterprise shortlist.</p></div>
     </div>
   </div>
 </section>
@@ -181,14 +159,12 @@ footer span{color:var(--pink)}
   <div class="wrap">
     <h2>Sources</h2>
     <p class="sources">
-      Company websites (physicsx.ai, emmi.ai, luminary.ai); PhysicsX Series B / NVentures extension (physicsx.ai newsroom, Silicon Republic); Luminary Cloud $72M round (SiliconANGLE, Sep 2025) and stealth launch (PRNewswire); Emmi AI €15M seed (Tech.eu, JKU Linz) and Mistral acquisition (Invest in Austria, May 2026); LinkedIn company pages (follower counts, May 2026). Figures are public-source estimates and should be sanity-checked before any external use.
+      Company sites: physicsx.ai, emmi.ai, luminary.ai. Funding: PhysicsX Series B + NVentures extension (physicsx.ai newsroom, Silicon Republic, Nov 2025); Luminary $72M Series B (SiliconANGLE, Sep 2025) and $115M Series A (Sutter Hill); Emmi AI €15M seed (Tech.eu, JKU Linz, Apr 2025). Team size: PhysicsX (CB Insights), Emmi (Tech.eu). Acquisition: Mistral AI / Emmi AI (Invest in Austria, May 2026). LinkedIn follower counts read from the live company pages, May 2026. All figures are public-source estimates, verify before any external use.
     </p>
   </div>
 </section>
 
-<footer>
-  <div class="wrap">Prepared by <span>Focus4ward</span> for NP Company · Confidential · May 2026</div>
-</footer>
+<footer><div class="wrap">Prepared by <span>Focus4ward</span> for NP Company · Confidential · May 2026</div></footer>
 
 </body>
 </html>
