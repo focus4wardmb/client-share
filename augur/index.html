@@ -21,11 +21,12 @@ header p{font-size:16px;color:rgba(255,255,255,.72);max-width:720px}
 .meta{margin-top:18px;font-size:12.5px;color:rgba(255,255,255,.5)}
 section{padding:44px 0}
 h2{font-size:23px;font-weight:700;letter-spacing:-.5px;margin-bottom:4px}
-h2 .pk{color:var(--pink)}
-.sec-sub{font-size:14.5px;color:var(--muted);margin-bottom:22px;max-width:740px}
+h2 .pk{color:inherit}
+.sec-sub{font-size:14.5px;color:var(--muted);margin-bottom:22px}
 .table-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:#fff}
-table{border-collapse:collapse;width:100%;min-width:920px;font-size:13px}
-th,td{text-align:left;padding:11px 15px;border-bottom:1px solid var(--line);vertical-align:top}
+table{border-collapse:collapse;width:100%;min-width:920px;font-size:13px;table-layout:fixed}
+th,td{text-align:left;padding:11px 15px;border-bottom:1px solid var(--line);vertical-align:top;overflow-wrap:break-word}
+thead th:first-child{width:150px}
 thead th{position:sticky;top:0;background:var(--ink);color:#fff;font-weight:600;font-size:12.5px}
 thead th.client{background:var(--pink)}
 tbody th{font-weight:600;color:var(--muted);width:140px;font-size:11.5px;text-transform:uppercase;letter-spacing:.4px;background:#FBF8F4}
@@ -37,8 +38,6 @@ tbody tr:last-child th,tbody tr:last-child td{border-bottom:none}
 .card .n{font-size:12px;font-weight:700;color:var(--pink);letter-spacing:1px;margin-bottom:7px}
 .card h3{font-size:16px;font-weight:600;line-height:1.25;margin-bottom:7px}
 .card p{font-size:13.5px;color:#43403c;line-height:1.55}
-.card.wide{grid-column:1 / -1;background:var(--ink);color:#fff;border:none}
-.card.wide h3{color:#fff}.card.wide p{color:rgba(255,255,255,.8)}.card.wide .n{color:var(--yellow)}
 .sources{font-size:12px;color:var(--muted);line-height:1.7}
 footer{background:var(--ink);color:rgba(255,255,255,.5);font-size:12px;padding:24px 0;text-align:center}
 footer span{color:var(--pink)}
@@ -56,6 +55,13 @@ footer span{color:var(--pink)}
     <div class="meta">Prepared by Focus4ward · May 2026 · Public-source figures, sourced inline, verify before external use · Confidential</div>
   </div>
 </header>
+
+<section style="padding:36px 0 8px">
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--pink)">Executive summary</div>
+    <p style="font-size:16.5px;line-height:1.7;color:#2c2c2c">NP Company (Augur) is entering a young but well-funded category where three players, PhysicsX, Emmi AI and Luminary Cloud, are converging on a single promise: physics-accurate AI simulation, roughly 1000x faster than traditional solvers. All three are larger, better capitalised ($170M to $187M raised, plus Emmi's acquisition by Mistral) and have already built audiences of 9,000 to 28,000 LinkedIn followers, while Augur starts near zero. Augur will not win on spend or scale. Its opening is a sharper, differentiated position the others have left vacant, paired with an automated content engine that lets a six-person team punch well above its weight, fast enough to matter before a first US enterprise decision is made.</p>
+  </div>
+</section>
 
 <section>
   <div class="wrap">
@@ -150,7 +156,7 @@ footer span{color:var(--pink)}
       <div class="card"><div class="n">03</div><h3>The category says one sentence</h3><p>"Physics + AI, 1000x faster simulation." All three repeat a version of it. Generic messaging here is invisible, not just weak. Differentiated positioning is the first lever.</p></div>
       <div class="card"><div class="n">04</div><h3>You can't outspend, so out-position</h3><p>$170M, $187M, and Mistral-backed. Augur will not win on budget or headcount. It wins on a sharper position and smarter presence, automated so it punches above six people.</p></div>
       <div class="card"><div class="n">05</div><h3>The US goal runs through their home turf</h3><p>Luminary is US-based with US defense/aero logos (Northrop, Joby, Honda); PhysicsX has a New York office. A first US client needs a wedge they don't own and visibility where US buyers shortlist.</p></div>
-      <div class="card wide"><div class="n">06</div><h3>The best-funded player just bet on presence</h3><p>Luminary's $72M Series B was raised explicitly to "build out a marketing and sales team." The leader of the category is now investing in exactly the layer Augur is debating. The brand gets you to credible; the system around it, positioning, persona arguments, content and presence, is what gets you onto a US enterprise shortlist.</p></div>
+      <div class="card"><div class="n">06</div><h3>The best-funded player just bet on presence</h3><p>Luminary's $72M Series B was raised explicitly to build out marketing and sales. The category leader is now investing in exactly the layer Augur is debating: the system around the brand, positioning, content and presence, is what gets you onto a US shortlist.</p></div>
     </div>
   </div>
 </section>
