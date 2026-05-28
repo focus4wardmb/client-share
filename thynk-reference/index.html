@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marketing Audit — Thynk (Reference Build) | Focus4ward</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#1E2530;
+  --slate:#3A4250;
+  --body:#43403c;
+  --bg:#F8F6F2;
+  --paper:#FFFFFF;
+  --line:#E4DCD2;
+  --line-strong:#C9C0B4;
+  --muted:#6B6560;
+  --accent:#4A6B8A;
+  --accent-soft:rgba(74,107,138,.08);
+  --green:#6B8E5A;
+  --amber:#C8932E;
+  --red:#A14C3E;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Space Grotesk',sans-serif;background:var(--bg);color:var(--body);line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1240px;margin:0 auto;padding:0 28px}
+
+/* Header */
+header.hero{background:var(--ink);color:#fff;padding:56px 0 48px}
+.hero .label{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:14px}
+.hero h1{font-size:38px;font-weight:700;letter-spacing:-1px;line-height:1.08;margin-bottom:14px;color:#fff}
+.hero h1 small{display:block;font-size:18px;font-weight:500;color:rgba(255,255,255,.7);margin-top:8px;letter-spacing:0}
+.hero p{font-size:15.5px;color:rgba(255,255,255,.7);max-width:780px;line-height:1.6}
+.hero .meta{margin-top:22px;font-size:12px;color:rgba(255,255,255,.45);letter-spacing:.3px}
+.hero .meta strong{color:rgba(255,255,255,.75);font-weight:600}
+
+/* Sticky nav */
+nav.toc{position:sticky;top:0;z-index:50;background:var(--ink);border-top:1px solid rgba(255,255,255,.08);padding:0;box-shadow:0 1px 0 rgba(0,0,0,.1)}
+nav.toc ul{list-style:none;display:flex;gap:0;overflow-x:auto;scrollbar-width:thin}
+nav.toc li{flex-shrink:0}
+nav.toc a{display:block;padding:14px 18px;font-size:12.5px;font-weight:500;color:rgba(255,255,255,.6);text-decoration:none;border-bottom:2px solid transparent;transition:all .15s}
+nav.toc a:hover{color:#fff;border-bottom-color:var(--accent)}
+
+/* Sections */
+section{padding:56px 0;border-top:1px solid var(--line)}
+section.alt{background:var(--paper)}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+section h2{font-size:26px;font-weight:700;letter-spacing:-.5px;color:var(--ink);margin-bottom:6px;line-height:1.2}
+section .sub{font-size:15px;color:var(--muted);margin-bottom:28px;max-width:780px}
+
+/* 3-column context */
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.three-col .col{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:22px 22px 20px}
+section.alt .three-col .col{background:var(--bg)}
+.three-col h3{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.three-col ul{list-style:none}
+.three-col li{font-size:13.5px;color:var(--body);line-height:1.55;margin-bottom:10px;padding-left:14px;position:relative}
+.three-col li::before{content:"•";position:absolute;left:0;top:-1px;color:var(--accent);font-weight:700}
+.three-col li:last-child{margin-bottom:0}
+.note{font-size:11.5px;color:var(--muted);font-style:italic;margin-top:14px}
+
+/* Pillars row */
+.pillars-row{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.pillar-card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:20px 18px}
+section.alt .pillar-card{background:var(--bg)}
+.pillar-card .pname{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:8px;letter-spacing:-.2px;line-height:1.25}
+.pillar-card .pdesc{font-size:12.5px;color:var(--body);line-height:1.5}
+
+/* What I heard - quote wall */
+.quotes{column-count:2;column-gap:24px;column-fill:balance}
+.quote{break-inside:avoid;margin-bottom:18px;padding:18px 20px;background:var(--paper);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;font-size:14px;color:var(--body);line-height:1.6;font-style:italic}
+section.alt .quote{background:var(--bg)}
+.quote::before{content:"\201C";font-size:30px;color:var(--accent);font-style:normal;line-height:0;vertical-align:-12px;margin-right:4px}
+.quote::after{content:"\201D";font-size:30px;color:var(--accent);font-style:normal;line-height:0;vertical-align:-12px;margin-left:2px}
+
+/* Pillar deep-dive — 3-zone layout */
+.pillar-block{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:28px;margin-bottom:26px}
+section.alt .pillar-block{background:var(--bg);border-color:var(--line-strong)}
+.pillar-block .pillar-title{font-size:18px;font-weight:700;color:var(--ink);margin-bottom:4px;letter-spacing:-.3px}
+.pillar-block .pillar-title .letter{display:inline-block;width:28px;height:28px;line-height:28px;text-align:center;background:var(--accent);color:#fff;border-radius:50%;font-size:12.5px;font-weight:700;margin-right:10px;vertical-align:1px}
+.pillar-block .pillar-sub{font-size:13px;color:var(--muted);margin-bottom:22px;margin-left:38px}
+.zones{display:grid;grid-template-columns:1.6fr 1fr;gap:24px;margin-bottom:22px}
+.zone-obs h4{font-size:12.5px;font-weight:700;color:var(--ink);letter-spacing:.3px;text-transform:uppercase;margin-bottom:10px}
+.zone-obs ul{list-style:none}
+.zone-obs li{font-size:13px;color:var(--body);line-height:1.55;margin-bottom:8px;padding-left:14px;position:relative}
+.zone-obs li::before{content:"–";position:absolute;left:0;color:var(--muted)}
+.zone-action{display:flex;flex-direction:column;gap:14px}
+.action-block{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:14px 16px}
+section.alt .action-block{background:var(--paper)}
+.action-block h5{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px}
+.action-block.continue h5{color:var(--green)}
+.action-block.stopstart h5{color:var(--accent)}
+.action-block ul{list-style:none}
+.action-block li{font-size:12.5px;color:var(--body);line-height:1.5;margin-bottom:7px;padding-left:14px;position:relative}
+.action-block.continue li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:700;font-size:11px}
+.action-block.stopstart li::before{content:"→";position:absolute;left:0;color:var(--accent);font-weight:700}
+
+/* RAG boxes */
+.rag{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding-top:18px;border-top:1px solid var(--line)}
+.rag-box{padding:12px 14px;border-radius:8px;text-align:center}
+.rag-box .rag-label{font-size:10.5px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.rag-box .rag-value{font-size:14px;font-weight:700;letter-spacing:-.2px}
+.rag-low{background:rgba(107,142,90,.1)}.rag-low .rag-value{color:var(--green)}
+.rag-med{background:rgba(200,147,46,.1)}.rag-med .rag-value{color:var(--amber)}
+.rag-high{background:rgba(161,76,62,.1)}.rag-high .rag-value{color:var(--red)}
+.rag-quick{background:rgba(107,142,90,.1)}.rag-quick .rag-value{color:var(--green)}
+.rag-medium{background:rgba(200,147,46,.1)}.rag-medium .rag-value{color:var(--amber)}
+.rag-slow{background:rgba(161,76,62,.1)}.rag-slow .rag-value{color:var(--red)}
+
+/* Competitive table */
+.comp-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--paper)}
+section.alt .comp-scroll{background:var(--bg)}
+table.comp{border-collapse:collapse;width:100%;min-width:960px;font-size:13px;table-layout:fixed}
+table.comp th,table.comp td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--line);vertical-align:top;overflow-wrap:break-word}
+table.comp thead th:first-child{width:160px}
+table.comp thead th{background:var(--ink);color:#fff;font-weight:600;font-size:12.5px;letter-spacing:.2px}
+table.comp tbody th{font-weight:600;color:var(--muted);font-size:11.5px;text-transform:uppercase;letter-spacing:.4px;background:rgba(0,0,0,.02)}
+table.comp tbody tr:last-child th,table.comp tbody tr:last-child td{border-bottom:none}
+
+/* Strategy matrix */
+.strategy-table{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--paper)}
+section.alt .strategy-table{background:var(--bg)}
+table.strategy{border-collapse:collapse;width:100%;font-size:13.5px}
+table.strategy th,table.strategy td{text-align:left;padding:14px 18px;border-bottom:1px solid var(--line);vertical-align:top}
+table.strategy thead th{background:var(--ink);color:#fff;font-weight:600;font-size:12.5px;letter-spacing:.3px}
+table.strategy tbody td:first-child{font-weight:600;color:var(--ink);width:36%}
+table.strategy tbody tr:last-child th,table.strategy tbody tr:last-child td{border-bottom:none}
+
+/* Priority list */
+.priority-intro{font-size:18px;font-weight:600;color:var(--ink);margin-bottom:8px;line-height:1.35;max-width:780px}
+.priority-intro em{font-style:normal;color:var(--accent)}
+.priority-sub{font-size:14px;color:var(--muted);margin-bottom:32px}
+.priority-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.priority-card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:24px 26px;position:relative}
+section.alt .priority-card{background:var(--bg);border-color:var(--line-strong)}
+.priority-card .pnum{position:absolute;top:18px;right:22px;font-size:36px;font-weight:700;color:var(--accent-soft);line-height:1;letter-spacing:-1px}
+.priority-card h3{font-size:17px;font-weight:700;color:var(--ink);margin-bottom:6px;letter-spacing:-.3px}
+.priority-card .pframe{font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.55;max-width:78%}
+.priority-card ul{list-style:none}
+.priority-card li{font-size:13px;color:var(--body);line-height:1.55;margin-bottom:8px;padding-left:18px;position:relative}
+.priority-card li::before{content:"→";position:absolute;left:0;color:var(--accent);font-weight:700}
+
+/* Yes/But table */
+.yb-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--paper)}
+section.alt .yb-scroll{background:var(--bg)}
+table.yb{border-collapse:collapse;width:100%;font-size:13.5px;table-layout:fixed}
+table.yb thead th{background:var(--ink);color:#fff;padding:14px 20px;font-weight:600;font-size:13px;letter-spacing:.3px;text-align:left}
+table.yb thead th.yes{background:rgba(107,142,90,.85)}
+table.yb thead th.but{background:rgba(161,76,62,.85)}
+table.yb td{padding:16px 20px;border-bottom:1px solid var(--line);vertical-align:top;font-size:13.5px;line-height:1.55;color:var(--body)}
+table.yb td.yes{background:rgba(107,142,90,.04);border-right:1px solid var(--line)}
+table.yb td.but{background:rgba(161,76,62,.04);font-weight:500;color:var(--ink)}
+table.yb tr:last-child td{border-bottom:none}
+
+/* Appendix */
+.appendix-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:24px}
+.appendix-card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:22px}
+section.alt .appendix-card{background:var(--bg)}
+.appendix-card h4{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:12px}
+.flow-diagram{font-size:12.5px;color:var(--body);line-height:1.7;font-family:'Space Grotesk',monospace}
+.flow-diagram .flow-row{display:flex;align-items:center;gap:8px;margin-bottom:10px;flex-wrap:wrap}
+.flow-step{background:var(--accent-soft);color:var(--accent);padding:6px 10px;border-radius:4px;font-weight:600;font-size:11.5px;letter-spacing:.3px}
+.flow-arrow{color:var(--muted);font-weight:700}
+.acronyms{column-count:2;column-gap:16px;font-size:12.5px;color:var(--body);line-height:1.8}
+.acronyms div{break-inside:avoid}
+.acronyms strong{color:var(--ink);font-weight:600}
+
+/* Footer */
+footer{background:var(--ink);color:rgba(255,255,255,.5);font-size:12px;padding:32px 0;text-align:center}
+footer .ftop{font-size:13px;color:rgba(255,255,255,.7);margin-bottom:6px}
+footer span.accent{color:var(--accent)}
+
+@media(max-width:900px){
+  .three-col,.pillars-row{grid-template-columns:1fr}
+  .pillars-row{gap:10px}
+  .zones{grid-template-columns:1fr}
+  .quotes{column-count:1}
+  .priority-grid{grid-template-columns:1fr}
+  .appendix-grid{grid-template-columns:1fr}
+  .hero h1{font-size:28px}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="label">Marketing Audit — Reference build</div>
+    <h1>Thynk
+      <small>Smart Hospitality SaaS · Part-Time CMO engagement · March 2024</small>
+    </h1>
+    <p>What follows is the recreated marketing audit deliverable from the March 2024 engagement, rebuilt as an HTML mini-site to validate the Focus4ward audit template. Content is verbatim from the original deck; layout demonstrates the canonical 8-section sequence applied to a real audit.</p>
+    <div class="meta"><strong>Reference build</strong> · Sample · No live client work · Used for skill QA only</div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="wrap">
+    <ul>
+      <li><a href="#context">01 Context</a></li>
+      <li><a href="#methodology">02 Methodology</a></li>
+      <li><a href="#pillars">03 Ideal-world pillars</a></li>
+      <li><a href="#heard">04 What I heard</a></li>
+      <li><a href="#review">05 Current state</a></li>
+      <li><a href="#competitive">06 Competitive</a></li>
+      <li><a href="#strategy">07 Recommended strategy</a></li>
+      <li><a href="#priority">08 Priority list</a></li>
+      <li><a href="#appendix">Appendix</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- 01 Context -->
+<section id="context">
+  <div class="wrap">
+    <div class="eyebrow">01 — Context</div>
+    <h2>Context and environment</h2>
+    <p class="sub">The market is growing fast, dominated by giants, and fragmented at the same time. Thynk is a challenger entering a market that's only partly ready for what the product can do.</p>
+    <div class="three-col">
+      <div class="col">
+        <h3>Market</h3>
+        <ul>
+          <li>The global Smart Hospitality market was valued at $13.7Bn in 2022 and is projected to reach $130.6Bn by 2030 (CAGR 29.5%).</li>
+          <li>The growing demand for guest-oriented, hyperconnected personalisation and real-time optimised experience will drive the smart hospitality market.</li>
+        </ul>
+        <div class="note">Sources: Verified Market Research · MarketsandMarkets</div>
+      </div>
+      <div class="col">
+        <h3>Thynk</h3>
+        <ul>
+          <li>The market is historically dominated by giants like Oracle and Amadeus.</li>
+          <li>Thynk is a challenger on a market that is partly (at least in Europe) unprepared for the full scope of the product's capabilities (and price).</li>
+          <li>The US and European markets differ greatly in terms of market maturity and GTM approach.</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h3>Competitors</h3>
+        <ul>
+          <li>The market is highly fragmented. It's divided into small parts (POS, PMS), managed by many different software providers.</li>
+          <li>Clients are looking to centralise operations, reduce manual labour, increase efficiency, and boost revenue.</li>
+          <li>They will opt for a solution that is cloud native, integrated, easy and fast to implement, and has great support.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 Methodology -->
+<section id="methodology" class="alt">
+  <div class="wrap">
+    <div class="eyebrow">02 — Methodology</div>
+    <h2>Audit methodology</h2>
+    <p class="sub">Three workstreams ran in parallel over a six-week engagement: tools and material assessment, structured interviews with leadership and team, and the synthesis into recommendations with ROI ranking.</p>
+    <div class="three-col">
+      <div class="col">
+        <h3>Assessment</h3>
+        <ul>
+          <li>Website performance</li>
+          <li>SEO performance</li>
+          <li>Paid search performance</li>
+          <li>HubSpot configuration and usage</li>
+          <li>Brand materials</li>
+          <li>Product marketing materials</li>
+          <li>Marketing plan, KPIs, budget</li>
+          <li>Financial state</li>
+          <li>Campaigns and content</li>
+          <li>Competitors review</li>
+          <li>Sales materials</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h3>Interviews</h3>
+        <ul>
+          <li>Interviewing the marketing team.</li>
+          <li>Interviewing key stakeholders: CEO, Sales EU, Sales US, Product, CFO.</li>
+          <li>Reviewing additional Sales, Product and Finance materials.</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h3>Ideation</h3>
+        <ul>
+          <li>Understand what is needed to win (ideal world) based on the context and my past experience.</li>
+          <li>Gap analysis.</li>
+          <li>Understanding the causes of the gaps (dynamics).</li>
+          <li>Suggesting ways to overcome them.</li>
+          <li>Recommendations for improvements in the short, mid, and long term, with associated investment and ROI.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 Pillars -->
+<section id="pillars">
+  <div class="wrap">
+    <div class="eyebrow">03 — Ideal-world pillars</div>
+    <h2>Pillars of a marketing strategy</h2>
+    <p class="sub">If we were building the function from scratch with no constraints, these are the five pillars it would rest on. Used as the gap-analysis frame in Phase 3.</p>
+    <div class="pillars-row">
+      <div class="pillar-card">
+        <div class="pname">Brand awareness and perception</div>
+        <div class="pdesc">Leveraging PR, AR and organic to increase reach and convey the relevant message about who we are and what is our unique, innovative solution for ENT and SMBs.</div>
+      </div>
+      <div class="pillar-card">
+        <div class="pname">Lead generation and pipeline growth</div>
+        <div class="pdesc">Building an inbound machine: generating leads, enriching, scoring, and qualifying them, followed by either passing them to Sales or nurturing them.</div>
+      </div>
+      <div class="pillar-card">
+        <div class="pname">Product marketing and positioning</div>
+        <div class="pdesc">Make the product stand out by positioning it as avant-garde. Crafting the appropriate packaging, messaging, and pricing to maximise revenue and upsell opportunities.</div>
+      </div>
+      <div class="pillar-card">
+        <div class="pname">Sales enablement and outbound</div>
+        <div class="pdesc">Support sales efforts by creating stunning sales enablement materials that resonate with our target audience and are effective at the local market level. Execute on ABM campaigns.</div>
+      </div>
+      <div class="pillar-card">
+        <div class="pname">Sales-Marketing-Product alignment</div>
+        <div class="pdesc">Enhance collaboration and synergy between Sales, Marketing, and Product by aligning objectives and roadmaps and establishing effective processes.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 What I heard -->
+<section id="heard" class="alt">
+  <div class="wrap">
+    <div class="eyebrow">04 — Voice of the team</div>
+    <h2>What I heard</h2>
+    <p class="sub">Verbatim from the stakeholder interviews. The recurring pattern: trust, process, and data are the three things that aren't yet there. Each one was named separately by people who didn't talk to each other before the interviews.</p>
+    <div class="quotes">
+      <div class="quote">We don't have a culture of A/B testing.</div>
+      <div class="quote">There is a difference in how we sell in the US compared to Europe: we don't use the same language and the pain-points are not even the same.</div>
+      <div class="quote">Our inbound strategy is low to non-existent. In the past 8 months I got 4 low quality leads.</div>
+      <div class="quote">People who know us still can't figure out what we do from our website.</div>
+      <div class="quote">If we don't have a process internally for Sales, Marketing and Ops, we'll lose deals.</div>
+      <div class="quote">There aren't any marketing materials, and the ones we have are not good, design and copy wise.</div>
+      <div class="quote">We change what we do and who we are every 3 weeks. When a startup changes their messaging over and over again, we cannot trust them.</div>
+      <div class="quote">We've shown Marketing we don't trust them.</div>
+      <div class="quote">There is a huge data gap. We have no visibility on lead status, I need to manually ask the people.</div>
+      <div class="quote">Our messaging doesn't resonate globally. We need to decentralise decisions.</div>
+      <div class="quote">We keep adding more bricks on bricks. We need to be more aligned internally with stakeholders.</div>
+      <div class="quote">We spend $200K a year on events. We need to do better before and after, and we need a better process for tradeshows.</div>
+      <div class="quote">One of the top prospects I've been talking to said: I've been on your website and I don't understand what you do.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 Current state -->
+<section id="review">
+  <div class="wrap">
+    <div class="eyebrow">05 — Review of current state</div>
+    <h2>Pillar-by-pillar review</h2>
+    <p class="sub">Six pillars covered: Website, Brand, Lead Generation, Product Marketing, Comms & Social, and Team / Process / Data. Each block surfaces observations, what to continue, what to stop or start, and a rough Investment / Impact / Time-to-results read.</p>
+
+    <!-- A. Website -->
+    <div class="pillar-block">
+      <div class="pillar-title"><span class="letter">A</span>Website</div>
+      <div class="pillar-sub">Clean design, but text-heavy and not optimised for the buyer journey. Mobile and US localisation are the two biggest gaps.</div>
+      <div class="zones">
+        <div class="zone-obs">
+          <h4>Observations — UX, UI, content</h4>
+          <ul>
+            <li>Clean and modern design, yet generic and unmemorable.</li>
+            <li>The website is text-heavy, making it difficult for users to focus on the key message.</li>
+            <li>The client carousel is very good, but other proof points should be more prominent.</li>
+            <li>No pricing page (potential conversion lift, ref: Mews).</li>
+            <li>The website has a chatbot, but it is offline.</li>
+            <li>URLs still need improvement for SEO.</li>
+            <li>Success stories should be in the main navigation; solutions don't include case studies.</li>
+            <li>The website is not optimised for mobile (41.8% of sessions are mobile).</li>
+            <li>English only, while 67% of revenue comes from Europe and the US is not optimised.</li>
+          </ul>
+          <h4 style="margin-top:18px">Web performance + lead generation</h4>
+          <ul>
+            <li>About 5K users per month, with 95% being new users. Main geos: US, FR, DE, UK, India.</li>
+            <li>Traffic sources: Direct 57%, organic search 20%, referral 6%, organic social (LinkedIn) 8%, paid social 6%, other 3%.</li>
+            <li>Organic search generates more engaged sessions than direct traffic (41% vs 34%) and higher avg time (1m02) and events per session (7.01).</li>
+            <li>In January: 24 leads and 13 prospects (most from direct traffic). Booking calendar doesn't always work, no confirmation email.</li>
+            <li>The form is not designed to be visible above the fold; scoring and data enrichment not done.</li>
+          </ul>
+        </div>
+        <div class="zone-action">
+          <div class="action-block continue">
+            <h5>Continue</h5>
+            <ul>
+              <li>Generate customer testimonials and feature them on the site.</li>
+            </ul>
+          </div>
+          <div class="action-block stopstart">
+            <h5>Stop / Start</h5>
+            <ul>
+              <li>Reduce copy and polish, focus on key messages.</li>
+              <li>Improve design and platform shots; add UI moments and videos.</li>
+              <li>Improve mobile experience.</li>
+              <li>Test CTAs, copy, and layout.</li>
+              <li>Move key items to main navigation.</li>
+              <li>Fix SEO technical issues, fix URLs.</li>
+              <li>Consider adding a product tour or a demo.</li>
+              <li>Create a multi-region / multi-language site.</li>
+              <li>Allow non-work emails on contact form; remove company size and number of properties.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="rag">
+        <div class="rag-box rag-med"><div class="rag-label">Investment</div><div class="rag-value">Medium</div></div>
+        <div class="rag-box rag-high"><div class="rag-label">Impact</div><div class="rag-value">High</div></div>
+        <div class="rag-box rag-quick"><div class="rag-label">Time for results</div><div class="rag-value">Quick</div></div>
+      </div>
+    </div>
+
+    <!-- B. Brand -->
+    <div class="pillar-block">
+      <div class="pillar-title"><span class="letter">B</span>Brand</div>
+      <div class="pillar-sub">A "next-generation" positioning that the brand identity doesn't yet live up to. Three missing elements: reassurance, momentum, and movement.</div>
+      <div class="zones">
+        <div class="zone-obs">
+          <h4>Positioning + messaging</h4>
+          <ul>
+            <li>Using "Next generation" is very good. Thynk is identified as a disruptor and fosters innovation.</li>
+            <li>While change is desired, it's not always easy. Three key elements are missing: reassurance, momentum, movement.</li>
+            <li><strong>Reassurance:</strong> Thynk needs to be perceived as a trusted advisor. Proof points (business results, quotes) need to be strategically placed.</li>
+            <li><strong>Movement:</strong> Thynk is uniquely positioned to drive customer-centric digitalisation in hospitality. The "bigger than us" opportunity is not fully reflected in the copy.</li>
+            <li><strong>Momentum:</strong> Hoteliers need to feel the urgency: if they don't jump on the spacecraft, they'll be left behind.</li>
+            <li>For advanced users: everyone is talking about AI. Without data, AI is impossible.</li>
+          </ul>
+          <h4 style="margin-top:18px">Look &amp; feel + tone of voice</h4>
+          <ul>
+            <li>Recently rebranded and therefore more "put together," yet not polished.</li>
+            <li>The brand doesn't convey high-end, market-leading, or world-class.</li>
+            <li>Discrepancy between "next-gen" and brand elements (like icons) that are archaic.</li>
+            <li>Slides are cluttered, suggesting a complex solution.</li>
+            <li>Branding is not always consistent or unique. Platform screenshots need improvement.</li>
+            <li>TOV is corporate and professional, but not memorable or unique.</li>
+            <li>Word choice matters: use "reshaped" or "transformed" instead of "converted"; "enable" and "empower" instead of "help."</li>
+          </ul>
+        </div>
+        <div class="zone-action">
+          <div class="action-block continue">
+            <h5>Continue</h5>
+            <ul>
+              <li>Keep "next generation" as the core positioning angle.</li>
+              <li>Keep using action verbs that create dynamic rhythm.</li>
+            </ul>
+          </div>
+          <div class="action-block stopstart">
+            <h5>Stop / Start</h5>
+            <ul>
+              <li>Restructure and refocus the brand narrative.</li>
+              <li>Recreate essential brand elements: mission, vision, USP, tagline.</li>
+              <li>Polish the copy using a professional copywriter.</li>
+              <li>Revise the brand design to make it more modern, crisp, and ENT-worthy.</li>
+              <li>Introduce captivating content: UI moments and product videos.</li>
+              <li>Create a brand book, TOV and style guide.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="rag">
+        <div class="rag-box rag-low"><div class="rag-label">Investment</div><div class="rag-value">Low</div></div>
+        <div class="rag-box rag-med"><div class="rag-label">Impact</div><div class="rag-value">Medium</div></div>
+        <div class="rag-box rag-medium"><div class="rag-label">Time for results</div><div class="rag-value">Medium</div></div>
+      </div>
+    </div>
+
+    <!-- C. Lead Generation -->
+    <div class="pillar-block">
+      <div class="pillar-title"><span class="letter">C</span>Lead generation</div>
+      <div class="pillar-sub">Branded keywords work; non-branded ranks have been flat for 16 months. Events absorb 74% of budget without process or ROI tracking.</div>
+      <div class="zones">
+        <div class="zone-obs">
+          <h4>General + SEO + paid search</h4>
+          <ul>
+            <li>Generated 23 leads (40% from search) in Jan and 18 leads in Feb (60% from search).</li>
+            <li>Affiliate content such as HotelTechReport is not present.</li>
+            <li>Content is often produced without a clear understanding of how it will be utilised, often without SEO in mind.</li>
+            <li>SEO is not treated as a priority (SEMrush or SpyFu not used).</li>
+            <li>Non-brand keywords have maintained low positions for the past 16 months.</li>
+            <li>Branded keywords show improvement in impressions, clicks, and CTRs.</li>
+            <li>Test campaign generated learning but lacked impact (only 3 leads): inadequate budget, not geo-optimised, no conversion tracking, one keyword board match, ill-defined objectives.</li>
+          </ul>
+          <h4 style="margin-top:18px">Paid LinkedIn (ABM) + events</h4>
+          <ul>
+            <li>ABM running on targeted accounts in the US, but not including all relevant titles.</li>
+            <li>~40 events globally per year, spend over €200K (74% of total budget).</li>
+            <li>Event process not designed to maximise outcome; ROI not calculated or tracked.</li>
+            <li>One e-book campaign per quarter; campaigns not always linked to sales priorities or ABM.</li>
+          </ul>
+        </div>
+        <div class="zone-action">
+          <div class="action-block continue">
+            <h5>Continue</h5>
+            <ul>
+              <li>Run relevant events in key sales areas.</li>
+              <li>Maintain SEO positions on branded keywords.</li>
+            </ul>
+          </div>
+          <div class="action-block stopstart">
+            <h5>Stop / Start</h5>
+            <ul>
+              <li>Double down on SEO non-brand.</li>
+              <li>Invest wisely in SEA.</li>
+              <li>Treat events as campaigns, not isolated activities.</li>
+              <li>Improve and enhance ABM programs.</li>
+              <li>Add lead scoring with two flows: low-qualified (watch a demo) and high-qualified (book a meeting).</li>
+              <li>Enrich Salesforce data with web data using third-party tools.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="rag">
+        <div class="rag-box rag-low"><div class="rag-label">Investment</div><div class="rag-value">Low</div></div>
+        <div class="rag-box rag-med"><div class="rag-label">Impact</div><div class="rag-value">Medium</div></div>
+        <div class="rag-box rag-quick"><div class="rag-label">Time for results</div><div class="rag-value">Quick</div></div>
+      </div>
+    </div>
+
+    <!-- D. Product Marketing -->
+    <div class="pillar-block">
+      <div class="pillar-title"><span class="letter">D</span>Product marketing</div>
+      <div class="pillar-sub">Strong feature-benefit logic, but packaging, pricing, and buyer-persona depth are not yet there. The solution reads "robust but overwhelming" to SMB segments.</div>
+      <div class="zones">
+        <div class="zone-obs">
+          <h4>General + positioning</h4>
+          <ul>
+            <li>Thynk is lacking product marketing development.</li>
+            <li>Packaging, pricing, and messaging need to be redesigned to be easier to comprehend and sell, and to create upsell opportunities.</li>
+            <li>Pricing structure is not straightforward, internally or externally.</li>
+            <li>Current packaging can be limiting for sales (Groups & Events for example).</li>
+            <li>Individuals own some aspects of product marketing, but there is a lack of strategy. Competitive analysis not done on a regular basis.</li>
+            <li>Product knowledge missing in both Marketing and Sales teams.</li>
+            <li>Solutions based on 4 use cases (Lobby, Corporate & FIT, Groups & Events, Guest); good feature-benefit link established.</li>
+            <li>Solution perceived as robust but possibly overwhelming, especially for SMBs who may not be ready for it.</li>
+          </ul>
+          <h4 style="margin-top:18px">Buyer persona + reviews + advocacy</h4>
+          <ul>
+            <li>Missing detailed buyer persona research and documentation.</li>
+            <li>Good ranking on Hotel Tech Report (awards finalist in 2 categories); not ranked on G2, Gartner, TrustRadius.</li>
+            <li>Numerous relevant quotes in the pitch and on the website; missing video case studies.</li>
+            <li>Need to ensure client testimonies are fully leveraged across all MKT-Sales activities.</li>
+          </ul>
+        </div>
+        <div class="zone-action">
+          <div class="action-block continue">
+            <h5>Continue</h5>
+            <ul>
+              <li>Maintain ranking on Hotel Tech Report.</li>
+              <li>Highlight benefits mapped to pain points.</li>
+              <li>Build a customer stories database.</li>
+            </ul>
+          </div>
+          <div class="action-block stopstart">
+            <h5>Stop / Start</h5>
+            <ul>
+              <li>Reconsider packaging and pricing.</li>
+              <li>Revise product messaging.</li>
+              <li>Research the buyer persona; create a comprehensive doc shared with marketing and sales.</li>
+              <li>Generate reviews for G2 and other platforms.</li>
+              <li>Develop a more efficient process for client advocacy to maximise impact.</li>
+              <li>Video case studies.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="rag">
+        <div class="rag-box rag-med"><div class="rag-label">Investment</div><div class="rag-value">Medium</div></div>
+        <div class="rag-box rag-high"><div class="rag-label">Impact</div><div class="rag-value">High</div></div>
+        <div class="rag-box rag-medium"><div class="rag-label">Time for results</div><div class="rag-value">Medium</div></div>
+      </div>
+    </div>
+
+    <!-- E. Comms & Social -->
+    <div class="pillar-block">
+      <div class="pillar-title"><span class="letter">E</span>Comms &amp; Social</div>
+      <div class="pillar-sub">LinkedIn is the only working channel; IG/FB are stalled. PR is internalised and under-distributed in the US.</div>
+      <div class="zones">
+        <div class="zone-obs">
+          <h4>Social</h4>
+          <ul>
+            <li>LinkedIn is a top performing channel: 3K followers as of today, 316% engagement increase on Dec 23rd, 45 content shares in January.</li>
+            <li>Instagram: 85 followers. Facebook: 43 followers. Posting on a weekly basis.</li>
+            <li>Content produced once a week (blog, case study, TL, ebook); includes events, thought-leadership, and employee branding.</li>
+          </ul>
+          <h4 style="margin-top:18px">PR</h4>
+          <ul>
+            <li>Full content lifecycle managed internally: ideation, writing, validation, distribution.</li>
+            <li>Media coverage is low, particularly in the US.</li>
+            <li>MEA is the only region using a 3rd-party agency for distribution, with better results.</li>
+            <li>Press release distribution limited to key moments (Series A for instance).</li>
+          </ul>
+        </div>
+        <div class="zone-action">
+          <div class="action-block continue">
+            <h5>Continue</h5>
+            <ul>
+              <li>Build awareness and consideration through LinkedIn.</li>
+            </ul>
+          </div>
+          <div class="action-block stopstart">
+            <h5>Stop / Start</h5>
+            <ul>
+              <li>Run PR in key countries, using a 3rd-party agency for better coverage.</li>
+              <li>Leverage prominent clients for media stories.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="rag">
+        <div class="rag-box rag-low"><div class="rag-label">Investment</div><div class="rag-value">Low</div></div>
+        <div class="rag-box rag-med"><div class="rag-label">Impact</div><div class="rag-value">Medium</div></div>
+        <div class="rag-box rag-medium"><div class="rag-label">Time for results</div><div class="rag-value">Medium</div></div>
+      </div>
+    </div>
+
+    <!-- F. Team, Process & Data -->
+    <div class="pillar-block">
+      <div class="pillar-title"><span class="letter">F</span>Team, process &amp; data</div>
+      <div class="pillar-sub">The headline finding. There is lack of trust, process, and data — and this gap, more than any tactical fix, is what holds growth back.</div>
+      <div class="zones">
+        <div class="zone-obs">
+          <h4>Marketing team &amp; budget</h4>
+          <ul>
+            <li>Severely understaffed: only 3% of the workforce (6%+ at competitors). Smallest growth projection to 2025.</li>
+            <li>Budget limited, includes full-time staff. Limited third-party support.</li>
+            <li>Marketing strategy is "light," not data-driven, not quantitative. Unclear how success or ROI are measured.</li>
+            <li>Lack of trust between the marketing team and its stakeholders.</li>
+            <li>Team lacks some areas of expertise — mentoring and training will help.</li>
+          </ul>
+          <h4 style="margin-top:18px">Processes + data</h4>
+          <ul>
+            <li>Need clear, effective processes between Sales ⇔ Marketing ⇔ Product: LG, content validation, events, product roadmap.</li>
+            <li>US form sends an email (performance not guaranteed); EU form books a meeting directly (scalability not guaranteed).</li>
+            <li>Inbound leads not scored or segmented. Event leads followed up manually.</li>
+            <li>Missing documentation that is critical as the team scales.</li>
+            <li>Tech stack siloed: tools not integrated; HubSpot used mostly as a CMS, not fully leveraged by LG.</li>
+            <li>Salesforce → HubSpot one-way only (not vice versa). Contacts not enriched with behavioural data. Campaign field in Salesforce unused.</li>
+          </ul>
+        </div>
+        <div class="zone-action">
+          <div class="action-block continue">
+            <h5>Continue</h5>
+            <ul>
+              <li>The pieces that work (LinkedIn content cadence, HubSpot baseline) — fix the integration, don't rip out the tool.</li>
+            </ul>
+          </div>
+          <div class="action-block stopstart">
+            <h5>Stop / Start</h5>
+            <ul>
+              <li>Establish clear and effective processes for event, LG, validation, sales requests.</li>
+              <li>Solve the data problem by utilising HubSpot, or replace it as a marketing automation tool (not as a CMS).</li>
+              <li>Add data enrichment and lead scoring.</li>
+              <li>Organise the nomenclature used by teams.</li>
+              <li>Enhance collaboration between teams to restore trust.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="rag">
+        <div class="rag-box rag-low"><div class="rag-label">Investment</div><div class="rag-value">Low</div></div>
+        <div class="rag-box rag-high"><div class="rag-label">Impact</div><div class="rag-value">High</div></div>
+        <div class="rag-box rag-medium"><div class="rag-label">Time for results</div><div class="rag-value">Medium</div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 06 Competitive -->
+<section id="competitive" class="alt">
+  <div class="wrap">
+    <div class="eyebrow">06 — Competitive</div>
+    <h2>Competitive review</h2>
+    <p class="sub">Key marketing dynamics from the four most-relevant competitors. Mews and Tripleseat are the two to watch for content and brand pattern; Oracle Opera and iVvy provide useful benchmarks on multi-language and pricing transparency.</p>
+    <div class="comp-scroll">
+      <table class="comp">
+        <thead>
+          <tr><th></th><th>Mews</th><th>Oracle Opera</th><th>iVvy</th><th>Tripleseat</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Website</th>
+            <td>Very good website from a content and look & feel perspective.</td>
+            <td>The website is archaic but offers a direct call to sales, available in French and German.</td>
+            <td>The website is functional, clean, and effective.</td>
+            <td>A brand that is both distinctive and memorable. Rich in content including videos.</td>
+          </tr>
+          <tr>
+            <th>Solutions / pricing</th>
+            <td>Solutions by property type, size, and role. Pricing page exists.</td>
+            <td>Webpage as part of the Oracle site. Solutions by product type and sector. No pricing page.</td>
+            <td>Solutions by venue type. No pricing page.</td>
+            <td>Solutions by industry and by product. Pricing page exists.</td>
+          </tr>
+          <tr>
+            <th>Reviews</th>
+            <td>4.5 (553) on Hotel Tech Report. 4.3 (7) on G2. 3 awards won in the past year.</td>
+            <td>4.5 (521) on Hotel Tech Report. 4.2 (60) on G2.</td>
+            <td>4.7 (25) on Hotel Tech Report. 4.7 (22) on G2.</td>
+            <td>4.5 (119) on Hotel Tech Report. 4.4 (309) on G2.</td>
+          </tr>
+          <tr>
+            <th>Paid + share of brand</th>
+            <td>Spends about $3.2K a day on paid search. Share of branded traffic: 25%.</td>
+            <td>Not active on paid search.</td>
+            <td>Share of branded traffic: 12%.</td>
+            <td>Share of branded traffic: 80%. Last month: ~$2K on paid.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 07 Recommended strategy -->
+<section id="strategy">
+  <div class="wrap">
+    <div class="eyebrow">07 — Recommended strategy</div>
+    <h2>Recommended new strategy</h2>
+    <p class="sub">Three-tier go-to-market motion (Company / Small business / Mid-market + ENT) over a single marketing-ops backbone. Each line in the matrix carries its own KPI so progress is measurable.</p>
+    <div class="strategy-table">
+      <table class="strategy">
+        <thead>
+          <tr><th>Strategy</th><th>Objective</th><th>KPI</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Company level</strong><br><span style="color:var(--muted);font-size:12.5px">Brand platform, brand positioning, messaging using: PR, TL Social</span></td>
+            <td>Awareness — Trusted partner</td>
+            <td>Website new users<br>PR SOV<br>Social performance</td>
+          </tr>
+          <tr>
+            <td><strong>Small business</strong> (US ~60%, RoW TBD)<br><span style="color:var(--muted);font-size:12.5px">LG engine — Inbound using SEO, SEM, Display</span></td>
+            <td>Growth</td>
+            <td>MQLs (demo) — Target vs actual<br>CPL</td>
+          </tr>
+          <tr>
+            <td><strong>Mid-market + ENT</strong> (US ~40%, RoW TBD)<br><span style="color:var(--muted);font-size:12.5px">ABM (one to few) using LinkedIn</span></td>
+            <td>Growth</td>
+            <td>Marketing-influenced pipeline</td>
+          </tr>
+          <tr>
+            <td><strong>MKT Ops</strong><br><span style="color:var(--muted);font-size:12.5px">Process · Events · Lead scoring + enrichment · Data sync Sales ⇔ Marketing</span></td>
+            <td>Track campaign source and ROI</td>
+            <td>Event process: before, during, after<br>LG process: inbound, nurture, follow-up</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 08 Priority list -->
+<section id="priority" class="alt">
+  <div class="wrap">
+    <div class="eyebrow">08 — Priority list</div>
+    <p class="priority-intro">Here is what I recommend focusing on. <em>This list is by order of priority.</em></p>
+    <p class="priority-sub">Five priority blocks. First two should be in motion within 30 days; brand and product marketing in parallel over 60-90 days; search as the compounding long-term engine.</p>
+    <div class="priority-grid">
+
+      <div class="priority-card">
+        <div class="pnum">1</div>
+        <h3>Lead Gen</h3>
+        <div class="pframe">Rebuild the process for LG to get more quality leads and scale operations across geos.</div>
+        <ul>
+          <li>Add a lead enrichment tool.</li>
+          <li>Look into a tool with better integration with Salesforce.</li>
+          <li>Introduce lead scoring.</li>
+          <li>Align on lead definitions.</li>
+          <li>Build nurture programs for non-MQLs.</li>
+        </ul>
+      </div>
+
+      <div class="priority-card">
+        <div class="pnum">2</div>
+        <h3>Team &amp; Process</h3>
+        <div class="pframe">Strengthen the alliance and collaboration between Sales ⇔ MKT ⇔ Product.</div>
+        <ul>
+          <li>Redesign the event process.</li>
+          <li>Drive better lead generation and team synergy.</li>
+          <li>Regain trust.</li>
+        </ul>
+      </div>
+
+      <div class="priority-card">
+        <div class="pnum">3</div>
+        <h3>Brand</h3>
+        <div class="pframe">Make the brand platform simpler, comprehensible, consistent, and scalable by redoing both copy and design.</div>
+        <ul>
+          <li>Ensure that an external copywriter polishes the key components.</li>
+          <li>Redesign the brand to enhance it and elevate it to a world-class ENT brand.</li>
+          <li>Rebuild the messaging framework, aligning CEO, Marketing, Sales, and Product.</li>
+        </ul>
+      </div>
+
+      <div class="priority-card">
+        <div class="pnum">4</div>
+        <h3>Product Marketing</h3>
+        <div class="pframe">Start doing product marketing from the ground up.</div>
+        <ul>
+          <li>Conduct market research to align buyer and user personas, pain points, and competitive analysis.</li>
+          <li>Recreate the Product / Solutions / Feature matrix.</li>
+          <li>Reevaluate pricing and packaging.</li>
+        </ul>
+      </div>
+
+      <div class="priority-card" style="grid-column:1/-1">
+        <div class="pnum">5</div>
+        <h3>Search</h3>
+        <div class="pframe">Increase consideration by securing visibility on non-branded keywords to expose the brand to new people.</div>
+        <ul>
+          <li>Double down on SEO, starting with specific terms, moving into broader terms.</li>
+          <li>Align content production to SEO.</li>
+          <li>Invest in paid to complement SEO efforts.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Appendix -->
+<section id="appendix">
+  <div class="wrap">
+    <div class="eyebrow">Appendix</div>
+    <h2>Inbound lead flow + acronyms</h2>
+    <p class="sub">Supporting reference material from the audit. The lead flow diagram is the recommended target state; acronym list defines terms used throughout the deck.</p>
+    <div class="appendix-grid">
+
+      <div class="appendix-card">
+        <h4>Inbound lead flow — recommended target</h4>
+        <div class="flow-diagram">
+          <div class="flow-row">
+            <span class="flow-step">Lead inbound (web)</span>
+            <span class="flow-arrow">→</span>
+            <span class="flow-step">Lead scored + enriched</span>
+            <span class="flow-arrow">→</span>
+            <span class="flow-step">Score ≥ 50%?</span>
+          </div>
+          <div class="flow-row" style="margin-left:24px">
+            <span class="flow-arrow">↳ Yes →</span>
+            <span class="flow-step">Book a demo (calendar)</span>
+            <span class="flow-arrow">→</span>
+            <span class="flow-step">Enters pipeline (SF)</span>
+          </div>
+          <div class="flow-row" style="margin-left:24px">
+            <span class="flow-arrow">↳ No →</span>
+            <span class="flow-step">Lead nurturing (email + content)</span>
+          </div>
+          <div style="font-size:11.5px;color:var(--muted);margin-top:14px;line-height:1.6">
+            <strong>MAL</strong> (Marketing Accepted Lead) → <strong>MQL</strong> (Marketing Qualified Lead) → <strong>SAL</strong> (Sales Accepted Lead) → <strong>SQL</strong> (Sales Qualified Lead).<br>
+            Basic info captured at web inbound (name, company, job title, property type). Source set to "Marketing inbound." Lead enriched with Salesforce data + additional sources.
+          </div>
+        </div>
+      </div>
+
+      <div class="appendix-card">
+        <h4>Acronym list</h4>
+        <div class="acronyms">
+          <div><strong>CAGR</strong> Compound annual growth rate</div>
+          <div><strong>AR</strong> Analyst relations</div>
+          <div><strong>SQL</strong> Sales qualified leads</div>
+          <div><strong>SOV</strong> Share of voice</div>
+          <div><strong>CPL</strong> Cost per lead</div>
+          <div><strong>USP</strong> Unique selling proposition</div>
+          <div><strong>TOV</strong> Tone of voice</div>
+          <div><strong>TL</strong> Thought leadership</div>
+          <div><strong>LG</strong> Lead generation</div>
+          <div><strong>ABM</strong> Account-based marketing</div>
+          <div><strong>ENT</strong> Enterprise</div>
+          <div><strong>SMB</strong> Small and medium business</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="ftop">Marketing Audit · Thynk reference build · <span class="accent">Focus4ward</span></div>
+    <div>Reference deliverable for skill testing. Original engagement: March 2024. Rebuilt as HTML mini-site May 2026.</div>
+  </div>
+</footer>
+
+</body>
+</html>
