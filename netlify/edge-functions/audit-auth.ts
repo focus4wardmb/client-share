@@ -116,10 +116,13 @@ body{font-family:'Space Grotesk',sans-serif;background:#1E2530;color:#fff;displa
 h1{font-size:26px;font-weight:700;line-height:1.2;letter-spacing:-.4px;margin-bottom:10px}
 p.lede{font-size:15px;line-height:1.6;color:rgba(255,255,255,.7);margin-bottom:28px}
 form{display:flex;gap:8px}
-input[type=password]{flex:1;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);color:#fff;padding:13px 16px;font-family:inherit;font-size:15px;border-radius:8px;outline:none}
-input[type=password]:focus{border-color:#C9316E;background:rgba(255,255,255,.09)}
-button{background:#C9316E;color:#fff;border:none;padding:13px 22px;font-family:inherit;font-weight:600;font-size:14px;border-radius:8px;cursor:pointer;letter-spacing:.2px}
-button:hover{background:#b22a61}
+.pwwrap{position:relative;flex:1}
+.pwwrap input{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);color:#fff;padding:13px 56px 13px 16px;font-family:inherit;font-size:15px;border-radius:8px;outline:none;letter-spacing:.5px}
+.pwwrap input:focus{border-color:#C9316E;background:rgba(255,255,255,.09)}
+.show-btn{position:absolute;right:6px;top:50%;transform:translateY(-50%);background:transparent;border:none;color:rgba(255,255,255,.55);font-family:inherit;font-size:11px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;padding:8px 10px;cursor:pointer;border-radius:5px}
+.show-btn:hover{background:rgba(255,255,255,.08);color:rgba(255,255,255,.85)}
+button.submit{background:#C9316E;color:#fff;border:none;padding:13px 22px;font-family:inherit;font-weight:600;font-size:14px;border-radius:8px;cursor:pointer;letter-spacing:.2px}
+button.submit:hover{background:#b22a61}
 .err{background:rgba(201,49,110,.15);border:1px solid rgba(201,49,110,.4);color:#ffcfdb;padding:11px 14px;border-radius:8px;font-size:13px;margin-bottom:20px;line-height:1.5}
 .meta{margin-top:24px;font-size:12px;color:rgba(255,255,255,.4);line-height:1.6}
 .meta a{color:rgba(255,255,255,.6);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.2)}
@@ -132,11 +135,25 @@ button:hover{background:#b22a61}
   <p class="lede">Enter the password Miri sent you to view this audit.</p>
   ${errorBanner}
   <form method="get" action="/${slug}/">
-    <input type="password" name="key" placeholder="Password" autofocus autocomplete="current-password" required>
-    <button type="submit">Open</button>
+    <div class="pwwrap">
+      <input type="password" id="pw" name="key" placeholder="Password" autofocus autocomplete="current-password" required>
+      <button type="button" class="show-btn" id="toggle" aria-label="Show password">Show</button>
+    </div>
+    <button type="submit" class="submit">Open</button>
   </form>
   <div class="meta">If you weren't sent a password and reached this page by mistake, you can <a href="/">return home</a>.</div>
 </div>
+<script>
+(function(){
+  var inp = document.getElementById('pw');
+  var btn = document.getElementById('toggle');
+  btn.addEventListener('click', function(){
+    if(inp.type === 'password'){ inp.type = 'text'; btn.textContent = 'Hide'; }
+    else { inp.type = 'password'; btn.textContent = 'Show'; }
+    inp.focus();
+  });
+})();
+</script>
 </body>
 </html>`;
 }
