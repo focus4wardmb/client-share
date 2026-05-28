@@ -1,0 +1,9 @@
+[build]
+  publish = "."
+
+# Per-client password gate. The Edge Function decides which paths are gated
+# based on whether AUDIT_PASS_<SLUG> env vars exist (or fallback entries in
+# the function file). See netlify/edge-functions/audit-auth.ts for the rules.
+[[edge_functions]]
+  path = "/*"
+  function = "audit-auth"
