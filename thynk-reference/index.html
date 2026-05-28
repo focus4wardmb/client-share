@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marketing Audit — Thynk (Reference Build) | Focus4ward</title>
+<title>Marketing Audit · Thynk (Reference Build) | Focus4ward</title>
 <meta name="robots" content="noindex,nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +18,7 @@
   --line:#EAE6E0;
   --line-strong:#D4CFC7;
 
-  /* Thynk brand — three roles */
+  /* Thynk brand: three roles */
   --brand-deep:#57147E;
   --brand-bright:#8C52FF;
   --brand-cta:#ff4db8;
@@ -45,51 +45,48 @@ body{
   -webkit-font-smoothing:antialiased;font-feature-settings:'ss01','cv11';
 }
 
-/* ===== App layout ===== */
 .app{display:grid;grid-template-columns:var(--sidebar-w) 1fr;min-height:100vh}
 
 /* ===== Sidebar ===== */
 aside.sidebar{
-  background:var(--brand-deep);
-  color:#fff;
+  background:var(--brand-deep);color:#fff;
   position:sticky;top:0;height:100vh;overflow-y:auto;
-  padding:32px 0 28px;
-  border-right:1px solid rgba(255,255,255,.06);
+  padding:30px 0 28px;border-right:1px solid rgba(255,255,255,.06);
 }
-.sidebar-brand{padding:0 26px 28px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:22px}
-.sidebar-brand img{height:32px;width:auto;display:block;filter:brightness(0) invert(1)}
+.sidebar-brand{padding:0 26px 22px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:20px}
+.sidebar-brand img{height:30px;width:auto;display:block;filter:brightness(0) invert(1)}
 .sidebar-brand .label{margin-top:14px;font-size:10.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.55)}
 .sidebar-brand h2{margin-top:6px;font-size:15px;font-weight:600;letter-spacing:-.2px;color:#fff;line-height:1.3}
-.sidebar-brand .meta{margin-top:8px;font-size:11.5px;color:rgba(255,255,255,.45)}
+.sidebar-brand .meta{margin-top:6px;font-size:11.5px;color:rgba(255,255,255,.45)}
 
 nav.nav-list{padding:0 14px}
-.nav-group{margin-bottom:24px}
+.nav-group{margin-bottom:22px}
 .nav-group h4{
   font-size:10.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
-  color:rgba(255,255,255,.45);padding:0 12px 10px;
+  color:rgba(255,255,255,.45);padding:0 12px 9px;
 }
 nav.nav-list a{
   display:flex;align-items:baseline;gap:10px;
-  padding:8px 12px;font-size:13.5px;font-weight:500;color:rgba(255,255,255,.78);
+  padding:7px 12px;font-size:13px;font-weight:500;color:rgba(255,255,255,.78);
   text-decoration:none;border-radius:6px;line-height:1.35;
   transition:background .12s,color .12s;margin-bottom:1px;
 }
 nav.nav-list a:hover{background:rgba(255,255,255,.06);color:#fff}
 nav.nav-list a.active{background:var(--brand-bright);color:#fff;font-weight:600}
 nav.nav-list a .num{
-  font-size:10.5px;font-weight:700;color:rgba(255,255,255,.45);
+  font-size:10px;font-weight:700;color:rgba(255,255,255,.45);
   letter-spacing:.5px;min-width:18px;flex-shrink:0;
 }
 nav.nav-list a.active .num{color:rgba(255,255,255,.85)}
 
-/* ===== Main area ===== */
+/* ===== Main ===== */
 main{min-width:0}
 .wrap{max-width:980px;margin:0 auto;padding:0 48px}
 
-/* ===== Highlight sections (slide-feel) ===== */
+/* ===== Highlight sections (slide-feel, viewport-fit) ===== */
 section.hl{
   min-height:88vh;
-  padding:88px 0 96px;
+  padding:64px 0 64px;
   display:flex;flex-direction:column;justify-content:center;
   border-bottom:1px solid var(--line);
 }
@@ -99,167 +96,195 @@ section.hl .eyebrow{
   color:var(--brand-bright);margin-bottom:18px;
 }
 section.hl h1.hl-title{
-  font-size:48px;font-weight:800;letter-spacing:-1.5px;line-height:1.05;
-  color:var(--ink);margin-bottom:22px;
+  font-size:40px;font-weight:800;letter-spacing:-1.2px;line-height:1.08;
+  color:var(--ink);margin-bottom:18px;
 }
 section.hl h1.hl-title em{color:var(--brand-deep);font-style:normal}
 section.hl .hl-lede{
-  font-size:20px;line-height:1.5;color:var(--muted);max-width:760px;
-  margin-bottom:36px;font-weight:400;
+  font-size:16.5px;line-height:1.55;color:var(--muted);max-width:760px;
+  margin-bottom:28px;font-weight:400;
 }
 section.hl .hl-lede strong{color:var(--ink);font-weight:600}
 
 .see-analysis{
   display:inline-flex;align-items:center;gap:8px;
-  font-size:13.5px;font-weight:600;color:var(--brand-cta);text-decoration:none;
-  padding:10px 0;border-bottom:1.5px solid var(--brand-cta);
+  font-size:13px;font-weight:600;color:var(--brand-cta);text-decoration:none;
+  padding:8px 0;border-bottom:1.5px solid var(--brand-cta);
   letter-spacing:.1px;align-self:flex-start;
 }
 .see-analysis:hover{color:var(--brand-cta-hover);border-bottom-color:var(--brand-cta-hover)}
 .see-analysis::after{content:"→";font-weight:400}
 
-/* Cover (first highlight) */
-.cover-stack{display:flex;flex-direction:column;gap:20px}
+/* ===== Cover ===== */
+.cover-stack{display:flex;flex-direction:column;gap:18px}
 .cover-stack .doc-type{
   display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:3px;
   text-transform:uppercase;color:var(--brand-bright);padding-bottom:14px;
   border-bottom:2px solid var(--brand-bright);align-self:flex-start;
 }
 .cover-stack .client-name{
-  font-size:64px;font-weight:800;letter-spacing:-2px;line-height:1;color:var(--brand-deep);
+  font-size:96px;font-weight:800;letter-spacing:-3.5px;line-height:.95;color:var(--brand-deep);
 }
 .cover-stack .strapline{
-  font-size:22px;color:var(--muted);max-width:620px;line-height:1.45;
+  font-size:22px;color:var(--ink);max-width:680px;line-height:1.4;font-weight:500;
 }
+.cover-stack .strapline em{font-style:normal;color:var(--brand-deep);font-weight:700}
 .cover-stack .meta-row{
-  display:flex;gap:32px;margin-top:24px;flex-wrap:wrap;
-  padding-top:24px;border-top:1px solid var(--line);
+  display:flex;gap:32px;margin-top:18px;flex-wrap:wrap;
+  padding-top:18px;border-top:1px solid var(--line);
 }
-.cover-stack .meta-row div{font-size:13px}
 .cover-stack .meta-row .l{
   font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
   color:var(--muted);margin-bottom:4px;
 }
-.cover-stack .meta-row .v{font-size:14px;font-weight:600;color:var(--ink)}
+.cover-stack .meta-row .v{font-size:13.5px;font-weight:600;color:var(--ink)}
 
-/* Context glance — 3 big stats */
+/* ===== Objectives ===== */
+.obj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:28px}
+.obj-card{
+  background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px 24px;
+  display:flex;gap:16px;align-items:flex-start;
+}
+section.hl.alt .obj-card{background:var(--bg)}
+.obj-card .obj-num{
+  font-size:28px;font-weight:800;color:var(--brand-bright);line-height:1;
+  letter-spacing:-1px;min-width:34px;
+}
+.obj-card .obj-body{flex:1}
+.obj-card h3{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:6px;letter-spacing:-.2px;line-height:1.3}
+.obj-card .horizon{
+  display:inline-block;font-size:10px;font-weight:700;color:var(--brand-cta);
+  letter-spacing:1.2px;text-transform:uppercase;margin-bottom:8px;
+}
+.obj-card p{font-size:13px;color:var(--muted);line-height:1.5}
+
+/* ===== Context glance ===== */
 .glance-stats{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:36px;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:28px;
 }
 .glance-stat{
-  background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px 26px;
+  background:#fff;border:1px solid var(--line);border-radius:14px;padding:30px 26px;
 }
 section.hl.alt .glance-stat{background:var(--bg)}
-.glance-stat .stat{font-size:34px;font-weight:800;color:var(--brand-deep);letter-spacing:-1px;line-height:1;margin-bottom:8px}
-.glance-stat .stat small{font-size:18px;color:var(--brand-bright);font-weight:700;margin-left:2px}
+.glance-stat .stat{
+  font-size:60px;font-weight:800;color:var(--brand-deep);letter-spacing:-2.5px;
+  line-height:.95;margin-bottom:10px;
+}
+.glance-stat .stat small{font-size:24px;color:var(--brand-bright);font-weight:700;margin-left:2px;letter-spacing:-.5px}
 .glance-stat .label{font-size:13px;color:var(--body);line-height:1.5}
 
-/* Voices — pull quotes */
-.voices-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:36px}
+/* ===== Voices (What I heard) ===== */
+.voices-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:28px}
 .voice{
-  background:#fff;border-left:3px solid var(--brand-bright);
-  padding:24px 28px;border-radius:0 12px 12px 0;
-  font-size:18px;line-height:1.45;color:var(--ink);font-weight:500;
+  background:#fff;border-top:3px solid var(--brand-bright);
+  padding:24px 24px 22px;border-radius:0 0 10px 10px;
+  font-size:15.5px;line-height:1.45;color:var(--ink);font-weight:500;
   position:relative;
 }
 section.hl.alt .voice{background:var(--bg)}
-.voice::before{
-  content:"\201C";font-family:Georgia,serif;
-  font-size:56px;color:var(--brand-bright);line-height:0;
-  position:absolute;top:24px;left:14px;opacity:.3;
+.voice .tag{
+  font-size:10.5px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;
+  color:var(--brand-cta);margin-bottom:10px;display:block;
 }
+.voice .q::before{content:"\201C";font-family:Georgia,serif;font-size:30px;color:var(--brand-bright);line-height:0;vertical-align:-12px;margin-right:2px}
+.voice .q::after{content:"\201D";font-family:Georgia,serif;font-size:30px;color:var(--brand-bright);line-height:0;vertical-align:-12px;margin-left:2px}
 
-/* Tension — Yes/But */
-.tension-list{display:flex;flex-direction:column;gap:18px;margin-bottom:36px}
-.tension-row{
-  display:grid;grid-template-columns:1fr 1fr;gap:0;
-  border-radius:12px;overflow:hidden;border:1px solid var(--line);
+/* ===== Diagnosis ===== */
+.diag-headline{
+  font-size:64px;font-weight:800;color:var(--brand-deep);letter-spacing:-2.5px;
+  line-height:.95;margin-bottom:18px;
 }
-.tension-row .yes,.tension-row .but{padding:22px 26px;font-size:15px;line-height:1.55}
-.tension-row .yes{
-  background:rgba(140,82,255,.06);color:var(--body);
-  border-right:1px solid var(--line);
+.diag-body{
+  font-size:18px;color:var(--ink);line-height:1.5;max-width:780px;margin-bottom:28px;font-weight:500;
 }
-.tension-row .yes::before{
-  content:"YES";font-size:10.5px;font-weight:700;letter-spacing:1.8px;
-  color:var(--brand-bright);display:block;margin-bottom:8px;
+.diag-body strong{color:var(--brand-cta);font-weight:700}
+.diag-beats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:24px}
+.diag-beat{
+  background:#fff;border-left:3px solid var(--brand-deep);
+  padding:18px 22px;border-radius:0 8px 8px 0;
 }
-.tension-row .but{background:#fff;color:var(--ink);font-weight:500}
-section.hl.alt .tension-row .but{background:var(--bg)}
-.tension-row .but::before{
-  content:"BUT";font-size:10.5px;font-weight:700;letter-spacing:1.8px;
-  color:var(--brand-cta);display:block;margin-bottom:8px;
+section.hl.alt .diag-beat{background:var(--bg)}
+.diag-beat h4{
+  font-size:18px;font-weight:700;color:var(--brand-deep);margin-bottom:6px;letter-spacing:-.3px;
 }
+.diag-beat p{font-size:13.5px;color:var(--body);line-height:1.5}
+.diag-closer{font-size:15px;color:var(--ink);font-style:italic;border-left:3px solid var(--brand-cta);padding-left:18px;max-width:680px}
 
-/* Strategy pillars at a glance */
+/* ===== Strategy pillars at a glance ===== */
 .pillars-glance{
-  display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:36px;
+  display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:28px;
 }
 .pillar-glance{
   background:#fff;border:1px solid var(--line);border-radius:12px;
-  padding:22px 18px;
+  padding:20px 16px;
 }
 section.hl.alt .pillar-glance{background:var(--bg)}
 .pillar-glance .pn{
-  font-size:11px;font-weight:700;color:var(--brand-cta);letter-spacing:1px;margin-bottom:10px;
+  font-size:10.5px;font-weight:700;color:var(--brand-cta);letter-spacing:1px;margin-bottom:10px;
 }
 .pillar-glance .pname{
-  font-size:14px;font-weight:700;color:var(--ink);margin-bottom:10px;
+  font-size:13px;font-weight:700;color:var(--ink);margin-bottom:10px;
   letter-spacing:-.2px;line-height:1.25;
 }
-.pillar-glance .pdesc{font-size:12.5px;color:var(--body);line-height:1.5}
+.pillar-glance .pdesc{font-size:12px;color:var(--body);line-height:1.5}
 
-/* Priority list — the closer */
-.priority-intro{
-  font-size:22px;font-weight:600;color:var(--ink);
-  margin-bottom:6px;line-height:1.35;max-width:780px;
+/* ===== Priority Timeline ===== */
+.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:24px;position:relative}
+.timeline::before{
+  content:"";position:absolute;top:32px;left:6%;right:6%;height:2px;
+  background:linear-gradient(to right,var(--brand-deep) 0%,var(--brand-bright) 50%,var(--brand-cta) 100%);
+  z-index:0;
 }
-.priority-intro em{font-style:normal;color:var(--brand-cta);font-weight:700}
-.priority-sub{font-size:14px;color:var(--muted);margin-bottom:32px}
-.priority-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-.priority-card{
-  background:#fff;border:1px solid var(--line);border-radius:14px;
-  padding:24px 26px;position:relative;
+.t-col{
+  background:#fff;border:1px solid var(--line);border-radius:12px;
+  padding:24px 22px 22px;position:relative;z-index:1;
 }
-section.hl.alt .priority-card{background:var(--bg)}
-.priority-card .pnum{
-  position:absolute;top:18px;right:22px;
-  font-size:42px;font-weight:800;color:rgba(87,20,126,.1);line-height:1;letter-spacing:-1.5px;
+section.hl.alt .t-col{background:var(--bg)}
+.t-col .horizon-dot{
+  width:14px;height:14px;border-radius:50%;background:var(--brand-deep);
+  margin-bottom:14px;border:3px solid #fff;box-shadow:0 0 0 2px var(--brand-deep);
 }
-.priority-card h3{font-size:18px;font-weight:700;color:var(--brand-deep);margin-bottom:6px;letter-spacing:-.3px;max-width:80%}
-.priority-card .pframe{font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.55;max-width:78%}
-.priority-card ul{list-style:none}
-.priority-card li{font-size:13px;color:var(--body);line-height:1.55;margin-bottom:8px;padding-left:18px;position:relative}
-.priority-card li::before{content:"→";position:absolute;left:0;color:var(--brand-cta);font-weight:700}
+section.hl.alt .t-col .horizon-dot{border-color:var(--bg);box-shadow:0 0 0 2px var(--brand-deep)}
+.t-col:nth-child(2) .horizon-dot{background:var(--brand-bright);box-shadow:0 0 0 2px var(--brand-bright)}
+.t-col:nth-child(3) .horizon-dot{background:var(--brand-cta);box-shadow:0 0 0 2px var(--brand-cta)}
+.t-col .horizon-label{
+  font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--muted);margin-bottom:4px;
+}
+.t-col h3{font-size:17px;font-weight:700;color:var(--ink);letter-spacing:-.3px;margin-bottom:14px}
+.t-col h3 small{display:block;font-size:11px;font-weight:600;color:var(--brand-deep);margin-top:2px;letter-spacing:0}
+.t-col:nth-child(2) h3 small{color:var(--brand-bright)}
+.t-col:nth-child(3) h3 small{color:var(--brand-cta)}
+.t-col ul{list-style:none}
+.t-col li{font-size:13px;color:var(--body);line-height:1.5;margin-bottom:10px;padding-left:18px;position:relative}
+.t-col li::before{content:"→";position:absolute;left:0;color:var(--brand-cta);font-weight:700}
+.t-col li strong{color:var(--ink);font-weight:600}
+.timeline-closer{
+  font-size:14.5px;color:var(--ink);font-weight:500;font-style:italic;
+  border-left:3px solid var(--brand-deep);padding-left:18px;max-width:700px;
+}
 
-/* ===== Deep-dive sections ===== */
-.dd-divider{
-  background:var(--brand-deep);color:#fff;padding:64px 0 60px;
-}
+/* ===== Deep-dive divider ===== */
+.dd-divider{background:var(--brand-deep);color:#fff;padding:54px 0 50px}
 .dd-divider .wrap{max-width:980px;margin:0 auto;padding:0 48px}
 .dd-divider .eyebrow{
   font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;
   color:var(--brand-cta);margin-bottom:14px;
 }
 .dd-divider h2{
-  font-size:38px;font-weight:800;letter-spacing:-1px;line-height:1.1;color:#fff;
-  margin-bottom:14px;max-width:740px;
+  font-size:34px;font-weight:800;letter-spacing:-1px;line-height:1.1;color:#fff;
+  margin-bottom:12px;max-width:740px;
 }
-.dd-divider p{
-  font-size:16px;line-height:1.6;color:rgba(255,255,255,.7);max-width:680px;
-}
+.dd-divider p{font-size:15.5px;line-height:1.6;color:rgba(255,255,255,.7);max-width:680px}
 
-section.dd{padding:64px 0;border-bottom:1px solid var(--line)}
+section.dd{padding:56px 0;border-bottom:1px solid var(--line)}
 section.dd.alt{background:var(--paper)}
 section.dd .eyebrow{
   font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
   color:var(--brand-bright);margin-bottom:8px;
 }
-section.dd h2{
-  font-size:28px;font-weight:700;letter-spacing:-.4px;color:var(--ink);
-  margin-bottom:6px;line-height:1.2;
-}
-section.dd .sub{font-size:15px;color:var(--muted);margin-bottom:28px;max-width:780px}
+section.dd h2{font-size:26px;font-weight:700;letter-spacing:-.4px;color:var(--ink);margin-bottom:6px;line-height:1.2}
+section.dd .sub{font-size:14.5px;color:var(--muted);margin-bottom:26px;max-width:780px}
 
 .back-link{
   display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;
@@ -269,73 +294,59 @@ section.dd .sub{font-size:15px;color:var(--muted);margin-bottom:28px;max-width:7
 .back-link::before{content:"↑";font-weight:400}
 .back-link:hover{color:var(--brand-deep)}
 
-/* 3-col layout */
+/* 3-col */
 .three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.three-col .col{
-  background:#fff;border:1px solid var(--line);border-radius:10px;padding:22px;
-}
+.three-col .col{background:#fff;border:1px solid var(--line);border-radius:10px;padding:22px}
 section.dd.alt .three-col .col{background:var(--bg)}
 .three-col h3{
   font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
-  color:var(--brand-deep);margin-bottom:14px;padding-bottom:10px;
-  border-bottom:1px solid var(--line);
+  color:var(--brand-deep);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--line);
 }
 .three-col ul{list-style:none}
-.three-col li{
-  font-size:13.5px;color:var(--body);line-height:1.55;margin-bottom:10px;
-  padding-left:14px;position:relative;
-}
-.three-col li::before{content:"•";position:absolute;left:0;top:-1px;color:var(--brand-bright);font-weight:700}
+.three-col li{font-size:13.5px;color:var(--body);line-height:1.55;margin-bottom:10px;padding-left:14px;position:relative}
+.three-col li::before{content:"\2022";position:absolute;left:0;top:-1px;color:var(--brand-bright);font-weight:700}
 .three-col li:last-child{margin-bottom:0}
-.note{font-size:11.5px;color:var(--muted);font-style:italic;margin-top:14px}
 
-/* Pillar deep-dive block */
-.pillar-block{
-  background:#fff;border:1px solid var(--line);border-radius:14px;
-  padding:30px;margin-bottom:24px;
+/* Yes/But (deep dive version) */
+.tension-list{display:flex;flex-direction:column;gap:14px}
+.tension-row{
+  display:grid;grid-template-columns:1fr 1fr;gap:0;
+  border-radius:10px;overflow:hidden;border:1px solid var(--line);
 }
+.tension-row .yes,.tension-row .but{padding:18px 22px;font-size:14px;line-height:1.55}
+.tension-row .yes{background:rgba(140,82,255,.06);color:var(--body);border-right:1px solid var(--line)}
+.tension-row .yes::before{content:"YES";font-size:10px;font-weight:700;letter-spacing:1.8px;color:var(--brand-bright);display:block;margin-bottom:7px}
+.tension-row .but{background:#fff;color:var(--ink);font-weight:500}
+section.dd.alt .tension-row .but{background:var(--bg)}
+.tension-row .but::before{content:"BUT";font-size:10px;font-weight:700;letter-spacing:1.8px;color:var(--brand-cta);display:block;margin-bottom:7px}
+
+/* Pillar block */
+.pillar-block{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px;margin-bottom:22px}
 section.dd.alt .pillar-block{background:var(--bg);border-color:var(--line-strong)}
-.pillar-block .pt{
-  font-size:20px;font-weight:700;color:var(--ink);margin-bottom:6px;letter-spacing:-.3px;
-}
-.pillar-block .pt .letter{
-  display:inline-flex;align-items:center;justify-content:center;
-  width:30px;height:30px;background:var(--brand-deep);color:#fff;border-radius:50%;
-  font-size:13px;font-weight:700;margin-right:12px;vertical-align:1px;
-}
-.pillar-block .psub{font-size:13.5px;color:var(--muted);margin-bottom:24px;margin-left:42px}
-.zones{display:grid;grid-template-columns:1.6fr 1fr;gap:26px;margin-bottom:22px}
-.zone-obs h4{
-  font-size:12.5px;font-weight:700;color:var(--ink);letter-spacing:.3px;
-  text-transform:uppercase;margin-bottom:11px;
-}
+.pillar-block .pt{font-size:18px;font-weight:700;color:var(--ink);margin-bottom:6px;letter-spacing:-.3px}
+.pillar-block .pt .letter{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:var(--brand-deep);color:#fff;border-radius:50%;font-size:12px;font-weight:700;margin-right:11px;vertical-align:1px}
+.pillar-block .psub{font-size:13px;color:var(--muted);margin-bottom:22px;margin-left:40px}
+.zones{display:grid;grid-template-columns:1.6fr 1fr;gap:24px;margin-bottom:22px}
+.zone-obs h4{font-size:12px;font-weight:700;color:var(--ink);letter-spacing:.3px;text-transform:uppercase;margin-bottom:10px}
 .zone-obs ul{list-style:none}
-.zone-obs li{
-  font-size:13px;color:var(--body);line-height:1.55;margin-bottom:8px;
-  padding-left:14px;position:relative;
-}
-.zone-obs li::before{content:"–";position:absolute;left:0;color:var(--muted)}
-.zone-action{display:flex;flex-direction:column;gap:14px}
-.action-block{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:14px 16px}
+.zone-obs li{font-size:13px;color:var(--body);line-height:1.55;margin-bottom:7px;padding-left:14px;position:relative}
+.zone-obs li::before{content:"\2013";position:absolute;left:0;color:var(--muted)}
+.zone-action{display:flex;flex-direction:column;gap:12px}
+.action-block{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:13px 16px}
 section.dd.alt .action-block{background:#fff}
-.action-block h5{
-  font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;
-}
+.action-block h5{font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:9px}
 .action-block.continue h5{color:var(--green)}
 .action-block.stopstart h5{color:var(--brand-cta)}
 .action-block ul{list-style:none}
-.action-block li{
-  font-size:12.5px;color:var(--body);line-height:1.5;margin-bottom:7px;
-  padding-left:14px;position:relative;
-}
-.action-block.continue li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:700;font-size:11px}
-.action-block.stopstart li::before{content:"→";position:absolute;left:0;color:var(--brand-cta);font-weight:700}
+.action-block li{font-size:12.5px;color:var(--body);line-height:1.5;margin-bottom:7px;padding-left:14px;position:relative}
+.action-block.continue li::before{content:"\2713";position:absolute;left:0;color:var(--green);font-weight:700;font-size:11px}
+.action-block.stopstart li::before{content:"\2192";position:absolute;left:0;color:var(--brand-cta);font-weight:700}
 
 /* RAG */
 .rag{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding-top:18px;border-top:1px solid var(--line)}
-.rag-box{padding:12px 14px;border-radius:8px;text-align:center}
-.rag-box .rl{font-size:10.5px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
-.rag-box .rv{font-size:14px;font-weight:700;letter-spacing:-.2px}
+.rag-box{padding:11px 13px;border-radius:8px;text-align:center}
+.rag-box .rl{font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.rag-box .rv{font-size:13.5px;font-weight:700;letter-spacing:-.2px}
 .rag-low,.rag-quick{background:rgba(107,142,90,.1)}.rag-low .rv,.rag-quick .rv{color:var(--green)}
 .rag-med,.rag-medium{background:rgba(200,147,46,.1)}.rag-med .rv,.rag-medium .rv{color:var(--amber)}
 .rag-high,.rag-slow{background:rgba(161,76,62,.1)}.rag-high .rv,.rag-slow .rv{color:var(--red)}
@@ -350,7 +361,6 @@ table.t thead th{background:var(--brand-deep);color:#fff;font-weight:600;font-si
 table.t tbody th{font-weight:600;color:var(--muted);font-size:11.5px;text-transform:uppercase;letter-spacing:.4px;background:rgba(87,20,126,.03)}
 table.t tbody tr:last-child th,table.t tbody tr:last-child td{border-bottom:none}
 
-/* Strategy matrix */
 table.strategy{border-collapse:collapse;width:100%;font-size:13.5px}
 table.strategy th,table.strategy td{text-align:left;padding:14px 18px;border-bottom:1px solid var(--line);vertical-align:top}
 table.strategy thead th{background:var(--brand-deep);color:#fff;font-weight:600;font-size:12.5px}
@@ -358,9 +368,23 @@ table.strategy tbody td:first-child{font-weight:600;color:var(--ink);width:36%}
 table.strategy tbody td:first-child small{font-weight:400;color:var(--muted);font-size:12.5px;display:block;margin-top:4px}
 table.strategy tbody tr:last-child td{border-bottom:none}
 
+/* KPIs */
+.budget-split{
+  display:grid;grid-template-columns:repeat(3,auto);gap:0;border-radius:10px;overflow:hidden;
+  margin-bottom:24px;border:1px solid var(--line);
+}
+.budget-cell{padding:18px 22px;text-align:center;background:#fff}
+section.dd.alt .budget-cell{background:var(--bg)}
+.budget-cell .pct{font-size:28px;font-weight:800;color:var(--brand-deep);letter-spacing:-1px;line-height:1}
+.budget-cell:nth-child(2) .pct{color:var(--brand-bright)}
+.budget-cell:nth-child(3) .pct{color:var(--brand-cta)}
+.budget-cell .pl{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-top:8px}
+.budget-cell{border-right:1px solid var(--line)}
+.budget-cell:last-child{border-right:none}
+
 /* Appendix */
 .appendix-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:24px}
-.appendix-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:24px}
+.appendix-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px}
 section.dd.alt .appendix-card{background:var(--bg)}
 .appendix-card h4{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:14px}
 .flow{font-size:12.5px;color:var(--body);line-height:1.7}
@@ -371,39 +395,41 @@ section.dd.alt .appendix-card{background:var(--bg)}
 .acros div{break-inside:avoid}
 .acros strong{color:var(--ink);font-weight:700}
 
-/* ===== Footer ===== */
-footer.site-footer{
-  background:var(--brand-deep);color:rgba(255,255,255,.55);padding:36px 0;text-align:center;
-}
+/* Footer */
+footer.site-footer{background:var(--brand-deep);color:rgba(255,255,255,.55);padding:32px 0;text-align:center}
 footer.site-footer .ftop{font-size:13px;color:rgba(255,255,255,.85);margin-bottom:6px;font-weight:600}
 footer.site-footer .accent{color:var(--brand-cta)}
 footer.site-footer .fb{font-size:12px}
 
-/* ===== Mobile ===== */
+/* Mobile */
 @media (max-width:1024px){
   .app{grid-template-columns:1fr}
-  aside.sidebar{position:fixed;top:0;left:0;width:100%;height:auto;max-height:64px;overflow:hidden;z-index:50;padding:14px 0;transition:max-height .25s}
+  aside.sidebar{position:fixed;top:0;left:0;width:100%;height:auto;max-height:60px;overflow:hidden;z-index:50;padding:14px 0;transition:max-height .25s}
   aside.sidebar.open{max-height:100vh;overflow-y:auto;padding:14px 0 28px}
   .sidebar-brand{padding:0 22px 14px;border-bottom:none;margin-bottom:0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
   aside.sidebar.open .sidebar-brand{border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:18px;padding-bottom:18px}
-  .sidebar-brand img{height:24px}
+  .sidebar-brand img{height:22px}
   .sidebar-brand .label,.sidebar-brand h2,.sidebar-brand .meta{display:none}
   aside.sidebar.open .sidebar-brand .label,aside.sidebar.open .sidebar-brand h2,aside.sidebar.open .sidebar-brand .meta{display:block;width:100%}
   .menu-toggle{background:rgba(255,255,255,.1);color:#fff;border:none;padding:8px 14px;border-radius:6px;font-family:inherit;font-size:13px;font-weight:600;cursor:pointer}
   nav.nav-list{display:none}
   aside.sidebar.open nav.nav-list{display:block}
-  main{padding-top:64px}
+  main{padding-top:60px}
   .wrap,.dd-divider .wrap{padding:0 22px}
-  section.hl{min-height:auto;padding:48px 0 56px}
-  section.hl h1.hl-title{font-size:32px}
-  .cover-stack .client-name{font-size:44px}
-  .cover-stack .strapline{font-size:18px}
-  .glance-stats,.pillars-glance,.three-col,.appendix-grid{grid-template-columns:1fr}
-  .pillars-glance{gap:10px}
-  .voices-grid,.priority-grid{grid-template-columns:1fr}
+  section.hl{min-height:auto;padding:44px 0 50px}
+  section.hl h1.hl-title{font-size:28px}
+  .cover-stack .client-name{font-size:62px}
+  .cover-stack .strapline{font-size:17px}
+  .obj-grid,.glance-stats,.pillars-glance,.three-col,.appendix-grid,.diag-beats,.voices-grid,.timeline{grid-template-columns:1fr}
+  .timeline::before{display:none}
+  .glance-stat .stat{font-size:46px}
+  .diag-headline{font-size:42px}
   .tension-row{grid-template-columns:1fr}
   .tension-row .yes{border-right:none;border-bottom:1px solid var(--line)}
   .zones{grid-template-columns:1fr}
+  .budget-split{grid-template-columns:1fr}
+  .budget-cell{border-right:none;border-bottom:1px solid var(--line)}
+  .budget-cell:last-child{border-bottom:none}
 }
 @media (min-width:1025px){.menu-toggle{display:none}}
 </style>
@@ -412,7 +438,6 @@ footer.site-footer .fb{font-size:12px}
 
 <div class="app">
 
-  <!-- ===== SIDEBAR ===== -->
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-brand">
       <div>
@@ -427,40 +452,42 @@ footer.site-footer .fb{font-size:12px}
     <nav class="nav-list">
       <div class="nav-group">
         <h4>Highlights</h4>
-        <a href="#cover"><span class="num">01</span>Cover &amp; headline finding</a>
-        <a href="#context-glance"><span class="num">02</span>Context at a glance</a>
-        <a href="#voices"><span class="num">03</span>What I heard</a>
-        <a href="#tension"><span class="num">04</span>Yes / But</a>
-        <a href="#pillars-glance"><span class="num">05</span>Strategy pillars</a>
-        <a href="#priority"><span class="num">06</span>Priority list</a>
+        <a href="#cover"><span class="num">01</span>Cover</a>
+        <a href="#objectives"><span class="num">02</span>Objectives</a>
+        <a href="#context-glance"><span class="num">03</span>Context at a glance</a>
+        <a href="#voices"><span class="num">04</span>What I heard</a>
+        <a href="#diagnosis"><span class="num">05</span>The diagnosis</a>
+        <a href="#pillars-glance"><span class="num">06</span>Strategic pillars</a>
+        <a href="#priority"><span class="num">07</span>Priority timeline</a>
       </div>
 
       <div class="nav-group">
         <h4>Deep dives</h4>
         <a href="#methodology"><span class="num">A</span>Audit methodology</a>
-        <a href="#dd-website"><span class="num">B1</span>Pillar — Website</a>
-        <a href="#dd-brand"><span class="num">B2</span>Pillar — Brand</a>
-        <a href="#dd-leadgen"><span class="num">B3</span>Pillar — Lead Generation</a>
-        <a href="#dd-pmm"><span class="num">B4</span>Pillar — Product Marketing</a>
-        <a href="#dd-comms"><span class="num">B5</span>Pillar — Comms &amp; Social</a>
-        <a href="#dd-team"><span class="num">B6</span>Pillar — Team, Process &amp; Data</a>
-        <a href="#dd-competitive"><span class="num">C</span>Competitive review</a>
-        <a href="#dd-strategy"><span class="num">D</span>Recommended strategy matrix</a>
-        <a href="#dd-appendix"><span class="num">E</span>Appendix</a>
+        <a href="#tension"><span class="num">B</span>Yes / But tension</a>
+        <a href="#dd-website"><span class="num">C1</span>Pillar · Website</a>
+        <a href="#dd-brand"><span class="num">C2</span>Pillar · Brand</a>
+        <a href="#dd-leadgen"><span class="num">C3</span>Pillar · Lead Generation</a>
+        <a href="#dd-pmm"><span class="num">C4</span>Pillar · Product Marketing</a>
+        <a href="#dd-comms"><span class="num">C5</span>Pillar · Comms &amp; Social</a>
+        <a href="#dd-team"><span class="num">C6</span>Pillar · Team, Process &amp; Data</a>
+        <a href="#dd-competitive"><span class="num">D</span>Competitive review</a>
+        <a href="#dd-strategy"><span class="num">E</span>Strategy matrix</a>
+        <a href="#dd-kpis"><span class="num">F</span>KPIs &amp; budget split</a>
+        <a href="#dd-appendix"><span class="num">G</span>Appendix</a>
       </div>
     </nav>
   </aside>
 
-  <!-- ===== MAIN ===== -->
   <main>
 
-    <!-- === HIGHLIGHT 01: Cover === -->
+    <!-- === HL 01: Cover === -->
     <section class="hl" id="cover">
       <div class="wrap">
         <div class="cover-stack">
           <div class="doc-type">Marketing Audit</div>
           <div class="client-name">Thynk</div>
-          <p class="strapline">There is lack of trust, process, and data. <strong style="color:var(--ink)">This gap, more than any tactical fix, is what holds growth back.</strong></p>
+          <p class="strapline">Lack of trust, process, and data. <em>This gap holds growth back more than any tactical fix.</em></p>
           <div class="meta-row">
             <div><div class="l">Engagement</div><div class="v">Part-Time CMO</div></div>
             <div><div class="l">Date</div><div class="v">March 2024</div></div>
@@ -471,11 +498,55 @@ footer.site-footer .fb{font-size:12px}
       </div>
     </section>
 
-    <!-- === HIGHLIGHT 02: Context at a glance === -->
-    <section class="hl alt" id="context-glance">
+    <!-- === HL 02: Objectives === -->
+    <section class="hl alt" id="objectives">
       <div class="wrap">
-        <div class="eyebrow">02 — Context at a glance</div>
-        <h1 class="hl-title">A market growing 10× by 2030, dominated by giants, <em>and fragmented at the same time.</em></h1>
+        <div class="eyebrow">02 · Objectives</div>
+        <h1 class="hl-title">Where Thynk wants to be in <em>12 to 18 months.</em></h1>
+        <p class="hl-lede">Four outcomes pulled directly from the CEO and leadership interviews. Every recommendation in this audit ladders back to one of these. If a tactic doesn't serve them, it's not in scope.</p>
+        <div class="obj-grid">
+          <div class="obj-card">
+            <div class="obj-num">01</div>
+            <div class="obj-body">
+              <div class="horizon">12 months</div>
+              <h3>Become the European challenger to Mews in Smart Hospitality SaaS</h3>
+              <p>Move from "promising challenger" to category-named alternative in EU buyer evaluations.</p>
+            </div>
+          </div>
+          <div class="obj-card">
+            <div class="obj-num">02</div>
+            <div class="obj-body">
+              <div class="horizon">12 months</div>
+              <h3>Build a predictable inbound machine</h3>
+              <p>Double MQLs, halve CPL, and reach Series B-ready growth metrics that don't depend on events.</p>
+            </div>
+          </div>
+          <div class="obj-card">
+            <div class="obj-num">03</div>
+            <div class="obj-body">
+              <div class="horizon">18 months</div>
+              <h3>Scale marketing to 6%+ of headcount</h3>
+              <p>Add the right specialist roles and external partners. Today the function is severely underweight for the ambition.</p>
+            </div>
+          </div>
+          <div class="obj-card">
+            <div class="obj-num">04</div>
+            <div class="obj-body">
+              <div class="horizon">18 months</div>
+              <h3>Close the EU-US revenue gap</h3>
+              <p>Bring the US contribution from one-third to half of total revenue, while protecting the European base.</p>
+            </div>
+          </div>
+        </div>
+        <a class="see-analysis" href="#methodology">See the methodology that produced this</a>
+      </div>
+    </section>
+
+    <!-- === HL 03: Context glance === -->
+    <section class="hl" id="context-glance">
+      <div class="wrap">
+        <div class="eyebrow">03 · Context at a glance</div>
+        <h1 class="hl-title">A market growing 10× by 2030. <em>Dominated by giants and fragmented at the same time.</em></h1>
         <div class="glance-stats">
           <div class="glance-stat">
             <div class="stat">$130.6<small>Bn</small></div>
@@ -487,64 +558,68 @@ footer.site-footer .fb{font-size:12px}
           </div>
           <div class="glance-stat">
             <div class="stat">74<small>%</small></div>
-            <div class="label">Of the marketing budget goes to events (€200K+ annually). ROI not tracked.</div>
+            <div class="label">Of marketing budget goes to events (€200K+ annually). ROI not tracked.</div>
           </div>
         </div>
-        <p class="hl-lede">Thynk is a challenger entering a market that is partly unprepared (especially in Europe) for the full scope of the product's capabilities. The US and European markets differ greatly in maturity and GTM approach.</p>
-        <a class="see-analysis" href="#methodology">See the methodology &amp; full context</a>
+        <p class="hl-lede">Thynk is a challenger entering a market that is partly unprepared, especially in Europe, for the full scope of the product's capabilities. The US and European markets differ greatly in maturity and GTM approach.</p>
+        <a class="see-analysis" href="#dd-competitive">See the full competitive review</a>
       </div>
     </section>
 
-    <!-- === HIGHLIGHT 03: What I heard === -->
-    <section class="hl" id="voices">
+    <!-- === HL 04: What I heard === -->
+    <section class="hl alt" id="voices">
       <div class="wrap">
-        <div class="eyebrow">03 — What I heard</div>
+        <div class="eyebrow">04 · What I heard</div>
         <h1 class="hl-title">Three things the team named separately, <em>before they ever talked to each other.</em></h1>
-        <p class="hl-lede">From 60+ minutes with each of: CEO, Sales EU, Sales US, Product, CFO, plus the marketing team individually. Trust, process, and data come up in every conversation — phrased differently, but the same underlying gap.</p>
+        <p class="hl-lede">From 60+ minutes with each of CEO, Sales EU, Sales US, Product, CFO, plus the marketing team individually. Trust, process, and data come up in every conversation. Phrased differently. The same underlying gap.</p>
         <div class="voices-grid">
-          <div class="voice">We change what we do and who we are every 3 weeks. We've shown Marketing we don't trust them.</div>
-          <div class="voice">If we don't have a process internally for Sales, Marketing and Ops, we'll lose deals.</div>
-          <div class="voice">There is a huge data gap. We have no visibility on lead status, I need to manually ask the people.</div>
-          <div class="voice">One of the top prospects I've been talking to said: I've been on your website and I don't understand what you do.</div>
+          <div class="voice">
+            <span class="tag">Trust</span>
+            <div class="q">We change what we do and who we are every 3 weeks. We've shown Marketing we don't trust them.</div>
+          </div>
+          <div class="voice">
+            <span class="tag">Process</span>
+            <div class="q">If we don't have a process internally for Sales, Marketing and Ops, we'll lose deals.</div>
+          </div>
+          <div class="voice">
+            <span class="tag">Data</span>
+            <div class="q">There is a huge data gap. We have no visibility on lead status, I need to manually ask the people.</div>
+          </div>
         </div>
-        <a class="see-analysis" href="#methodology">See the full quote wall &amp; pillar deep-dives</a>
+        <a class="see-analysis" href="#dd-team">See the team, process &amp; data deep dive</a>
       </div>
     </section>
 
-    <!-- === HIGHLIGHT 04: Yes / But === -->
-    <section class="hl alt" id="tension">
+    <!-- === HL 05: Diagnosis === -->
+    <section class="hl" id="diagnosis">
       <div class="wrap">
-        <div class="eyebrow">04 — The tension</div>
-        <h1 class="hl-title">What's claimed is real. <em>And what's missing alongside it is what blocks growth.</em></h1>
-        <p class="hl-lede">Each Yes is true. Each But is the gap the audit found alongside it. Read together, they explain why the marketing function isn't producing the results the leadership team expects.</p>
-        <div class="tension-list">
-          <div class="tension-row">
-            <div class="yes">Brand is identified as "next-generation" and a disruptor. Innovation is the core positioning angle.</div>
-            <div class="but">Three things missing: reassurance, momentum, movement. Without them, hoteliers want the change but won't trust the partner driving it.</div>
+        <div class="eyebrow">05 · The diagnosis</div>
+        <h1 class="diag-headline">Trust. Process. Data.</h1>
+        <p class="diag-body">This is the headline finding. <strong>Fix this layer and the rest compounds.</strong> Skip it, and the tactical fixes don't stick because the function underneath them keeps breaking the work.</p>
+        <div class="diag-beats">
+          <div class="diag-beat">
+            <h4>Trust</h4>
+            <p>Sales doesn't believe marketing produces qualified leads. Product doesn't believe marketing reads the roadmap. The CEO sees the gap and the marketing team sees the gap. Nobody has named it out loud yet.</p>
           </div>
-          <div class="tension-row">
-            <div class="yes">LinkedIn is a top-performing channel with 3K followers, 316% engagement spike on key posts, weekly cadence.</div>
-            <div class="but">The marketing team is 3% of headcount vs 6%+ at competitors, with limited third-party support. One channel can't carry the function alone.</div>
+          <div class="diag-beat">
+            <h4>Process</h4>
+            <p>No shared handoff between Sales, Marketing, and Ops. Lead routing is manual. Content validation is ad-hoc. Events get planned without before/during/after structure. Every successful play requires a hero.</p>
           </div>
-          <div class="tension-row">
-            <div class="yes">Inbound generates leads — 23 in January, 18 in February. Most come from search.</div>
-            <div class="but">Lead scoring, enrichment, and routing are missing. The pipeline can't tell which leads matter; sales follows up manually.</div>
-          </div>
-          <div class="tension-row">
-            <div class="yes">$200K spent on events annually, ~40 events globally, presence at the right industry moments.</div>
-            <div class="but">ROI per event isn't calculated. The process isn't designed to maximise outcome before, during, or after the show.</div>
+          <div class="diag-beat">
+            <h4>Data</h4>
+            <p>HubSpot is a CMS, not a marketing automation tool. Salesforce sync is one-way. No lead scoring, no enrichment, no behavioural data. Attribution to source is impossible. Decisions get made on hunches.</p>
           </div>
         </div>
-        <a class="see-analysis" href="#dd-website">See the pillar-by-pillar analysis</a>
+        <p class="diag-closer">Every other pillar in this audit, brand, lead gen, product marketing, search, has tactical recommendations that work only when this trust-process-data layer is moving. Build the foundation first.</p>
       </div>
     </section>
 
-    <!-- === HIGHLIGHT 05: Strategy pillars === -->
-    <section class="hl" id="pillars-glance">
+    <!-- === HL 06: Strategic pillars === -->
+    <section class="hl alt" id="pillars-glance">
       <div class="wrap">
-        <div class="eyebrow">05 — Recommended pillars</div>
+        <div class="eyebrow">06 · Recommended pillars</div>
         <h1 class="hl-title">The five-pillar marketing strategy <em>Thynk should run on.</em></h1>
-        <p class="hl-lede">If the function were built from scratch today, these are the five pillars it would rest on. Used as the gap-analysis frame to score the current state.</p>
+        <p class="hl-lede">If the function were built from scratch today, these are the five pillars it would rest on. Used as the gap-analysis frame to score the current state, and the operating frame for the engagement that follows the audit.</p>
         <div class="pillars-glance">
           <div class="pillar-glance">
             <div class="pn">01</div>
@@ -554,7 +629,7 @@ footer.site-footer .fb{font-size:12px}
           <div class="pillar-glance">
             <div class="pn">02</div>
             <div class="pname">Lead generation &amp; pipeline growth</div>
-            <div class="pdesc">Build an inbound machine: generate, enrich, score, and qualify. Pass to Sales or nurture.</div>
+            <div class="pdesc">Build an inbound machine: generate, enrich, score, qualify. Pass to Sales or nurture.</div>
           </div>
           <div class="pillar-glance">
             <div class="pn">03</div>
@@ -572,94 +647,67 @@ footer.site-footer .fb{font-size:12px}
             <div class="pdesc">Align objectives and roadmaps; establish effective processes across the three functions.</div>
           </div>
         </div>
-        <a class="see-analysis" href="#dd-strategy">See the strategy matrix with KPIs &amp; budget split</a>
+        <a class="see-analysis" href="#dd-strategy">See the strategy matrix with KPIs</a>
       </div>
     </section>
 
-    <!-- === HIGHLIGHT 06: Priority list === -->
-    <section class="hl alt" id="priority">
+    <!-- === HL 07: Priority timeline === -->
+    <section class="hl" id="priority">
       <div class="wrap">
-        <div class="eyebrow">06 — Priority list</div>
-        <p class="priority-intro">Here is what I recommend focusing on. <em>This list is by order of priority.</em></p>
-        <p class="priority-sub">Five blocks. The first two should be in motion within 30 days. Brand and product marketing run in parallel over 60–90 days. Search compounds as the long-term engine.</p>
-        <div class="priority-grid">
-          <div class="priority-card">
-            <div class="pnum">1</div>
-            <h3>Lead Gen</h3>
-            <div class="pframe">Rebuild the process for LG to get more quality leads and scale operations across geos.</div>
+        <div class="eyebrow">07 · Priority timeline</div>
+        <h1 class="hl-title">Here is what I recommend focusing on. <em>This list is by order of priority.</em></h1>
+        <p class="hl-lede">Three horizons. Each block has 2 to 3 named actions. The first 30 days fix the foundation. The next 90 build the brand and product marketing layer. The 12-month horizon is the compounding engine.</p>
+        <div class="timeline">
+          <div class="t-col">
+            <div class="horizon-dot"></div>
+            <div class="horizon-label">Immediate</div>
+            <h3>First 30 days<small>Foundation. Restore trust.</small></h3>
             <ul>
-              <li>Add a lead enrichment tool.</li>
-              <li>Look into a tool with better integration with Salesforce.</li>
-              <li>Introduce lead scoring.</li>
-              <li>Align on lead definitions.</li>
-              <li>Build nurture programs for non-MQLs.</li>
+              <li><strong>Lead Gen process redesign.</strong> Lead enrichment tool live. Lead scoring with two flows. SF integration cleaned.</li>
+              <li><strong>Sales ⇔ MKT alignment kickoff.</strong> Lead definition agreed. Handoff process documented. Weekly sync established.</li>
+              <li><strong>Event-process redesign.</strong> Apply on next event: before / during / after structure with KPIs.</li>
             </ul>
           </div>
-
-          <div class="priority-card">
-            <div class="pnum">2</div>
-            <h3>Team &amp; Process</h3>
-            <div class="pframe">Strengthen the alliance and collaboration between Sales ⇔ MKT ⇔ Product.</div>
+          <div class="t-col">
+            <div class="horizon-dot"></div>
+            <div class="horizon-label">Mid-term</div>
+            <h3>Next 90 days<small>Brand and product marketing.</small></h3>
             <ul>
-              <li>Redesign the event process.</li>
-              <li>Drive better lead generation and team synergy.</li>
-              <li>Regain trust.</li>
+              <li><strong>Brand platform rebuild.</strong> Messaging framework aligned across CEO / MKT / Sales / Product. TOV, design refresh, brand book.</li>
+              <li><strong>Product marketing foundation.</strong> Buyer persona research. Pricing &amp; packaging revisited. Solutions / features matrix recreated.</li>
+              <li><strong>Lead nurture programs.</strong> Non-MQLs into structured nurture sequences. Win-loss analysis loop.</li>
             </ul>
           </div>
-
-          <div class="priority-card">
-            <div class="pnum">3</div>
-            <h3>Brand</h3>
-            <div class="pframe">Make the brand platform simpler, comprehensible, consistent, and scalable.</div>
+          <div class="t-col">
+            <div class="horizon-dot"></div>
+            <div class="horizon-label">Long-term</div>
+            <h3>12 months<small>Compounding engine.</small></h3>
             <ul>
-              <li>Have an external copywriter polish the key components.</li>
-              <li>Redesign the brand to elevate it to a world-class ENT brand.</li>
-              <li>Rebuild the messaging framework, aligning CEO, Marketing, Sales, Product.</li>
-            </ul>
-          </div>
-
-          <div class="priority-card">
-            <div class="pnum">4</div>
-            <h3>Product Marketing</h3>
-            <div class="pframe">Start doing product marketing from the ground up.</div>
-            <ul>
-              <li>Conduct market research to align buyer and user personas, pain points, competitive analysis.</li>
-              <li>Recreate the Product / Solutions / Feature matrix.</li>
-              <li>Reevaluate pricing and packaging.</li>
-            </ul>
-          </div>
-
-          <div class="priority-card" style="grid-column:1/-1">
-            <div class="pnum">5</div>
-            <h3>Search</h3>
-            <div class="pframe">Increase consideration by securing visibility on non-branded keywords to expose the brand to new audiences.</div>
-            <ul>
-              <li>Double down on SEO, starting with specific terms, moving into broader terms.</li>
-              <li>Align content production to SEO.</li>
-              <li>Invest in paid to complement SEO efforts.</li>
+              <li><strong>SEO non-brand engine.</strong> Content production aligned to SEO from day one. Paid complementing organic, not substituting.</li>
+              <li><strong>Team scale.</strong> Hire specialists. External partners for PR and content distribution. Function reaches 6%+ of headcount.</li>
+              <li><strong>Sales-MKT-Product as operating rhythm.</strong> Roadmap aligned. Trust restored by repeated delivery.</li>
             </ul>
           </div>
         </div>
+        <p class="timeline-closer">Each horizon depends on the one before it. Skipping foundation work and starting with brand or SEO produces a deck that looks better and a pipeline that still doesn't move.</p>
       </div>
     </section>
 
-    <!-- ===================================================== -->
-    <!-- ===== DEEP DIVES ==================================== -->
-    <!-- ===================================================== -->
+    <!-- ===================== DEEP DIVES ===================== -->
 
     <div class="dd-divider">
       <div class="wrap">
         <div class="eyebrow">Deep dives</div>
         <h2>The full analysis behind the highlights.</h2>
-        <p>Six pillar deep-dives, the competitive review, the recommended strategy matrix with KPIs and budget split, and the appendix with the lead-flow target state and the acronym list. Each section links back to its highlight.</p>
+        <p>Methodology, the Yes / But tension table, six pillar deep-dives, competitive review, recommended strategy matrix with KPIs and budget split, and the appendix. Each section links back to its highlight.</p>
       </div>
     </div>
 
     <!-- DD: Methodology -->
     <section class="dd" id="methodology">
       <div class="wrap">
-        <a href="#context-glance" class="back-link">Back to: Context at a glance</a>
-        <div class="eyebrow">A — Methodology</div>
+        <a href="#objectives" class="back-link">Back to: Objectives</a>
+        <div class="eyebrow">A · Methodology</div>
         <h2>How the audit ran</h2>
         <p class="sub">Three workstreams in parallel over six weeks: assessment of tools and material, structured interviews with leadership and the team, and synthesis into recommendations with ROI ranking.</p>
         <div class="three-col">
@@ -705,11 +753,39 @@ footer.site-footer .fb{font-size:12px}
       </div>
     </section>
 
-    <!-- DD: Website -->
-    <section class="dd alt" id="dd-website">
+    <!-- DD: Yes/But -->
+    <section class="dd alt" id="tension">
       <div class="wrap">
-        <a href="#tension" class="back-link">Back to: Yes / But tension</a>
-        <div class="eyebrow">B1 — Pillar</div>
+        <a href="#diagnosis" class="back-link">Back to: The diagnosis</a>
+        <div class="eyebrow">B · Tension table</div>
+        <h2>Yes / But · The gap behind each claim</h2>
+        <p class="sub">Each Yes is true. Each But is the gap the audit found alongside it. Read together, they explain why the marketing function isn't producing the results the leadership team expects.</p>
+        <div class="tension-list">
+          <div class="tension-row">
+            <div class="yes">Brand is identified as "next-generation" and a disruptor. Innovation is the core positioning angle.</div>
+            <div class="but">Three things missing: reassurance, momentum, movement. Without them, hoteliers want the change but won't trust the partner driving it.</div>
+          </div>
+          <div class="tension-row">
+            <div class="yes">LinkedIn is a top-performing channel with 3K followers, 316% engagement spike on key posts, weekly cadence.</div>
+            <div class="but">The marketing team is 3% of headcount vs 6%+ at competitors, with limited third-party support. One channel can't carry the function alone.</div>
+          </div>
+          <div class="tension-row">
+            <div class="yes">Inbound generates leads: 23 in January, 18 in February. Most come from search.</div>
+            <div class="but">Lead scoring, enrichment, and routing are missing. The pipeline can't tell which leads matter; sales follows up manually.</div>
+          </div>
+          <div class="tension-row">
+            <div class="yes">$200K spent on events annually, ~40 events globally, presence at the right industry moments.</div>
+            <div class="but">ROI per event isn't calculated. The process isn't designed to maximise outcome before, during, or after the show.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DD: Website -->
+    <section class="dd" id="dd-website">
+      <div class="wrap">
+        <a href="#priority" class="back-link">Back to: Priority timeline</a>
+        <div class="eyebrow">C1 · Pillar</div>
         <h2>Website</h2>
         <p class="sub">Clean design, but text-heavy and not optimised for the buyer journey. Mobile and US localisation are the two biggest gaps.</p>
         <div class="pillar-block">
@@ -719,7 +795,7 @@ footer.site-footer .fb{font-size:12px}
               <h4>UX, UI, content</h4>
               <ul>
                 <li>Clean and modern design, yet generic and unmemorable.</li>
-                <li>The website is text-heavy, making it difficult for users to focus on the key message.</li>
+                <li>The website is text-heavy, making it difficult to focus on the key message.</li>
                 <li>The client carousel is very good, but other proof points should be more prominent.</li>
                 <li>No pricing page (potential conversion lift, ref: Mews).</li>
                 <li>The website has a chatbot, but it is offline.</li>
@@ -768,10 +844,10 @@ footer.site-footer .fb{font-size:12px}
     </section>
 
     <!-- DD: Brand -->
-    <section class="dd" id="dd-brand">
+    <section class="dd alt" id="dd-brand">
       <div class="wrap">
-        <a href="#tension" class="back-link">Back to: Yes / But tension</a>
-        <div class="eyebrow">B2 — Pillar</div>
+        <a href="#priority" class="back-link">Back to: Priority timeline</a>
+        <div class="eyebrow">C2 · Pillar</div>
         <h2>Brand</h2>
         <p class="sub">A "next-generation" positioning that the brand identity doesn't yet live up to. Three missing elements: reassurance, momentum, movement.</p>
         <div class="pillar-block">
@@ -794,7 +870,7 @@ footer.site-footer .fb{font-size:12px}
                 <li>Discrepancy between "next-gen" and brand elements (icons) that are archaic.</li>
                 <li>Slides cluttered, suggesting a complex solution.</li>
                 <li>TOV is corporate and professional, but not memorable or unique.</li>
-                <li>Word choice: "reshaped"/"transformed" beats "converted"; "enable"/"empower" beats "help."</li>
+                <li>Word choice: "reshaped" or "transformed" beats "converted"; "enable" or "empower" beats "help."</li>
               </ul>
             </div>
             <div class="zone-action">
@@ -828,10 +904,10 @@ footer.site-footer .fb{font-size:12px}
     </section>
 
     <!-- DD: Lead Generation -->
-    <section class="dd alt" id="dd-leadgen">
+    <section class="dd" id="dd-leadgen">
       <div class="wrap">
-        <a href="#tension" class="back-link">Back to: Yes / But tension</a>
-        <div class="eyebrow">B3 — Pillar</div>
+        <a href="#priority" class="back-link">Back to: Priority timeline</a>
+        <div class="eyebrow">C3 · Pillar</div>
         <h2>Lead generation</h2>
         <p class="sub">Branded keywords work; non-branded ranks have been flat for 16 months. Events absorb 74% of budget without process or ROI tracking.</p>
         <div class="pillar-block">
@@ -886,10 +962,10 @@ footer.site-footer .fb{font-size:12px}
     </section>
 
     <!-- DD: Product Marketing -->
-    <section class="dd" id="dd-pmm">
+    <section class="dd alt" id="dd-pmm">
       <div class="wrap">
-        <a href="#tension" class="back-link">Back to: Yes / But tension</a>
-        <div class="eyebrow">B4 — Pillar</div>
+        <a href="#priority" class="back-link">Back to: Priority timeline</a>
+        <div class="eyebrow">C4 · Pillar</div>
         <h2>Product marketing</h2>
         <p class="sub">Strong feature-benefit logic, but packaging, pricing, and buyer-persona depth are not yet there. The solution reads "robust but overwhelming" to SMB segments.</p>
         <div class="pillar-block">
@@ -946,13 +1022,13 @@ footer.site-footer .fb{font-size:12px}
       </div>
     </section>
 
-    <!-- DD: Comms & Social -->
-    <section class="dd alt" id="dd-comms">
+    <!-- DD: Comms -->
+    <section class="dd" id="dd-comms">
       <div class="wrap">
-        <a href="#tension" class="back-link">Back to: Yes / But tension</a>
-        <div class="eyebrow">B5 — Pillar</div>
+        <a href="#priority" class="back-link">Back to: Priority timeline</a>
+        <div class="eyebrow">C5 · Pillar</div>
         <h2>Comms &amp; Social</h2>
-        <p class="sub">LinkedIn is the only working channel; IG/FB are stalled. PR is internalised and under-distributed in the US.</p>
+        <p class="sub">LinkedIn is the only working channel; IG and FB are stalled. PR is internalised and under-distributed in the US.</p>
         <div class="pillar-block">
           <div class="pt"><span class="letter">E</span>Observations &amp; recommendations</div>
           <div class="zones">
@@ -994,13 +1070,13 @@ footer.site-footer .fb{font-size:12px}
       </div>
     </section>
 
-    <!-- DD: Team, Process & Data -->
-    <section class="dd" id="dd-team">
+    <!-- DD: Team -->
+    <section class="dd alt" id="dd-team">
       <div class="wrap">
-        <a href="#cover" class="back-link">Back to: Headline finding</a>
-        <div class="eyebrow">B6 — Pillar</div>
+        <a href="#diagnosis" class="back-link">Back to: The diagnosis</a>
+        <div class="eyebrow">C6 · Pillar</div>
         <h2>Team, process &amp; data</h2>
-        <p class="sub">The headline finding. There is lack of trust, process, and data — and this gap, more than any tactical fix, is what holds growth back.</p>
+        <p class="sub">The headline finding. There is lack of trust, process, and data, and this gap holds growth back more than any tactical fix.</p>
         <div class="pillar-block">
           <div class="pt"><span class="letter">F</span>Observations &amp; recommendations</div>
           <div class="zones">
@@ -1011,7 +1087,7 @@ footer.site-footer .fb{font-size:12px}
                 <li>Budget limited, includes full-time staff. Limited third-party support.</li>
                 <li>Marketing strategy is "light," not data-driven. Unclear how success or ROI are measured.</li>
                 <li>Lack of trust between marketing team and its stakeholders.</li>
-                <li>Team lacks some areas of expertise — mentoring and training will help.</li>
+                <li>Team lacks some areas of expertise; mentoring and training will help.</li>
               </ul>
               <h4 style="margin-top:18px">Processes + data</h4>
               <ul>
@@ -1026,7 +1102,7 @@ footer.site-footer .fb{font-size:12px}
             <div class="zone-action">
               <div class="action-block continue">
                 <h5>Continue</h5>
-                <ul><li>The pieces that work (LinkedIn cadence, HubSpot baseline) — fix the integration, don't rip the tool.</li></ul>
+                <ul><li>The pieces that work (LinkedIn cadence, HubSpot baseline): fix the integration, don't rip the tool.</li></ul>
               </div>
               <div class="action-block stopstart">
                 <h5>Stop / Start</h5>
@@ -1050,10 +1126,10 @@ footer.site-footer .fb{font-size:12px}
     </section>
 
     <!-- DD: Competitive -->
-    <section class="dd alt" id="dd-competitive">
+    <section class="dd" id="dd-competitive">
       <div class="wrap">
         <a href="#context-glance" class="back-link">Back to: Context at a glance</a>
-        <div class="eyebrow">C — Competitive</div>
+        <div class="eyebrow">D · Competitive</div>
         <h2>Competitive review</h2>
         <p class="sub">Key marketing dynamics from the four most-relevant competitors. Mews and Tripleseat are the two to watch for content and brand pattern; Oracle Opera and iVvy provide useful benchmarks on multi-language and pricing transparency.</p>
         <div class="scroll-table">
@@ -1062,46 +1138,22 @@ footer.site-footer .fb{font-size:12px}
               <tr><th></th><th>Mews</th><th>Oracle Opera</th><th>iVvy</th><th>Tripleseat</th></tr>
             </thead>
             <tbody>
-              <tr>
-                <th>Website</th>
-                <td>Very good from content and look &amp; feel perspective.</td>
-                <td>Archaic but offers direct call to sales. Available in French and German.</td>
-                <td>Functional, clean, and effective.</td>
-                <td>Distinctive and memorable. Rich in content including videos.</td>
-              </tr>
-              <tr>
-                <th>Solutions / pricing</th>
-                <td>Solutions by property type, size, role. Pricing page exists.</td>
-                <td>Webpage as part of Oracle site. Solutions by product type and sector. No pricing page.</td>
-                <td>Solutions by venue type. No pricing page.</td>
-                <td>Solutions by industry and product. Pricing page exists.</td>
-              </tr>
-              <tr>
-                <th>Reviews</th>
-                <td>4.5 (553) Hotel Tech Report. 4.3 (7) G2. 3 awards.</td>
-                <td>4.5 (521) Hotel Tech Report. 4.2 (60) G2.</td>
-                <td>4.7 (25) Hotel Tech Report. 4.7 (22) G2.</td>
-                <td>4.5 (119) Hotel Tech Report. 4.4 (309) G2.</td>
-              </tr>
-              <tr>
-                <th>Paid + share of brand</th>
-                <td>~$3.2K/day on paid search. Branded traffic share: 25%.</td>
-                <td>Not active on paid search.</td>
-                <td>Branded traffic share: 12%.</td>
-                <td>Branded traffic share: 80%. ~$2K on paid last month.</td>
-              </tr>
+              <tr><th>Website</th><td>Very good from content and look &amp; feel perspective.</td><td>Archaic but offers direct call to sales. Available in French and German.</td><td>Functional, clean, and effective.</td><td>Distinctive and memorable. Rich in content including videos.</td></tr>
+              <tr><th>Solutions / pricing</th><td>Solutions by property type, size, role. Pricing page exists.</td><td>Webpage as part of Oracle site. Solutions by product type and sector. No pricing page.</td><td>Solutions by venue type. No pricing page.</td><td>Solutions by industry and product. Pricing page exists.</td></tr>
+              <tr><th>Reviews</th><td>4.5 (553) Hotel Tech Report. 4.3 (7) G2. 3 awards.</td><td>4.5 (521) Hotel Tech Report. 4.2 (60) G2.</td><td>4.7 (25) Hotel Tech Report. 4.7 (22) G2.</td><td>4.5 (119) Hotel Tech Report. 4.4 (309) G2.</td></tr>
+              <tr><th>Paid + share of brand</th><td>~$3.2K/day on paid search. Branded traffic share: 25%.</td><td>Not active on paid search.</td><td>Branded traffic share: 12%.</td><td>Branded traffic share: 80%. ~$2K on paid last month.</td></tr>
             </tbody>
           </table>
         </div>
       </div>
     </section>
 
-    <!-- DD: Strategy -->
-    <section class="dd" id="dd-strategy">
+    <!-- DD: Strategy matrix -->
+    <section class="dd alt" id="dd-strategy">
       <div class="wrap">
-        <a href="#pillars-glance" class="back-link">Back to: Strategy pillars</a>
-        <div class="eyebrow">D — Recommended strategy</div>
-        <h2>Strategy matrix with KPIs</h2>
+        <a href="#pillars-glance" class="back-link">Back to: Strategic pillars</a>
+        <div class="eyebrow">E · Strategy matrix</div>
+        <h2>Recommended strategy with KPIs</h2>
         <p class="sub">Three-tier go-to-market motion (Company / Small business / Mid-market + ENT) over a single marketing-ops backbone. Each line carries its own KPI so progress is measurable.</p>
         <div class="scroll-table">
           <table class="strategy">
@@ -1109,43 +1161,57 @@ footer.site-footer .fb{font-size:12px}
               <tr><th>Strategy</th><th>Objective</th><th>KPI</th></tr>
             </thead>
             <tbody>
-              <tr>
-                <td><strong>Company level</strong><small>Brand platform, positioning, messaging via PR, TL, Social</small></td>
-                <td>Awareness — Trusted partner</td>
-                <td>Website new users<br>PR SOV<br>Social performance</td>
-              </tr>
-              <tr>
-                <td><strong>Small business</strong> (US ~60%, RoW TBD)<small>LG engine — Inbound via SEO, SEM, Display</small></td>
-                <td>Growth</td>
-                <td>MQLs (demo) — Target vs actual<br>CPL</td>
-              </tr>
-              <tr>
-                <td><strong>Mid-market + ENT</strong> (US ~40%, RoW TBD)<small>ABM (one to few) via LinkedIn</small></td>
-                <td>Growth</td>
-                <td>Marketing-influenced pipeline</td>
-              </tr>
-              <tr>
-                <td><strong>MKT Ops</strong><small>Process · Events · Lead scoring &amp; enrichment · Data sync Sales ⇔ MKT</small></td>
-                <td>Track campaign source &amp; ROI</td>
-                <td>Event process before/during/after<br>LG process inbound/nurture/follow-up</td>
-              </tr>
+              <tr><td><strong>Company level</strong><small>Brand platform, positioning, messaging via PR, TL, Social</small></td><td>Awareness · Trusted partner</td><td>Website new users<br>PR SOV<br>Social performance</td></tr>
+              <tr><td><strong>Small business</strong> (US ~60%, RoW TBD)<small>LG engine via SEO, SEM, Display</small></td><td>Growth</td><td>MQLs (demo): target vs actual<br>CPL</td></tr>
+              <tr><td><strong>Mid-market + ENT</strong> (US ~40%, RoW TBD)<small>ABM (one to few) via LinkedIn</small></td><td>Growth</td><td>Marketing-influenced pipeline</td></tr>
+              <tr><td><strong>MKT Ops</strong><small>Process · Events · Lead scoring &amp; enrichment · Data sync Sales ⇔ MKT</small></td><td>Track campaign source &amp; ROI</td><td>Event process before / during / after<br>LG process inbound / nurture / follow-up</td></tr>
             </tbody>
           </table>
         </div>
-        <p style="margin-top:20px;font-size:13px;color:var(--muted)"><strong style="color:var(--ink)">Recommended budget split:</strong> 85% Growth · 14% Brand · 1% Team &amp; productivity. Default for B2B SaaS at this stage; flex only on specific business signals.</p>
+      </div>
+    </section>
+
+    <!-- DD: KPIs -->
+    <section class="dd" id="dd-kpis">
+      <div class="wrap">
+        <a href="#priority" class="back-link">Back to: Priority timeline</a>
+        <div class="eyebrow">F · KPIs &amp; budget</div>
+        <h2>How success gets measured</h2>
+        <p class="sub">Per-pillar north-star KPI, supporting metrics, and reporting cadence. Plus the recommended budget allocation across Growth, Brand, and Team &amp; productivity.</p>
+        <div class="scroll-table" style="margin-bottom:24px">
+          <table class="t">
+            <thead>
+              <tr><th>Pillar</th><th>North-star KPI</th><th>Supporting KPIs</th><th>Cadence</th></tr>
+            </thead>
+            <tbody>
+              <tr><th>Brand</th><td>Website new users</td><td>PR SOV · Mentions volume · Bespoke awareness survey</td><td>Monthly</td></tr>
+              <tr><th>Lead Generation</th><td>MQLs (demo): target vs actual</td><td>CPL · Source mix · Conversion rate by stage</td><td>Weekly</td></tr>
+              <tr><th>Product Marketing</th><td>% Marketing attribution on deals</td><td>Marketing-influenced revenue · Case study velocity</td><td>Quarterly</td></tr>
+              <tr><th>Comms &amp; Social</th><td>LinkedIn engagement &amp; reach</td><td>Earned media mentions · Lead volume by geographic spread</td><td>Monthly</td></tr>
+              <tr><th>Team &amp; Process</th><td>Sales-MKT alignment score</td><td>Sales satisfaction survey · Time to follow-up · Faster response to sales requests</td><td>Quarterly</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 style="font-size:14px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--brand-deep);margin-bottom:12px">Recommended budget allocation</h3>
+        <div class="budget-split">
+          <div class="budget-cell"><div class="pct">85%</div><div class="pl">Growth</div></div>
+          <div class="budget-cell"><div class="pct">14%</div><div class="pl">Brand</div></div>
+          <div class="budget-cell"><div class="pct">1%</div><div class="pl">Team &amp; productivity</div></div>
+        </div>
+        <p style="margin-top:16px;font-size:13px;color:var(--muted);max-width:680px">Default split for B2B SaaS at this stage. Flex only on specific business signals: pre-launch needs more Brand, zero-marketing functions need more Team budget for first hires.</p>
       </div>
     </section>
 
     <!-- DD: Appendix -->
     <section class="dd alt" id="dd-appendix">
       <div class="wrap">
-        <a href="#priority" class="back-link">Back to: Priority list</a>
-        <div class="eyebrow">E — Appendix</div>
+        <a href="#priority" class="back-link">Back to: Priority timeline</a>
+        <div class="eyebrow">G · Appendix</div>
         <h2>Inbound lead flow + acronyms</h2>
         <p class="sub">Supporting reference material. The lead-flow diagram is the recommended target state; acronym list covers terms used throughout the audit.</p>
         <div class="appendix-grid">
           <div class="appendix-card">
-            <h4>Inbound lead flow — recommended target</h4>
+            <h4>Inbound lead flow · recommended target</h4>
             <div class="flow">
               <div class="row">
                 <span class="step">Lead inbound (web)</span>
@@ -1201,14 +1267,12 @@ footer.site-footer .fb{font-size:12px}
 </footer>
 
 <script>
-// Active-section highlighting in sidebar via IntersectionObserver
 (function(){
   const navLinks = document.querySelectorAll('nav.nav-list a[href^="#"]');
   const sections = Array.from(navLinks).map(a => document.getElementById(a.getAttribute('href').slice(1))).filter(Boolean);
   const linkBySection = new Map();
   navLinks.forEach(a => {
-    const id = a.getAttribute('href').slice(1);
-    linkBySection.set(id, a);
+    linkBySection.set(a.getAttribute('href').slice(1), a);
   });
 
   const setActive = (id) => {
@@ -1216,7 +1280,6 @@ footer.site-footer .fb{font-size:12px}
     const a = linkBySection.get(id);
     if (a) {
       a.classList.add('active');
-      // Scroll the sidebar so the active item stays visible
       const sb = document.getElementById('sidebar');
       if (sb && window.innerWidth >= 1025) {
         const r = a.getBoundingClientRect();
@@ -1229,16 +1292,12 @@ footer.site-footer .fb{font-size:12px}
   };
 
   const observer = new IntersectionObserver((entries) => {
-    // Find the section whose top is closest to (but past) the top of viewport
     const visible = entries.filter(e => e.isIntersecting).sort((a,b) => a.boundingClientRect.top - b.boundingClientRect.top);
-    if (visible.length > 0) {
-      setActive(visible[0].target.id);
-    }
+    if (visible.length > 0) setActive(visible[0].target.id);
   }, { rootMargin: '-20% 0px -60% 0px', threshold: 0 });
 
   sections.forEach(s => observer.observe(s));
 
-  // Mobile menu toggle
   const toggle = document.getElementById('menuToggle');
   const sidebar = document.getElementById('sidebar');
   if (toggle && sidebar) {
@@ -1246,7 +1305,6 @@ footer.site-footer .fb{font-size:12px}
       sidebar.classList.toggle('open');
       toggle.textContent = sidebar.classList.contains('open') ? 'Close' : 'Menu';
     });
-    // Close sidebar after nav-link click on mobile
     navLinks.forEach(a => a.addEventListener('click', () => {
       if (window.innerWidth < 1025) {
         sidebar.classList.remove('open');
