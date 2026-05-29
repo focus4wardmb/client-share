@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Swan: audit read · Focus4ward</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pink: #C9316E;
+    --navy: #1E2530;
+    --text: #0F0D0B;
+    --paper: #F5F0EB;
+    --rule: #E5DFD2;
+    --muted: #6E665A;
+    --card: #FBF8F3;
+    --green: #4F7A53;
+    --amber: #B07B2E;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--paper);
+    color: var(--text);
+    font-family: 'Source Serif 4', Georgia, 'Iowan Old Style', serif;
+    font-size: 18px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  /* Dark top bar */
+  .top {
+    background: var(--navy);
+    width: 100%;
+    padding: 18px 0;
+  }
+  .top-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .top .logo {
+    height: 22px;
+    width: auto;
+    display: block;
+  }
+
+  /* Left sidebar navigation */
+  .nav {
+    position: fixed;
+    top: 120px;
+    left: max(32px, calc((100vw - 1180px) / 2));
+    width: 210px;
+    font-family: 'Space Grotesk', sans-serif;
+    max-height: calc(100vh - 160px);
+    overflow-y: auto;
+  }
+  .nav-title {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    margin-bottom: 22px;
+    font-weight: 500;
+  }
+  .nav-title .dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: var(--pink);
+    border-radius: 50%;
+    margin-right: 8px;
+    vertical-align: middle;
+    margin-top: -2px;
+  }
+  .nav-list { list-style: none; padding: 0; margin: 0; }
+  .nav-item {
+    display: block;
+    font-size: 13px;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 9px 0 9px 18px;
+    border-left: 2px solid var(--rule);
+    margin-bottom: 2px;
+    line-height: 1.35;
+    transition: color 0.2s, border-color 0.2s, padding-left 0.2s;
+  }
+  .nav-item:hover {
+    color: var(--text);
+    border-left-color: var(--muted);
+  }
+  .nav-item.active {
+    color: var(--text);
+    border-left-color: var(--pink);
+    font-weight: 500;
+    padding-left: 20px;
+  }
+  .nav-num {
+    display: block;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+    margin-bottom: 3px;
+    text-transform: uppercase;
+  }
+
+  /* Page content */
+  .page {
+    max-width: 720px;
+    margin-left: max(312px, calc((100vw - 1180px) / 2 + 270px));
+    padding: 72px 28px 80px;
+  }
+
+  h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 44px;
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+    margin: 0 0 10px;
+    color: var(--text);
+  }
+  h1 .accent { color: var(--pink); }
+  .meta {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+    margin: 0 0 36px;
+  }
+
+  /* Headline finding hero */
+  .headline {
+    border-left: 3px solid var(--pink);
+    padding: 4px 0 4px 24px;
+    margin: 0 0 16px;
+  }
+  .headline .label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--pink);
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+  .headline p {
+    font-size: 25px;
+    line-height: 1.34;
+    font-weight: 400;
+    margin: 0;
+  }
+  .headline em { font-style: italic; }
+  .assume {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: var(--muted);
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin: 0 0 50px;
+  }
+
+  .section-num {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    color: var(--pink);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 27px;
+    line-height: 1.2;
+    letter-spacing: -0.005em;
+    margin: 0 0 20px;
+    scroll-margin-top: 40px;
+  }
+  h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    letter-spacing: 0.01em;
+    margin: 30px 0 12px;
+  }
+  hr {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 52px 0 40px;
+  }
+  p { margin: 0 0 18px; }
+  p strong { font-weight: 600; }
+  em { font-style: italic; }
+
+  /* 3-column context */
+  .cols3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 18px;
+    margin: 8px 0 6px;
+  }
+  .col {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 18px 18px 8px;
+  }
+  .col-head {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    font-weight: 600;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .col.mid .col-head { color: var(--pink); }
+  .col ul { margin: 0; padding: 0 0 0 1px; list-style: none; }
+  .col li {
+    font-size: 14.5px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    padding-left: 16px;
+    position: relative;
+  }
+  .col li::before {
+    content: "›";
+    position: absolute;
+    left: 0;
+    color: var(--pink);
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  .src {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11.5px;
+    color: var(--muted);
+    margin: 14px 0 0;
+  }
+
+  /* Gap callout */
+  .gap {
+    background: #FBEEF3;
+    border: 1px solid #E8C6D6;
+    border-left: 3px solid var(--pink);
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin: 0 0 18px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .gap b {
+    color: var(--pink);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 11.5px;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .gap-list { margin: 0 0 18px; }
+  .gap-list .gap { margin-bottom: 8px; }
+
+  /* Yes / But table */
+  .yesbut { margin: 6px 0 8px; }
+  .yb-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1px solid var(--rule);
+    border-bottom: none;
+  }
+  .yesbut .yb-row:last-child { border-bottom: 1px solid var(--rule); }
+  .yesbut .yb-row:first-child { border-radius: 8px 8px 0 0; }
+  .yesbut .yb-row:last-child { border-radius: 0 0 8px 8px; }
+  .yb-yes, .yb-but {
+    padding: 16px 18px;
+    font-size: 14.5px;
+    line-height: 1.5;
+  }
+  .yb-yes {
+    background: var(--card);
+    border-right: 1px solid var(--rule);
+  }
+  .yb-but { background: var(--paper); }
+  .yb-tag {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 7px;
+  }
+  .yb-yes .yb-tag { color: var(--muted); }
+  .yb-but .yb-tag { color: var(--pink); }
+
+  /* Pillar cards */
+  .pillar {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 22px 22px 20px;
+    margin: 0 0 22px;
+  }
+  .pillar-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    margin: 0 0 4px;
+  }
+  .pillar-sub {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12.5px;
+    color: var(--muted);
+    margin: 0 0 16px;
+  }
+  .cs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+  .cs h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 0 0 8px;
+    font-weight: 600;
+  }
+  .cs .continue h4 { color: var(--green); }
+  .cs .stopstart h4 { color: var(--pink); }
+  .cs ul { list-style: none; margin: 0; padding: 0; }
+  .cs li {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 9px;
+    padding-left: 18px;
+    position: relative;
+  }
+  .cs .continue li::before {
+    content: "✓";
+    position: absolute; left: 0;
+    color: var(--green);
+    font-size: 12px;
+  }
+  .cs .stopstart li::before {
+    content: "→";
+    position: absolute; left: 0;
+    color: var(--pink);
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  /* RAG boxes */
+  .rag {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    border-top: 1px solid var(--rule);
+    padding-top: 16px;
+  }
+  .rag-box { text-align: left; }
+  .rag-box .rag-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .rag-box .rag-val {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+  }
+  .lvl-low  { background: #E4EEE5; color: var(--green); }
+  .lvl-med  { background: #F5E9D6; color: var(--amber); }
+  .lvl-high { background: #FBEEF3; color: var(--pink); }
+
+  /* Generic comparison / matrix tables */
+  .tbl-wrap { overflow-x: auto; margin: 6px 0 8px; -webkit-overflow-scrolling: touch; }
+  table.grid {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 640px;
+    font-size: 13.5px;
+    font-family: 'Source Serif 4', serif;
+  }
+  table.grid th, table.grid td {
+    border: 1px solid var(--rule);
+    padding: 11px 13px;
+    vertical-align: top;
+    text-align: left;
+    line-height: 1.45;
+  }
+  table.grid thead th {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 600;
+    background: var(--navy);
+    color: #fff;
+  }
+  table.grid thead th.client { background: var(--pink); }
+  table.grid tbody th {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    background: var(--card);
+    white-space: nowrap;
+    font-weight: 600;
+  }
+  table.grid td.client { background: #FBEEF3; }
+
+  /* ID card */
+  .idcard {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 22px;
+    margin: 8px 0;
+  }
+  .idcard dl { margin: 0; }
+  .idcard .id-row {
+    display: flex;
+    gap: 10px;
+    font-size: 14px;
+    padding: 7px 0;
+    border-bottom: 1px dotted var(--rule);
+  }
+  .idcard .id-row dt {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    flex: 0 0 110px;
+    margin: 0;
+  }
+  .idcard .id-row dd { margin: 0; flex: 1; }
+  .idcard h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 0 0 10px;
+    font-weight: 600;
+  }
+  .idcard .sw h4 { color: var(--green); }
+  .idcard .wk h4 { color: var(--pink); }
+  .idcard ul { list-style: none; margin: 0 0 16px; padding: 0; }
+  .idcard li {
+    font-size: 13.5px; line-height: 1.45;
+    margin-bottom: 8px; padding-left: 16px; position: relative;
+  }
+  .idcard .sw li::before { content: "✓"; position: absolute; left: 0; color: var(--green); font-size: 12px; }
+  .idcard .wk li::before { content: "✕"; position: absolute; left: 0; color: var(--pink); font-size: 12px; }
+
+  /* Strategy matrix list */
+  .stratmatrix { margin: 6px 0; }
+
+  /* Action plan grid */
+  .plan { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+  /* Priority blocks */
+  .prio {
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 20px 22px;
+    margin: 0 0 16px;
+    background: var(--card);
+    position: relative;
+  }
+  .prio .rank {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    background: var(--pink);
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    vertical-align: middle;
+  }
+  .prio .prio-head {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    display: inline;
+  }
+  .prio .frame { font-size: 14.5px; color: var(--text); margin: 14px 0 12px; }
+  .prio ul { list-style: none; margin: 0; padding: 0; }
+  .prio li {
+    font-size: 14px; line-height: 1.5;
+    margin-bottom: 8px; padding-left: 18px; position: relative;
+  }
+  .prio li::before {
+    content: "→"; position: absolute; left: 0;
+    color: var(--pink); font-family: 'Space Grotesk', sans-serif;
+  }
+  .prio .when {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--muted); margin-top: 12px;
+  }
+
+  .closer {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.35;
+    border-left: 3px solid var(--pink);
+    padding-left: 20px;
+    margin: 30px 0 0;
+  }
+
+  .acronyms {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12.5px;
+    line-height: 1.7;
+    color: var(--muted);
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin: 8px 0 0;
+  }
+  .acronyms b { color: var(--text); font-weight: 600; }
+
+  footer {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+    margin-top: 56px;
+    padding-top: 26px;
+    border-top: 1px solid var(--rule);
+  }
+  footer a { color: var(--muted); text-decoration: underline; }
+
+  /* Mobile-only horizontal nav */
+  .mobile-nav { display: none; }
+
+  @media (max-width: 1024px) {
+    .nav { display: none; }
+    .page {
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 30px 24px 56px;
+    }
+    h1 { font-size: 34px; }
+    h2 { font-size: 23px; scroll-margin-top: 92px; }
+    .headline p { font-size: 21px; }
+    .cols3 { grid-template-columns: 1fr; }
+    .idcard { grid-template-columns: 1fr; }
+
+    .mobile-nav {
+      display: flex;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--paper);
+      border-bottom: 1px solid var(--rule);
+      padding: 0 20px;
+      gap: 20px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    .mobile-nav-item {
+      font-size: 12px;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 14px 0 12px;
+      border-bottom: 2px solid transparent;
+      white-space: nowrap;
+      letter-spacing: 0.04em;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .mobile-nav-item.active {
+      color: var(--text);
+      border-bottom-color: var(--pink);
+      font-weight: 500;
+    }
+    .mobile-nav-num {
+      color: var(--pink);
+      font-weight: 500;
+      margin-right: 6px;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+    }
+  }
+  @media (max-width: 600px) {
+    body { font-size: 17px; }
+    .page { padding: 24px 18px 48px; }
+    h1 { font-size: 28px; }
+    .headline p { font-size: 19px; }
+    .yb-row { grid-template-columns: 1fr; }
+    .yb-yes { border-right: none; border-bottom: 1px solid var(--rule); }
+    .cs { grid-template-columns: 1fr; }
+    .rag { grid-template-columns: 1fr; gap: 8px; }
+    .mobile-nav { gap: 16px; padding: 0 16px; }
+    .mobile-nav-item { font-size: 11px; padding: 12px 0 10px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-inner">
+    <img src="/images/logo-light.png" class="logo" alt="Focus4ward">
+  </div>
+</header>
+
+<nav class="mobile-nav">
+  <a class="mobile-nav-item" href="#context"><span class="mobile-nav-num">01</span>Context</a>
+  <a class="mobile-nav-item" href="#goals"><span class="mobile-nav-num">02</span>Goals</a>
+  <a class="mobile-nav-item" href="#gtm"><span class="mobile-nav-num">03</span>GTM tension</a>
+  <a class="mobile-nav-item" href="#pillars"><span class="mobile-nav-num">04</span>Pillars</a>
+  <a class="mobile-nav-item" href="#kpis"><span class="mobile-nav-num">05</span>KPIs + budget</a>
+  <a class="mobile-nav-item" href="#deepdives"><span class="mobile-nav-num">06</span>Deep dives</a>
+  <a class="mobile-nav-item" href="#competition"><span class="mobile-nav-num">07</span>Competition</a>
+  <a class="mobile-nav-item" href="#matrix"><span class="mobile-nav-num">08</span>Strategy matrix</a>
+  <a class="mobile-nav-item" href="#plan"><span class="mobile-nav-num">09</span>Action plan</a>
+  <a class="mobile-nav-item" href="#priority"><span class="mobile-nav-num">10</span>Priorities</a>
+</nav>
+
+<nav class="nav">
+  <div class="nav-title"><span class="dot"></span>Swan / audit read</div>
+  <ul class="nav-list">
+    <li><a class="nav-item" href="#context"><span class="nav-num">01</span>Context and environment</a></li>
+    <li><a class="nav-item" href="#goals"><span class="nav-num">02</span>Business and marketing goals</a></li>
+    <li><a class="nav-item" href="#gtm"><span class="nav-num">03</span>Current GTM: the tension</a></li>
+    <li><a class="nav-item" href="#pillars"><span class="nav-num">04</span>Pillars, ideal world</a></li>
+    <li><a class="nav-item" href="#kpis"><span class="nav-num">05</span>KPIs and budget split</a></li>
+    <li><a class="nav-item" href="#deepdives"><span class="nav-num">06</span>Pillar deep-dives</a></li>
+    <li><a class="nav-item" href="#competition"><span class="nav-num">07</span>Competitive review</a></li>
+    <li><a class="nav-item" href="#matrix"><span class="nav-num">08</span>Strategy matrix</a></li>
+    <li><a class="nav-item" href="#plan"><span class="nav-num">09</span>Action plan</a></li>
+    <li><a class="nav-item" href="#priority"><span class="nav-num">10</span>Priority list</a></li>
+  </ul>
+</nav>
+
+<main class="page">
+  <h1>Swan: audit <span class="accent">read.</span></h1>
+  <p class="meta">Intake-only synthesis · no CEO interview yet · 2026-05-29 · confidential</p>
+
+  <div class="headline">
+    <div class="label">Headline finding</div>
+    <p>Swan can't be audited on the numbers yet, because the numbers aren't written down. The intake came back blank, so the first deliverable isn't a growth plan. It's the <em>measurement layer</em> that makes one possible.</p>
+  </div>
+  <div class="assume">
+    Two things shape what follows. First, the intake template was returned empty: no company metadata, no KPIs, no funnel, no competitor set. Per the audit method, unanswered questions are not skipped, they are surfaced as findings ("decision data unavailable"). Second, there was no CEO interview, so strategic depth here is constrained. The market, client, and competitor framing below is built from public sources only and assumes Swan is the embedded finance / banking-as-a-service (BaaS) provider regulated as an Electronic Money Institution (EMI). Confirm the company and scope at kickoff, then book the 60-minute CEO call. The Yes / But synthesis in section 03 only gets sharp once that call happens.
+  </div>
+
+  <!-- 01 -->
+  <div class="section-num">01 · Context and environment</div>
+  <h2 id="context">Where Swan sits, from the outside</h2>
+  <p>This is the framing slide, and it does most of the work. With the intake empty, I built it from public reading. Read the center column as a hypothesis to confirm, not as a fact you supplied.</p>
+
+  <div class="cols3">
+    <div class="col">
+      <div class="col-head">Market</div>
+      <ul>
+        <li>Embedded finance in Europe is moving from "fintech feature" to default expectation: software platforms want to issue accounts, cards, and payments inside their own product.</li>
+        <li>Regulation is the tailwind and the moat. PSD2 opened it, PSD3 / PSR are coming, and DORA (operational resilience rules) applies from January 2025. Holding an EMI license is hard, which is the point.</li>
+        <li>The buyer is rarely one person. A product lead wants speed, a finance lead wants unit economics, a compliance lead wants to not go to jail.</li>
+        <li>The category word is still unsettled: "embedded finance," "BaaS," "embedded banking," "white-label banking" all describe overlapping things to different buyers.</li>
+      </ul>
+    </div>
+    <div class="col mid">
+      <div class="col-head">Swan (to confirm)</div>
+      <ul>
+        <li>API-first embedded banking: accounts, IBANs, Mastercard issuing, and payment flows that other companies build into their own products.</li>
+        <li>Regulated as an EMI, operating across several European markets. The license is the differentiator competitors without one can't copy quickly.</li>
+        <li>Developer-led product surface: docs, sandbox, and integration speed are the first thing a prospect touches, before sales.</li>
+        <li>Institutional backing and named platform customers exist publicly. The logos are likely the strongest unused asset, same pattern seen across B2B SaaS.</li>
+      </ul>
+    </div>
+    <div class="col">
+      <div class="col-head">Competitors</div>
+      <ul>
+        <li>Stripe (Issuing + Treasury): the category gorilla, owns developer mindshare and distribution globally.</li>
+        <li>Mangopay: marketplace and platform payments, French-rooted, Advent-owned, a close direct comparable.</li>
+        <li>Treezor (Société Générale) and Solaris (Germany): European BaaS with banking-group backing.</li>
+        <li>Adyen and Marqeta sit adjacent on enterprise issuing and processing.</li>
+      </ul>
+    </div>
+  </div>
+  <p class="src">Sources: public web reading, May 2026. EMI / DORA / PSD timelines per published EU and ACPR guidance. Center column is a working hypothesis pending kickoff confirmation. Competitor scores in section 07 are flagged for verification.</p>
+
+  <hr>
+
+  <!-- 02 -->
+  <div class="section-num">02 · Business and marketing goals</div>
+  <h2 id="goals">The goals an audit needs, and what's missing</h2>
+  <p>An audit anchors every recommendation to a stated business goal: the 12-month OKR, the revenue target, the markets that matter most. None of that was supplied. So the most useful thing I can do in this section is name precisely what's unavailable, because each gap is a decision you're currently making without data.</p>
+
+  <div class="gap-list">
+    <div class="gap"><b>Decision data unavailable: business goals</b>No 12-month OKRs, no current ARR, no prior-year to this-year growth rate. Without a revenue target, no marketing budget can be sized and no channel can be judged "enough."</div>
+    <div class="gap"><b>Decision data unavailable: revenue by market</b>For a multi-market EMI, revenue per country is the single most load-bearing number. Without it, budget gets split across France, Germany, Spain, and the rest by intuition, not by where it pays back.</div>
+    <div class="gap"><b>Decision data unavailable: unit economics</b>No CAC (cost to acquire a customer) and no LTV (lifetime value). The board will ask for payback math. Today's data can't produce it.</div>
+    <div class="gap"><b>Decision data unavailable: marketing KPIs and budget</b>No KPIs tracked, no monthly or annual budget, no agency or contractor spend, no MQL volume by source, no tech-stack ownership. A marketing function nobody can see is a function nobody can defend at the next budget review.</div>
+    <div class="gap"><b>Decision data unavailable: pipeline and product usage</b>No funnel volumes, no stage-to-stage conversion, no sales-cycle length, no inbound / outbound ratio, no average deal value, no DAU / MAU. For a developer-led product, usage data is the growth signal, and it's dark.</div>
+  </div>
+
+  <p>This is not a scolding. It's the actual finding: <strong>Swan commissioned an audit, which means something feels off, and the first thing the audit finds is that the instrument panel is unlit.</strong> The good news is that this is the most fixable problem in the deck. It's section 06's first pillar and priority block one.</p>
+
+  <hr>
+
+  <!-- 03 -->
+  <div class="section-num">03 · Current GTM</div>
+  <h2 id="gtm">The Yes / But tension</h2>
+  <p>This is normally the sharpest move in the deck: pairing what the company believes with the gap it creates, pulled from the CEO interview and the data. With no interview and no intake, these are built from the public picture and from the act of returning a blank intake. Treat them as opening provocations for the kickoff call, not verdicts. They get sharper once Swan answers.</p>
+
+  <div class="yesbut">
+    <div class="yb-row">
+      <div class="yb-yes"><span class="yb-tag">Yes</span>You sell the financial data layer that other companies build their entire product on top of.</div>
+      <div class="yb-but"><span class="yb-tag">But</span>The company that sells other people's data infrastructure returned a blank data intake about itself. You can't sell precision you don't run internally.</div>
+    </div>
+    <div class="yb-row">
+      <div class="yb-yes"><span class="yb-tag">Yes</span>You hold an EMI license and operate across several European markets, which is genuinely hard to copy.</div>
+      <div class="yb-but"><span class="yb-tag">But</span>Revenue per market is unanswered. A multi-country license with no per-country read means you're funding geographies on gut feel instead of payback.</div>
+    </div>
+    <div class="yb-row">
+      <div class="yb-yes"><span class="yb-tag">Yes</span>The product is API-first and developer-led: docs, sandbox, and integration speed do the early selling.</div>
+      <div class="yb-but"><span class="yb-tag">But</span>There's no DAU / MAU, no activation read, no feature-to-benefit doc. Developer-led growth that isn't instrumented is a vibe, not a channel.</div>
+    </div>
+    <div class="yb-row">
+      <div class="yb-yes"><span class="yb-tag">Yes</span>You operate in a category that includes Stripe, Adyen, and Mangopay.</div>
+      <div class="yb-but"><span class="yb-tag">But</span>No competitor set, no differentiation factors, and no win / loss data were supplied. You're in a knife fight with names you haven't written down.</div>
+    </div>
+    <div class="yb-row">
+      <div class="yb-yes"><span class="yb-tag">Yes</span>You carry institutional backing and recognizable platform logos.</div>
+      <div class="yb-but"><span class="yb-tag">But</span>No CAC, no LTV, no pipeline. The logos prove you can land customers. They don't yet prove you can do it repeatably and profitably, and the next raise will ask exactly that.</div>
+    </div>
+    <div class="yb-row">
+      <div class="yb-yes"><span class="yb-tag">Yes</span>Marketing is presumably running already, with people, budget, and a stack.</div>
+      <div class="yb-but"><span class="yb-tag">But</span>KPIs, budget split, MQL volume, and stack ownership are all blank. If the team can't see its own numbers, neither can the CEO, and neither can the board.</div>
+    </div>
+    <div class="yb-row">
+      <div class="yb-yes"><span class="yb-tag">Yes</span>You asked for an audit, which means you already suspect something is off.</div>
+      <div class="yb-but"><span class="yb-tag">But</span>An audit answers questions with data. With the intake empty and no CEO call yet, the sharpest thing I can hand back is the exact list of questions you currently can't answer. That list is section 02.</div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- 04 -->
+  <div class="section-num">04 · Pillars, ideal world</div>
+  <h2 id="pillars">What a marketing strategy for Swan should stand on</h2>
+  <p>Five pillars. One sentence each. This is the ideal-world shape for an embedded finance company at Swan's stage, before tactics. The deep-dives in section 06 turn each into Continue / Stop-Start.</p>
+
+  <p><strong>1. Measurement and process.</strong> The foundation every other pillar reports into: a defined funnel, KPIs the team and CEO see weekly, and clear ownership of the stack. Right now this is the hole everything else falls through.</p>
+  <p><strong>2. Demand and pipeline.</strong> Repeatable lead generation across the markets that pay back, with cost per lead and source attribution good enough to defend spend by geography.</p>
+  <p><strong>3. Product marketing and positioning.</strong> One category word, one buyer story per persona (product, finance, compliance), and a feature-to-benefit map that the website and sales both use.</p>
+  <p><strong>4. Developer-led growth.</strong> The docs, sandbox, and integration path treated as a measured acquisition channel, not just engineering output. Activation is the metric.</p>
+  <p><strong>5. Brand and trust.</strong> In embedded finance, trust is the product. Regulatory credibility, named-customer proof, and analyst presence are the assets, and they're currently underused.</p>
+
+  <hr>
+
+  <!-- 05 -->
+  <div class="section-num">05 · KPIs and budget</div>
+  <h2 id="kpis">Recommended KPIs and the 85 / 14 / 1 split</h2>
+  <p>Three KPI columns, mapped to the pillars. These are the numbers that, once they exist, replace every "decision data unavailable" flag in this deck.</p>
+
+  <div class="tbl-wrap">
+    <table class="grid">
+      <thead>
+        <tr><th>Growth</th><th>Brand</th><th>Team and productivity</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>MQLs per month by source<br>Marketing-influenced revenue<br>% attribution on closed deals<br>CPL (cost per lead) by market</td>
+          <td>Lead volume by geography<br>Share of voice vs Stripe / Mangopay<br>Analyst presence (Gartner / Forrester)<br>Branded search volume</td>
+          <td>Response time to sales on a lead<br>Sales satisfaction with lead quality<br>Activation rate (developer-led)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Budget split</h3>
+  <p>My default for B2B SaaS at this stage is <strong>85% Growth / 14% Brand / 1% Team</strong>, and I'd hold it here. The pull to over-invest in brand is strong for a trust-led category, but you don't yet have the measurement to know brand spend is working, so it would be spending blind on top of spending blind. Build the measurement layer first. Once CPL and attribution exist, I'd revisit flexing brand toward 20%, because in embedded finance trust genuinely converts. Not before.</p>
+
+  <hr>
+
+  <!-- 06 -->
+  <div class="section-num">06 · Pillar deep-dives</div>
+  <h2 id="deepdives">Continue, stop, start</h2>
+  <p>Per pillar: what to keep, what to change, and an honest read on investment, impact, and time to results. The scores are deliberately discriminated. If everything were "high," the audit wouldn't be deciding anything. Several scores are provisional because the intake is empty; they firm up once data and the CEO call land.</p>
+
+  <div class="pillar">
+    <div class="pillar-name">Measurement and process</div>
+    <div class="pillar-sub">The foundation. This is the headline finding made into work.</div>
+    <div class="cs">
+      <div class="continue">
+        <h4>Continue</h4>
+        <ul>
+          <li>The instinct that prompted the audit. Asking the question is the right move.</li>
+        </ul>
+      </div>
+      <div class="stopstart">
+        <h4>Stop / Start</h4>
+        <ul>
+          <li>Define the funnel stages and the definitions of MQL, SQL (sales-qualified lead), and opportunity, in writing, agreed with sales.</li>
+          <li>Stand up one weekly KPI view the CEO and the team both read.</li>
+          <li>Assign one named owner per tool in the stack.</li>
+          <li>Backfill revenue-per-market and CAC / LTV before any budget decision.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="rag">
+      <div class="rag-box"><div class="rag-label">Investment</div><span class="rag-val lvl-low">Low</span></div>
+      <div class="rag-box"><div class="rag-label">Impact</div><span class="rag-val lvl-high">High</span></div>
+      <div class="rag-box"><div class="rag-label">Time to results</div><span class="rag-val lvl-low">Quick</span></div>
+    </div>
+  </div>
+
+  <div class="pillar">
+    <div class="pillar-name">Demand and pipeline</div>
+    <div class="pillar-sub">Repeatable lead gen, judged by geography.</div>
+    <div class="cs">
+      <div class="continue">
+        <h4>Continue</h4>
+        <ul>
+          <li>Whatever is currently landing the named logos. Find it in the data first, then defend it.</li>
+        </ul>
+      </div>
+      <div class="stopstart">
+        <h4>Stop / Start</h4>
+        <ul>
+          <li>Stop splitting budget evenly across markets until per-market payback is known.</li>
+          <li>Start source attribution: tag every lead so CPL by channel and by country is visible.</li>
+          <li>Start a single inbound path with a measured form conversion rate.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="rag">
+      <div class="rag-box"><div class="rag-label">Investment</div><span class="rag-val lvl-med">Medium</span></div>
+      <div class="rag-box"><div class="rag-label">Impact</div><span class="rag-val lvl-high">High</span></div>
+      <div class="rag-box"><div class="rag-label">Time to results</div><span class="rag-val lvl-med">Medium</span></div>
+    </div>
+  </div>
+
+  <div class="pillar">
+    <div class="pillar-name">Product marketing and positioning</div>
+    <div class="pillar-sub">One category word, one story per buyer.</div>
+    <div class="cs">
+      <div class="continue">
+        <h4>Continue</h4>
+        <ul>
+          <li>The API-first, technically credible product story. It's real and it's differentiated.</li>
+        </ul>
+      </div>
+      <div class="stopstart">
+        <h4>Stop / Start</h4>
+        <ul>
+          <li>Pick one category word and use it on every surface. Stop letting "BaaS," "embedded finance," and "embedded banking" compete on your own site.</li>
+          <li>Write one feature-to-benefit map, then a buyer story each for the product, finance, and compliance personas.</li>
+          <li>Move named-customer proof ahead of feature lists.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="rag">
+      <div class="rag-box"><div class="rag-label">Investment</div><span class="rag-val lvl-low">Low</span></div>
+      <div class="rag-box"><div class="rag-label">Impact</div><span class="rag-val lvl-med">Medium</span></div>
+      <div class="rag-box"><div class="rag-label">Time to results</div><span class="rag-val lvl-med">Medium</span></div>
+    </div>
+  </div>
+
+  <div class="pillar">
+    <div class="pillar-name">Developer-led growth</div>
+    <div class="pillar-sub">Docs and sandbox as a measured channel.</div>
+    <div class="cs">
+      <div class="continue">
+        <h4>Continue</h4>
+        <ul>
+          <li>Investing in docs, sandbox, and integration speed. For this buyer, that is the first sales call.</li>
+        </ul>
+      </div>
+      <div class="stopstart">
+        <h4>Stop / Start</h4>
+        <ul>
+          <li>Start measuring sign-up to first-API-call to activation as a funnel, with a rate.</li>
+          <li>Instrument the docs: which pages precede activation, which precede drop-off.</li>
+          <li>Treat developer activation as a marketing KPI, not only an engineering one.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="rag">
+      <div class="rag-box"><div class="rag-label">Investment</div><span class="rag-val lvl-med">Medium</span></div>
+      <div class="rag-box"><div class="rag-label">Impact</div><span class="rag-val lvl-high">High</span></div>
+      <div class="rag-box"><div class="rag-label">Time to results</div><span class="rag-val lvl-med">Medium</span></div>
+    </div>
+  </div>
+
+  <div class="pillar">
+    <div class="pillar-name">Brand and trust</div>
+    <div class="pillar-sub">Regulatory credibility as the asset.</div>
+    <div class="cs">
+      <div class="continue">
+        <h4>Continue</h4>
+        <ul>
+          <li>The EMI license and named logos. These are trust assets most competitors can't match quickly.</li>
+        </ul>
+      </div>
+      <div class="stopstart">
+        <h4>Stop / Start</h4>
+        <ul>
+          <li>Lead with regulatory credibility and named customers, not feature parity claims.</li>
+          <li>Start pursuing analyst presence (Gartner, Forrester) once positioning is locked.</li>
+          <li>Hold brand spend until measurement exists. Trust you can't measure is faith.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="rag">
+      <div class="rag-box"><div class="rag-label">Investment</div><span class="rag-val lvl-med">Medium</span></div>
+      <div class="rag-box"><div class="rag-label">Impact</div><span class="rag-val lvl-med">Medium</span></div>
+      <div class="rag-box"><div class="rag-label">Time to results</div><span class="rag-val lvl-high">Slow</span></div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- 07 -->
+  <div class="section-num">07 · Competitive review</div>
+  <h2 id="competition">Who Swan is up against</h2>
+  <p>Built from public reading, with Swan in the leftmost column for comparison. The intake supplied no competitor set, so this is my read of the European embedded finance field, not yours. Numbers carrying a "verify" note need confirming against Apify and primary sources before this goes to a board, per the audit's sourcing rule.</p>
+
+  <div class="tbl-wrap">
+    <table class="grid">
+      <thead>
+        <tr>
+          <th></th>
+          <th class="client">Swan</th>
+          <th>Stripe</th>
+          <th>Mangopay</th>
+          <th>Treezor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Positioning / USP</th>
+          <td class="client">Embedded banking via API: white-label accounts, cards, payments. EMI-licensed in Europe.</td>
+          <td>"Financial infrastructure for the internet." Issuing + Treasury bolt onto the broader Stripe stack.</td>
+          <td>Payment infrastructure for marketplaces and platforms, European-rooted.</td>
+          <td>"Banking-as-a-Service," backed by Société Générale.</td>
+        </tr>
+        <tr>
+          <th>Lead gen</th>
+          <td class="client">Developer-led, docs-first. Paid and SEO posture not supplied (gap).</td>
+          <td>Dominant developer mindshare, huge branded search, vast content library.</td>
+          <td>Sales-led enterprise motion plus marketplace ecosystem reach.</td>
+          <td>Banking-group distribution and partner channel.</td>
+        </tr>
+        <tr>
+          <th>Product marketing</th>
+          <td class="client">Strong technical story; category word unsettled across surfaces.</td>
+          <td>Deep solutions taxonomy, transparent pricing, large case-study library.</td>
+          <td>Clear marketplace and platform use cases.</td>
+          <td>BaaS solution framing, lighter public content depth.</td>
+        </tr>
+        <tr>
+          <th>Reviews + AR</th>
+          <td class="client">Analyst and review presence not supplied (gap).</td>
+          <td>Heavy analyst coverage, strong G2 presence (verify current scores).</td>
+          <td>Moderate analyst and review presence (verify).</td>
+          <td>Limited public review footprint (verify).</td>
+        </tr>
+        <tr>
+          <th>Partnerships</th>
+          <td class="client">Mastercard issuing; platform integrations (confirm named partners).</td>
+          <td>Vast partner and app ecosystem, card networks, banks.</td>
+          <td>Advent-owned; marketplace and PSP integrations.</td>
+          <td>Société Générale group; fintech partner network.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Zoom on the primary threat: Stripe</h3>
+  <p>Stripe is the competitor that defines the battle. Its move into Issuing and Treasury brings embedded finance to the buyer where they already are. Naming it isn't pessimism, it's where the positioning has to be sharpest.</p>
+
+  <div class="idcard">
+    <dl>
+      <div class="id-row"><dt>Founded</dt><dd>2010 (Patrick and John Collison)</dd></div>
+      <div class="id-row"><dt>HQ</dt><dd>San Francisco and Dublin</dd></div>
+      <div class="id-row"><dt>Embedded products</dt><dd>Stripe Issuing (cards), Stripe Treasury (accounts)</dd></div>
+      <div class="id-row"><dt>Valuation</dt><dd>~$65B, 2024 tender (down from ~$95B in 2021). Verify.</dd></div>
+      <div class="id-row"><dt>Reach</dt><dd>Global, with deepest strength in the US</dd></div>
+      <div class="id-row"><dt>Motion</dt><dd>Developer-led, product-led, enormous content and docs footprint</dd></div>
+    </dl>
+    <div>
+      <div class="sw">
+        <h4>Strengths</h4>
+        <ul>
+          <li>Developer mindshare and distribution at a scale no European peer matches.</li>
+          <li>Existing relationship with the buyer through payments, so embedded finance is an upsell, not a new sale.</li>
+          <li>Documentation and brand trust are the category benchmark.</li>
+        </ul>
+      </div>
+      <div class="wk">
+        <h4>Weaknesses Swan can press</h4>
+        <ul>
+          <li>US-centric banking partners and a thinner, less-local European regulatory footprint than a homegrown EMI.</li>
+          <li>Embedded banking is one product among many, not the whole company, so depth and support attention are split.</li>
+          <li>Less white-label flexibility for platforms that want the bank to disappear behind their own brand.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- 08 -->
+  <div class="section-num">08 · Strategy matrix</div>
+  <h2 id="matrix">Strategy → objective → KPI</h2>
+  <p>Each pillar tied to one objective and the KPI that proves it. This is the contract: when these KPIs exist and move, the strategy is working.</p>
+
+  <div class="tbl-wrap">
+    <table class="grid">
+      <thead>
+        <tr><th>Strategy pillar</th><th>Objective</th><th>Primary KPI</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Measurement and process</strong></td><td>Make the marketing function visible and defensible</td><td>Weekly KPI view live; funnel definitions agreed with sales</td></tr>
+        <tr><td><strong>Demand and pipeline</strong></td><td>Grow qualified pipeline in the markets that pay back</td><td>MQLs by source and CPL by market</td></tr>
+        <tr><td><strong>Product marketing</strong></td><td>One category, one story per buyer</td><td>Branded search volume; sales adoption of the messaging</td></tr>
+        <tr><td><strong>Developer-led growth</strong></td><td>Turn docs and sandbox into a measured channel</td><td>Sign-up to activation rate</td></tr>
+        <tr><td><strong>Brand and trust</strong></td><td>Own regulatory credibility in the category</td><td>Share of voice; analyst presence</td></tr>
+        <tr><td><strong>Sales-marketing alignment</strong></td><td>Agree on what a good lead is</td><td>Sales satisfaction with lead quality; SQL conversion</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr>
+
+  <!-- 09 -->
+  <div class="section-num">09 · Action plan</div>
+  <h2 id="plan">Short, mid, long</h2>
+  <p>The same pillars across three horizons. No paragraphs, no hourly estimates. That detail belongs to the engagement that follows, not to this read.</p>
+
+  <div class="tbl-wrap plan">
+    <table class="grid">
+      <thead>
+        <tr><th>Pillar</th><th>Short-term (0–30 days)</th><th>Mid-term (30–90 days)</th><th>Long-term (90+ days)</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Measurement</th>
+          <td>→ Define funnel and lead definitions<br>→ Stand up weekly KPI view<br>→ Assign stack owners</td>
+          <td>→ Backfill CAC / LTV and revenue by market<br>→ Source attribution live</td>
+          <td>→ Attribution trusted enough to set budget by geography</td>
+        </tr>
+        <tr>
+          <th>Demand and pipeline</th>
+          <td>→ Tag every lead by source and country</td>
+          <td>→ One measured inbound path<br>→ CPL by market visible</td>
+          <td>→ Scale only the markets that show payback</td>
+        </tr>
+        <tr>
+          <th>Product marketing</th>
+          <td>→ Pick one category word</td>
+          <td>→ Feature-to-benefit map<br>→ Buyer story per persona</td>
+          <td>→ Proof-led site and sales narrative aligned</td>
+        </tr>
+        <tr>
+          <th>Developer-led growth</th>
+          <td>→ Instrument sign-up to activation</td>
+          <td>→ Docs analytics tied to activation</td>
+          <td>→ Activation reported as a marketing KPI</td>
+        </tr>
+        <tr>
+          <th>Brand and trust</th>
+          <td>→ Lead with license and logos</td>
+          <td>→ Plan analyst outreach</td>
+          <td>→ Pursue Gartner / Forrester presence; revisit brand budget</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr>
+
+  <!-- 10 -->
+  <div class="section-num">10 · Priority list</div>
+  <h2 id="priority">Here is what I recommend focusing on, in order</h2>
+  <p>The order is the deliverable. First block is highest impact, shortest time to results, and the precondition for everything below it.</p>
+
+  <div class="prio">
+    <p><span class="rank">1</span><span class="prio-head">Measurement and process</span></p>
+    <p class="frame">Light the instrument panel. Until the funnel, the KPIs, and the per-market revenue exist, every other recommendation is a guess wearing a suit.</p>
+    <ul>
+      <li>Define funnel stages and MQL / SQL definitions with sales, in writing.</li>
+      <li>Stand up one weekly KPI view the CEO reads.</li>
+      <li>Backfill CAC, LTV, and revenue per market.</li>
+    </ul>
+    <p class="when">Impact: high · Time: quick · Investment: low</p>
+  </div>
+
+  <div class="prio">
+    <p><span class="rank">2</span><span class="prio-head">Demand and pipeline by market</span></p>
+    <p class="frame">Once you can see source and geography, stop spreading budget evenly and start funding what pays back.</p>
+    <ul>
+      <li>Tag every lead by source and country.</li>
+      <li>Get CPL by market visible within the quarter.</li>
+      <li>Pick one inbound path and measure its form conversion rate.</li>
+    </ul>
+    <p class="when">Impact: high · Time: medium · Investment: medium</p>
+  </div>
+
+  <div class="prio">
+    <p><span class="rank">3</span><span class="prio-head">Developer-led growth, measured</span></p>
+    <p class="frame">Your strongest channel is already running. It just isn't counted.</p>
+    <ul>
+      <li>Instrument sign-up to first-API-call to activation.</li>
+      <li>Tie docs analytics to activation and drop-off.</li>
+      <li>Report activation as a marketing KPI.</li>
+    </ul>
+    <p class="when">Impact: high · Time: medium · Investment: medium</p>
+  </div>
+
+  <div class="prio">
+    <p><span class="rank">4</span><span class="prio-head">Positioning: one category word</span></p>
+    <p class="frame">Three category words across your own surfaces split the buyer. Pick one and commit.</p>
+    <ul>
+      <li>Choose the category word and apply it everywhere.</li>
+      <li>Write the feature-to-benefit map and a story per persona.</li>
+      <li>Move named-customer proof ahead of feature lists.</li>
+    </ul>
+    <p class="when">Impact: medium · Time: medium · Investment: low</p>
+  </div>
+
+  <div class="prio">
+    <p><span class="rank">5</span><span class="prio-head">Brand and trust</span></p>
+    <p class="frame">Trust is the product in this category, but you can't manage what you can't measure. This comes after the panel is lit, not before.</p>
+    <ul>
+      <li>Lead with the EMI license and the logos now, at zero extra cost.</li>
+      <li>Plan analyst presence once positioning is locked.</li>
+      <li>Revisit flexing brand to 20% of budget only after attribution exists.</li>
+    </ul>
+    <p class="when">Impact: medium · Time: slow · Investment: medium</p>
+  </div>
+
+  <p class="closer">The data isn't missing because it's hard. It's missing because no one built the place to put it. Build that first. Then this read becomes an audit.</p>
+
+  <h3>Acronyms</h3>
+  <div class="acronyms">
+    <b>ARR</b> annual recurring revenue · <b>BaaS</b> banking-as-a-service · <b>CAC</b> cost to acquire a customer · <b>CPL</b> cost per lead · <b>DAU / MAU</b> daily / monthly active users · <b>DORA</b> Digital Operational Resilience Act · <b>EMI</b> Electronic Money Institution · <b>ICP</b> ideal customer profile · <b>LTV</b> lifetime value · <b>MQL</b> marketing-qualified lead · <b>OKR</b> objectives and key results · <b>PSD2 / PSD3 / PSR</b> EU payment services directives and regulation · <b>SQL</b> sales-qualified lead · <b>SOV</b> share of voice · <b>USP</b> unique selling proposition
+  </div>
+
+  <footer>
+    Focus4ward · Working deliverable · 2026-05-29 · <a href="mailto:miri@focus4ward.co">miri@focus4ward.co</a>
+  </footer>
+</main>
+
+<script>
+  const sections = document.querySelectorAll('h2[id]');
+  const navItems = document.querySelectorAll('.nav-item, .mobile-nav-item');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navItems.forEach(item => {
+          item.classList.toggle('active', item.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
