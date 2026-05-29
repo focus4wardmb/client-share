@@ -72,8 +72,10 @@ export default async function handler(req: Request, context: Context) {
     return new Response(null, { status: 302, headers });
   }
 
-  // Show login page.
-  return new Response(loginPageHtml(slug, !!submittedKey), {
+  // Show login page. Pass the originally-requested path so the form submits
+  // back to it — otherwise after auth we'd redirect to /<slug>/ which may
+  // not have an index.html (e.g. the file lives at /<slug>/<page>/index.html).
+  return new Response(loginPageHtml(slug, url.pathname, !!submittedKey), {
     status: 401,
     headers: { "Content-Type": "text/html; charset=utf-8" },
   });
@@ -96,7 +98,7 @@ async function hashPassword(p: string): Promise<string> {
     .join("");
 }
 
-function loginPageHtml(slug: string, wrongAttempt: boolean): string {
+function loginPageHtml(slug: string, returnTo: string, wrongAttempt: boolean): string {
   const errorBanner = wrongAttempt
     ? `<div class="err">That password didn't match. Try again, or get in touch if you weren't sent one.</div>`
     : "";
@@ -136,7 +138,7 @@ button.submit:hover{background:#b22a61}
   <h1>This document is protected</h1>
   <p class="lede">Enter the password Miri sent you to view this audit.</p>
   ${errorBanner}
-  <form method="get" action="/${slug}/">
+  <form method="get" action="${returnTo}">
     <div class="pwwrap">
       <input type="password" id="pw" name="key" placeholder="Password" autofocus autocomplete="current-password" required>
       <button type="button" class="show-btn" id="toggle" aria-label="Show password">Show</button>
