@@ -27,6 +27,7 @@ const SALT = "focus4ward-audit-2026";
 const FALLBACK_PASSWORDS: Record<string, string> = {
   "thynk-reference": "purple-spacecraft-2026",
   "axeleo": "axeleo-portcos-2026",
+  "augur": "augur-research-2026",
 };
 
 export default async function handler(req: Request, context: Context) {
