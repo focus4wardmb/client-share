@@ -165,21 +165,62 @@
   }
   footer a { color: var(--muted); text-decoration: underline; }
 
+  /* Mobile-only horizontal nav (replaces fixed left sidebar under 1024px) */
+  .mobile-nav { display: none; }
+
   @media (max-width: 1024px) {
     .nav { display: none; }
     .page {
       max-width: 640px;
       margin-left: auto;
       margin-right: auto;
-      padding: 56px 24px 56px;
+      padding: 32px 24px 56px;
     }
     h1 { font-size: 34px; }
     h2 { font-size: 22px; }
+
+    .mobile-nav {
+      display: flex;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--paper);
+      border-bottom: 1px solid var(--rule);
+      padding: 0 20px;
+      gap: 22px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    .mobile-nav-item {
+      font-size: 12px;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 14px 0 12px;
+      border-bottom: 2px solid transparent;
+      white-space: nowrap;
+      letter-spacing: 0.04em;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .mobile-nav-item.active {
+      color: var(--text);
+      border-bottom-color: var(--pink);
+      font-weight: 500;
+    }
+    .mobile-nav-num {
+      color: var(--pink);
+      font-weight: 500;
+      margin-right: 6px;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+    }
   }
   @media (max-width: 480px) {
     body { font-size: 17px; }
-    .page { padding: 48px 20px 48px; }
+    .page { padding: 24px 20px 48px; }
     h1 { font-size: 28px; }
+    .mobile-nav { gap: 16px; padding: 0 16px; }
+    .mobile-nav-item { font-size: 11px; padding: 12px 0 10px; }
   }
 </style>
 </head>
@@ -190,6 +231,12 @@
     <img src="/images/logo-light.png" class="logo" alt="Focus4ward">
   </div>
 </header>
+
+<nav class="mobile-nav">
+  <a class="mobile-nav-item" href="#observations"><span class="mobile-nav-num">01</span>Observations</a>
+  <a class="mobile-nav-item" href="#questions"><span class="mobile-nav-num">02</span>Questions</a>
+  <a class="mobile-nav-item" href="#approach"><span class="mobile-nav-num">03</span>Approach</a>
+</nav>
 
 <nav class="nav">
   <div class="nav-title"><span class="dot"></span>Sopht / first read</div>
@@ -234,7 +281,7 @@
 
 <script>
   const sections = document.querySelectorAll('h2[id]');
-  const navItems = document.querySelectorAll('.nav-item');
+  const navItems = document.querySelectorAll('.nav-item, .mobile-nav-item');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
