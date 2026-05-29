@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Sopht: a first read — Focus4ward</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pink: #C9316E;
+    --navy: #1E2530;
+    --text: #0F0D0B;
+    --paper: #F5F0EB;
+    --rule: #E5DFD2;
+    --muted: #6E665A;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--paper);
+    color: var(--text);
+    font-family: 'Source Serif 4', Georgia, 'Iowan Old Style', serif;
+    font-size: 18px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  /* Dark top bar */
+  .top {
+    background: var(--navy);
+    width: 100%;
+    padding: 18px 0;
+  }
+  .top-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .top .logo {
+    height: 22px;
+    width: auto;
+    display: block;
+  }
+
+  /* Left sidebar navigation */
+  .nav {
+    position: fixed;
+    top: 140px;
+    left: max(32px, calc((100vw - 1100px) / 2));
+    width: 200px;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  .nav-title {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    margin-bottom: 24px;
+    font-weight: 500;
+  }
+  .nav-title .dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: var(--pink);
+    border-radius: 50%;
+    margin-right: 8px;
+    vertical-align: middle;
+    margin-top: -2px;
+  }
+  .nav-list { list-style: none; padding: 0; margin: 0; }
+  .nav-item {
+    display: block;
+    font-size: 13px;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 10px 0 10px 18px;
+    border-left: 2px solid var(--rule);
+    margin-bottom: 2px;
+    line-height: 1.4;
+    transition: color 0.2s, border-color 0.2s, padding-left 0.2s;
+  }
+  .nav-item:hover {
+    color: var(--text);
+    border-left-color: var(--muted);
+  }
+  .nav-item.active {
+    color: var(--text);
+    border-left-color: var(--pink);
+    font-weight: 500;
+    padding-left: 20px;
+  }
+  .nav-num {
+    display: block;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+    margin-bottom: 3px;
+    text-transform: uppercase;
+  }
+
+  /* Page content */
+  .page {
+    max-width: 640px;
+    margin-left: max(296px, calc((100vw - 1100px) / 2 + 264px));
+    padding: 80px 28px 80px;
+  }
+
+  h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 42px;
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+    margin: 0 0 10px;
+    color: var(--text);
+  }
+  h1 .accent { color: var(--pink); }
+  .meta {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+    margin: 0 0 52px;
+  }
+  .section-num {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    color: var(--pink);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 1.22;
+    letter-spacing: -0.005em;
+    margin: 0 0 22px;
+    scroll-margin-top: 60px;
+  }
+  hr {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 44px 0 36px;
+  }
+  p { margin: 0 0 18px; }
+  p strong { font-weight: 600; }
+  footer {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+    margin-top: 56px;
+    padding-top: 26px;
+    border-top: 1px solid var(--rule);
+  }
+  footer a { color: var(--muted); text-decoration: underline; }
+
+  @media (max-width: 1024px) {
+    .nav { display: none; }
+    .page {
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 56px 24px 56px;
+    }
+    h1 { font-size: 34px; }
+    h2 { font-size: 22px; }
+  }
+  @media (max-width: 480px) {
+    body { font-size: 17px; }
+    .page { padding: 48px 20px 48px; }
+    h1 { font-size: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-inner">
+    <img src="/images/logo-light.png" class="logo" alt="Focus4ward">
+  </div>
+</header>
+
+<nav class="nav">
+  <div class="nav-title"><span class="dot"></span>Sopht / first read</div>
+  <ul class="nav-list">
+    <li><a class="nav-item" href="#observations"><span class="nav-num">01</span>Observations</a></li>
+    <li><a class="nav-item" href="#questions"><span class="nav-num">02</span>Questions</a></li>
+    <li><a class="nav-item" href="#approach"><span class="nav-num">03</span>Approach</a></li>
+  </ul>
+</nav>
+
+<main class="page">
+  <h1>Sopht: a first <span class="accent">read.</span></h1>
+  <p class="meta">Public sources only · 29 May 2026 · 2 min read</p>
+
+  <div class="section-num">01 · Observations</div>
+  <h2 id="observations">What's visible right now</h2>
+  <p>Three things noticed from 20 minutes of public reading.</p>
+  <p><strong>Three category words across three surfaces.</strong> The homepage now reads <em>"ITOps through sustainability."</em> Google still shows the older title <em>"Plateforme Green IT."</em> Partner and analyst posts call it <em>"GreenOps."</em> Three frames, three buyer types.</p>
+  <p><strong>The customer list is the strongest asset.</strong> BNP Paribas, VINCI, VEOLIA, ADECCO, EDENRED. Logo concentration like that is rare in B2B SaaS. Current messaging leads with product features rather than customer proof.</p>
+  <p><strong>The regulatory tailwind isn't being used.</strong> CSRD scope-3 reporting (rolling out 2025-2028) and France's REEN law (annual measurement and reduction of digital footprint for large companies) both push enterprises to do what Sopht does. Neither appears in current messaging.</p>
+
+  <hr>
+
+  <div class="section-num">02 · Questions</div>
+  <h2 id="questions">Three questions</h2>
+  <p>Three questions worth asking first.</p>
+  <p><strong>Category.</strong> ITOps, GreenOps, or Green IT? Three frames are in play. They reach different buyers. Picking one in 2026 changes who you sell to.</p>
+  <p><strong>Buyer.</strong> CIO, CFO, or Sustainability Officer? Those logos suggest several people sign off. The one who actually controls the budget is rarely the one being spoken to in current messaging.</p>
+  <p><strong>Regulation.</strong> CSRD and REEN are both running tailwinds 2024-2028. Either a deliberate choice not to lead with them, or a missed opportunity.</p>
+
+  <hr>
+
+  <div class="section-num">03 · Approach</div>
+  <h2 id="approach">An approach that fits</h2>
+  <p>The shape is familiar: clear product, enviable enterprise logos, category word still unsettled. The framework that fits maps regulatory clusters against buyer personas, against buying phases. Each row points to one decision: content, paid, analyst, SEO.</p>
+  <p>Most recent application, Aprovall (e-Attestations → Aprovall, 2024-2026): same approach produced a rebrand, entry into the Gartner 2025 Market Guide and Forrester 2026 Landscape, and €0 to €2.1M of marketing-sourced pipeline in 15 months.</p>
+
+  <footer>
+    Focus4ward · Working document · Not a proposal · <a href="mailto:miri@focus4ward.co">miri@focus4ward.co</a>
+  </footer>
+</main>
+
+<script>
+  const sections = document.querySelectorAll('h2[id]');
+  const navItems = document.querySelectorAll('.nav-item');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navItems.forEach(item => {
+          item.classList.toggle('active', item.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
