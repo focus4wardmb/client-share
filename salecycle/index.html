@@ -7,27 +7,27 @@
 <meta name="robots" content="noindex,nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Unbounded:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
 :root{
-  --ink:#13202E;
-  --body:#2A3340;
-  --muted:#677687;
-  --line:#E6EBF0;
-  --line-strong:#D0D8E0;
+  --ink:#23104A;
+  --body:#3D3450;
+  --muted:#8B8194;
+  --line:#ECE5F1;
+  --line-strong:#DBD0E5;
 
-  /* SaleCycle brand: three roles — PLACEHOLDER HEXES, swap to official SaleCycle colour chart */
-  --brand-deep:#10243F;     /* deep navy */
-  --brand-bright:#2E7DF6;   /* bright blue */
-  --brand-cta:#FF5C49;      /* coral accent */
-  --brand-cta-hover:#e64a39;
+  /* SaleCycle brand — from the official deck: deep purple + orange */
+  --brand-deep:#2D0166;     /* SaleCycle purple */
+  --brand-bright:#FE9B2C;   /* SaleCycle orange */
+  --brand-cta:#F5851C;      /* orange (action / hover base) */
+  --brand-cta-hover:#E0760F;
 
   /* Surfaces */
   --bg:#FFFFFF;
-  --paper:#F5F8FC;
-  --paper-deep:#EAF1FA;
+  --paper:#FDF7F1;          /* warm cream (deck background) */
+  --paper-deep:#F4ECF7;
 
   /* Functional (RAG) */
   --green:#3F8A5C;
@@ -40,7 +40,7 @@
 
 html{scroll-behavior:smooth;scroll-padding-top:24px}
 body{
-  font-family:'DM Sans',-apple-system,BlinkMacSystemFont,sans-serif;
+  font-family:'Poppins',-apple-system,BlinkMacSystemFont,sans-serif;
   background:var(--bg);color:var(--body);line-height:1.55;
   -webkit-font-smoothing:antialiased;font-feature-settings:'ss01','cv11';
 }
@@ -54,7 +54,8 @@ aside.sidebar{
   padding:30px 0 28px;border-right:1px solid rgba(255,255,255,.06);
 }
 .sidebar-brand{padding:0 26px 22px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:20px}
-.sidebar-brand .wordmark{font-size:22px;font-weight:800;letter-spacing:-.5px;color:#fff}
+.sidebar-brand .logo-pill{background:#fff;border-radius:10px;padding:9px 14px;display:inline-block}
+.sidebar-brand .logo-pill img{height:26px;width:auto;display:block}
 .sidebar-brand .label{margin-top:14px;font-size:10.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.55)}
 .sidebar-brand h2{margin-top:6px;font-size:15px;font-weight:600;letter-spacing:-.2px;color:#fff;line-height:1.3}
 .sidebar-brand .meta{margin-top:6px;font-size:11.5px;color:rgba(255,255,255,.45)}
@@ -319,6 +320,15 @@ footer.site-footer .fb{font-size:12px}
   .budget-cell:last-child{border-bottom:none}
 }
 @media (min-width:1025px){.menu-toggle{display:none}}
+
+/* ===== Brand display font (Unbounded) — applied last so it wins ===== */
+.cover-stack .client-name,section.hl h1.hl-title,.diag-headline,.dd-divider h2{
+  font-family:'Unbounded','Poppins',sans-serif;
+}
+.cover-stack .client-name{letter-spacing:-2px;font-weight:800}
+section.hl h1.hl-title{letter-spacing:-.6px;font-weight:700}
+.diag-headline{letter-spacing:-1px;font-weight:700}
+.dd-divider h2{letter-spacing:-.4px;font-weight:700}
 </style>
 </head>
 <body>
@@ -328,7 +338,7 @@ footer.site-footer .fb{font-size:12px}
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-brand">
       <div>
-        <div class="wordmark">SaleCycle</div>
+        <div class="logo-pill"><img src="salecycle-logo.jpg" alt="SaleCycle"></div>
         <div class="label">GTM Audit</div>
         <h2>Presented to the COMEX</h2>
         <div class="meta">June 2026 · Focus4ward</div>
