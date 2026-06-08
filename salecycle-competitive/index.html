@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,18 +22,23 @@
 }
 body{font-family:'Poppins',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--cream);color:var(--body);line-height:1.55;-webkit-font-smoothing:antialiased}
 .wrap{max-width:1240px;margin:0 auto;padding:0 28px}
-h1,h2,.eyebrow,.card h3,.stat .big,.wedge .mod h3{font-family:'Unbounded',sans-serif}
+h1,h2,.eyebrow,.card h3,.stat .big,.pillar h3{font-family:'Unbounded',sans-serif}
 header{background:var(--deep);color:#fff;padding:46px 0 42px}
 .logo{display:inline-block;margin-bottom:24px}
 .logo img{height:32px;width:auto;display:block}
 .eyebrow{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--orange);margin-bottom:14px}
 header h1{font-size:31px;font-weight:700;letter-spacing:-.5px;line-height:1.18;margin-bottom:14px}
-header p{font-size:15.5px;font-family:'Poppins',sans-serif;color:rgba(255,255,255,.74);max-width:780px;line-height:1.6}
+header p{font-size:15.5px;font-family:'Poppins',sans-serif;color:rgba(255,255,255,.74);max-width:720px;line-height:1.6}
 .meta{margin-top:20px;font-size:12px;color:rgba(255,255,255,.5)}
 section{padding:44px 0}
 h2{font-size:21px;font-weight:600;letter-spacing:-.3px;margin-bottom:6px}
 h2 .pk{color:var(--orange)}
 .sec-sub{font-size:14px;color:var(--muted);margin-bottom:22px;max-width:800px;line-height:1.6}
+.exec p{font-size:16px;line-height:1.7;color:#2c2440;max-width:880px}
+.exec p+p{margin-top:16px}
+.exec .lead{font-size:17px}
+.exec .lead strong{color:var(--ink)}
+.exec .gap{border-left:3px solid var(--orange);padding-left:18px;color:var(--ink);font-weight:500}
 .table-scroll{overflow-x:auto;border:1px solid var(--line-strong);border-radius:14px;background:#fff}
 table{border-collapse:collapse;width:100%;min-width:1080px;font-size:13px;table-layout:fixed}
 th,td{text-align:left;padding:11px 15px;border-bottom:1px solid var(--line);vertical-align:top;overflow-wrap:break-word}
@@ -51,11 +56,11 @@ tbody tr:last-child th,tbody tr:last-child td{border-bottom:none}
 .card .n{font-family:'Unbounded',sans-serif;font-size:13px;font-weight:700;color:var(--orange);letter-spacing:.5px;margin-bottom:9px}
 .card h3{font-size:15px;font-weight:600;line-height:1.3;margin-bottom:8px;color:var(--ink)}
 .card p{font-size:13.5px;color:#4a4458;line-height:1.55}
-.wedge{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.wedge .mod{background:#fff;border:1px solid var(--line-strong);border-radius:14px;padding:21px 23px}
-.wedge .mod .k{font-family:'Unbounded',sans-serif;font-size:12px;font-weight:700;color:var(--orange);letter-spacing:1px;margin-bottom:8px}
-.wedge .mod h3{font-size:15px;font-weight:600;margin-bottom:7px;color:var(--ink)}
-.wedge .mod p{font-size:13.5px;color:#4a4458;line-height:1.55}
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.pillar{background:#fff;border:1px solid var(--line-strong);border-radius:14px;padding:19px 20px}
+.pillar .k{font-family:'Unbounded',sans-serif;font-size:11px;font-weight:700;color:var(--orange);letter-spacing:.5px;margin-bottom:8px;line-height:1.3}
+.pillar p{font-size:13px;color:#4a4458;line-height:1.5}
+.layer{margin-top:16px;background:rgba(45,1,102,.04);border:1px dashed var(--line-strong);border-radius:12px;padding:15px 20px;font-size:13.5px;color:var(--ink)}
 .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
 .stat{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:20px 22px}
 .stat .big{font-size:30px;font-weight:700;color:var(--orange);letter-spacing:-.5px;line-height:1}
@@ -63,7 +68,8 @@ tbody tr:last-child th,tbody tr:last-child td{border-bottom:none}
 .sources{font-size:12px;color:var(--muted);line-height:1.75}
 footer{background:var(--deep);color:rgba(255,255,255,.55);font-size:12px;padding:26px 0;text-align:center}
 footer span{color:var(--orange)}
-@media(max-width:760px){.cards,.wedge,.stat-row{grid-template-columns:1fr}header h1{font-size:25px}}
+@media(max-width:860px){.pillars{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){.cards,.stat-row{grid-template-columns:1fr}header h1{font-size:25px}}
 </style>
 </head>
 <body>
@@ -73,47 +79,51 @@ footer span{color:var(--orange)}
     <div class="logo"><img src="salecycle-logo.png" alt="SaleCycle"></div>
     <div class="eyebrow">Competitive overview</div>
     <h1>SaleCycle + Beyable vs the personalisation &amp; CRO field</h1>
-    <p>Where the merged business sits against the personalisation engines and experimentation players it competes with: company, positioning, product, AI philosophy, pricing, reputation, and the wedge the field has left open.</p>
-    <div class="meta">Prepared by Focus4ward · June 2026 · Public-source and vendor-reported figures, sourced inline, verify before external use · Confidential</div>
+    <p>A side-by-side read of SaleCycle and Beyable against the players they compete with, and where the field has left an opening.</p>
+    <div class="meta">Prepared by Miri Blum, Focus4ward · June 2026 · Public-source and vendor-reported figures, sourced inline, verify before external use · Confidential</div>
   </div>
 </header>
 
-<section style="padding:38px 0 8px">
+<section class="exec" style="padding:38px 0 8px">
   <div class="wrap">
     <div class="eyebrow" style="color:var(--orange)">Executive summary</div>
-    <p style="font-size:16px;line-height:1.7;color:#2c2440">Personalisation has moved from a tactical A/B-testing add-on to mission-critical infrastructure: a $1.2B market in 2024 (up 26.1% that year), projected to reach $31.6B by 2030 at a 20.9% CAGR. McKinsey finds companies that get personalisation right generate 40% more revenue from it than average players, yet only 15% of CMOs believe they are on the right track. The 2026 Gartner Magic Quadrant names five Leaders (Adobe, SAP Emarsys, Insider One, CleverTap, Optimizely); they win on suite breadth and cross-channel orchestration. None of them lead with identity. That is the opening. SaleCycle, with Beyable, owns a different sentence: identity resolution plus real-time personalisation, GDPR-compliant without third-party cookies, exactly as the cookie dies. The proof exists, a reported 70% identification of anonymous traffic, Breitling at 45%, a 30% conversion uplift. The gap is not the product. It is that the merger is real on paper but not yet one brand, one story, one platform a buyer can see, and the AI visibility starting to build is converting nothing yet.</p>
+    <p class="lead"><strong>SaleCycle, with Beyable, owns a sentence no one else in this field leads with: identify the anonymous visitor, personalise in real time, and stay GDPR-compliant without third-party cookies.</strong> As the cookie disappears, that is the difference.</p>
+    <p>The market behind it is real. Gartner sizes the personalisation-engine market at $1.2 billion in 2024, rising to a projected $31.6 billion by 2030 (a 20.9% CAGR), and McKinsey finds the companies that get personalisation right earn 40% more revenue from it, while only 15% of CMOs believe they are on the right track. The 2026 Gartner Magic Quadrant names five Leaders: Adobe, SAP Emarsys, Insider One, CleverTap and Optimizely. They compete on suite breadth and cross-channel orchestration. None of them lead with identity, by which we mean identifying the anonymous visitor before personalising to them.</p>
+    <p>The proof is already there, on two fronts. The numbers: a reported 70% of anonymous traffic identified, and at Breitling (the watch brand, a SaleCycle client) 45% of previously anonymous traffic resolved, alongside a reported 30% uplift in conversions and 8% in average basket value. And the logos: SaleCycle carries names most of this field cannot, Balenciaga, Vodafone, L'Occitane, Lacoste, Breitling, which is its own form of proof.</p>
+    <p class="gap">The gap is not the product. It is that the merger is real on paper but not yet one brand, one story, one platform a buyer can see, and the AI visibility starting to build is converting nothing yet.</p>
   </div>
 </section>
 
 <section>
   <div class="wrap">
     <h2>1. The <span class="pk">field</span></h2>
-    <p class="sec-sub">Who SaleCycle is measured against. The headline of this table is scale: SaleCycle is a ~165-person business sitting opposite competitors of 470 to 1,500+ people. That sets the strategy, it cannot win on spend or headcount.</p>
+    <p class="sec-sub">Who SaleCycle is measured against. The headline of this table is scale: SaleCycle is a ~165-person, 500-brand business sitting opposite competitors of 1,000 to 2,000+ clients and far larger teams. It cannot win on spend or headcount.</p>
     <div class="table-scroll"><table>
       <thead><tr><th></th><th class="client">SaleCycle (+ Beyable)</th><th>Insider One</th><th>Bloomreach</th><th>Dynamic Yield</th><th>AB Tasty</th><th>Kameleoon</th></tr></thead>
       <tbody>
-        <tr><th>Category</th><td class="client">Identity-led CRO &amp; re-engagement</td><td>Growth Management Platform (native CDP)</td><td>Composable Personalisation Cloud</td><td>Experience OS</td><td>Experience optimisation / testing</td><td>Web experimentation</td></tr>
+        <tr><th>Category</th><td class="client">Identity-led CRO &amp; re-engagement</td><td>Agentic customer-engagement platform</td><td>AI personalisation / commerce cloud</td><td>Experience OS</td><td>Experience optimisation / testing</td><td>Experimentation &amp; personalisation</td></tr>
         <tr><th>Founded</th><td class="client">2010<span class="src">+ Beyable, acq. Jan 2026</span></td><td>2012</td><td>2009</td><td>2012</td><td>2009</td><td>2012</td></tr>
         <tr><th>Team size</th><td class="client">~165<span class="src">PitchBook</span></td><td>~1,536<span class="src">LinkedIn, Jun 2026</span></td><td>~1,148<span class="src">LinkedIn, Jun 2026</span></td><td>~470<span class="src">LinkedIn, Jun 2026</span></td><td>~346<span class="src">LinkedIn, Jun 2026</span></td><td>~237<span class="src">LinkedIn, Jun 2026</span></td></tr>
+        <tr><th>Customers (declared)</th><td class="client">500+ brands<span class="src">salecycle.com</span></td><td>2,000+ customers<span class="src">insiderone.com</span></td><td>1,400+ brands<span class="src">bloomreach.com</span></td><td>Not disclosed</td><td>1,000+ brands<span class="src">abtasty.com</span></td><td>1,000+ brands<span class="src">kameleoon.com</span></td></tr>
         <tr><th>HQ</th><td class="client">UK (+ France, Beyable)</td><td>Singapore</td><td>USA</td><td>Israel (Mastercard-owned)</td><td>France</td><td>France</td></tr>
-        <tr><th>AI engine</th><td class="client">Real-time intent &amp; product scoring</td><td>Sirius AI (generative)</td><td>Loomi AI (analytical)</td><td>AdaptML (predictive)</td><td>Predictive targeting</td><td>Auto-learning algorithm</td></tr>
-        <tr><th>2026 market standing</th><td class="client">European CRO challenger (not in the MQ)</td><td><strong>2026 Gartner MQ Leader</strong></td><td>Commerce-personalisation specialist</td><td>Enterprise retail &amp; finance</td><td>Experimentation-led player</td><td>Web-experimentation specialist</td></tr>
+        <tr><th>AI engine</th><td class="client">Real-time intent &amp; product scoring</td><td>Sirius AI (generative / agentic)</td><td>Loomi AI (analytical)</td><td>AdaptML (predictive)</td><td>Predictive targeting</td><td>Auto-learning algorithm</td></tr>
+        <tr><th>2026 market standing</th><td class="client">European CRO challenger (not in the MQ)</td><td><strong>2026 Gartner MQ Leader</strong></td><td>Commerce-personalisation specialist</td><td>Enterprise retail &amp; finance</td><td>Experimentation-led player</td><td>Experimentation specialist</td></tr>
       </tbody>
     </table></div>
-    <p class="tnote"><strong>On Gartner:</strong> the 2026 Magic Quadrant for Personalization Engines (published 3 Feb 2026, 12 vendors evaluated) names five Leaders: Adobe, SAP Emarsys, Insider One, CleverTap and Optimizely. Of the direct competitors above, only <strong>Insider One</strong> sits in the Leaders quadrant. Bloomreach and Dynamic Yield are strong commerce players but are not 2026 MQ Leaders.</p>
+    <p class="tnote"><strong>On Gartner:</strong> the 2026 Magic Quadrant for Personalization Engines (published 3 Feb 2026, 12 vendors evaluated) names five Leaders: Adobe, SAP Emarsys, Insider One, CleverTap and Optimizely. Of the direct competitors above, only <strong>Insider One</strong> sits in the Leaders quadrant. Bloomreach and Dynamic Yield are strong commerce players but are not 2026 MQ Leaders. The other descriptors in this row are characterisations of each player's focus, not Gartner rankings.</p>
   </div>
 </section>
 
 <section style="background:#fff;border-top:1px solid var(--line)">
   <div class="wrap">
     <h2>2. Positioning &amp; <span class="pk">messaging</span></h2>
-    <p class="sec-sub">The field splits into three stories: orchestration breadth (Insider), commerce depth (Bloomreach, Dynamic Yield) and experimentation (AB Tasty, Kameleoon). SaleCycle's "identity + personalisation synergy" is a fourth, and nobody else is standing on it.</p>
+    <p class="sec-sub">Two lines tell the story: what each player leads with on its website, and the shorter tagline it runs on LinkedIn. The field splits into orchestration breadth, commerce depth and experimentation. SaleCycle's identity-led line is a fourth story, and nobody else is standing on it.</p>
     <div class="table-scroll"><table>
       <thead><tr><th></th><th class="client">SaleCycle (+ Beyable)</th><th>Insider One</th><th>Bloomreach</th><th>Dynamic Yield</th><th>AB Tasty</th><th>Kameleoon</th></tr></thead>
       <tbody>
-        <tr><th>Core differentiation</th><td class="client">Identity + personalisation synergy: identify the anonymous visitor, then act in real time</td><td>Breadth in cross-channel orchestration</td><td>Depth in commerce data + CDP</td><td>Mastercard transaction data ("Element") for spend-based targeting</td><td>No-code testing speed for marketers</td><td>Algorithmic personalisation for technical teams</td></tr>
-        <tr><th>LinkedIn tagline</th><td class="client">European CRO champion (rebrand in progress)</td><td>—</td><td>"An AI platform for personalization"<span class="src">LinkedIn</span></td><td>—</td><td>"Your customer experience optimization partner"<span class="src">LinkedIn</span></td><td>—</td></tr>
-        <tr><th>Messaging by segment</th><td class="client">Forming (merger not yet one story)</td><td>By application &amp; channel</td><td>By commerce vertical</td><td>By vertical (retail, finance)</td><td>By persona (marketer vs developer)</td><td>By technical maturity</td></tr>
+        <tr><th>Website positioning</th><td class="client">"Identify 70% of anonymous visitors and generate new revenues"<span class="src">salecycle.com</span></td><td>"The leading Agentic Customer Engagement Platform"<span class="src">insiderone.com</span></td><td>"The AI Platform for Personalization"<span class="src">bloomreach.com</span></td><td>"Create experiences as unique as your customers"<span class="src">dynamicyield.com</span></td><td>"Push the limits of experience optimization with AI"<span class="src">abtasty.com</span></td><td>"Build experiments in minutes by chatting with AI"<span class="src">kameleoon.com</span></td></tr>
+        <tr><th>LinkedIn tagline</th><td class="client">—</td><td>—</td><td>"An AI platform for personalization"<span class="src">LinkedIn</span></td><td>—</td><td>"Your customer experience optimization partner"<span class="src">LinkedIn</span></td><td>"Build experiments in minutes by chatting with AI"<span class="src">LinkedIn</span></td></tr>
+        <tr><th>Core differentiation</th><td class="client">Identity + personalisation synergy: identify the anonymous visitor, then act in real time</td><td>Breadth in cross-channel, now agentic, orchestration</td><td>Depth in commerce data + CDP</td><td>Mastercard transaction data ("Element") for spend-based targeting</td><td>No-code testing speed for marketers</td><td>AI-chat experimentation for technical teams</td></tr>
       </tbody>
     </table></div>
   </div>
@@ -126,13 +136,14 @@ footer span{color:var(--orange)}
     <div class="table-scroll"><table>
       <thead><tr><th></th><th class="client">SaleCycle (+ Beyable)</th><th>Insider One</th><th>Bloomreach</th><th>Dynamic Yield</th><th>AB Tasty</th><th>Kameleoon</th></tr></thead>
       <tbody>
-        <tr><th>AI philosophy</th><td class="client">Identity → real-time intent scoring</td><td>Generative (journeys + content)</td><td>Analytical (purchase prediction)</td><td>Predictive (next-best-action)</td><td>Predictive targeting</td><td>Algorithmic auto-optimisation</td></tr>
-        <tr><th>Signature capability</th><td class="client">Identify up to ~70% of anonymous traffic, then personalise &amp; re-engage<span class="src">vendor-reported</span></td><td>Sirius auto-generates journeys via prompts</td><td>Loomi unifies catalogue + behaviour</td><td>"Element" uses Mastercard spend data</td><td>No-code WYSIWYG + 40+ targeting criteria</td><td>Hybrid client/server testing</td></tr>
+        <tr><th>AI philosophy</th><td class="client">Identity → real-time intent scoring</td><td>Generative / agentic (journeys + content)</td><td>Analytical (purchase prediction)</td><td>Predictive (next-best-action)</td><td>Predictive targeting</td><td>Algorithmic auto-optimisation</td></tr>
+        <tr><th>Signature capability</th><td class="client">Identify up to ~70% of anonymous traffic, then personalise &amp; re-engage<span class="src">vendor-reported</span></td><td>Sirius auto-generates journeys via prompts</td><td>Loomi unifies catalogue + behaviour</td><td>"Element" uses Mastercard spend data</td><td>No-code WYSIWYG + 40+ targeting criteria</td><td>Build experiments by chatting with AI</td></tr>
         <tr><th>Channels</th><td class="client">Email, SMS, RCS, WhatsApp + on-site</td><td><strong>12+</strong> (Social, WhatsApp, push, SMS…)</td><td>Web, Email, SMS</td><td>Web, app, email, kiosk</td><td>On-site (web)</td><td>On-site + SDKs</td></tr>
         <tr><th>Implementation</th><td class="client">All-inclusive service model</td><td>2–8 weeks (template-driven)</td><td>2–4 months (deep architecture)</td><td>Enterprise (dedicated team)</td><td>Fast (marketer self-serve)</td><td>30-day free trial for POC</td></tr>
-        <tr><th>Compliance moat</th><td class="client"><strong>GDPR-native, no third-party cookies, ISO 27001:2022</strong></td><td>Standard</td><td>Standard</td><td>Standard</td><td>Standard</td><td>Standard</td></tr>
+        <tr><th>Privacy &amp; compliance</th><td class="client"><strong>100% GDPR, cookieless identity, ISO 27001:2022</strong> — privacy as positioning</td><td>GDPR, ISO 27001, ePrivacy</td><td>Privacy controls (DPO, data control); GDPR not front-of-house</td><td>GDPR, CCPA, SOC 2, ISO 27001 (badged)</td><td>GDPR-compliant (dedicated page)</td><td>GDPR, CCPA, HIPAA (consent management)</td></tr>
       </tbody>
     </table></div>
+    <p class="tnote"><strong>On privacy:</strong> most of the field claims GDPR compliance, it is table stakes, not a differentiator on its own. The European-rooted players (SaleCycle, AB Tasty, Kameleoon) push privacy hardest in their messaging. SaleCycle's real edge is not GDPR alone but <strong>cookieless identity resolution</strong>, identifying visitors without third-party cookies, which the others do not lead with.</p>
   </div>
 </section>
 
@@ -159,7 +170,7 @@ footer span{color:var(--orange)}
       <thead><tr><th></th><th class="client">SaleCycle (+ Beyable)</th><th>Insider One</th><th>Bloomreach</th><th>Dynamic Yield</th><th>AB Tasty</th><th>Kameleoon</th></tr></thead>
       <tbody>
         <tr><th>G2 rating</th><td class="client">Not captured</td><td>#1 in <strong>11 categories</strong><span class="src">G2</span></td><td><strong>4.6 / 5</strong> · 700+ reviews<span class="src">G2</span></td><td><strong>4.5 / 5</strong> · ~150 reviews<span class="src">G2</span></td><td>Not captured</td><td>Not captured</td></tr>
-        <tr><th>Reputation signal</th><td class="client">Named brand case studies (Breitling); Beyable on Trustpilot</td><td>Implementation speed; labour-saving AI</td><td>Highest review volume in category</td><td>"Gold standard" for retail / finance</td><td>Established experimentation brand</td><td>Accessible POC, lighter partner network</td></tr>
+        <tr><th>Reputation signal</th><td class="client">Marquee logos (Balenciaga, Vodafone, L'Occitane, Breitling, Lacoste); Beyable on Trustpilot</td><td>Implementation speed; labour-saving AI</td><td>Highest review volume in category</td><td>"Gold standard" for retail / finance</td><td>Established experimentation brand</td><td>Accessible POC, lighter partner network</td></tr>
       </tbody>
     </table></div>
   </div>
@@ -167,13 +178,15 @@ footer span{color:var(--orange)}
 
 <section style="background:#fff;border-top:1px solid var(--line)">
   <div class="wrap">
-    <h2>6. The <span class="pk">wedge</span>: one technology, three modules</h2>
-    <p class="sec-sub">The SaleCycle + Beyable thesis in one line: identity without personalisation is wasted, personalisation without identity is guesswork. The merged platform closes that loop, and the identity layer is the hard part competitors cannot easily copy.</p>
-    <div class="wedge">
-      <div class="mod"><div class="k">REACH</div><h3>Identify</h3><p>Gather audience data in full GDPR compliance and identify visitors without third-party cookies. The entry point, and the technical moat in a cookieless era.</p></div>
-      <div class="mod"><div class="k">RETAIN</div><h3>Personalise on-site</h3><p>Real-time behavioural scoring while the visitor is still on the page, adapting the experience to the individual the moment it matters (the Beyable layer).</p></div>
-      <div class="mod"><div class="k">RE-ENGAGE</div><h3>Recover off-site</h3><p>Win back lost sales and build loyalty through Email, SMS, RCS and WhatsApp after the visitor leaves (the original SaleCycle strength).</p></div>
+    <h2>6. The product story, <span class="pk">regrouped</span></h2>
+    <p class="sec-sub"><strong>Direction in development.</strong> Rather than the action-verb framing (Reach / Retain / Re-engage), which reads as dated and is hard for a buyer to map to a need, the stronger structure groups the portfolio around what it does for the customer, with channels treated as a separate layer.</p>
+    <div class="pillars">
+      <div class="pillar"><div class="k">INSIGHTS HUB</div><p>The data and identity layer: identify the anonymous visitor and read intent in real time. The foundation everything else runs on.</p></div>
+      <div class="pillar"><div class="k">CUSTOMER JOURNEY OPTIMISATION</div><p>Orchestrate the visitor's path across touchpoints, on-site and off, as one connected journey rather than disconnected tactics.</p></div>
+      <div class="pillar"><div class="k">PERSONALISATION ENGINE</div><p>Adapt the experience to the individual in real time: content, recommendations and layout tuned to live intent.</p></div>
+      <div class="pillar"><div class="k">CONVERSATION OPTIMISATION</div><p>Turn intent into revenue through conversational re-engagement after the visitor leaves.</p></div>
     </div>
+    <div class="layer"><strong>Channels</strong> (Email, SMS, RCS, WhatsApp) sit as a separate layer beneath all four, the delivery mechanism, not the organising principle.</div>
   </div>
 </section>
 
@@ -183,14 +196,14 @@ footer span{color:var(--orange)}
     <p class="sec-sub" style="color:rgba(255,255,255,.72)">Six reads that set where SaleCycle's marketing energy should go.</p>
     <div class="cards">
       <div class="card"><div class="n">01</div><h3>The Leaders compete on the wrong axis for you</h3><p>The five 2026 Gartner Leaders win on suite breadth and cross-channel orchestration. None of them lead with identity resolution. SaleCycle's category sits adjacent to theirs, not inside it, so this is a positioning fight, not a feature arms race.</p></div>
-      <div class="card"><div class="n">02</div><h3>Identity + cookieless is the real moat</h3><p>Reach identifies a reported ~70% of anonymous traffic, GDPR-native, no third-party cookies. As the cookie dies, that is a durable advantage the Leaders don't put first. It should be the headline, not a feature buried in module three.</p></div>
-      <div class="card"><div class="n">03</div><h3>The proof exists but isn't packaged</h3><p>Breitling at 45% identity resolution, a 30% conversion uplift, 8% higher basket value. Strong, board-ready numbers, currently scattered across decks rather than front-and-centre as the reason to believe.</p></div>
+      <div class="card"><div class="n">02</div><h3>Identity + cookieless is the real advantage</h3><p>SaleCycle identifies a reported ~70% of anonymous traffic, GDPR-native, no third-party cookies. Everyone claims GDPR; almost no one leads with cookieless identity. As the cookie dies, that should be the headline, not a line buried deep in the product.</p></div>
+      <div class="card"><div class="n">03</div><h3>The proof exists on two fronts</h3><p>The numbers (Breitling at 45% identity resolution, +30% conversion, +8% basket value) and the logos (Balenciaga, Vodafone, L'Occitane, Lacoste). Names most of this field cannot carry. Both are scattered across decks rather than front-and-centre.</p></div>
       <div class="card"><div class="n">04</div><h3>AI visibility is trending up, converting zero</h3><p>From January to May, AI-surfaced visits rose on a positive trend but none converted to a lead of any kind. The presence is forming; the capture mechanism behind it isn't built yet. That's a system gap, not a content gap.</p></div>
       <div class="card"><div class="n">05</div><h3>The merger is real on paper, not in the market</h3><p>Competitors present one coherent platform. SaleCycle + Beyable still reads as two: one brand, one story, one platform a buyer can see don't fully exist yet. Closing that is the highest-leverage move before any channel spend.</p></div>
-      <div class="card"><div class="n">06</div><h3>You can't out-staff them, so out-position them</h3><p>SaleCycle is ~165 people against Insider's ~1,536 and Bloomreach's ~1,148. The win is the identity wedge plus the service-inclusive TCO story, packaged sharply and run lean with AI doing the heavy lifting.</p></div>
+      <div class="card"><div class="n">06</div><h3>You can't out-staff them, so out-position them</h3><p>SaleCycle is ~165 people and 500 brands against Insider's ~1,536 people and 2,000+ clients. The win is the identity advantage plus the service-inclusive cost story, packaged sharply and run lean with AI doing the heavy lifting.</p></div>
     </div>
     <div class="stat-row">
-      <div class="stat"><div class="big">~70%</div><div class="lbl">of anonymous traffic identified by Reach <span style="opacity:.7">(vendor-reported)</span></div></div>
+      <div class="stat"><div class="big">~70%</div><div class="lbl">of anonymous traffic identified by SaleCycle <span style="opacity:.7">(vendor-reported)</span></div></div>
       <div class="stat"><div class="big">+40%</div><div class="lbl">more revenue for companies that get personalisation right <span style="opacity:.7">(McKinsey)</span></div></div>
       <div class="stat"><div class="big">$31.6B</div><div class="lbl">projected 2030 personalisation-engine market, from $1.2B in 2024 <span style="opacity:.7">(Gartner)</span></div></div>
     </div>
@@ -201,18 +214,19 @@ footer span{color:var(--orange)}
   <div class="wrap">
     <h2>Sources</h2>
     <p class="sources">
-      <strong>Market sizing &amp; Gartner Leaders:</strong> 2026 Gartner Magic Quadrant for Personalization Engines (published 3 February 2026; 12 vendors evaluated; $1.2B 2024 market at 26.1% growth, $31.6B projected by 2030 at 20.9% CAGR). Leaders quadrant (Adobe, SAP Emarsys, Insider One, CleverTap, Optimizely) confirmed via the vendors' own 2026 MQ press releases.
-      <strong>Revenue impact:</strong> McKinsey personalisation research (40% more revenue from personalisation; 15% of CMOs confident they are on the right track).
-      <strong>Company data</strong> (founded, team size, HQ): LinkedIn company pages, June 2026; SaleCycle facts via PitchBook / Wikipedia (founded 2010, ~165 employees, UK HQ; Beyable acquired Jan 2026).
-      <strong>Reviews:</strong> G2 (Bloomreach 4.6/5 with 700+ reviews; Dynamic Yield 4.5/5 with ~150 reviews; Insider #1 across 11 categories).
+      <strong>Market sizing &amp; Gartner Leaders:</strong> 2026 Gartner Magic Quadrant for Personalization Engines (published 3 February 2026; 12 vendors evaluated; $1.2B 2024 market, $31.6B projected by 2030 at 20.9% CAGR). Leaders quadrant (Adobe, SAP Emarsys, Insider One, CleverTap, Optimizely) confirmed via the vendors' own 2026 MQ press releases.
+      <strong>Revenue impact:</strong> McKinsey personalisation research (40% more revenue; 15% of CMOs confident).
+      <strong>Company data</strong> (founded, team size, HQ): LinkedIn company pages, June 2026; SaleCycle facts via PitchBook (founded 2010, ~165 employees, UK HQ; Beyable acquired Jan 2026).
+      <strong>Website positioning &amp; declared customer counts:</strong> each vendor's own homepage, read June 2026 (SaleCycle 500+ brands; Insider One 2,000+; Bloomreach 1,400+; AB Tasty and Kameleoon 1,000+; Dynamic Yield not disclosed).
+      <strong>Reviews:</strong> G2 (Bloomreach 4.6/5, 700+ reviews; Dynamic Yield 4.5/5, ~150 reviews; Insider #1 across 11 categories).
       <strong>Pricing:</strong> indicative ranges from public / vendor sources, directional only.
       <strong>SaleCycle + Beyable performance metrics</strong> (~70% identity resolution, Breitling 45%, +30% conversion, +8% average basket value, GDPR / ISO 27001:2022): vendor-reported by SaleCycle / Beyable, confirm before external use.
-      <strong>AI visibility</strong> (Jan–May 2026, no confirmed lead conversions): SaleCycle first-party analytics. All figures public-source or vendor estimates, verify before external use.
+      <strong>AI visibility</strong> (Jan–May 2026, no confirmed lead conversions): SaleCycle first-party analytics. Verify all figures before external use.
     </p>
   </div>
 </section>
 
-<footer><div class="wrap">Prepared by <span>Focus4ward</span> for SaleCycle · Confidential · June 2026</div></footer>
+<footer><div class="wrap">Prepared by <span>Miri Blum, Focus4ward</span> for SaleCycle · Confidential · June 2026</div></footer>
 
 </body>
 </html>
