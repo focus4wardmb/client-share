@@ -355,6 +355,21 @@ section.dd.alt .comp-review .cr-stat{background:var(--bg)}
 .comp-review .cr-sources{font-size:11.5px;color:var(--muted);line-height:1.7;margin-top:6px}
 .comp-review .cr-sources strong{color:var(--ink)}
 @media (max-width:1024px){.comp-review .cr-stats{grid-template-columns:1fr}}
+
+/* ===== Scorecard ===== */
+.scorecard{margin-top:6px}
+.sc-head{display:grid;grid-template-columns:minmax(190px,1fr) 1.7fr;gap:0 24px;margin-bottom:10px}
+.sc-zones{display:flex;justify-content:space-between;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+.sc-row{display:grid;grid-template-columns:minmax(190px,1fr) 1.7fr;gap:0 24px;align-items:center;padding:8px 0;border-top:1px solid var(--line)}
+.sc-label{font-size:14px;font-weight:600;color:var(--ink);line-height:1.25}
+.sc-label .sc-rank{font-size:11px;font-weight:700;color:var(--brand-bright);margin-right:9px}
+.sc-label small{display:block;font-size:11px;font-weight:400;color:var(--muted);margin-top:1px;padding-left:25px}
+.sc-track{position:relative;height:10px;border-radius:6px;background:linear-gradient(to right,#F4D9D4 0%,#F4D9D4 38%,#F7EBCC 38%,#F7EBCC 67%,#D9E9DF 67%,#D9E9DF 100%)}
+.sc-dot{position:absolute;top:50%;width:16px;height:16px;border-radius:50%;transform:translate(-50%,-50%);border:3px solid #fff;box-shadow:0 1px 4px rgba(35,16,74,.22)}
+.sc-dot.red{background:var(--red)}
+.sc-dot.amber{background:var(--amber)}
+.sc-dot.green{background:var(--green)}
+@media(max-width:1024px){.sc-row,.sc-head{grid-template-columns:1fr;gap:6px}.sc-label small{padding-left:0}}
 </style>
 </head>
 <body>
@@ -378,6 +393,7 @@ section.dd.alt .comp-review .cr-stat{background:var(--bg)}
         <a href="#cover"><span class="num">01</span>Cover</a>
         <a href="#reframe"><span class="num">02</span>Not a marketing audit</a>
         <a href="#context"><span class="num">03</span>Context at a glance</a>
+        <a href="#scorecard"><span class="num"></span>Scorecard</a>
         <a href="#voices"><span class="num">04</span>What I heard</a>
         <a href="#finding"><span class="num">05</span>The finding</a>
         <a href="#stateofplay"><span class="num">06</span>State of play</a>
@@ -446,6 +462,59 @@ section.dd.alt .comp-review .cr-stat{background:var(--bg)}
         </div>
         <p class="hl-lede">The market is real and growing: CRO and on-site personalization, with identity resolution and GDPR-native data as a European edge. The players are well-defined: AB Tasty, Kameleoon, Insider, Bloomreach, Dynamic Yield. SaleCycle plus BEYABLE should be a credible European champion. Right now the numbers point the other way.</p>
         <a class="see-analysis" href="#dd-market">See the full market &amp; competitive review</a>
+      </div>
+    </section>
+
+    <!-- === HL: Scorecard === -->
+    <section class="hl" id="scorecard">
+      <div class="wrap">
+        <div class="eyebrow">The scorecard</div>
+        <h1 class="hl-title">Ten things winning companies get right. <em>Here is where SaleCycle stands.</em></h1>
+        <p class="hl-lede">In order of importance. The marker shows where SaleCycle sits today on each, below par, at par, or above.</p>
+        <div class="scorecard">
+          <div class="sc-head"><div></div><div class="sc-zones"><span>Below par</span><span>At par</span><span>Above</span></div></div>
+          <div class="sc-row">
+            <div class="sc-label"><span class="sc-rank">01</span>Positioning &amp; story<small>how the company is understood, beyond colours and logos</small></div>
+            <div class="sc-track"><span class="sc-dot red" style="left:25%"></span></div>
+          </div>
+          <div class="sc-row">
+            <div class="sc-label"><span class="sc-rank">02</span>Website &amp; conversion<small>the experience that turns a visit into a lead</small></div>
+            <div class="sc-track"><span class="sc-dot red" style="left:11%"></span></div>
+          </div>
+          <div class="sc-row">
+            <div class="sc-label"><span class="sc-rank">03</span>Lead generation &amp; efficiency<small>volume and cost of leads across channels</small></div>
+            <div class="sc-track"><span class="sc-dot red" style="left:23%"></span></div>
+          </div>
+          <div class="sc-row">
+            <div class="sc-label"><span class="sc-rank">04</span>Search visibility<small>being found on Google and in AI answers (SEO / GEO)</small></div>
+            <div class="sc-track"><span class="sc-dot red" style="left:21%"></span></div>
+          </div>
+          <div class="sc-row">
+            <div class="sc-label"><span class="sc-rank">05</span>Lead management<small>capture, scoring, handover, nurture</small></div>
+            <div class="sc-track"><span class="sc-dot amber" style="left:43%"></span></div>
+          </div>
+          <div class="sc-row">
+            <div class="sc-label"><span class="sc-rank">06</span>Content<small>case studies and thought leadership: good, not enough</small></div>
+            <div class="sc-track"><span class="sc-dot amber" style="left:54%"></span></div>
+          </div>
+          <div class="sc-row">
+            <div class="sc-label"><span class="sc-rank">07</span>Product marketing<small>packaging and naming the offer</small></div>
+            <div class="sc-track"><span class="sc-dot amber" style="left:41%"></span></div>
+          </div>
+          <div class="sc-row">
+            <div class="sc-label"><span class="sc-rank">08</span>Sales enablement<small>the decks and materials sales runs on</small></div>
+            <div class="sc-track"><span class="sc-dot amber" style="left:48%"></span></div>
+          </div>
+          <div class="sc-row">
+            <div class="sc-label"><span class="sc-rank">09</span>Martech &amp; data<small>the tools are there; no single source of truth</small></div>
+            <div class="sc-track"><span class="sc-dot green" style="left:70%"></span></div>
+          </div>
+          <div class="sc-row">
+            <div class="sc-label"><span class="sc-rank">10</span>AI<small>using AI as leverage across the funnel</small></div>
+            <div class="sc-track"><span class="sc-dot amber" style="left:56%"></span></div>
+          </div>
+        </div>
+        <p class="timeline-closer">The pattern that matters: the most important areas, story, website, lead generation, are where SaleCycle is weakest. The tools and the AI are already in place. The fix is sequencing, not spend.</p>
       </div>
     </section>
 
