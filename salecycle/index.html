@@ -392,6 +392,10 @@ section.dd.alt .comp-review .cr-stat{background:var(--bg)}
 .dd-shots img{display:block;width:100%;height:auto}
 .dd-shots figcaption{font-size:11px;color:var(--muted);padding:8px 10px;border-top:1px solid var(--line)}
 @media(max-width:1024px){.dd-shots{grid-template-columns:1fr}}
+.kpi-top{list-style:none;counter-reset:k;display:grid;grid-template-columns:1fr 1fr;gap:7px 24px;margin:8px 0 8px}
+.kpi-top li{counter-increment:k;font-size:14px;color:var(--ink);padding-left:26px;position:relative;line-height:1.4}
+.kpi-top li::before{content:counter(k);position:absolute;left:0;top:1px;font-family:'Unbounded','Poppins',sans-serif;font-weight:700;color:var(--brand-bright);font-size:12px}
+@media(max-width:1024px){.kpi-top{grid-template-columns:1fr}}
 @media(max-width:1024px){.lossrow{grid-template-columns:150px 1fr 44px;font-size:12px}}
 </style>
 </head>
@@ -420,9 +424,9 @@ section.dd.alt .comp-review .cr-stat{background:var(--bg)}
         <a href="#voices"><span class="num">05</span>What I heard</a>
         <a href="#customers"><span class="num">06</span>What customers say</a>
         <a href="#finding"><span class="num">07</span>The finding</a>
-        <a href="#warnings"><span class="num">08</span>Three key takeaways</a>
-        <a href="#forward"><span class="num">09</span>The way forward</a>
-        <a href="#rebrand"><span class="num">10</span>The rename question</a>
+        <a href="#forward"><span class="num">08</span>The way forward</a>
+        <a href="#rebrand"><span class="num">09</span>The rename question</a>
+        <a href="#warnings"><span class="num">10</span>Three key takeaways</a>
       </div>
 
       <div class="nav-group">
@@ -432,9 +436,7 @@ section.dd.alt .comp-review .cr-stat{background:var(--bg)}
         <a href="#dd-loss"><span class="num">C</span>Why deals are lost</a>
         <a href="#dd-website"><span class="num">D</span>Website &amp; demand engine</a>
         <a href="#dd-positioning"><span class="num">E</span>Positioning &amp; packaging</a>
-        <a href="#dd-rename"><span class="num">F</span>The rename question</a>
-        <a href="#dd-kpis"><span class="num">G</span>KPIs &amp; budget</a>
-        <a href="#dd-org"><span class="num">H</span>Org &amp; capacity</a>
+        <a href="#dd-kpis"><span class="num">F</span>KPIs to track</a>
       </div>
     </nav>
   </aside>
@@ -465,7 +467,7 @@ section.dd.alt .comp-review .cr-stat{background:var(--bg)}
         <p class="hl-lede">Marketing cannot fix this alone, and it did not cause it alone. What you are looking at sits across three functions that have to move together. Where they pull apart, the business itself is at risk.</p>
         <div class="tri-grid">
           <div class="tri-card"><div class="tn">Marketing</div><h3>The story &amp; the engine</h3><p>Positioning, brand, demand generation, product marketing, sales enablement.</p></div>
-          <div class="tri-card"><div class="tn">Product</div><h3>The product and roadmap</h3><p>Architecture, roadmap, the merged platform, and building what the market actually wants and will pay for.</p></div>
+          <div class="tri-card"><div class="tn">Product</div><h3>The product and roadmap</h3><p>Roadmap, the merged platform, and building what the market actually wants and will pay for.</p></div>
           <div class="tri-card"><div class="tn">Sales</div><h3>New logo + growth</h3><p>New business, spotting the growth opportunities, and cross-selling and up-selling the base you already have.</p></div>
         </div>
         <p class="diag-closer">None of the three works in a vacuum. Most of what follows is a failure of the alliance between them, not of any one of them.</p>
@@ -554,7 +556,6 @@ section.dd.alt .comp-review .cr-stat{background:var(--bg)}
           <div class="voice"><span class="tag">Market</span><div class="q">We're behind on prompt-based optimization, and the market is asking for it.</div></div>
           <div class="voice"><span class="tag">Process</span><div class="q">We gather data manually across different systems, Drive, Notion. Centralize and automate it and the efficiency gain is significant.</div></div>
         </div>
-        <a class="see-analysis" href="#dd-org">See the org, process &amp; data deep dive</a>
       </div>
     </section>
 
@@ -566,15 +567,15 @@ section.dd.alt .comp-review .cr-stat{background:var(--bg)}
         <p class="hl-lede">From 27 recorded sales and customer-success calls. Three patterns repeat.</p>
         <div class="three-col">
           <div class="col"><h3>The product works</h3><ul><li>Results in their words: 57% open, +58% conversion, double-digit uplift</li><li>Satisfaction holds even where budgets are frozen</li></ul></div>
-          <div class="col"><h3>They describe the moat, you don't</h3><ul><li>They name the edge: identify the anonymous visitor, then personalise</li><li><strong>Identity without personalisation is wasted; personalisation without identity is guesswork</strong></li><li>In their mouths, never on the site</li></ul></div>
-          <div class="col"><h3>They rarely leave for a rival</h3><ul><li>The AA went in-house to cut cost, not to a competitor</li><li>Competitor wins are only third, 6.8%</li><li>Rarely the product or a rival, they go cold</li></ul></div>
+          <div class="col"><h3>They describe the moat, you don't</h3><ul><li>They name the edge themselves: spot the anonymous visitor, then personalise and re-engage</li><li>Cookieless and GDPR-safe, the part an in-house build can't replicate</li><li>It's in their mouths, never on the site</li></ul></div>
+          <div class="col"><h3>They rarely leave for a rival</h3><ul><li>The AA went in-house to cut cost, not to a competitor</li><li>Competitor wins are only third, 6.8%</li></ul></div>
         </div>
         <div class="voices-grid" style="grid-template-columns:1fr 1fr 1fr;margin-top:16px">
           <div class="voice"><span class="tag">Churn call · The AA</span><div class="q">It's purely in-housing the process instead of keeping it with you. The business saw a way to save costs. We're not going to a different provider.</div></div>
           <div class="voice"><span class="tag">QBR · Air Austral (from FR)</span><div class="q">We know you support us. The solutions you offer are always win-win. You win, we win.</div></div>
           <div class="voice"><span class="tag">Account review · Balenciaga</span><div class="q">We pay 8K a month and only use cart retargeting.</div></div>
         </div>
-        <p class="timeline-closer">It is not that nothing is wrong: budgets are tight, some clients go in-house, and the product is not always at the pace of innovation. But the opportunity is bigger, and three things are ours to fix, the story, the speed, and how the value is packaged.</p>
+        <p class="timeline-closer" style="margin-top:12px">It is not that everything is in our favour: budgets are tight, some clients go in-house, and the product is not always at the pace of innovation. But the opportunity is bigger, and three things are ours to fix, the story, the speed, and how the value is packaged.</p>
       </div>
     </section>
 
@@ -593,24 +594,10 @@ section.dd.alt .comp-review .cr-stat{background:var(--bg)}
       </div>
     </section>
 
-    <!-- === HL 08: Three warnings === -->
-    <section class="hl alt" id="warnings">
-      <div class="wrap">
-        <div class="eyebrow">08 · Three key takeaways</div>
-        <h1 class="hl-title">If you remember three things, <em>remember these.</em></h1>
-        <div class="diag-beats">
-          <div class="diag-beat"><h4>1 · Story</h4><p>There is no single story yet. SaleCycle has one, BEYABLE has one, the market holds neither. No agreed answer to who the company is or what it sells.</p></div>
-          <div class="diag-beat"><h4>2 · Visibility</h4><p>Even a strong story is invisible today. Traffic has collapsed, search is near-zero, social and LinkedIn presence is thin. The story is not reaching the market.</p></div>
-          <div class="diag-beat"><h4>3 · Lead generation</h4><p>The funnel barely converts. Paid spend brings traffic that does not become leads, and the handover to sales is broken. The engine is not generating.</p></div>
-        </div>
-        <p class="diag-closer">All three are fixable, in this order: get the story right, make it visible, then turn that visibility into leads.</p>
-      </div>
-    </section>
-
     <!-- === HL 09: The way forward === -->
     <section class="hl" id="forward" style="min-height:auto;padding:40px 0">
       <div class="wrap">
-        <div class="eyebrow">09 · The way forward</div>
+        <div class="eyebrow">08 · The way forward</div>
         <h1 class="hl-title">Do it in order. <em>Strategy before channels.</em></h1>
         <p class="hl-lede">There is real motivation and real effort in this team. It isn't compounding because the work is happening out of order. Keep selling what is true and defensible: <strong>heritage, international reach, trust, and GDPR-native identity resolution.</strong></p>
         <div class="timeline">
@@ -625,14 +612,28 @@ section.dd.alt .comp-review .cr-stat{background:var(--bg)}
     <!-- === HL 10: What success looks like === -->
     <section class="hl alt" id="rebrand">
       <div class="wrap">
-        <div class="eyebrow">10 · The rename question</div>
+        <div class="eyebrow">09 · The rename question</div>
         <h1 class="hl-title">Refresh the brand, or start fresh? <em>I'd start fresh.</em></h1>
         <p class="hl-lede">The merger left two confusing brands and a market that still sees the old SaleCycle. The board's real decision: refresh the name, or rename into one new company.</p>
         <div class="three-col" style="grid-template-columns:1fr 1fr">
-          <div class="col"><h3>Keep &amp; refresh "SaleCycle"</h3><ul><li>16 years of heritage and blue-chip trust, kept</li><li>But it still says who we were, not who we are</li><li>And you spend years re-educating the market: "we're not who you think"</li></ul></div>
+          <div class="col"><h3>Keep &amp; refresh "SaleCycle"</h3><ul><li>16 years of heritage and blue-chip trust, kept</li><li>Operationally simpler, a refresh, not a rename project</li><li>But it still says who we were, and you keep re-educating: "we're not who you think"</li></ul></div>
           <div class="col"><h3>Rename, a clean slate</h3><ul><li>One new company, erasing the two confusing brands in one move</li><li>Not just a new name, a new category we can claim</li><li>SEO is so low today that a rename loses almost no equity</li></ul></div>
         </div>
-        <p class="diag-closer">The merger instability is itself the argument: a rename makes this one company, not two. Done right it is a category play, build the product, rebrand in parallel, and launch claiming new ground. And turning the page costs less than years of re-educating the market on "we're not who you think" (the Sendinblue to Brevo lesson). My lean is to rename. The board owns the call.</p>
+        <p class="diag-closer">The merger instability is itself the argument: a rename makes this one company, not two. Done right it is a category play, build the product, rebrand in parallel, and launch claiming new ground. And turning the page costs less than years of re-educating the market on "we're not who you think" (the Sendinblue to Brevo lesson). My lean is to rename. Your call.</p>
+      </div>
+    </section>
+
+    <!-- === HL 08: Three warnings === -->
+    <section class="hl alt" id="warnings">
+      <div class="wrap">
+        <div class="eyebrow">10 · Three key takeaways</div>
+        <h1 class="hl-title">If you remember three things, <em>remember these.</em></h1>
+        <div class="diag-beats">
+          <div class="diag-beat"><h4>1 · Story</h4><p>There is no single story yet. SaleCycle has one, BEYABLE has one, the market holds neither. No agreed answer to who the company is or what it sells.</p></div>
+          <div class="diag-beat"><h4>2 · Visibility</h4><p>Even a strong story is invisible today. Traffic has collapsed, search is near-zero, social and LinkedIn presence is thin. The story is not reaching the market.</p></div>
+          <div class="diag-beat"><h4>3 · Lead generation</h4><p>The funnel barely converts. Paid spend brings traffic that does not become leads, and the handover to sales is broken. The engine is not generating.</p></div>
+        </div>
+        <p class="diag-closer">All three are fixable, in this order: get the story right, make it visible, then turn that visibility into leads.</p>
       </div>
     </section>
 
@@ -819,8 +820,8 @@ section.dd.alt .comp-review .cr-stat{background:var(--bg)}
           </table></div>
           <p class="tnote"><strong>The read:</strong> the highest-spend channels, paid search and paid social, sit at the bottom for conversion. The site takes the click and loses the lead. Source: HubSpot visits + Bronze / Silver / Gold leads by latest source.</p>
 
-          <h3 class="cr-h">The visitors who land are <span class="pk">engaged</span></h3>
-          <p class="cr-sub">Q1 2026 engagement rate 75.8% (up from Q1 2025), average engagement time 2m 22s (up 233%). The few who arrive are interested. The problem is volume and the broken path to becoming a lead, not the content itself.</p>
+          <h3 class="cr-h">Engagement held, but on far <span class="pk">fewer visitors</span></h3>
+          <p class="cr-sub">Q1 2026 engagement rate was 75.8% and average time 2m 22s, both up year on year, but on a far smaller audience, so read it with care. The clearer issue is volume and the broken path from visit to lead.</p>
           <div class="scroll-table"><table class="t">
             <thead><tr><th>Channel · Q1 2026</th><th>Bounce rate</th><th>Engagement rate</th></tr></thead>
             <tbody>
@@ -832,9 +833,9 @@ section.dd.alt .comp-review .cr-stat{background:var(--bg)}
           </table></div>
           <p class="tnote">GA4, Q1 2026. Cross-network (paid / performance max) and organic search had the lowest bounce; email the highest.</p>
           <div class="dd-shots">
+            <figure><img src="img/traffic-chart-1.png" alt="GA4 sessions and active users, Q1 YoY"><figcaption>GA4 · sessions &amp; active users, Q1 YoY (−85% / −87%)</figcaption></figure>
             <figure><img src="img/traffic-chart-2.png" alt="GA4 daily sessions, Q1 2026 vs 2025"><figcaption>GA4 · daily sessions, Q1 2026 vs 2025</figcaption></figure>
             <figure><img src="img/sources.png" alt="GA4 top session sources"><figcaption>GA4 · top session sources, Jan–May</figcaption></figure>
-            <figure><img src="img/engagement-by-source.png" alt="GA4 engagement by channel"><figcaption>GA4 · engagement by channel</figcaption></figure>
           </div>
         </div>
       </div>
@@ -850,42 +851,28 @@ section.dd.alt .comp-review .cr-stat{background:var(--bg)}
       </div>
     </section>
 
-    <section class="dd" id="dd-rename">
-      <div class="wrap">
-        <a href="#forward" class="back-link">Back to the way forward</a>
-        <div class="eyebrow">Deep dive F</div>
-        <h2>The rename question</h2>
-        <p class="sub">A genuine board decision, not a foregone conclusion. The heritage you'd position on is the same heritage a rename throws away.</p>
-        <div class="three-col">
-          <div class="col"><h3>The case for</h3><ul><li>Clean slate, a clear "new us"</li><li>Easier internal + external education</li><li>Resolves the two-brand confusion at the root</li></ul></div>
-          <div class="col"><h3>The case against</h3><ul><li>16 years of SaleCycle heritage is real equity in Europe</li><li>Rename without tech change risks reading as brand-washing</li><li>The differentiation bet leans on that heritage</li></ul></div>
-          <div class="col"><h3>Recommendation</h3><ul><li>[TO FILL: Miri's call — present with a clear lean]</li><li>Short-term: fix the site on the current brand</li><li>Rename, if chosen, is a deliberate later phase</li></ul></div>
-        </div>
-      </div>
-    </section>
-
     <section class="dd" id="dd-kpis">
       <div class="wrap">
         <a href="#forward" class="back-link">Back to the way forward</a>
-        <div class="eyebrow">Deep dive G</div>
-        <h2>KPIs &amp; budget split</h2>
-        <p class="sub">Success criteria for the 3.5-month sprint and a rough allocation of effort, for the CFO.</p>
-        <div class="budget-split">
-          <div class="budget-cell"><div class="pct">[ ]%</div><div class="pl">Foundation</div></div>
-          <div class="budget-cell"><div class="pct">[ ]%</div><div class="pl">Demand engine</div></div>
-          <div class="budget-cell"><div class="pct">[ ]%</div><div class="pl">Enablement + AI</div></div>
+        <div class="eyebrow">Deep dive F</div>
+        <h2>KPIs to track</h2>
+        <p class="sub">The KPIs a healthy marketing function reports on, the set I would put in place. Targets follow once the foundation is rebuilt.</p>
+        <div class="comp-review">
+          <h3 class="cr-h">The five that matter <span class="pk">most</span></h3>
+          <p class="cr-sub">In order of importance.</p>
+          <ol class="kpi-top">
+            <li>Marketing pipeline, generated and influenced</li>
+            <li>Marketing leads to SQLs</li>
+            <li>Website contribution to pipeline (organic)</li>
+            <li>Paid performance and CAC</li>
+            <li>Visibility: traffic, analysts, G2</li>
+          </ol>
+          <h3 class="cr-h">The reporting <span class="pk">cadence</span></h3>
+          <div class="three-col" style="grid-template-columns:1fr 1fr">
+            <div class="col"><h3>Monthly · optimise &amp; learn</h3><ul><li>Pipeline generated, influenced, % touched, revenue</li><li>Lead quality: by sector and size, MQL to SQL, time to convert, CPL then CAC</li><li>Campaign &amp; content effectiveness; webinars and events to opportunities</li><li>Website: organic traffic, engagement, sources, conversion, SEO, AI visibility</li></ul></div>
+            <div class="col"><h3>Quarterly · impact &amp; strategy</h3><ul><li>New-logo revenue from marketing, % of new logos influenced</li><li>% revenue influenced, deals-to-pipe coverage ratio</li><li>OKR progress against target</li><li>Channel efficiency: cost per deal, paid vs organic</li></ul></div>
+          </div>
         </div>
-        <div class="todo"><strong>To fill</strong>Confirm the split (this is a rebuild situation, so weight foundation + demand engine, with a real line for the content-writer hire), and lock the quantitative success targets.</div>
-      </div>
-    </section>
-
-    <section class="dd alt" id="dd-org">
-      <div class="wrap">
-        <a href="#voices" class="back-link">Back to what I heard</a>
-        <div class="eyebrow">Deep dive H</div>
-        <h2>Org &amp; capacity</h2>
-        <p class="sub">Why pipeline collapsed isn't only marketing: the new-business team has been gutted, and the function needs one key hire.</p>
-        <div class="todo"><strong>To fill</strong>New-business sales cut to 1 rep + intern; UK market unworked 6–7 months despite blue-chip logos; marketing lead departed; content writer is the #1 hire (senior, in-house, &gt;€35K). Frame as resourcing reality + asks, not blame.</div>
       </div>
     </section>
 
