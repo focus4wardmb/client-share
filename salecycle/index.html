@@ -382,6 +382,9 @@ section.dd.alt .comp-review .cr-stat{background:var(--bg)}
 .lossrow.hot .lbl,.lossrow.hot .pct{color:var(--brand-cta)}
 .loss-read{margin-top:18px;border-left:3px solid var(--brand-cta);padding-left:18px;font-size:14px;color:var(--ink);line-height:1.6}
 .loss-read em{color:var(--muted);font-style:normal;font-size:12px}
+.lossrow.muted{margin-top:8px;border-top:1px solid var(--line);padding-top:10px}
+.lossrow.muted .lbl,.lossrow.muted .pct{color:var(--muted)}
+.lossrow.muted .track > i{background:var(--line-strong)}
 @media(max-width:1024px){.lossrow{grid-template-columns:150px 1fr 44px;font-size:12px}}
 </style>
 </head>
@@ -558,7 +561,7 @@ section.dd.alt .comp-review .cr-stat{background:var(--bg)}
         <div class="three-col">
           <div class="col"><h3>The product works</h3><ul><li>Strong, stable results in their own words: 57% email open, +58% conversion on personalised journeys, double-digit sales uplift</li><li>Satisfaction stays high even among clients freezing budget</li><li>The proof is real. It lives in 1:1 calls and is never packaged</li></ul></div>
           <div class="col"><h3>They describe the moat, you don't</h3><ul><li>They explain the edge themselves: identify the anonymous visitor, then personalise in real time</li><li><strong>Identity without personalisation is wasted. Personalisation without identity is guesswork.</strong> Together, that is the moat</li><li>It is in their mouths, never on the site, and an in-house build misses exactly this: the anonymous visitor</li></ul></div>
-          <div class="col"><h3>They rarely leave for a rival</h3><ul><li>The clearest churn, The AA, is taking it in-house on Bloomreach to cut cost, "not going to a different provider"</li><li>Across closed-lost deals, competitor wins are 6.8%. "No value seen" is 50.5%</li><li>A value-communication gap marketing closes, not a product hole</li></ul></div>
+          <div class="col"><h3>They rarely leave for a rival</h3><ul><li>The clearest churn, The AA, is taking it in-house on Bloomreach to cut cost, "not going to a different provider"</li><li>Among the deals that were actually tagged, competitor wins are only third, at 6.8%</li><li>Rarely the product, rarely a rival. The losses are cost, timing, and prospects going cold</li></ul></div>
         </div>
         <div class="voices-grid" style="grid-template-columns:1fr 1fr;margin-top:16px">
           <div class="voice"><span class="tag">Churn call · The AA</span><div class="q">It's purely in-housing the process instead of keeping it with you. The business saw a way to save costs. We're not going to a different provider.</div></div>
@@ -642,9 +645,9 @@ section.dd.alt .comp-review .cr-stat{background:var(--bg)}
         <h2>Audit methodology</h2>
         <p class="sub">What was done over the engagement window, who was interviewed, and the sources behind every claim.</p>
         <div class="three-col">
-          <div class="col"><h3>Interviews</h3><ul><li>New-business sales lead</li><li>Product expert (11.5 yrs)</li><li>Brand designer</li><li>Growth / account management</li><li>CPO &amp; leadership inputs</li></ul></div>
-          <div class="col"><h3>Internal data</h3><ul><li>HubSpot (traffic, leads, funnel)</li><li>Google Analytics 4</li><li>Google Search Console</li><li>CRM / won-deal revenue</li><li>Sales-call notes</li></ul></div>
-          <div class="col"><h3>External research</h3><ul><li>Market &amp; category landscape</li><li>5 named competitors</li><li>AI-visibility / citation scan</li><li>Reviews &amp; analyst standing</li></ul></div>
+          <div class="col"><h3>Interviews</h3><ul><li>New-business sales lead</li><li>Former CMO</li><li>Product expert (11.5 yrs)</li><li>2 brand designers</li><li>Product marketing manager</li><li>Growth &amp; account management</li><li>CPO &amp; leadership</li></ul></div>
+          <div class="col"><h3>Internal data</h3><ul><li>HubSpot, marketing side</li><li>HubSpot, CRM side</li><li>Praiz, sales &amp; CS call recordings</li><li>Google Analytics 4</li><li>Google Search Console</li><li>Won-deal revenue</li></ul></div>
+          <div class="col"><h3>External research</h3><ul><li>Claude + NotebookLM, synthesis</li><li>Trakkr, GEO &amp; AI visibility</li><li>G2, reviews</li><li>Competitor &amp; category landscape</li></ul></div>
         </div>
       </div>
     </section>
@@ -758,9 +761,8 @@ section.dd.alt .comp-review .cr-stat{background:var(--bg)}
         <a href="#dd-market" class="back-link">Back to competitive review</a>
         <div class="eyebrow">Deep dive</div>
         <h2>Why deals are lost</h2>
-        <p class="sub">The team's instinct is that SaleCycle loses to stronger competitors. The closed-lost data says otherwise.</p>
+        <p class="sub">Half of all lost deals carry no reason in the CRM. The real picture is in the deals that were tagged, and there, losing to a competitor is rare.</p>
         <div class="loss">
-          <div class="lossrow hot"><div class="lbl">No value seen</div><div class="track"><i style="width:100%"></i></div><div class="pct">50.5%</div></div>
           <div class="lossrow"><div class="lbl">Disengaged</div><div class="track"><i style="width:24%"></i></div><div class="pct">12.1%</div></div>
           <div class="lossrow"><div class="lbl">No commitment / wrong time</div><div class="track"><i style="width:21%"></i></div><div class="pct">10.5%</div></div>
           <div class="lossrow"><div class="lbl">Competitor win</div><div class="track"><i style="width:13.5%"></i></div><div class="pct">6.8%</div></div>
@@ -773,8 +775,9 @@ section.dd.alt .comp-review .cr-stat{background:var(--bg)}
           <div class="lossrow"><div class="lbl">Value proposition not proven</div><div class="track"><i style="width:2.2%"></i></div><div class="pct">1.1%</div></div>
           <div class="lossrow"><div class="lbl">Compliance / security</div><div class="track"><i style="width:1%"></i></div><div class="pct">0.5%</div></div>
           <div class="lossrow"><div class="lbl">In-house solution</div><div class="track"><i style="width:1%"></i></div><div class="pct">0.5%</div></div>
+          <div class="lossrow muted"><div class="lbl">No reason logged in CRM (excluded, data gap)</div><div class="track"><i style="width:100%"></i></div><div class="pct">50.5%</div></div>
         </div>
-        <p class="loss-read"><strong>The read:</strong> over half of lost deals (50.5%) are "no value seen", prospects who never grasped the value, not prospects who picked a better tool. Competitor wins are just 6.8%, and in-house 0.5%. This is a value-communication and positioning gap marketing closes, not a product weakness. <em>n ≈ 190 closed-lost (HubSpot). Win/loss and target attainment to be added.</em></p>
+        <p class="loss-read"><strong>The read:</strong> half of closed-lost deals have no reason logged at all (grey, excluded), a data-hygiene gap that means the team can't fully learn from its losses. Among the deals that were tagged, the leaders are disengagement and timing, not a stronger rival: competitor wins are third at 6.8%, and "value proposition not proven" is just 1.1%. SaleCycle rarely loses on the product or to a competitor. It loses prospects who go cold, an engagement and follow-up gap. <em>n ≈ 190 closed-lost (HubSpot).</em></p>
       </div>
     </section>
 
