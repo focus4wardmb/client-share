@@ -361,9 +361,9 @@ section.dd.alt .comp-review .cr-stat{background:var(--bg)}
 .sc-head{display:grid;grid-template-columns:minmax(190px,1fr) 1.7fr;gap:0 24px;margin-bottom:10px}
 .sc-zones{display:flex;justify-content:space-between;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
 .sc-row{display:grid;grid-template-columns:minmax(190px,1fr) 1.7fr;gap:0 24px;align-items:center;padding:8px 0;border-top:1px solid var(--line)}
-.sc-label{font-size:14px;font-weight:600;color:var(--ink);line-height:1.25}
-.sc-label .sc-rank{font-size:11px;font-weight:700;color:var(--brand-bright);margin-right:9px}
-.sc-label small{display:block;font-size:11px;font-weight:400;color:var(--muted);margin-top:1px;padding-left:25px}
+.sc-label{display:flex;gap:9px;font-size:14px;font-weight:600;color:var(--ink);line-height:1.25}
+.sc-label .sc-rank{flex-shrink:0;font-size:11px;font-weight:700;color:var(--brand-bright);min-width:16px}
+.sc-label small{display:block;font-size:11px;font-weight:400;color:var(--muted);margin-top:2px}
 .sc-track{position:relative;height:10px;border-radius:6px;background:linear-gradient(to right,#F4D9D4 0%,#F4D9D4 38%,#F7EBCC 38%,#F7EBCC 67%,#D9E9DF 67%,#D9E9DF 100%)}
 .sc-dot{position:absolute;top:50%;width:16px;height:16px;border-radius:50%;transform:translate(-50%,-50%);border:3px solid #fff;box-shadow:0 1px 4px rgba(35,16,74,.22)}
 .sc-dot.red{background:var(--red)}
@@ -396,8 +396,6 @@ section.dd.alt .comp-review .cr-stat{background:var(--bg)}
         <a href="#scorecard"><span class="num"></span>Scorecard</a>
         <a href="#voices"><span class="num">04</span>What I heard</a>
         <a href="#finding"><span class="num">05</span>The finding</a>
-        <a href="#stateofplay"><span class="num">06</span>State of play</a>
-        <a href="#tension"><span class="num">07</span>Yes / But</a>
         <a href="#warnings"><span class="num">08</span>Three warnings</a>
         <a href="#forward"><span class="num">09</span>The way forward</a>
         <a href="#success"><span class="num">10</span>What success looks like</a>
@@ -443,7 +441,7 @@ section.dd.alt .comp-review .cr-stat{background:var(--bg)}
         <p class="hl-lede">Marketing cannot fix this alone, and it did not cause it alone. What you are looking at sits across three functions that have to move together. Where they pull apart, growth stalls.</p>
         <div class="tri-grid">
           <div class="tri-card"><div class="tn">Marketing</div><h3>The story &amp; the engine</h3><p>Positioning, brand, demand generation, product marketing, sales enablement.</p></div>
-          <div class="tri-card"><div class="tn">Product</div><h3>The thing being sold</h3><p>Architecture, roadmap, the merged platform, what is actually shippable.</p></div>
+          <div class="tri-card"><div class="tn">Product</div><h3>The product and roadmap</h3><p>Architecture, roadmap, the merged platform, what is actually shippable.</p></div>
           <div class="tri-card"><div class="tn">Sales</div><h3>New logo + growth</h3><p>New business and account growth: cross-sell and up-sell into the base.</p></div>
         </div>
         <p class="diag-closer">None of the three works in a vacuum. Most of what follows is a failure of the alliance between them, not of any one of them.</p>
@@ -454,13 +452,13 @@ section.dd.alt .comp-review .cr-stat{background:var(--bg)}
     <section class="hl" id="context">
       <div class="wrap">
         <div class="eyebrow">03 · Context at a glance</div>
-        <h1 class="hl-title">A strong acquisition thesis, <em>landing into a year that is contracting.</em></h1>
+        <h1 class="hl-title">The acquisition was a strong promise. <em>Right now it isn't delivering the value it should.</em></h1>
         <div class="glance-stats">
           <div class="glance-stat"><div class="stat">-41<small>%</small></div><div class="label">New-business bookings YTD vs the same point in 2025 (£847.5K vs £1.44M). 2025 grew +26%.</div></div>
           <div class="glance-stat"><div class="stat">-86<small>%</small></div><div class="label">Website sessions, Q1 2026 vs Q1 2025 (10,451 vs 75,753). Same domain, no migration.</div></div>
           <div class="glance-stat"><div class="stat">~15</div><div class="label">Demo requests in five months. Almost none in the last month.</div></div>
         </div>
-        <p class="hl-lede">The market is real and growing: CRO and on-site personalization, with identity resolution and GDPR-native data as a European edge. The players are well-defined: AB Tasty, Kameleoon, Insider, Bloomreach, Dynamic Yield. SaleCycle plus BEYABLE should be a credible European champion. Right now the numbers point the other way.</p>
+        <p class="hl-lede">The market is real and growing: CRO and on-site personalization, with identity resolution and GDPR-native data as a European edge. The players are well-defined: AB Tasty, Kameleoon, Insider, Bloomreach, Dynamic Yield. <strong>SaleCycle plus BEYABLE should be a credible European champion. Right now the numbers point the other way.</strong></p>
         <a class="see-analysis" href="#dd-market">See the full market &amp; competitive review</a>
       </div>
     </section>
@@ -469,52 +467,52 @@ section.dd.alt .comp-review .cr-stat{background:var(--bg)}
     <section class="hl" id="scorecard">
       <div class="wrap">
         <div class="eyebrow">The scorecard</div>
-        <h1 class="hl-title">Ten things winning companies get right. <em>Here is where SaleCycle stands.</em></h1>
-        <p class="hl-lede">In order of importance. The marker shows where SaleCycle sits today on each, below par, at par, or above.</p>
+        <h1 class="hl-title">Ten things winning companies get right. <em>Here is where we stand.</em></h1>
+        <p class="hl-lede">In order of importance. The marker shows where we sit today on each, below average, average, or above.</p>
         <div class="scorecard">
-          <div class="sc-head"><div></div><div class="sc-zones"><span>Below par</span><span>At par</span><span>Above</span></div></div>
+          <div class="sc-head"><div></div><div class="sc-zones"><span>Below average</span><span>Average</span><span>Above</span></div></div>
           <div class="sc-row">
-            <div class="sc-label"><span class="sc-rank">01</span>Positioning &amp; story<small>how the company is understood, beyond colours and logos</small></div>
+            <div class="sc-label"><span class="sc-rank">01</span><span class="sc-txt">Positioning &amp; story<small>How the company is perceived: category, offering, value proposition, and the approach we bring to market.</small></span></div>
             <div class="sc-track"><span class="sc-dot red" style="left:25%"></span></div>
           </div>
           <div class="sc-row">
-            <div class="sc-label"><span class="sc-rank">02</span>Website &amp; conversion<small>the experience that turns a visit into a lead</small></div>
+            <div class="sc-label"><span class="sc-rank">02</span><span class="sc-txt">Website &amp; conversion<small>The experience that turns a visit into a lead.</small></span></div>
             <div class="sc-track"><span class="sc-dot red" style="left:11%"></span></div>
           </div>
           <div class="sc-row">
-            <div class="sc-label"><span class="sc-rank">03</span>Lead generation &amp; efficiency<small>volume and cost of leads across channels</small></div>
+            <div class="sc-label"><span class="sc-rank">03</span><span class="sc-txt">Lead generation &amp; efficiency<small>Volume and cost of leads across channels.</small></span></div>
             <div class="sc-track"><span class="sc-dot red" style="left:23%"></span></div>
           </div>
           <div class="sc-row">
-            <div class="sc-label"><span class="sc-rank">04</span>Search visibility<small>being found on Google and in AI answers (SEO / GEO)</small></div>
+            <div class="sc-label"><span class="sc-rank">04</span><span class="sc-txt">Search visibility<small>Being found on Google and in AI answers (SEO / GEO).</small></span></div>
             <div class="sc-track"><span class="sc-dot red" style="left:21%"></span></div>
           </div>
           <div class="sc-row">
-            <div class="sc-label"><span class="sc-rank">05</span>Lead management<small>capture, scoring, handover, nurture</small></div>
+            <div class="sc-label"><span class="sc-rank">05</span><span class="sc-txt">Lead management<small>Capture, scoring, handover, nurture.</small></span></div>
             <div class="sc-track"><span class="sc-dot amber" style="left:43%"></span></div>
           </div>
           <div class="sc-row">
-            <div class="sc-label"><span class="sc-rank">06</span>Content<small>case studies and thought leadership: good, not enough</small></div>
-            <div class="sc-track"><span class="sc-dot amber" style="left:54%"></span></div>
-          </div>
-          <div class="sc-row">
-            <div class="sc-label"><span class="sc-rank">07</span>Product marketing<small>packaging and naming the offer</small></div>
+            <div class="sc-label"><span class="sc-rank">06</span><span class="sc-txt">Product marketing<small>Packaging, naming, and how the offer is sold.</small></span></div>
             <div class="sc-track"><span class="sc-dot amber" style="left:41%"></span></div>
           </div>
           <div class="sc-row">
-            <div class="sc-label"><span class="sc-rank">08</span>Sales enablement<small>the decks and materials sales runs on</small></div>
+            <div class="sc-label"><span class="sc-rank">07</span><span class="sc-txt">Content<small>Case studies, thought-leadership articles, social media.</small></span></div>
+            <div class="sc-track"><span class="sc-dot amber" style="left:54%"></span></div>
+          </div>
+          <div class="sc-row">
+            <div class="sc-label"><span class="sc-rank">08</span><span class="sc-txt">AI<small>Using AI as leverage across the funnel.</small></span></div>
+            <div class="sc-track"><span class="sc-dot amber" style="left:56%"></span></div>
+          </div>
+          <div class="sc-row">
+            <div class="sc-label"><span class="sc-rank">09</span><span class="sc-txt">Sales enablement<small>Decks, battle cards, and the materials sales runs on.</small></span></div>
             <div class="sc-track"><span class="sc-dot amber" style="left:48%"></span></div>
           </div>
           <div class="sc-row">
-            <div class="sc-label"><span class="sc-rank">09</span>Martech &amp; data<small>the tools are there; no single source of truth</small></div>
+            <div class="sc-label"><span class="sc-rank">10</span><span class="sc-txt">Martech &amp; data<small>The marketing tool stack and the data behind it.</small></span></div>
             <div class="sc-track"><span class="sc-dot green" style="left:70%"></span></div>
           </div>
-          <div class="sc-row">
-            <div class="sc-label"><span class="sc-rank">10</span>AI<small>using AI as leverage across the funnel</small></div>
-            <div class="sc-track"><span class="sc-dot amber" style="left:56%"></span></div>
-          </div>
         </div>
-        <p class="timeline-closer">The pattern that matters: the most important areas, story, website, lead generation, are where SaleCycle is weakest. The tools and the AI are already in place. The fix is sequencing, not spend.</p>
+        <p class="timeline-closer">The pattern that matters: the most important areas, story, website, lead generation, are where we are weakest. The tools and the AI are already in place. The fix is sequencing, not spend.</p>
       </div>
     </section>
 
@@ -522,8 +520,8 @@ section.dd.alt .comp-review .cr-stat{background:var(--bg)}
     <section class="hl alt" id="voices">
       <div class="wrap">
         <div class="eyebrow">04 · What I heard</div>
-        <h1 class="hl-title">The team named the same thing, <em>separately, before comparing notes.</em></h1>
-        <p class="hl-lede">From interviews across new-business sales, product, customer success, growth and brand. Anonymized. The same gap keeps surfacing in different words.</p>
+        <h1 class="hl-title">Different roles, different views. <em>One thing kept repeating.</em></h1>
+        <p class="hl-lede">From interviews across sales, product, customer success, growth and brand. All anonymized.</p>
         <div class="voices-grid">
           <div class="voice"><span class="tag">Positioning</span><div class="q">We're stuck in the middle. Not the innovator, not the low-cost option. The old guy in the room.</div></div>
           <div class="voice"><span class="tag">Brand</span><div class="q">The brand is negative equity. The site, the decks, the platform UI all undersell what we do.</div></div>
@@ -551,43 +549,13 @@ section.dd.alt .comp-review .cr-stat{background:var(--bg)}
       </div>
     </section>
 
-    <!-- === HL 06: State of play === -->
-    <section class="hl alt" id="stateofplay">
-      <div class="wrap">
-        <div class="eyebrow">06 · State of play</div>
-        <h1 class="hl-title">The merger happened on paper. <em>Not in product, not in story, not in the market.</em></h1>
-        <div class="three-col">
-          <div class="col"><h3>Brand · not merged</h3><ul><li>Two live websites, two names, two visual systems</li><li>BEYABLE.com still up with only a banner, traffic and SEO equity not consolidated</li><li>Market sees two faded brands, not one champion</li></ul></div>
-          <div class="col"><h3>Story · not merged</h3><ul><li>No agreed answer to "what is SaleCycle now"</li><li>Sales and growth mix and match products ad hoc</li><li>No platform / product / feature / solution taxonomy</li></ul></div>
-          <div class="col"><h3>Platform · not merged</h3><ul><li>Two systems that do not communicate</li><li>Customers on both log into two tools</li><li>No documented integration roadmap</li></ul></div>
-        </div>
-        <p class="timeline-closer">A documented integration plan, even a faked-unified login as the first step, is the minimum the 1+1=3 story needs to become deliverable.</p>
-      </div>
-    </section>
-
-    <!-- === HL 07: Yes / But === -->
-    <section class="hl" id="tension">
-      <div class="wrap">
-        <div class="eyebrow">07 · Yes / But</div>
-        <h1 class="hl-title">Every strength here comes with <em>a sentence the board needs to hear.</em></h1>
-        <div class="tension-list">
-          <div class="tension-row"><div class="yes">The BEYABLE acquisition created a genuinely strong combination: identity plus personalization.</div><div class="but">Nothing has been merged, brand, story or platform, so the market sees two faded brands, not one champion.</div></div>
-          <div class="tension-row"><div class="yes">16 years of heritage and blue-chip logos (Dyson, Nespresso, telcos).</div><div class="but">The brand today reads as negative equity. The site, decks and platform UI all undersell the company.</div></div>
-          <div class="tension-row"><div class="yes">The team is enthusiastic, committed and ready for change.</div><div class="but">It is tiny, just lost its marketing lead, and new-business sales has been cut to one rep and an intern.</div></div>
-          <div class="tension-row"><div class="yes">The story leans on AI and innovation.</div><div class="but">The tech is materially behind, so positioning on "most innovative" isn't credible yet.</div></div>
-          <div class="tension-row"><div class="yes">Stopping paid spend cut burn.</div><div class="but">It also let the demand engine go dark: traffic -86%, ~15 demos in five months.</div></div>
-          <div class="tension-row"><div class="yes">Leadership sees the opportunity.</div><div class="but">It isn't filtering down, and the roadmap lives in two people's heads with no transparency.</div></div>
-        </div>
-      </div>
-    </section>
-
     <!-- === HL 08: Three warnings === -->
     <section class="hl alt" id="warnings">
       <div class="wrap">
         <div class="eyebrow">08 · For the board</div>
         <h1 class="hl-title">Three things to be aware of <em>right now.</em></h1>
         <div class="warn-beats">
-          <div class="warn-beat"><div class="wn">01 · Bleeding equity</div><h4>The website is taking from revenue, not adding to it</h4><p>Traffic -86% on a stable domain. The traffic that arrives doesn't convert. SEO and AI visibility untreated for a year. BEYABLE.com's equity thrown away, not consolidated.</p></div>
+          <div class="warn-beat"><div class="wn">01 · Leaking equity</div><h4>Two sites, leaking equity</h4><p>Two live websites still split the brand and the traffic. They need to become one: a European-leader brand image, a clear message, and a path that turns a visit into a lead.</p></div>
           <div class="warn-beat"><div class="wn">02 · Captured, abandoned</div><h4>Leads come in and go nowhere</h4><p>The form does capture to HubSpot, so leads aren't lost. But no confirmation to the submitter, and no nurture after. Only gold leads get followed. Intent leads are left cold.</p></div>
           <div class="warn-beat"><div class="wn">03 · Vibe over process</div><h4>Flexibility has become the absence of process</h4><p>Packaging and nomenclature are improvised. No lead scoring, definition or handover. This is no longer a 10-person startup, and AI can't add leverage without process and clean data underneath it.</p></div>
         </div>
@@ -596,11 +564,11 @@ section.dd.alt .comp-review .cr-stat{background:var(--bg)}
     </section>
 
     <!-- === HL 09: The way forward === -->
-    <section class="hl" id="forward">
+    <section class="hl" id="forward" style="min-height:auto;padding:40px 0">
       <div class="wrap">
         <div class="eyebrow">09 · The way forward</div>
         <h1 class="hl-title">Do it in order. <em>Strategy before channels.</em></h1>
-        <p class="hl-lede">There is real motivation and real effort in this team. It isn't compounding because the work is happening out of order. The bet to build on: <strong>heritage, international reach, trust, and GDPR-native identity resolution.</strong> Not "most innovative", which the product can't yet back. Sell what is true and defensible.</p>
+        <p class="hl-lede">There is real motivation and real effort in this team. It isn't compounding because the work is happening out of order. The bet to build on: <strong>heritage, international reach, trust, and GDPR-native identity resolution.</strong> Keep selling what is true and defensible.</p>
         <div class="timeline">
           <div class="t-col"><div class="horizon-dot"></div><div class="horizon-label">Now · weeks</div><h3>Foundation</h3><ul><li><strong>Lock positioning</strong> and the marketing architecture (one brand, clear taxonomy)</li><li><strong>Rebuild the website</strong> on the current brand: modern, clear, optimized journey</li><li>C-suite alignment first, then cascade internally</li></ul></div>
           <div class="t-col"><div class="horizon-dot"></div><div class="horizon-label">Next · this quarter</div><h3>Relight &amp; arm</h3><ul><li><strong>Demand engine:</strong> SEO/GEO, funnel, tracking, MQL scoring, nurture</li><li><strong>Sales enablement</strong> + the product-recommendations GTM already in motion</li><li><strong>AI operating layer</strong> so a small team punches above its weight</li></ul></div>
