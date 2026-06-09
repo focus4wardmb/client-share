@@ -386,6 +386,12 @@ section.dd.alt .comp-review .cr-stat{background:var(--bg)}
 .lossrow.muted .lbl,.lossrow.muted .pct{color:var(--muted)}
 .lossrow.muted .track > i{background:var(--line-strong)}
 .loss-foot{margin-top:10px;font-size:11.5px;color:var(--muted)}
+#dd-website table.t{min-width:0}
+.dd-shots{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+.dd-shots figure{margin:0;border:1px solid var(--line-strong);border-radius:10px;overflow:hidden;background:#fff}
+.dd-shots img{display:block;width:100%;height:auto}
+.dd-shots figcaption{font-size:11px;color:var(--muted);padding:8px 10px;border-top:1px solid var(--line)}
+@media(max-width:1024px){.dd-shots{grid-template-columns:1fr}}
 @media(max-width:1024px){.lossrow{grid-template-columns:150px 1fr 44px;font-size:12px}}
 </style>
 </head>
@@ -422,11 +428,11 @@ section.dd.alt .comp-review .cr-stat{background:var(--bg)}
       <div class="nav-group">
         <h4>Part B · Deep dives</h4>
         <a href="#dd-method"><span class="num">A</span>Audit methodology</a>
-        <a href="#dd-market"><span class="num">B</span>Market &amp; competitive review</a>
-        <a href="#dd-loss"><span class="num"></span>Why deals are lost</a>
-        <a href="#dd-website"><span class="num">C</span>Website &amp; demand engine</a>
-        <a href="#dd-positioning"><span class="num">D</span>Positioning &amp; packaging</a>
-        <a href="#dd-rename"><span class="num">E</span>The rename question</a>
+        <a href="#dd-market"><span class="num">B</span>Competitive review</a>
+        <a href="#dd-loss"><span class="num">C</span>Why deals are lost</a>
+        <a href="#dd-website"><span class="num">D</span>Website &amp; demand engine</a>
+        <a href="#dd-positioning"><span class="num">E</span>Positioning &amp; packaging</a>
+        <a href="#dd-rename"><span class="num">F</span>The rename question</a>
         <a href="#dd-kpis"><span class="num">G</span>KPIs &amp; budget</a>
         <a href="#dd-org"><span class="num">H</span>Org &amp; capacity</a>
       </div>
@@ -477,7 +483,7 @@ section.dd.alt .comp-review .cr-stat{background:var(--bg)}
           <div class="glance-stat"><div class="stat">~15</div><div class="label">Demo requests in five months. Almost none in the last month.</div></div>
         </div>
         <p class="hl-lede">The market is real and growing: CRO and on-site personalization, with identity resolution and GDPR-native data as a European edge. The players are well-defined: AB Tasty, Kameleoon, Insider, Bloomreach, Dynamic Yield. <strong>SaleCycle plus BEYABLE should be a credible European champion. Right now the numbers point the other way.</strong></p>
-        <a class="see-analysis" href="#dd-market">See the full market &amp; competitive review</a>
+        <a class="see-analysis" href="#dd-market">See the full competitive review</a>
       </div>
     </section>
 
@@ -553,22 +559,22 @@ section.dd.alt .comp-review .cr-stat{background:var(--bg)}
     </section>
 
     <!-- === HL: What your customers say === -->
-    <section class="hl" id="customers">
+    <section class="hl" id="customers" style="min-height:auto;padding:44px 0">
       <div class="wrap">
         <div class="eyebrow">06 · What your customers say</div>
         <h1 class="hl-title">Your customers are already sold. <em>The market never hears why.</em></h1>
-        <p class="hl-lede">From 27 recorded sales and customer-success calls, a sample, not the whole book. Three things came through again and again.</p>
+        <p class="hl-lede">From 27 recorded sales and customer-success calls. Three patterns repeat.</p>
         <div class="three-col">
-          <div class="col"><h3>The product works</h3><ul><li>Strong, stable results in their own words: 57% email open, +58% conversion on personalised journeys, double-digit sales uplift</li><li>Satisfaction stays high even among clients freezing budget</li><li>The proof is real. It lives in 1:1 calls and is never packaged</li></ul></div>
-          <div class="col"><h3>They describe the moat, you don't</h3><ul><li>They explain the edge themselves: identify the anonymous visitor, then personalise in real time</li><li><strong>Identity without personalisation is wasted. Personalisation without identity is guesswork.</strong> Together, that is the moat</li><li>It is in their mouths, never on the site, and an in-house build misses exactly this: the anonymous visitor</li></ul></div>
-          <div class="col"><h3>They rarely leave for a rival</h3><ul><li>The clearest churn, The AA, is taking it in-house on Bloomreach to cut cost, "not going to a different provider"</li><li>Among the deals that were actually tagged, competitor wins are only third, at 6.8%</li><li>Rarely the product, rarely a rival. The losses are cost, timing, and prospects going cold</li></ul></div>
+          <div class="col"><h3>The product works</h3><ul><li>Results in their words: 57% open, +58% conversion, double-digit uplift</li><li>Satisfaction holds even where budgets are frozen</li></ul></div>
+          <div class="col"><h3>They describe the moat, you don't</h3><ul><li>They name the edge: identify the anonymous visitor, then personalise</li><li><strong>Identity without personalisation is wasted; personalisation without identity is guesswork</strong></li><li>In their mouths, never on the site</li></ul></div>
+          <div class="col"><h3>They rarely leave for a rival</h3><ul><li>The AA went in-house to cut cost, not to a competitor</li><li>Competitor wins are only third, 6.8%</li><li>Rarely the product or a rival, they go cold</li></ul></div>
         </div>
         <div class="voices-grid" style="grid-template-columns:1fr 1fr 1fr;margin-top:16px">
           <div class="voice"><span class="tag">Churn call · The AA</span><div class="q">It's purely in-housing the process instead of keeping it with you. The business saw a way to save costs. We're not going to a different provider.</div></div>
           <div class="voice"><span class="tag">QBR · Air Austral (from FR)</span><div class="q">We know you support us. The solutions you offer are always win-win. You win, we win.</div></div>
           <div class="voice"><span class="tag">Account review · Balenciaga</span><div class="q">We pay 8K a month and only use cart retargeting.</div></div>
         </div>
-        <p class="timeline-closer">The customers are not the problem, and neither is the product. The story, the speed, and how the value is packaged are. All three are fixable.</p>
+        <p class="timeline-closer">It is not that nothing is wrong: budgets are tight, some clients go in-house, and the product is not always at the pace of innovation. But the opportunity is bigger, and three things are ours to fix, the story, the speed, and how the value is packaged.</p>
       </div>
     </section>
 
@@ -623,10 +629,10 @@ section.dd.alt .comp-review .cr-stat{background:var(--bg)}
         <h1 class="hl-title">Refresh the brand, or start fresh? <em>I'd start fresh.</em></h1>
         <p class="hl-lede">The merger left two confusing brands and a market that still sees the old SaleCycle. The board's real decision: refresh the name, or rename into one new company.</p>
         <div class="three-col" style="grid-template-columns:1fr 1fr">
-          <div class="col"><h3>Keep &amp; refresh "SaleCycle"</h3><ul><li>16 years of heritage and blue-chip trust, kept</li><li>No re-education cost on a name the market knows</li><li>But it still says who we were, not who we are, and the two-brand confusion lingers</li></ul></div>
-          <div class="col"><h3>Rename, a clean slate</h3><ul><li>One new company, erasing the two confusing brands in a single move</li><li>A strong signal to the market and the team: new company, new product, new offer</li><li>SEO is so low today that a rename loses almost no equity</li></ul></div>
+          <div class="col"><h3>Keep &amp; refresh "SaleCycle"</h3><ul><li>16 years of heritage and blue-chip trust, kept</li><li>But it still says who we were, not who we are</li><li>And you spend years re-educating the market: "we're not who you think"</li></ul></div>
+          <div class="col"><h3>Rename, a clean slate</h3><ul><li>One new company, erasing the two confusing brands in one move</li><li>Not just a new name, a new category we can claim</li><li>SEO is so low today that a rename loses almost no equity</li></ul></div>
         </div>
-        <p class="diag-closer">The merger instability is itself the argument: a rename resolves it at the root, this is now one company, not two. And the Sendinblue to Brevo lesson holds, it costs less to turn the page with a new name than to spend years re-educating the market on "we're not who you think". My lean is to rename. The board owns the call.</p>
+        <p class="diag-closer">The merger instability is itself the argument: a rename makes this one company, not two. Done right it is a category play, build the product, rebrand in parallel, and launch claiming new ground. And turning the page costs less than years of re-educating the market on "we're not who you think" (the Sendinblue to Brevo lesson). My lean is to rename. The board owns the call.</p>
       </div>
     </section>
 
@@ -657,7 +663,7 @@ section.dd.alt .comp-review .cr-stat{background:var(--bg)}
       <div class="wrap">
         <a href="#context" class="back-link">Back to context</a>
         <div class="eyebrow">Deep dive B</div>
-        <h2>Market &amp; competitive review</h2>
+        <h2>Competitive review</h2>
         <p class="sub">The 2026 CRO and personalization landscape, where SaleCycle + BEYABLE sit against the field, and the opening no one else is standing on. This is the full review behind the highlight on slide 03.</p>
 
         <div class="comp-review">
@@ -760,7 +766,7 @@ section.dd.alt .comp-review .cr-stat{background:var(--bg)}
     <section class="dd" id="dd-loss">
       <div class="wrap">
         <a href="#dd-market" class="back-link">Back to competitive review</a>
-        <div class="eyebrow">Deep dive</div>
+        <div class="eyebrow">Deep dive C</div>
         <h2>Why deals are lost</h2>
         <p class="sub">Group the reasons and the real story shows: the losses are about value, timing and engagement, not a stronger competitor.</p>
         <div class="loss">
@@ -785,7 +791,7 @@ section.dd.alt .comp-review .cr-stat{background:var(--bg)}
     <section class="dd" id="dd-website">
       <div class="wrap">
         <a href="#warnings" class="back-link">Back to warnings</a>
-        <div class="eyebrow">Deep dive C</div>
+        <div class="eyebrow">Deep dive D</div>
         <h2>Website &amp; demand engine</h2>
         <p class="sub">Traffic has collapsed, and the paid traffic that still arrives is not converting. The campaigns are not the problem. The website is.</p>
         <div class="comp-review">
@@ -824,7 +830,13 @@ section.dd.alt .comp-review .cr-stat{background:var(--bg)}
               <tr><th>Email</th><td>46.20%</td><td>53.80%</td></tr>
             </tbody>
           </table></div>
-          <p class="tnote">GA4, Q1 2026. Cross-network (paid / performance max) and organic search had the lowest bounce; email the highest. Underlying GA4 and HubSpot screenshots held as jump-to backup.</p>
+          <p class="tnote">GA4, Q1 2026. Cross-network (paid / performance max) and organic search had the lowest bounce; email the highest.</p>
+          <div class="dd-shots">
+            <figure><img src="img/q1-traffic.png" alt="GA4 sessions by source, Q1 2026 vs 2025"><figcaption>GA4 · sessions by source, Q1 2026 vs Q1 2025</figcaption></figure>
+            <figure><img src="img/engagement-by-source.png" alt="GA4 engagement by channel"><figcaption>GA4 · engagement by channel</figcaption></figure>
+            <figure><img src="img/hubspot-1.png" alt="HubSpot website analytics"><figcaption>HubSpot · website analytics</figcaption></figure>
+            <figure><img src="img/hubspot-2.png" alt="HubSpot website analytics"><figcaption>HubSpot · website analytics</figcaption></figure>
+          </div>
         </div>
       </div>
     </section>
@@ -832,7 +844,7 @@ section.dd.alt .comp-review .cr-stat{background:var(--bg)}
     <section class="dd alt" id="dd-positioning">
       <div class="wrap">
         <a href="#finding" class="back-link">Back to the finding</a>
-        <div class="eyebrow">Deep dive D</div>
+        <div class="eyebrow">Deep dive E</div>
         <h2>Positioning, packaging &amp; nomenclature</h2>
         <p class="sub">From "stuck in the middle" to a defensible position, and from improvised packaging to defined plans per vertical and persona.</p>
         <div class="todo"><strong>To fill</strong>The marketing architecture (platform / product / feature / solution), the "1 platform, 3 modules: Reach / Retain / Re-engage" frame, defined packaging per vertical+persona (~30% flex for enterprise), and the recommendation to show packaging on the website even without pricing (pricing/packaging pages are among the highest-converting in SaaS).</div>
@@ -842,7 +854,7 @@ section.dd.alt .comp-review .cr-stat{background:var(--bg)}
     <section class="dd" id="dd-rename">
       <div class="wrap">
         <a href="#forward" class="back-link">Back to the way forward</a>
-        <div class="eyebrow">Deep dive E</div>
+        <div class="eyebrow">Deep dive F</div>
         <h2>The rename question</h2>
         <p class="sub">A genuine board decision, not a foregone conclusion. The heritage you'd position on is the same heritage a rename throws away.</p>
         <div class="three-col">
