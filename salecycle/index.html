@@ -385,6 +385,7 @@ section.dd.alt .comp-review .cr-stat{background:var(--bg)}
 .lossrow.muted{margin-top:8px;border-top:1px solid var(--line);padding-top:10px}
 .lossrow.muted .lbl,.lossrow.muted .pct{color:var(--muted)}
 .lossrow.muted .track > i{background:var(--line-strong)}
+.loss-foot{margin-top:10px;font-size:11.5px;color:var(--muted)}
 @media(max-width:1024px){.lossrow{grid-template-columns:150px 1fr 44px;font-size:12px}}
 </style>
 </head>
@@ -562,9 +563,10 @@ section.dd.alt .comp-review .cr-stat{background:var(--bg)}
           <div class="col"><h3>They describe the moat, you don't</h3><ul><li>They explain the edge themselves: identify the anonymous visitor, then personalise in real time</li><li><strong>Identity without personalisation is wasted. Personalisation without identity is guesswork.</strong> Together, that is the moat</li><li>It is in their mouths, never on the site, and an in-house build misses exactly this: the anonymous visitor</li></ul></div>
           <div class="col"><h3>They rarely leave for a rival</h3><ul><li>The clearest churn, The AA, is taking it in-house on Bloomreach to cut cost, "not going to a different provider"</li><li>Among the deals that were actually tagged, competitor wins are only third, at 6.8%</li><li>Rarely the product, rarely a rival. The losses are cost, timing, and prospects going cold</li></ul></div>
         </div>
-        <div class="voices-grid" style="grid-template-columns:1fr 1fr;margin-top:16px">
+        <div class="voices-grid" style="grid-template-columns:1fr 1fr 1fr;margin-top:16px">
           <div class="voice"><span class="tag">Churn call · The AA</span><div class="q">It's purely in-housing the process instead of keeping it with you. The business saw a way to save costs. We're not going to a different provider.</div></div>
           <div class="voice"><span class="tag">QBR · Air Austral (from FR)</span><div class="q">We know you support us. The solutions you offer are always win-win. You win, we win.</div></div>
+          <div class="voice"><span class="tag">Account review · Balenciaga</span><div class="q">We pay 8K a month and only use cart retargeting.</div></div>
         </div>
         <p class="timeline-closer">The customers are not the problem, and neither is the product. The story, the speed, and how the value is packaged are. All three are fixable.</p>
       </div>
@@ -760,23 +762,23 @@ section.dd.alt .comp-review .cr-stat{background:var(--bg)}
         <a href="#dd-market" class="back-link">Back to competitive review</a>
         <div class="eyebrow">Deep dive</div>
         <h2>Why deals are lost</h2>
-        <p class="sub">Half of all lost deals carry no reason in the CRM. The real picture is in the deals that were tagged, and there, losing to a competitor is rare.</p>
+        <p class="sub">Group the reasons and the real story shows: the losses are about value, timing and engagement, not a stronger competitor.</p>
         <div class="loss">
-          <div class="lossrow"><div class="lbl">Disengaged</div><div class="track"><i style="width:24%"></i></div><div class="pct">12.1%</div></div>
-          <div class="lossrow"><div class="lbl">No commitment / wrong time</div><div class="track"><i style="width:21%"></i></div><div class="pct">10.5%</div></div>
-          <div class="lossrow"><div class="lbl">Competitor win</div><div class="track"><i style="width:13.5%"></i></div><div class="pct">6.8%</div></div>
-          <div class="lossrow"><div class="lbl">No budget</div><div class="track"><i style="width:11.5%"></i></div><div class="pct">5.8%</div></div>
-          <div class="lossrow"><div class="lbl">Cost</div><div class="track"><i style="width:8.3%"></i></div><div class="pct">4.2%</div></div>
-          <div class="lossrow"><div class="lbl">Qualified out, client decision</div><div class="track"><i style="width:6.3%"></i></div><div class="pct">3.2%</div></div>
-          <div class="lossrow"><div class="lbl">Qualified out, SaleCycle decision</div><div class="track"><i style="width:4.2%"></i></div><div class="pct">2.1%</div></div>
-          <div class="lossrow"><div class="lbl">No show</div><div class="track"><i style="width:3.2%"></i></div><div class="pct">1.6%</div></div>
-          <div class="lossrow"><div class="lbl">No agreement on terms</div><div class="track"><i style="width:2.2%"></i></div><div class="pct">1.1%</div></div>
-          <div class="lossrow"><div class="lbl">Value proposition not proven</div><div class="track"><i style="width:2.2%"></i></div><div class="pct">1.1%</div></div>
-          <div class="lossrow"><div class="lbl">Compliance / security</div><div class="track"><i style="width:1%"></i></div><div class="pct">0.5%</div></div>
-          <div class="lossrow"><div class="lbl">In-house solution</div><div class="track"><i style="width:1%"></i></div><div class="pct">0.5%</div></div>
-          <div class="lossrow muted"><div class="lbl">No reason logged in CRM (excluded, data gap)</div><div class="track"><i style="width:100%"></i></div><div class="pct">50.5%</div></div>
+          <div class="lossrow hot"><div class="lbl">Disengaged</div><div class="track"><i style="width:100%"></i></div><div class="pct">12.1%</div></div>
+          <div class="lossrow hot"><div class="lbl">No commitment / wrong time</div><div class="track"><i style="width:87%"></i></div><div class="pct">10.5%</div></div>
+          <div class="lossrow"><div class="lbl">Competitor win</div><div class="track"><i style="width:56%"></i></div><div class="pct">6.8%</div></div>
+          <div class="lossrow hot"><div class="lbl">No budget</div><div class="track"><i style="width:48%"></i></div><div class="pct">5.8%</div></div>
+          <div class="lossrow"><div class="lbl">Cost</div><div class="track"><i style="width:35%"></i></div><div class="pct">4.2%</div></div>
+          <div class="lossrow"><div class="lbl">Qualified out, client decision</div><div class="track"><i style="width:26%"></i></div><div class="pct">3.2%</div></div>
+          <div class="lossrow"><div class="lbl">Qualified out, SaleCycle decision</div><div class="track"><i style="width:17%"></i></div><div class="pct">2.1%</div></div>
+          <div class="lossrow"><div class="lbl">No show</div><div class="track"><i style="width:13%"></i></div><div class="pct">1.6%</div></div>
+          <div class="lossrow"><div class="lbl">No agreement on terms</div><div class="track"><i style="width:9%"></i></div><div class="pct">1.1%</div></div>
+          <div class="lossrow"><div class="lbl">Value proposition not proven</div><div class="track"><i style="width:9%"></i></div><div class="pct">1.1%</div></div>
+          <div class="lossrow"><div class="lbl">Compliance / security</div><div class="track"><i style="width:4%"></i></div><div class="pct">0.5%</div></div>
+          <div class="lossrow"><div class="lbl">In-house solution</div><div class="track"><i style="width:4%"></i></div><div class="pct">0.5%</div></div>
         </div>
-        <p class="loss-read"><strong>The read:</strong> half of closed-lost deals have no reason logged at all (grey, excluded), a data-hygiene gap that means the team can't fully learn from its losses. Among the deals that were tagged, the leaders are disengagement and timing, not a stronger rival: competitor wins are third at 6.8%, and "value proposition not proven" is just 1.1%. SaleCycle rarely loses on the product or to a competitor. It loses prospects who go cold, an engagement and follow-up gap. <em>n ≈ 190 closed-lost (HubSpot).</em></p>
+        <p class="loss-read"><strong>The read:</strong> group disengagement, no-commitment and no-budget (highlighted) and you get roughly 28% of tracked losses. They point to one thing, the value was not made sticky enough through the sales process. Competitor wins are just 6.8%. The account reviews say the same: budget freezes and "we pay 8K a month and only use cart retargeting" are value and stickiness problems, not product gaps.</p>
+        <p class="loss-foot">Half of closed-lost deals carry no reason logged in the CRM. n ≈ 190 (HubSpot).</p>
       </div>
     </section>
 
