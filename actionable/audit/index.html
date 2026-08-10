@@ -35,6 +35,7 @@ section { padding: 56px 0; border-bottom: 1px solid var(--rule); }
 h2 { font-size: clamp(24px, 3.4vw, 34px); letter-spacing: -0.01em; margin: 0 0 6px; }
 .secnum { color: var(--pink); font-weight: 700; font-size: 14px; letter-spacing: .08em; }
 .lede { color: var(--muted); font-size: 18px; max-width: 720px; margin-top: 4px; }
+.kick2 { color: var(--pink); font-weight: 700; font-size: 12.5px; letter-spacing: .08em; text-transform: uppercase; margin: 26px 0 -16px; }
 .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin: 28px 0 8px; }
 .stat { background: var(--card); border: 1px solid var(--rule); border-radius: 10px; padding: 18px 16px; }
 .stat .num { font-size: 30px; font-weight: 700; color: var(--pink); line-height: 1.1; }
@@ -82,7 +83,7 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
 
 <nav class="wrap">
   <a href="#summary">Summary</a>
-  <a href="#heard">What you told us</a>
+  <a href="#heard">What Nicolas told us</a>
   <a href="#tension">Yes / But</a>
   <a href="#funnel">Website &amp; funnel</a>
   <a href="#search">Search</a>
@@ -98,7 +99,7 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
   <div class="brand">Actionable <span>×</span> Focus4ward</div>
   <div class="sub">Marketing audit<br>August 12, 2026</div>
   <a href="#summary"><span class="n">01</span>Executive summary</a>
-  <a href="#heard"><span class="n">02</span>What you told us</a>
+  <a href="#heard"><span class="n">02</span>What Nicolas told us</a>
   <a href="#tension"><span class="n">03</span>Yes / But</a>
   <a href="#funnel"><span class="n">04</span>Website &amp; funnel</a>
   <a href="#search"><span class="n">05</span>Search</a>
@@ -122,21 +123,24 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
 <section id="summary"><div class="wrap">
   <div class="secnum">01</div>
   <h2>Executive summary</h2>
-  <p class="lede">Four numbers tell the story of a strong product with a business-card website.</p>
+  <p class="lede">The snapshot: the facts Nicolas gave us, and what the data adds to them.</p>
+  <div class="kick2">What Nicolas told us — the facts</div>
+  <p style="margin-top:24px">A real, growing business: <strong>€1.6M ARR, 6 active enterprise clients</strong> (~15 large logos delivered, including Carrefour, SNCF/OUIGO, Sephora, ENGIE, Fnac Darty, Audiens), a 5-6 month cycle, 10-25% first-meeting-to-signature on ICP. Acquisition: <strong>50% events, 30% partners, 20% network</strong> — founder-carried, and effectively zero inbound outside the fundraise press spike.</p>
+  <div class="kick2">What the data reveals</div>
   <div class="stats">
     <div class="stat"><div class="num">100%</div><div class="label">of search clicks come from people already typing "Actionable". Zero category or problem-driven discovery.</div></div>
     <div class="stat"><div class="num">1</div><div class="label">demo click tracked in 90 days, on 2,470 visits.</div></div>
     <div class="stat"><div class="num">85%</div><div class="label">bounce rate, 41-second average visit. One page to see, nothing to come back for.</div></div>
     <div class="stat"><div class="num">62%</div><div class="label">of traffic is French, while the ambition is enterprise Europe, UK and US.</div></div>
   </div>
-  <p>The business behind these numbers is real and growing: <strong>€1.6M ARR, 6 active enterprise clients</strong> (~15 large logos delivered, including Carrefour, SNCF/OUIGO, Sephora, ENGIE, Fnac Darty, Audiens), a 5-6 month cycle and a 10-25% first-meeting-to-signature conversion on ICP. Acquisition today: <strong>50% events, 30% partners, 20% network</strong> — and effectively zero inbound outside the fundraise press spike. Nothing is broken. The engine that turns this proof into pipeline simply hasn't been built.</p>
+  <p>Nothing here is broken. The engine that turns the proof into pipeline simply hasn't been built — and the data shows exactly where it's missing.</p>
   <div class="callout">The finding in one line: Actionable is creating a category on calls, with no surface for that category to live on between the calls. <span class="todo">REFINE WITH MIRI</span></div>
 </div></section>
 
 <section id="heard"><div class="wrap">
   <div class="secnum">02</div>
-  <h2>What you told us</h2>
-  <p class="lede">From the discovery interview. If any of this reads wrong, the audit should be challenged; if it reads right, the rest follows.</p>
+  <h2>What Nicolas told us</h2>
+  <p class="lede">Nicolas's own framing, from the discovery interview and his written answers. If any of this reads wrong, challenge the audit; if it reads right, the rest follows.</p>
   <div class="quote">"Avec Actionable, je peux enfin agir proactivement, plutôt que constater a posteriori ce qui s'est passé."<span class="who">The customer sentence, in your own words</span></div>
   <div class="cols">
     <div class="card"><h3>The goal</h3><p>A meaningful share of enterprise pipeline generated inbound, with prospects arriving already knowing Actionable and the category: "We need Predictive CX, and we think Actionable is the leader."</p></div>
@@ -184,7 +188,7 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
     <div class="stat"><div class="num">1</div><div class="label">page doing all the work. The homepage takes 725 of 735 clicks.</div></div>
     <div class="stat"><div class="num">0.37%</div><div class="label">CTR in the US on 15,800 impressions (France: 22.8%). Where the ambition is, the brand is invisible.</div></div>
   </div>
-  <p>People who already know Actionable find it: "actionable ai" converts at 19% CTR from position 1.5. Nobody else does. Not a single click came from a problem, category or use-case query, because not a single page answers one. For a category-creation strategy, this is the whole game: <strong>when "predictive CX" starts being searched, somebody will own that page. Today it would not be you.</strong></p>
+  <p>People who already know Actionable find it: "actionable ai" converts at 19% CTR from position 1.5. Nobody else does. Not a single click came from a problem, category or use-case query, because not a single page answers one. For a category-creation strategy, this is the whole game: category search demand is near zero today — Google Trends shows a faint rise in the US and nothing in France — which means <strong>the name is still claimable, and claiming it is real work</strong>. Inventing a category with a small team and a focused budget doesn't happen by broadcast; it happens through the 400 accounts, the events, and being the answer wherever those specific people look.</p>
 </div></section>
 
 <section id="ai"><div class="wrap">
@@ -214,7 +218,8 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
   <div class="secnum">08</div>
   <h2>Competitive review</h2>
   <p class="lede">Who occupies the space around "Predictive CX" today, and what they own.</p>
-  <p>Nicolas's own watchlist: <strong>Qualtrics and Medallia</strong> (voice of customer), <strong>Priorlabs and Fundamental</strong> (predictive), <strong>Hex</strong> (AI analytics) — plus the real enemy, in-house Data teams, for whom <strong>Dataiku ships ready-made churn-prediction solution kits</strong>. "We have no competitors" is true only at the product level; at the budget level, all of these compete for the same line.</p>
+  <p>Nicolas's own watchlist: <strong>Qualtrics and Medallia</strong> (voice of customer), <strong>Priorlabs and Fundamental</strong> (predictive), <strong>Hex</strong> (AI analytics) — plus the real enemy: in-house Data teams and the status quo. "We have no competitors" is true only at the product level; at the budget level, all of these compete for the same line.</p>
+  <div class="callout">The window is short. Today nobody is buying the category's keywords and nobody owns its name. The moment CX leaders realise solutions like this exist, this space turns competitive — and the survey incumbents have the budgets. Actionable has a narrow window to install itself as the leader and the original before the noise starts.</div>
   <p><strong>The category namespace is contested at the edges:</strong> Medallia calls itself an "enterprise experience platform", Qualtrics owns "experience management". The survey incumbents own the word "experience"; nobody yet owns "predictive" + "CX" together. That is the opening — if the label survives tomorrow's LLM and search validation.</p>
   <p><strong>And the brand map has an empty corner.</strong> Priorlabs and Hex dress for data scientists (dense, technical). Fundamental is the most memorable brand of the set — bold, distinct — but still AI-coded. Qualtrics is friendlier but flat and interchangeable. Every AI player defaults to dark-plus-one-flashy-color, including Actionable itself. <em>Nobody in the space dresses for the CX leader.</em> The first brand that does takes the champion by default.</p>
   <div class="todo-block"><span class="todo">TODO</span> Verify each player at source + US scan for direct "predictive CX" competitors &middot; 5-column comparison table &middot; Fold in the 22 collected ad screenshots (LinkedIn + Google ads libraries) &middot; Live LLM-answer captures for category questions, presented in the room.</div>
