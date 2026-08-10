@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Actionable × Focus4ward — Marketing Audit</title>
+<style>
+:root {
+  --pink: #C9316E;
+  --navy: #1E2530;
+  --text: #0F0D0B;
+  --paper: #F5F0EB;
+  --rule: #E5DFD2;
+  --muted: #6E665A;
+  --card: #FBF8F3;
+  --green: #4F7A53;
+  --amber: #B07B2E;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "Space Grotesk", -apple-system, "Helvetica Neue", Arial, sans-serif; background: var(--paper); color: var(--text); line-height: 1.55; font-size: 17px; }
+a { color: var(--pink); }
+nav { position: sticky; top: 0; background: rgba(245,240,235,.95); backdrop-filter: blur(6px); border-bottom: 1px solid var(--rule); padding: 10px 24px; z-index: 10; overflow-x: auto; white-space: nowrap; }
+nav a { color: var(--muted); text-decoration: none; font-size: 13px; font-weight: 600; margin-right: 18px; }
+nav a:hover { color: var(--pink); }
+header.hero { background: var(--navy); color: #fff; padding: 72px 24px 64px; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+.hero .wrap { padding: 0; max-width: 960px; margin: 0 auto; padding: 0 24px; }
+.kicker { color: #F0C040; font-weight: 700; letter-spacing: .08em; font-size: 13px; text-transform: uppercase; }
+h1 { font-size: clamp(30px, 5vw, 52px); line-height: 1.1; margin: 12px 0 16px; letter-spacing: -0.015em; }
+h1 .accent { color: var(--pink); }
+.hero p.sub { color: #cfd3da; max-width: 640px; font-size: 19px; }
+.hero .meta { color: #8a919d; font-size: 14px; margin-top: 28px; }
+section { padding: 56px 0; border-bottom: 1px solid var(--rule); }
+h2 { font-size: clamp(24px, 3.4vw, 34px); letter-spacing: -0.01em; margin: 0 0 6px; }
+.secnum { color: var(--pink); font-weight: 700; font-size: 14px; letter-spacing: .08em; }
+.lede { color: var(--muted); font-size: 18px; max-width: 720px; margin-top: 4px; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin: 28px 0 8px; }
+.stat { background: var(--card); border: 1px solid var(--rule); border-radius: 10px; padding: 18px 16px; }
+.stat .num { font-size: 30px; font-weight: 700; color: var(--pink); line-height: 1.1; }
+.stat .label { font-size: 13.5px; color: var(--muted); margin-top: 6px; line-height: 1.35; }
+.todo { display: inline-block; background: #F6E8CF; color: var(--amber); border: 1px solid #E8D3A8; font-size: 12.5px; font-weight: 700; border-radius: 6px; padding: 2px 9px; letter-spacing: .03em; vertical-align: middle; }
+.todo-block { background: #FBF4E6; border: 1px dashed #E8D3A8; border-radius: 10px; padding: 18px 20px; color: #7a6a4a; font-size: 15.5px; margin-top: 20px; }
+table { width: 100%; border-collapse: collapse; margin: 24px 0 6px; background: var(--card); border-radius: 10px; overflow: hidden; font-size: 15.5px; }
+th, td { text-align: left; padding: 13px 15px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { background: var(--navy); color: #fff; font-size: 13.5px; letter-spacing: .04em; }
+td.yes { color: var(--green); font-weight: 600; width: 44%; }
+td.but { color: var(--text); }
+td.but strong { color: var(--pink); }
+.callout { border-left: 3px solid var(--pink); background: var(--card); padding: 16px 20px; border-radius: 0 10px 10px 0; margin: 24px 0; font-weight: 600; font-size: 17.5px; }
+.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin-top: 24px; }
+.card { background: var(--card); border: 1px solid var(--rule); border-radius: 10px; padding: 20px; }
+.card h3 { margin: 0 0 8px; font-size: 17px; }
+.card p { margin: 0; font-size: 15px; color: #3d3a35; }
+.plist { counter-reset: pr; list-style: none; padding: 0; margin: 26px 0 0; }
+.plist li { counter-increment: pr; background: var(--card); border: 1px solid var(--rule); border-radius: 10px; padding: 18px 20px 18px 66px; margin-bottom: 12px; position: relative; }
+.plist li::before { content: "0" counter(pr); position: absolute; left: 18px; top: 16px; color: var(--pink); font-weight: 700; font-size: 22px; }
+.plist h3 { margin: 0 0 5px; font-size: 17.5px; }
+.plist p { margin: 0; font-size: 15px; color: #3d3a35; }
+footer { padding: 44px 24px 60px; color: var(--muted); font-size: 14px; }
+footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.quote { font-size: 20px; font-style: italic; color: var(--navy); border-left: 3px solid #F0C040; padding: 6px 0 6px 20px; margin: 22px 0; }
+.quote .who { display: block; font-style: normal; font-size: 14px; color: var(--muted); margin-top: 6px; }
+</style>
+</head>
+<body>
+
+<nav class="wrap">
+  <a href="#summary">Summary</a>
+  <a href="#heard">What you told us</a>
+  <a href="#tension">Yes / But</a>
+  <a href="#funnel">Website &amp; funnel</a>
+  <a href="#search">Search</a>
+  <a href="#ai">AI visibility</a>
+  <a href="#brand">Brand</a>
+  <a href="#competition">Competition</a>
+  <a href="#story">The story</a>
+  <a href="#priority">Priorities</a>
+  <a href="#next">Next</a>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">Actionable × Focus4ward · Marketing audit · August 12, 2026</div>
+    <h1>The category is yours to create.<br>The engine to claim it <span class="accent">doesn't exist yet.</span></h1>
+    <p class="sub">Predictive CX is a story that wins in the room, every time. This audit is about what happens before and after the room: how buyers find you, what they see, and what carries them through a 5-to-6-month cycle.</p>
+    <div class="meta">Prepared by Miri Blum · Focus4ward · Sources: Umami (90 days), Google Search Console (3 months), Trakkr AI-visibility tracking, discovery interview</div>
+  </div>
+</header>
+
+<section id="summary"><div class="wrap">
+  <div class="secnum">01</div>
+  <h2>Executive summary</h2>
+  <p class="lede">Four numbers tell the story of a strong product with a business-card website.</p>
+  <div class="stats">
+    <div class="stat"><div class="num">100%</div><div class="label">of search clicks come from people already typing "Actionable". Zero category or problem-driven discovery.</div></div>
+    <div class="stat"><div class="num">1</div><div class="label">demo click tracked in 90 days, on 2,470 visits.</div></div>
+    <div class="stat"><div class="num">85%</div><div class="label">bounce rate, 41-second average visit. One page to see, nothing to come back for.</div></div>
+    <div class="stat"><div class="num">62%</div><div class="label">of traffic is French, while the ambition is enterprise Europe, UK and US.</div></div>
+  </div>
+  <div class="callout">The finding in one line: Actionable is creating a category on calls, with no surface for that category to live on between the calls. <span class="todo">REFINE WITH MIRI</span></div>
+</div></section>
+
+<section id="heard"><div class="wrap">
+  <div class="secnum">02</div>
+  <h2>What you told us</h2>
+  <p class="lede">From the discovery interview. If any of this reads wrong, the audit should be challenged; if it reads right, the rest follows.</p>
+  <div class="quote">"Avec Actionable, je peux enfin agir proactivement, plutôt que constater a posteriori ce qui s'est passé."<span class="who">The customer sentence, in your own words</span></div>
+  <div class="cols">
+    <div class="card"><h3>The goal</h3><p>A meaningful share of enterprise pipeline generated inbound, with prospects arriving already knowing Actionable and the category: "We need Predictive CX, and we think Actionable is the leader."</p></div>
+    <div class="card"><h3>The buying committee</h3><p>CX / Customer Insights teams champion. The CMO signs. Two different conversations, and the deal climbs from one to the other over 5 to 6 months.</p></div>
+    <div class="card"><h3>The real enemy</h3><p>Deals almost never die against a named competitor. They die against the status quo: surveys, internal Data teams, "not now".</p></div>
+    <div class="card"><h3>The wedge</h3><p>Surveys reach 2 to 5% of customers and get challenged on representativity. Actionable reads 100% of customers, individually, at 80%+ reliability, industrialised at Edenred and Cdiscount scale.</p></div>
+  </div>
+</div></section>
+
+<section id="tension"><div class="wrap">
+  <div class="secnum">03</div>
+  <h2>The Yes / But tension</h2>
+  <table>
+    <tr><th>Yes</th><th>But</th></tr>
+    <tr><td class="yes">Real enterprise proof: Edenred, Cdiscount, millions of customers scored, 80%+ reliability.</td><td class="but">None of it is visible anywhere a buyer looks <strong>before</strong> the first call.</td></tr>
+    <tr><td class="yes">A distinctive new brand that nobody forgets.</td><td class="but">It speaks to data engineers. Your champions are <strong>CX and insights people</strong>: empathy professionals walking into a control room.</td></tr>
+    <tr><td class="yes">A category being created: Predictive CX.</td><td class="but">The category exists only inside your calls. Search demand for it is <strong>zero</strong>, and you own no surface to build it on.</td></tr>
+    <tr><td class="yes">Traffic multiplied by 22 since the May relaunch.</td><td class="but">85% of it bounces in 41 seconds. There is <strong>one page</strong> to see and one thing to do: request a demo.</td></tr>
+    <tr><td class="yes">A clear champion motion and a proven sales narrative.</td><td class="but">One bottom-funnel CTA serves a <strong>5-to-6-month cycle</strong>. The curious CX manager who isn't demo-ready has nowhere to go, and no way to be seen again.</td></tr>
+  </table>
+</div></section>
+
+<section id="funnel"><div class="wrap">
+  <div class="secnum">04</div>
+  <h2>Website &amp; funnel</h2>
+  <p class="lede">Umami, last 90 days (May 12 – August 10, since the site relaunch).</p>
+  <div class="stats">
+    <div class="stat"><div class="num">2,140</div><div class="label">visitors · 2,470 visits · 2,980 views</div></div>
+    <div class="stat"><div class="num">92%</div><div class="label">of all views land on the homepage. The rest is privacy and legal pages.</div></div>
+    <div class="stat"><div class="num">1.2</div><div class="label">pages per visit. There is nowhere else to go.</div></div>
+    <div class="stat"><div class="num">10</div><div class="label">case-study opens vs 1 demo click. Proof pulls; the CTA doesn't.</div></div>
+  </div>
+  <p>The May relaunch removed what the previous site had: the blog, the case-studies page, the about page. What replaced them converts visitors into exactly one action, a demo request, and in 90 days one tracked visitor took it. Referral mix: Google 84% (almost all branded navigation), VivaTech, LinkedIn, and your investor's own site. Notably, <strong>chatgpt.com already appears as a referrer</strong>: buyers are asking AI tools about you before you have anything for AI tools to read.</p>
+  <div class="todo-block"><span class="todo">TODO</span> Confirm with Nicolas: CRM in place behind the demo form? What happens to a submitted demo request today? Any nurture at all? · Verify the demo-click event is correctly instrumented before quoting "1" live (it is directionally right either way: the funnel is a cliff).</div>
+</div></section>
+
+<section id="search"><div class="wrap">
+  <div class="secnum">05</div>
+  <h2>Search visibility</h2>
+  <p class="lede">Google Search Console, last 3 months.</p>
+  <div class="stats">
+    <div class="stat"><div class="num">735</div><div class="label">clicks on 35,700 impressions, average position 7.</div></div>
+    <div class="stat"><div class="num">100%</div><div class="label">of clicking queries are brand terms: "actionable", "actionable ai", "actionable startup".</div></div>
+    <div class="stat"><div class="num">1</div><div class="label">page doing all the work. The homepage takes 725 of 735 clicks.</div></div>
+    <div class="stat"><div class="num">0.37%</div><div class="label">CTR in the US on 15,800 impressions (France: 22.8%). Where the ambition is, the brand is invisible.</div></div>
+  </div>
+  <p>People who already know Actionable find it: "actionable ai" converts at 19% CTR from position 1.5. Nobody else does. Not a single click came from a problem, category or use-case query, because not a single page answers one. For a category-creation strategy, this is the whole game: <strong>when "predictive CX" starts being searched, somebody will own that page. Today it would not be you.</strong></p>
+</div></section>
+
+<section id="ai"><div class="wrap">
+  <div class="secnum">06</div>
+  <h2>AI visibility</h2>
+  <p class="lede">How ChatGPT, Perplexity and Gemini answer the questions your buyers ask.</p>
+  <div class="todo-block"><span class="todo">DATA ARRIVING</span> actionable.live is now tracked in Trakkr; first full crawl completes ~Aug 11. This section receives: visibility score vs category prompts, which sources LLMs cite for "predictive CX" / "customer experience AI" questions, and where Actionable appears (expected: nowhere yet — chatgpt.com referrals in Umami show buyers are already asking). Add model-by-model table + the citation-source list the content strategy should target.</div>
+</div></section>
+
+<section id="brand"><div class="wrap">
+  <div class="secnum">07</div>
+  <h2>Brand, look &amp; feel</h2>
+  <p class="lede">Who the brand talks to today, versus who buys.</p>
+  <p>The current identity is a retro control room: terminal typography, CRT glitch, dark cockpit imagery, "// CAUSAL AI PREDICTION PLATFORM". It is distinctive and technically credible, and those are real assets. But look at it through the eyes of the buying committee: your champion is a <strong>customer experience professional</strong>, someone whose job is empathy at scale, and the site greets them with surveillance-room aesthetics and "act before it's too late". The brand is dressed for the Data team, and the Data team is the status quo you displace, not the champion who carries you upstairs.</p>
+  <p>AI does not have to look like a machine. The strongest Predictive CX brand would feel the way the product makes a CX leader feel: finally seeing their customers clearly. Human, warm, confident, with the technical depth one layer down for the validation conversation.</p>
+  <div class="todo-block"><span class="todo">TODO</span> Add annotated homepage screenshots (hero, CTA area, proof section) · Contrast panel: 2-3 reference brands that do "serious AI, human face" well · Copy audit of hero + CTAs (fear framing vs empowerment framing) · Check accessibility/readability of the terminal font on mobile.</div>
+</div></section>
+
+<section id="competition"><div class="wrap">
+  <div class="secnum">08</div>
+  <h2>Competitive review</h2>
+  <p class="lede">Who occupies the space around "Predictive CX" today, and what they own.</p>
+  <div class="todo-block"><span class="todo">TODO</span> Build from the competitor list: 5-column table (Positioning / Lead gen motion / Product marketing / Reviews &amp; analyst presence / Partnerships) + a zoom card on the primary competitor. Include the adjacent giants (Qualtrics, Medallia — the "survey status quo" vendors) since the real competition is the status quo, and check who if anyone is using "Predictive CX" language already.</div>
+</div></section>
+
+<section id="story"><div class="wrap">
+  <div class="secnum">09</div>
+  <h2>One story, two rooms</h2>
+  <p class="lede">The strategic conclusion everything above points to.</p>
+  <div class="cols">
+    <div class="card"><h3>Tighter story</h3><p>One narrative that a CX manager can fall in love with and a CMO can defend to a CFO. Today the story lives in your calls and nowhere else. It needs to be written, warmed up, and put where buyers are before the call.</p></div>
+    <div class="card"><h3>Visible story</h3><p>A proof and content layer that Google can rank and LLMs can cite: case studies back on the site, a Predictive CX hub, answer-shaped pages. You are creating the category; own its surface before anyone searches it.</p></div>
+    <div class="card"><h3>A path for the not-yet-ready</h3><p>A 5-to-6-month cycle needs middle steps: something to read, something to keep, something to send the boss. "Request a demo" is the last step of the journey, not the only one.</p></div>
+  </div>
+</div></section>
+
+<section id="priority"><div class="wrap">
+  <div class="secnum">10</div>
+  <h2>Here is what I recommend focusing on. This list is by order of priority.</h2>
+  <ol class="plist">
+    <li><h3>The story, told for two rooms</h3><p>Positioning and messaging for the CX champion and the CMO signer, plus the brand-warmth layer that makes the champion feel at home. Foundation for everything below.</p></li>
+    <li><h3>Put the proof back</h3><p>Case studies (Edenred, Cdiscount) restored and rebuilt as citable pages. The 10-to-1 ratio of case-study opens to demo clicks says buyers want proof before conversation.</p></li>
+    <li><h3>Build the category surface</h3><p>A Predictive CX content hub built for both Google and LLMs. Answer-first pages, schema, llms.txt: claim the term while it is still unclaimed.</p></li>
+    <li><h3>Middle-funnel paths + measurement</h3><p>CTAs for every stage of a 5-6 month cycle, capture that feeds the CRM, and events that let you see the funnel you are building. <span class="todo">VALIDATE VS THEIR STACK</span></p></li>
+    <li><h3>De-French the footprint</h3><p>English-first content, US/UK-facing proof and presence, so the traffic mix starts matching the ambition.</p></li>
+  </ol>
+</div></section>
+
+<section id="next"><div class="wrap">
+  <div class="secnum">11</div>
+  <h2>What happens next</h2>
+  <p class="lede">The audit is the map. The build phase is the road.</p>
+  <p><span class="todo">TODO</span> 90-day sketch mapped to priorities 1-3, engagement shape, and the "what we'd measure" panel. Kept for after the presentation conversation.</p>
+</div></section>
+
+<footer><div class="wrap">
+  <div>Miri Blum · Focus4ward · miri@focus4ward.co</div>
+  <div>Confidential — prepared for Actionable, August 2026</div>
+</div></footer>
+
+</body>
+</html>
