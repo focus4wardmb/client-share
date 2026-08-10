@@ -59,6 +59,21 @@ td.but strong { color: var(--pink); }
 .plist p { margin: 0; font-size: 15px; color: #3d3a35; }
 footer { padding: 44px 24px 60px; color: var(--muted); font-size: 14px; }
 footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.sidenav { display: none; }
+@media (min-width: 1180px) {
+  nav { display: none; }
+  .sidenav { display: block; position: fixed; top: 0; left: 0; bottom: 0; width: 230px; background: var(--card); border-right: 1px solid var(--rule); padding: 28px 18px; overflow-y: auto; z-index: 20; }
+  .sidenav .brand { font-weight: 700; font-size: 15px; color: var(--navy); margin-bottom: 4px; }
+  .sidenav .brand span { color: var(--pink); }
+  .sidenav .sub { font-size: 11.5px; color: var(--muted); margin-bottom: 22px; line-height: 1.4; }
+  .sidenav a { display: flex; gap: 9px; align-items: baseline; color: var(--muted); text-decoration: none; font-size: 13.5px; font-weight: 600; padding: 7px 10px; border-radius: 7px; margin-bottom: 2px; }
+  .sidenav a .n { color: var(--pink); font-size: 11px; font-weight: 700; min-width: 18px; }
+  .sidenav a:hover { background: var(--paper); color: var(--text); }
+  .sidenav a.active { background: var(--navy); color: #fff; }
+  .sidenav a.active .n { color: #F0C040; }
+  header.hero, section > .wrap, footer .wrap { margin-left: 0; }
+  body { padding-left: 230px; }
+}
 .quote { font-size: 20px; font-style: italic; color: var(--navy); border-left: 3px solid #F0C040; padding: 6px 0 6px 20px; margin: 22px 0; }
 .quote .who { display: block; font-style: normal; font-size: 14px; color: var(--muted); margin-top: 6px; }
 </style>
@@ -78,6 +93,22 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
   <a href="#priority">Priorities</a>
   <a href="#next">Next</a>
 </nav>
+
+<aside class="sidenav">
+  <div class="brand">Actionable <span>×</span> Focus4ward</div>
+  <div class="sub">Marketing audit<br>August 12, 2026</div>
+  <a href="#summary"><span class="n">01</span>Executive summary</a>
+  <a href="#heard"><span class="n">02</span>What you told us</a>
+  <a href="#tension"><span class="n">03</span>Yes / But</a>
+  <a href="#funnel"><span class="n">04</span>Website &amp; funnel</a>
+  <a href="#search"><span class="n">05</span>Search</a>
+  <a href="#ai"><span class="n">06</span>AI visibility</a>
+  <a href="#brand"><span class="n">07</span>Brand &amp; positioning</a>
+  <a href="#competition"><span class="n">08</span>Competition</a>
+  <a href="#story"><span class="n">09</span>The story</a>
+  <a href="#priority"><span class="n">10</span>Priorities</a>
+  <a href="#next"><span class="n">11</span>Next</a>
+</aside>
 
 <header class="hero">
   <div class="wrap">
@@ -224,5 +255,20 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
   <div>Confidential — prepared for Actionable, August 2026</div>
 </div></footer>
 
+<script>
+const links = document.querySelectorAll('.sidenav a');
+const map = {};
+links.forEach(a => map[a.getAttribute('href').slice(1)] = a);
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      links.forEach(a => a.classList.remove('active'));
+      const a = map[e.target.id];
+      if (a) a.classList.add('active');
+    }
+  });
+}, { rootMargin: '-30% 0px -60% 0px' });
+document.querySelectorAll('section[id]').forEach(s => obs.observe(s));
+</script>
 </body>
 </html>
