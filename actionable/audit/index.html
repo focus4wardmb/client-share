@@ -129,6 +129,13 @@ h1.slide-title em{color:var(--pink);font-style:normal}
 .todo{display:inline-block;background:#F6E8CF;color:var(--amber);border:1px solid #E8D3A8;font-size:12px;font-weight:700;border-radius:6px;padding:2px 9px;letter-spacing:.03em;vertical-align:middle}
 .todo-block{background:#FBF4E6;border:1px dashed #E8D3A8;border-radius:10px;padding:18px 20px;color:#7a6a4a;font-size:14.5px;margin-top:22px;line-height:1.6;max-width:880px}
 
+.src{font-size:11.5px;color:var(--muted);margin-top:12px}
+.brand-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:4px}
+.brand-grid figure{margin:0;border:1px solid var(--rule);border-radius:10px;overflow:hidden;background:#fff}
+.brand-grid img{width:100%;display:block}
+.brand-grid figcaption{font-size:11.5px;color:var(--muted);padding:7px 10px;border-top:1px solid var(--rule);line-height:1.4}
+.brand-grid figcaption strong{color:var(--navy)}
+.sidebar-brand .logo-row img{height:22px;width:auto;display:block}
 footer{background:var(--navy);color:rgba(255,255,255,.6);padding:34px 0;font-size:13px}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 footer .fa{color:rgba(255,255,255,.85);font-weight:600}
@@ -163,8 +170,8 @@ footer .fa{color:rgba(255,255,255,.85);font-weight:600}
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-brand">
       <div>
-        <div class="wordmark">Actionable <span>×</span> Focus4ward</div>
-        <div class="label">Marketing audit</div>
+        <div class="logo-row"><img src="img/actionable-logo-light.svg" alt="Actionable"></div>
+        <div class="label">Marketing audit · Focus4ward</div>
         <div class="meta">August 12, 2026 · Miri Blum</div>
       </div>
       <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">Menu</button>
@@ -177,6 +184,7 @@ footer .fa{color:rgba(255,255,255,.85);font-weight:600}
       <a href="#funnel"><span class="num">04</span>Website &amp; funnel</a>
       <a href="#search"><span class="num">05</span>Search</a>
       <a href="#ai"><span class="num">06</span>AI visibility</a>
+      <a href="#g2"><span class="num">6b</span>The G2 play</a>
       <a href="#brand"><span class="num">07</span>Brand &amp; positioning</a>
       <a href="#competition"><span class="num">08</span>Competition</a>
       <a href="#story"><span class="num">09</span>The story</a>
@@ -255,7 +263,6 @@ footer .fa{color:rgba(255,255,255,.85);font-weight:600}
   <section class="slide" id="funnel"><div class="wrap">
     <div class="eyebrow">04 · Website &amp; funnel</div>
     <h1 class="slide-title">2,140 people came. <em>There was one page to see.</em></h1>
-    <p class="lede">Umami, last 90 days (May 12 – August 10, since the site relaunch).</p>
     <div class="glance-stats">
       <div class="glance-stat"><div class="stat">2,140</div><div class="label">visitors · 2,470 visits · 2,980 views</div></div>
       <div class="glance-stat"><div class="stat">92<small>%</small></div><div class="label">of all views land on the homepage. The rest is privacy and legal pages.</div></div>
@@ -267,13 +274,13 @@ footer .fa{color:rgba(255,255,255,.85);font-weight:600}
       <div class="beat"><h4>Buyers are already asking AI</h4><p>Referral mix: Google 84% (almost all branded navigation), VivaTech, LinkedIn, your investor's own site. And <strong>chatgpt.com already appears as a referrer</strong>: buyers ask AI tools about you before you have anything for AI tools to read.</p></div>
       <div class="beat"><h4>After the click, it works</h4><p>Tested: a demo request gets an instant confirmation and a personal email from the head of sales. The problem is not what happens after the click. It is that <strong>almost nobody clicks</strong>, and everyone who does not click is invisible.</p></div>
     </div>
+    <p class="src">Source: Umami, last 90 days (May 12 to August 10, since the site relaunch).</p>
   </div></section>
 
   <!-- 05 · Search -->
   <section class="slide alt" id="search"><div class="wrap">
     <div class="eyebrow">05 · Search visibility</div>
     <h1 class="slide-title">People who already know you find you. <em>Nobody else does.</em></h1>
-    <p class="lede">Google Search Console, last 3 months.</p>
     <div class="glance-stats">
       <div class="glance-stat"><div class="stat">735</div><div class="label">clicks on 35,700 impressions, average position 7.</div></div>
       <div class="glance-stat"><div class="stat">100<small>%</small></div><div class="label">of clicking queries are brand terms: "actionable", "actionable ai", "actionable startup".</div></div>
@@ -285,13 +292,13 @@ footer .fa{color:rgba(255,255,255,.85);font-weight:600}
       <div class="beat"><h4>Category search is zero</h4><p>Not a single click came from a problem, category or use-case query, because not a single page answers one. Google Trends: a faint US rise, nothing in France. <strong>The name is still claimable, and claiming it is real work.</strong></p></div>
       <div class="beat"><h4>The category won't be broadcast</h4><p>Inventing a category with a small team doesn't happen by broadcast. It happens through the 400 accounts, the events, and being the answer wherever those specific people look.</p></div>
     </div>
+    <p class="src">Source: Google Search Console, last 3 months.</p>
   </div></section>
 
   <!-- 06 · AI visibility -->
   <section class="slide" id="ai"><div class="wrap">
     <div class="eyebrow">06 · AI visibility</div>
     <h1 class="slide-title">Buyers already ask AI about the category. <em>The answer is never you.</em></h1>
-    <p class="lede">Trakkr baseline, August 11, 2026: 23 buyer-intent category prompts across ChatGPT, Perplexity, Gemini and others.</p>
     <div class="glance-stats">
       <div class="glance-stat"><div class="stat">0<small>/23</small></div><div class="label">prompts where any AI model names Actionable. Zero presence, zero visibility.</div></div>
       <div class="glance-stat"><div class="stat">1</div><div class="label">mention of Actionable across 1,845 source citations behind those answers.</div></div>
@@ -300,23 +307,50 @@ footer .fa{color:rgba(255,255,255,.85);font-weight:600}
     </div>
     <div class="beats">
       <div class="beat"><h4>Each label fights a different arena</h4><p>"Causal AI" is already owned: the causaLens cluster takes the top spots on that prompt. Data language lands you against Segment, Salesforce Data Cloud and Palantir. The CX prompts are answered with Medallia, Qualtrics and Adobe. <strong>Only the CX arena is winnable.</strong></p></div>
-      <div class="beat"><h4>A startup already proved it's winnable</h4><p>On "best alternatives to traditional survey-based satisfaction tools", your exact wedge, the models' top answer is <strong>Perspective AI, a startup</strong>, ahead of Qualtrics and Medallia, cited largely through its own site. Answer-shaped owned content beats incumbent size.</p></div>
+      <div class="beat"><h4>A startup already proved it's winnable</h4><p>On "best alternatives to traditional survey-based satisfaction tools", the top answer is <strong>Perspective AI</strong>: a startup that makes forms conversational, no prediction at all. Wrong product, right content: a clean, content-rich site wins the answer anyway. <strong>A buyer who meets them first never learns Actionable exists.</strong></p></div>
       <div class="beat"><h4>The sources are reachable with what you have</h4><p>Models build these answers from YouTube, LinkedIn, vendor blogs (Enterpret, Sentisum), Reddit and CX roundups (thecxlead.com, G2, Gartner). <strong>The videos and the film exist; the citable pages and roundup presence don't.</strong></p></div>
     </div>
-    <p class="fact-note" style="margin:16px 0 0"><span class="todo">TODO</span> Live LLM-answer captures for the room: what ChatGPT answers today for the buyers' category questions.</p>
+    <p class="fact-note" style="margin:10px 0 0"><span class="todo">TODO</span> Live LLM-answer captures for the room: what ChatGPT answers today for the buyers' category questions.</p>
+    <p class="src">Source: Trakkr baseline, August 11, 2026 · 23 buyer-intent category prompts across ChatGPT, Perplexity, Gemini and others.</p>
+  </div></section>
+
+  <!-- 06b · G2 -->
+  <section class="slide alt" id="g2"><div class="wrap">
+    <div class="eyebrow">06 · The G2 play</div>
+    <h1 class="slide-title">G2 is a shortlist and a source. <em>Actionable sits in neither.</em></h1>
+    <p class="lede">One profile feeds two audiences at once: enterprise buyers building shortlists, and the LLMs that lean on G2 when they answer category questions.</p>
+    <div class="beats">
+      <div class="beat"><h4>Pick the right shelf</h4><p>"Experience Management Software" is where Medallia and Qualtrics sit: that is the conversation to enter. "Feedback Analytics" is survey land (SurveyMonkey). <strong>Steer clear of survey-automation and AI-for-surveys categories: they are the opposite of the product.</strong></p></div>
+      <div class="beat"><h4>It counts twice</h4><p>learn.g2.com is already among the top-cited sources behind your category prompts (14 citations in the Trakkr baseline). <strong>A G2 profile is enterprise proof and AI visibility in one move.</strong></p></div>
+      <div class="beat"><h4>The reviews already exist</h4><p>Six enterprise clients, ~15 delivered logos. Reviews from Carrefour, OUIGO and Audiens-level names are proof listicle writers cannot fake, and competitors are already writing the listicles: <strong>Perspective AI publishes its own "10 AI CX platforms compared"</strong>.</p></div>
+    </div>
   </div></section>
 
   <!-- 07 · Brand & positioning (two screens) -->
   <section id="brand">
-    <div class="slide alt"><div class="wrap">
+    <div class="slide"><div class="wrap">
       <div class="eyebrow">07 · Brand, look &amp; feel</div>
       <h1 class="slide-title">The brand is dressed for the Data team. <em>The Data team is your status quo, not your champion.</em></h1>
-      <p class="lede">The current identity is a retro control room: terminal typography, CRT glitch, dark cockpit imagery, "// CAUSAL AI PREDICTION PLATFORM". It is distinctive and technically credible, and those are real assets. But your champion is a <strong>customer experience professional</strong>, someone whose job is empathy at scale, and the site greets them with surveillance-room aesthetics and "act before it's too late". AI does not have to look like a machine: the strongest Predictive CX brand would feel the way the product makes a CX leader feel. Finally seeing their customers clearly. Human, warm, confident, with the technical depth one layer down for the validation conversation.</p>
+      <p class="lede">The identity is a retro control room: terminal typography, CRT glitch, "// CAUSAL AI PREDICTION PLATFORM". Distinctive and technically credible, real assets. But the champion is a <strong>customer experience professional</strong>, empathy at scale as a job, greeted with surveillance aesthetics and "act before it's too late". The strongest Predictive CX brand would feel the way the product makes a CX leader feel: <strong>finally seeing their customers clearly</strong>. Human, warm, confident, technical depth one layer down.</p>
       <div class="cols two">
-        <div class="card"><h3>The domain is part of the problem</h3><p>actionable.live reads like a streaming site, not an enterprise vendor. For a company asking national banks for their customer data, actionable.com, or at minimum actionable.ai, is a trust signal worth buying. It also matters for search: today Google mostly meets this brand through its legal pages.</p></div>
+        <div class="card"><h3>The domain is part of the problem</h3><p>actionable.live reads like a streaming site, not an enterprise vendor. Checked August 11: <strong>getactionable.tech is available for a low price; actionable.ai and actionable.io are both available in the six figures.</strong> For a company asking national banks for their customer data, the premium domain is worth it: it is the one thing that gets harder to change every month.</p></div>
         <div class="card"><h3>The best brand asset already exists</h3><p>The brand film. Aspirational, positive urgency, human: "satisfaction is no longer a mystery, it's a science", "we make the silence speak", and a tagline-grade closer: <em>"Prédire la satisfaction, décider l'action."</em> The website simply doesn't keep the promise the film makes.</p></div>
       </div>
       <div class="callout">The recommendation is a rebrand, not a repaint. The current identity was built from the inside (what we find cool) rather than from the champion (what makes them feel seen). And it isn't an invention job; <em>it's an alignment job</em>: the film already found the voice.</div>
+    </div></div>
+    <div class="slide alt"><div class="wrap">
+      <div class="eyebrow">07 · The brand map, seen</div>
+      <h1 class="slide-title">Five neighbours, one costume. <em>The warm seat is open.</em></h1>
+      <div class="brand-grid">
+        <figure><img src="img/actionable.jpg" alt="actionable.live homepage"><figcaption><strong>Actionable</strong> · dark terminal, data-team language</figcaption></figure>
+        <figure><img src="img/qualtrics.jpg" alt="Qualtrics homepage"><figcaption><strong>Qualtrics</strong> · warm, but selling the survey world you replace</figcaption></figure>
+        <figure><img src="img/medallia.jpg" alt="Medallia homepage"><figcaption><strong>Medallia</strong> · black chrome, "leaders" language</figcaption></figure>
+        <figure><img src="img/fundamental.jpg" alt="Fundamental homepage"><figcaption><strong>Fundamental</strong> · synthwave, for AI teams</figcaption></figure>
+        <figure><img src="img/priorlabs.jpg" alt="Prior Labs homepage"><figcaption><strong>Prior Labs (SAP)</strong> · benchmarks, for ML teams</figcaption></figure>
+        <figure><img src="img/perspective.jpg" alt="Perspective AI homepage"><figcaption><strong>Perspective AI</strong> · clean and light, closest to warm, and not predictive</figcaption></figure>
+      </div>
+      <p class="closer">Nobody pairs CX-leader warmth with real predictive AI. That corner is the territory to own, and today it costs nothing to enter.</p>
+      <p class="src">Homepage captures, August 11, 2026.</p>
     </div></div>
     <div class="slide"><div class="wrap">
       <div class="eyebrow">07 · The positioning, in their own words</div>
@@ -351,23 +385,23 @@ footer .fa{color:rgba(255,255,255,.85);font-weight:600}
     <div class="slide"><div class="wrap">
     <div class="eyebrow">08 · Competitive review</div>
     <h1 class="slide-title">Nobody owns "predictive" + "CX" together. <em>Yet.</em></h1>
-    <p class="lede">Your watchlist, verified at source, splits into two different games. <strong>Qualtrics and Medallia</strong> sell to CX buyers today. <strong>Prior Labs and Fundamental</strong> sell the predictive model layer to data teams: Prior Labs was acquired by SAP in July 2026, Fundamental has raised $255M with churn prediction as a named use case, and Hex is analytics tooling. Plus the real enemy: in-house Data teams and the status quo. "We have no competitors" is true only at the product level; at the budget level, all of these compete for the same line.</p>
+    <p class="lede">Your watchlist, verified at source, splits into two games. <strong>Qualtrics and Medallia</strong> sell to CX buyers today. <strong>Prior Labs and Fundamental</strong> sell the predictive model layer to data teams: SAP bought Prior Labs in July 2026, Fundamental has raised $255M. Plus the real enemy: in-house Data teams and the status quo. "We have no competitors" is true at the product level; every one of these competes for the same budget line.</p>
     <div class="beats">
-      <div class="beat"><h4>The label survives validation</h4><p>CX Today publishes "Predictive CX AI Platforms 2026" rankings and CX Network runs a Predictive CX topic hub, yet <strong>no vendor claims the term</strong>: the shelf exists and is empty. No US startup runs it as their H1 either. Qualtrics owns "experience management", Medallia "experience platform"; analysts would file Actionable under Voice of the Customer today. Media momentum without a vendor claimant is the category-creation setup.</p></div>
-      <div class="beat"><h4>The brand map has an empty corner</h4><p>Prior Labs, Fundamental and Hex dress for data scientists. Qualtrics dresses warm, but for the survey world it owns; Medallia is lighter but corporate. <strong>Warm + predictive is the empty corner.</strong> The first brand that pairs CX-leader warmth with real predictive AI takes the champion by default.</p></div>
-      <div class="beat"><h4>The window is short</h4><p>SAP just bought Prior Labs. Fundamental raised $255M. The predictive layer is being armed and absorbed by the giants whose suites CX leaders already run, and CX Today reports providers "jostling to attach their own labels" to the space. <strong>Publish the category definition first</strong>, with the qualifier only Actionable can claim: 100% of customers, zero surveys.</p></div>
+      <div class="beat"><h4>The label survives validation</h4><p>CX Today publishes "Predictive CX AI Platforms 2026" rankings and CX Network runs a Predictive CX topic hub, yet <strong>no vendor claims the term</strong>, and no US startup runs it as their H1. Analysts would file Actionable under Voice of the Customer today. <strong>The shelf exists and is empty.</strong></p></div>
+      <div class="beat"><h4>The brand map has an empty corner</h4><p>Prior Labs, Fundamental and Hex dress for data scientists; Qualtrics dresses warm for the survey world it owns. <strong>Warm + predictive is the empty corner</strong> (see the brand map in 07). The first brand there takes the champion by default.</p></div>
+      <div class="beat"><h4>The window is short</h4><p>The predictive layer is being armed and absorbed by the giants whose suites CX leaders already run, and CX Today reports providers "jostling" for labels in this space. <strong>Publish the category definition first</strong>, with the qualifier only Actionable can claim: 100% of customers, zero surveys.</p></div>
     </div>
     <div class="todo-block"><span class="todo">TODO</span> 5-column comparison table &middot; LinkedIn Ad Library check for Qualtrics/Medallia needs a logged-in browser session &middot; Live LLM-answer captures for the room.</div>
     </div></div>
     <div class="slide alt"><div class="wrap">
       <div class="eyebrow">08 · What their ads say</div>
       <h1 class="slide-title">Everyone advertises in the dark. <em>The warm corner costs nothing to enter.</em></h1>
-      <p class="lede">Vision review of the 25 ad-library screenshots (LinkedIn + Google, FR + US, collected August 10).</p>
       <div class="beats">
         <div class="beat"><h4>Fear in an engineer's costume</h4><p>Medallia is the heaviest advertiser in the set: messages written for CX leaders ("CX leaders are under pressure", "Nice to have. Necessary to thrive.") dressed in black chrome and neon lime borrowed from dev tooling. <strong>The empathy position argued in the least empathetic visual language on LinkedIn.</strong></p></div>
         <div class="beat"><h4>One warm ad in twenty-five</h4><p>Across four active advertisers, exactly one creative is warm, human and light-ground: Medallia's Shipt customer story. Fundamental writes only for "enterprise AI teams", <strong>Hex has one ad live in Europe, Prior Labs runs none.</strong> In France, the warm-human position is empty.</p></div>
         <div class="beat"><h4>Even the empathy leaders slip</h4><p>Two Medallia thought-leader ads render as <strong>"Hi %FIRSTNAME%,"</strong>. A CX platform shipping a broken merge tag in paid media is the gap between claiming empathy and practicing it, on camera.</p></div>
       </div>
+      <p class="src">Source: vision review of the 25 ad-library screenshots (LinkedIn + Google, FR + US), collected August 10, 2026.</p>
     </div></div>
   </section>
 
