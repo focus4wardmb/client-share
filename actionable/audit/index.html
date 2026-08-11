@@ -61,7 +61,7 @@ h1.slide-title em{color:var(--pink);font-style:normal}
 .cover-stack .doc-type{font-size:12.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--pink)}
 .cover-stack .client-name{font-size:clamp(56px,9vw,96px);font-weight:700;letter-spacing:-3px;line-height:.95;color:var(--navy)}
 .cover-stack .strapline{font-size:clamp(19px,2.4vw,26px);color:var(--navy);line-height:1.3;font-weight:700;max-width:820px}
-.cover-stack .strapline .line2{display:block;color:var(--pink);margin-top:12px}
+.cover-stack .strapline .line2{display:block;color:var(--navy);margin-top:12px}
 .cover-stack .cover-sub{font-size:16.5px;color:var(--muted);max-width:720px;line-height:1.6}
 .cover-stack .meta-row{display:flex;gap:36px;margin-top:16px;flex-wrap:wrap;padding-top:18px;border-top:1px solid var(--rule)}
 .cover-stack .meta-row .l{font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
@@ -90,7 +90,7 @@ h1.slide-title em{color:var(--pink);font-style:normal}
 .card h3{margin:0 0 7px;font-size:15.5px;color:var(--navy);letter-spacing:-.2px}
 .card p{margin:0;font-size:13.5px;color:#3d3a35;line-height:1.55}
 .beats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:4px}
-.beat{background:var(--card);border-left:3px solid var(--navy);padding:18px 20px;border-radius:0 8px 8px 0}
+.beat{background:var(--card);border-left:3px solid var(--yellow);padding:18px 20px;border-radius:0 8px 8px 0}
 .slide.alt .beat{background:#fff}
 .beat h4{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:6px;letter-spacing:-.2px}
 .beat p{font-size:13px;color:#3d3a35;line-height:1.55}
@@ -122,6 +122,7 @@ h1.slide-title em{color:var(--pink);font-style:normal}
 .plist li{counter-increment:pr;background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:13px 22px 13px 66px;margin-bottom:9px;position:relative}
 .slide.alt .plist li{background:#fff}
 .plist li::before{content:"0" counter(pr);position:absolute;left:18px;top:13px;color:var(--pink);font-weight:700;font-size:23px;letter-spacing:-1px}
+.plist li{border-left:3px solid var(--yellow)}
 .plist h3{margin:0 0 5px;font-size:16.5px;color:var(--navy)}
 .plist p{margin:0;font-size:13px;color:#3d3a35;line-height:1.5}
 
@@ -186,18 +187,20 @@ footer .fa{color:rgba(255,255,255,.85);font-weight:600}
     <nav class="nav-list">
       <a href="#cover"><span class="num">00</span>Cover</a>
       <a href="#summary"><span class="num">01</span>Executive summary</a>
-      <a href="#heard"><span class="num">02</span>What Nicolas told us</a>
+      <a href="#heard"><span class="num">02</span>In your words</a>
       <a href="#funnel"><span class="num">03</span>Website &amp; funnel</a>
-      <a href="#search"><span class="num">04</span>Search</a>
+      <a href="#search"><span class="num">04</span>Organic search</a>
       <a href="#brand"><span class="num">05</span>Brand &amp; positioning</a>
       <a href="#ai"><span class="num">06</span>AI visibility</a>
       <a href="#g2"><span class="num">6b</span>The G2 play</a>
-      <a href="#linkedin"><span class="num">6c</span>LinkedIn</a>
-      <a href="#competition"><span class="num">07</span>Competition</a>
-      <a href="#tension"><span class="num">08</span>Yes / But</a>
-      <a href="#story"><span class="num">09</span>The story</a>
-      <a href="#priority"><span class="num">10</span>Priorities</a>
-      <a href="#next"><span class="num">11</span>Next</a>
+      <a href="#linkedin"><span class="num">07</span>LinkedIn</a>
+      <a href="#competition"><span class="num">08</span>Competition</a>
+      <a href="#tension"><span class="num">09</span>Yes / But</a>
+      <a href="#story"><span class="num">10</span>Strategic conclusion</a>
+      <a href="#priority"><span class="num">11</span>Action plan</a>
+      <a href="#timeline"><span class="num">11b</span>30 / 60 / 90</a>
+      <a href="#next"><span class="num">12</span>Next</a>
+      <a href="#annex"><span class="num">A</span>Annex</a>
     </nav>
   </aside>
 
@@ -208,11 +211,11 @@ footer .fa{color:rgba(255,255,255,.85);font-weight:600}
     <div class="cover-stack">
       <div class="doc-type">Marketing audit · August 12, 2026</div>
       <div class="client-name">Actionable</div>
-      <p class="strapline">The category is yours to create.<span class="line2">The engine to claim it doesn't exist yet.</span></p>
+      <p class="strapline">The category is ours to create.<span class="line2">The engine to claim it doesn't exist <em style="font-style:normal;color:var(--pink)">yet</em>.</span></p>
       <p class="cover-sub">Predictive CX is a story that wins in the room, every time. This audit is about what happens before and after the room: how buyers find you, what they see, and what carries them through a 5-to-6-month cycle.</p>
       <div class="meta-row">
         <div><div class="l">Prepared by</div><div class="v">Miri Blum · Focus4ward</div></div>
-        <div><div class="l">Presented to</div><div class="v">Nicolas · Actionable</div></div>
+        <div><div class="l">Presented to</div><div class="v">Nicolas Rieul · Co-Founder &amp; Co-CEO</div></div>
         <div><div class="l">Sources</div><div class="v">Umami (90 days) · GSC (3 months) · Trakkr · discovery interview</div></div>
       </div>
     </div>
@@ -220,7 +223,7 @@ footer .fa{color:rgba(255,255,255,.85);font-weight:600}
   <!-- 01 · Executive summary -->
   <section class="slide alt" id="summary"><div class="wrap">
     <div class="eyebrow">01 · Executive summary</div>
-    <h1 class="slide-title">A real business with real proof. <em>And an engine that hasn't been built.</em></h1>
+    <h1 class="slide-title">A real business with real proof.<br>And an engine that hasn't been <em>built</em>.</h1>
     <div class="fact-row">
       <span class="fact"><b>€1.6M</b> ARR</span>
       <span class="fact"><b>6</b> active enterprise clients</span>
@@ -228,25 +231,30 @@ footer .fa{color:rgba(255,255,255,.85);font-weight:600}
       <span class="fact"><b>5-6 mo</b> sales cycle</span>
       <span class="fact"><b>10-25%</b> first-meeting-to-signature on ICP</span>
       <span class="fact"><b>50 / 30 / 20</b> events · partners · network</span>
+      <span class="fact"><b>~15</b> inbound from the one press spike</span>
     </div>
-    <p class="fact-note">The facts Nicolas gave us. Logos include Carrefour, SNCF/OUIGO, Sephora, ENGIE, Fnac Darty, Audiens. Acquisition is founder-carried, with effectively zero inbound outside the fundraise press spike (one announcement produced ~15 inbound: visibility converts when it exists).</p>
-    <div class="glance-stats">
-      <div class="glance-stat"><div class="stat">100<small>%</small></div><div class="label">of search clicks come from people already typing "Actionable". Zero category or problem-driven discovery.</div></div>
-      <div class="glance-stat"><div class="stat">1</div><div class="label">demo click tracked in 90 days, on 2,470 visits.</div></div>
-      <div class="glance-stat"><div class="stat">85<small>%</small></div><div class="label">bounce rate, 41-second average visit. One page to see, nothing to come back for.</div></div>
-      <div class="glance-stat"><div class="stat">62<small>%</small></div><div class="label">of traffic is French, while the ambition is enterprise Europe, UK and US.</div></div>
+    <div class="glance-stats" style="margin-bottom:16px">
+      <div class="glance-stat" style="padding:20px 20px"><div class="stat" style="font-size:44px">100<small>%</small></div><div class="label">of search clicks come from people already typing "Actionable".</div></div>
+      <div class="glance-stat" style="padding:20px 20px"><div class="stat" style="font-size:44px">1</div><div class="label">demo click tracked in 90 days, on 2,470 visits.</div></div>
+      <div class="glance-stat" style="padding:20px 20px"><div class="stat" style="font-size:44px">0<small>/23</small></div><div class="label">buyer questions where any AI engine names Actionable.</div></div>
+      <div class="glance-stat" style="padding:20px 20px"><div class="stat" style="font-size:44px">4</div><div class="label">different category labels across the site and decks, for one category.</div></div>
     </div>
-    <div class="callout">Nothing here is broken. The engine that turns the proof into pipeline simply hasn't been built: the data shows exactly where it's missing. <em>Actionable is creating a category on calls, with no surface for that category to live on between the calls.</em> And enterprise buyers don't search; they shortlist. Getting on the shortlist takes visibility where they look, and trust built along the whole cycle.</div>
+    <div class="beats">
+      <div class="beat"><h4>Invisible where buyers look</h4><p>Brand-only search, absent from AI answers, no G2 profile, one founder post a week. Buyers shortlist; Actionable is not on the shelf.</p></div>
+      <div class="beat"><h4>Dressed for the wrong room</h4><p>Site, brand and decks speak to the Data team. The champion is a CX leader: an empathy professional greeted by a control room.</p></div>
+      <div class="beat"><h4>The assets already exist</h4><p>Blue-chip proof, the film's story, a 29,000-follower founder, partners at 30% of deals. Nothing is plugged in.</p></div>
+    </div>
+    <div class="callout"><em>Actionable is creating a category on calls, with no surface for that category to live on between the calls.</em> Getting on the enterprise shortlist takes visibility where buyers look, and trust built along the whole cycle: proof, website, thought leadership.</div>
   </div></section>
   <!-- 02 · What Nicolas told us -->
   <section class="slide" id="heard"><div class="wrap">
-    <div class="eyebrow">02 · What Nicolas told us</div>
-    <h1 class="slide-title">Your framing, in your own words. <em>If this reads right, the rest follows.</em></h1>
+    <div class="eyebrow">02 · In your words</div>
+    <h1 class="slide-title">Your framing, in your own words.<br>If this reads right, the rest <em>follows</em>.</h1>
     <div class="quote">"Avec Actionable, je peux enfin agir proactivement, plutôt que constater a posteriori ce qui s'est passé."<span class="who">The customer sentence, in your own words</span></div>
     <div class="cols">
-      <div class="card"><h3>The goal</h3><p>A meaningful share of enterprise pipeline generated inbound, with prospects arriving already knowing Actionable and the category: "We need Predictive CX, and we think Actionable is the leader."</p></div>
-      <div class="card"><h3>The buying committee</h3><p>CX / Customer Insights teams champion. The C-suite signs: the CMO at Cdiscount, Customer Strategy with Data at Edenred. Two different conversations, and the deal climbs from one to the other over 5 to 6 months.</p></div>
-      <div class="card"><h3>The real enemy</h3><p>Deals almost never die against a named competitor. They die against the status quo: surveys, the Data queue, "not now". In his buyers' words: <em>"dès qu'on veut aller plus loin, on dépend de la Data et ça prend des semaines."</em> His read; win/loss data to build.</p></div>
+      <div class="card"><h3>The goal</h3><p>Enterprise pipeline generated inbound: prospects arriving already knowing the category. "We need Predictive CX, and we think Actionable is the leader."</p></div>
+      <div class="card"><h3>The buying committee</h3><p>CX / Customer Insights teams champion. The C-suite signs: the CMO at Cdiscount, Customer Strategy with Data at Edenred. The deal climbs from one room to the other over 5 to 6 months.</p></div>
+      <div class="card"><h3>The real enemy</h3><p>Deals rarely die against a named competitor. They die against the status quo: surveys, the Data queue, "not now". In buyers' words: <em>"dès qu'on veut aller plus loin, on dépend de la Data et ça prend des semaines."</em></p></div>
       <div class="card"><h3>The machine today</h3><p>Marketing is founder-led with one apprentice. Events cost €8-15k for 1-3 immediate leads each. Partners (Ipsos, Kantar, Havas, Capgemini, Vertone) bring 30% of opportunities: the strongest under-invested channel.</p></div>
       <div class="card"><h3>The pitch that wins the room</h3><p>Surveys reach 2 to 5% of customers and get challenged on representativity. Actionable reads 100% of customers, individually, at 80%+ reliability, industrialised at Edenred and Cdiscount scale.</p></div>
     </div>
@@ -254,7 +262,7 @@ footer .fa{color:rgba(255,255,255,.85);font-weight:600}
   <!-- 04 · Website & funnel -->
   <section class="slide alt" id="funnel"><div class="wrap">
     <div class="eyebrow">03 · Website &amp; funnel</div>
-    <h1 class="slide-title">2,140 people came. <em>There was one page to see.</em></h1>
+    <h1 class="slide-title">2,140 people came.<br>There was <em>one page</em> to see.</h1>
     <div class="glance-stats">
       <div class="glance-stat"><div class="stat">2,140</div><div class="label">visitors · 2,470 visits · 2,980 views</div></div>
       <div class="glance-stat"><div class="stat">92<small>%</small></div><div class="label">of all views land on the homepage. The rest is privacy and legal pages.</div></div>
@@ -270,8 +278,8 @@ footer .fa{color:rgba(255,255,255,.85);font-weight:600}
   </div></section>
   <!-- 05 · Search -->
   <section class="slide" id="search"><div class="wrap">
-    <div class="eyebrow">04 · Search visibility</div>
-    <h1 class="slide-title">People who already know you find you. <em>Nobody else does.</em></h1>
+    <div class="eyebrow">04 · Organic search</div>
+    <h1 class="slide-title">People who already know you, find you.<br><em>Nobody else</em> does.</h1>
     <div class="glance-stats">
       <div class="glance-stat"><div class="stat">735</div><div class="label">clicks on 35,700 impressions, average position 7.</div></div>
       <div class="glance-stat"><div class="stat">100<small>%</small></div><div class="label">of clicking queries are brand terms: "actionable", "actionable ai", "actionable startup".</div></div>
@@ -280,7 +288,7 @@ footer .fa{color:rgba(255,255,255,.85);font-weight:600}
     </div>
     <div class="beats">
       <div class="beat"><h4>An authority asset, unused</h4><p>SEMrush registers Authority Score 23 and 255 referring domains: partly fundraise press, possibly partly the app subdomain (verify before quoting). Either way, <strong>only 2 pages earn organic traffic</strong>.</p></div>
-      <div class="beat"><h4>Category search is zero</h4><p>No clicks come from problem or category queries, because no page answers one. Google Trends: a faint US rise, nothing in France. The name is still claimable, and claiming it is real work.</p></div>
+      <div class="beat"><h4>Category search is zero</h4><p><strong>Not one click from a problem or category query</strong>, because no page answers one. Google Trends: a faint US rise, nothing in France. The name is still claimable.</p></div>
       <div class="beat"><h4>Presence, not mass advertising</h4><p>Category creation with a small team means being the answer wherever the 400 accounts look: search, AI, G2, LinkedIn, events. And at home first: 22.8% CTR in France vs 0.37% in the US, <strong>yet the site speaks only English</strong>. An advantage they shouldn't walk away from.</p></div>
     </div>
     <div class="callout">The index is a ghost town: Google knows 35 URLs, indexes 6. <em>10 are relaunch ghosts returning 404</em> (the deleted blog, cases, about). The sitemap declares 3 pages, two of them legal.</div>
@@ -290,17 +298,17 @@ footer .fa{color:rgba(255,255,255,.85);font-weight:600}
   <section id="brand">
     <div class="slide alt"><div class="wrap">
       <div class="eyebrow">05 · Brand, look &amp; feel</div>
-      <h1 class="slide-title">The brand is dressed for the Data team. <em>The Data team is your status quo, not your champion.</em></h1>
+      <h1 class="slide-title">The brand is dressed for the Data team.<br>Your champion is the <em>CX leader</em>.</h1>
       <p class="lede">The identity is a retro control room: terminal typography, CRT glitch, "// CAUSAL AI PREDICTION PLATFORM". Distinctive and technically credible, real assets. But the champion is a <strong>customer experience professional</strong>, empathy at scale as a job, greeted with surveillance aesthetics and "act before it's too late". The strongest Predictive CX brand would feel the way the product makes a CX leader feel: <strong>finally seeing their customers clearly</strong>. Human, warm, confident, technical depth one layer down.</p>
       <div class="cols two">
-        <div class="card"><h3>The domain is part of the problem</h3><p>actionable.live reads like a streaming site, not an enterprise vendor. Checked August 11: <strong>getactionable.tech is available for a low price; actionable.ai and actionable.io are both available in the six figures.</strong> For a company asking national banks for their customer data, the premium domain is worth it: it is the one thing that gets harder to change every month.</p></div>
-        <div class="card"><h3>The story exists; the look doesn't yet</h3><p>The brand film's story is the right one: positive urgency, human, "satisfaction is no longer a mystery, it's a science", and a tagline-grade closer: <em>"Prédire la satisfaction, décider l'action."</em> Its look is generic, and that is the opportunity: category creators set the aesthetic everyone else follows. Take the film's story; build the look it deserves.</p></div>
+        <div class="card"><h3>A domain that invokes trust</h3><p>You ask banks and retailers for their customer data; .live reads entertainment, not AI SaaS. Checked August 11: <strong>getactionable.tech is available cheap; actionable.ai and actionable.io are six figures</strong> and worth it. The domain only gets harder to change.</p></div>
+        <div class="card"><h3>Start from the film</h3><p>The film already tells it right: positive urgency, human, "satisfaction is no longer a mystery, it's a science", and a tagline-grade closer, <em>"Prédire la satisfaction, décider l'action."</em> The look around it is generic, which is normal: category creators get to set the look everyone else copies. That part is still to build.</p></div>
       </div>
       <div class="callout">The recommendation is a rebrand, not a repaint. The current identity was built from the inside (what we find cool) rather than from the champion (what makes them feel seen). And it isn't an invention job; <em>it's an alignment job</em>: the film already found the voice.</div>
     </div></div>
     <div class="slide"><div class="wrap">
       <div class="eyebrow">05 · The brand map, seen</div>
-      <h1 class="slide-title">Five neighbours, one costume. <em>The warm seat is open.</em></h1>
+      <h1 class="slide-title">Five neighbours, one costume.<br>The warm seat is <em>open</em>.</h1>
       <div class="brand-grid">
         <figure><img src="img/actionable.jpg" alt="actionable.live homepage"><figcaption><strong>Actionable</strong> · dark terminal, data-team language</figcaption></figure>
         <figure><img src="img/qualtrics.jpg" alt="Qualtrics homepage"><figcaption><strong>Qualtrics</strong> · warm, but selling the survey world you replace</figcaption></figure>
@@ -314,7 +322,7 @@ footer .fa{color:rgba(255,255,255,.85);font-weight:600}
     </div></div>
     <div class="slide alt"><div class="wrap">
       <div class="eyebrow">05 · What warm looks like</div>
-      <h1 class="slide-title">Serious AI with a human face <em>already exists. Just not in CX prediction.</em></h1>
+      <h1 class="slide-title">Serious AI with a human face exists.<br>Just not in <em>CX prediction</em>.</h1>
       <div class="brand-grid">
         <figure><img src="img/ref-sierra.jpg" alt="Sierra homepage"><figcaption><strong>Sierra</strong> · enterprise AI agents, sold through a human face and calm confidence</figcaption></figure>
         <figure><img src="img/ref-fin.jpg" alt="Fin by Intercom homepage"><figcaption><strong>Fin (Intercom)</strong> · "perfect customer experiences", serif warmth, light ground</figcaption></figure>
@@ -325,7 +333,7 @@ footer .fa{color:rgba(255,255,255,.85);font-weight:600}
     </div></div>
     <div class="slide"><div class="wrap">
       <div class="eyebrow">05 · The positioning, in their own words</div>
-      <h1 class="slide-title">Three names for one category, <em>written for the wrong reader.</em></h1>
+      <h1 class="slide-title">Three names for one category,<br>written for the <em>wrong reader</em>.</h1>
       <div class="beats">
         <div class="beat"><h4>Three labels at once</h4><p>The homepage runs "Causal AI prediction platform" (kicker), "The Predictive Customer Experience AI" (headline), and Predictive CX (the category the company says it is creating). A category-creation strategy cannot afford three names. Pick one, make every surface repeat it.</p></div>
         <div class="beat"><h4>Aimed at the wrong reader</h4><p>"AI your data has been waiting for", "understand why your KPIs move", +15B transactions analysed: written for the Data team, the very status quo the product displaces. The single best line on the page, <strong>"Score 100% of your customer base, not a 5% survey sample"</strong>, the exact wedge customers themselves describe, sits buried in module three.</p></div>
@@ -335,7 +343,7 @@ footer .fa{color:rgba(255,255,255,.85);font-weight:600}
     </div></div>
     <div class="slide alt"><div class="wrap">
       <div class="eyebrow">05 · The sales materials</div>
-      <h1 class="slide-title">Four decks, four framings. <em>The category lives in only one of them.</em></h1>
+      <h1 class="slide-title">Four decks, four framings.<br>The category lives in <em>one</em> of them.</h1>
       <div class="fact-row">
         <span class="fact">AFRC one-pager · <b>keep</b></span>
         <span class="fact">Generic sales deck · <b>rework</b></span>
@@ -353,7 +361,7 @@ footer .fa{color:rgba(255,255,255,.85);font-weight:600}
   <!-- 06 · AI visibility -->
   <section class="slide" id="ai"><div class="wrap">
     <div class="eyebrow">06 · AI visibility</div>
-    <h1 class="slide-title">Buyers already ask AI about the category. <em>The answer is never you.</em></h1>
+    <h1 class="slide-title">Buyers already ask AI about the category.<br>The answer is never <em>you</em>.</h1>
     <div class="glance-stats">
       <div class="glance-stat"><div class="stat">0<small>/23</small></div><div class="label">category prompts where any AI model names Actionable.</div></div>
       <div class="glance-stat"><div class="stat">1</div><div class="label">mention of Actionable across 1,845 source citations behind those answers.</div></div>
@@ -365,13 +373,12 @@ footer .fa{color:rgba(255,255,255,.85);font-weight:600}
       <div class="beat"><h4>A startup already proved it's winnable</h4><p>The survey-alternatives answers are led by <strong>Perspective AI</strong>: conversational forms, no prediction at all. In the live check, Gemini built its "measure without surveys" answer on <strong>their blog, cited six times</strong>. Wrong product, right content, and the buyer meets them first.</p></div>
       <div class="beat"><h4>The sources are reachable with what you have</h4><p>The answers are built from YouTube, LinkedIn, vendor blogs, Reddit and CX roundups (thecxlead.com, G2, Gartner). <strong>The videos and the film exist; the citable pages and roundup presence don't.</strong></p></div>
     </div>
-    <div class="callout" style="margin-top:8px">Live check, August 11: asked directly, all three models describe Actionable accurately, even favourably. Asked as a buyer, none names it once. <em>The name unlocks the answer; buyers don't have it yet.</em></div>
-    <p class="src">Sources: Trakkr baseline (23 buyer-intent prompts) · live captures on ChatGPT, Perplexity and Gemini · August 11, 2026.</p>
+    <p class="src">Sources: Trakkr baseline (23 buyer-intent prompts) and SEMrush, August 11, 2026. A manual spot-check on ChatGPT, Perplexity and Gemini matches: asked by name, all three answer well; asked as a buyer, none names Actionable.</p>
   </div></section>
   <!-- 06b · G2 -->
   <section class="slide alt" id="g2"><div class="wrap">
     <div class="eyebrow">06 · The G2 play</div>
-    <h1 class="slide-title">G2 is a shortlist and a source. <em>That makes it strategic.</em></h1>
+    <h1 class="slide-title">G2 is a shortlist and a source.<br>That makes it <em>strategic</em>.</h1>
     <p class="lede">One profile feeds two audiences at once: enterprise buyers building shortlists, and the LLMs that lean on G2 when they answer category questions. Actionable sits in neither today.</p>
     <div class="beats">
       <div class="beat"><h4>Pick the right shelf</h4><p>"Experience Management Software" is where Medallia and Qualtrics sit: that is the conversation to enter. "Feedback Analytics" is survey land (SurveyMonkey). <strong>Steer clear of survey-automation and AI-for-surveys categories: they are the opposite of the product.</strong></p></div>
@@ -381,8 +388,8 @@ footer .fa{color:rgba(255,255,255,.85);font-weight:600}
   </div></section>
   <!-- 06c · LinkedIn -->
   <section class="slide" id="linkedin"><div class="wrap">
-    <div class="eyebrow">06 · The LinkedIn read</div>
-    <h1 class="slide-title">The strongest channel is Nicolas. <em>At one post a week.</em></h1>
+    <div class="eyebrow">07 · The LinkedIn read</div>
+    <h1 class="slide-title">The strongest channel is Nicolas,<br>at <em>one post a week</em>.</h1>
     <div class="glance-stats">
       <div class="glance-stat"><div class="stat">29,000</div><div class="label">followers on Nicolas's profile. The company page has 2,460: the founder is 12x the company.</div></div>
       <div class="glance-stat"><div class="stat">1<small>/wk</small></div><div class="label">Nicolas's posting cadence (~2/wk for the company page). Below always-on for category creation.</div></div>
@@ -390,7 +397,7 @@ footer .fa{color:rgba(255,255,255,.85);font-weight:600}
       <div class="glance-stat"><div class="stat">~0</div><div class="label">comments on company posts. Broadcast, not conversation, and the FR/EN mix splits a small audience.</div></div>
     </div>
     <div class="beats">
-      <div class="beat"><h4>The founder is the media</h4><p>Every audit finding about visibility routes through the same fix: <strong>Nicolas posting as the category voice</strong>, not the company amplifier. Today his posts are milestones (awards, partnerships); the missing genre is the opinion piece that defines Predictive CX and retires the survey era.</p></div>
+      <div class="beat"><h4>People beat logos, now more than ever</h4><p>AI made content abundant; what cuts through is authority and authenticity, and those live with people, not company pages. <strong>The follower base is already there</strong>: the play is Nicolas posting as the category voice (more team voices to follow), not as the company amplifier.</p></div>
       <div class="beat"><h4>Even here, the label drifts</h4><p>Site says "Predictive Customer Experience AI" and "Causal AI", the company tagline says "predict satisfaction", posts say "Predictive CX", his headline says "Actionable AI ⚡️ Predictive...". Four surfaces, four variants of the name.</p></div>
       <div class="beat"><h4>Scale check</h4><p>Qualtrics: 332,000 followers. Medallia: 143,000. Perspective AI: <strong>766</strong>. On LinkedIn, unlike search and AI answers, Actionable is ahead of the startup set. This channel is winnable now with cadence alone.</p></div>
     </div>
@@ -399,19 +406,106 @@ footer .fa{color:rgba(255,255,255,.85);font-weight:600}
   <!-- 08 · Competition (two screens) -->
   <section id="competition">
     <div class="slide alt"><div class="wrap">
-    <div class="eyebrow">07 · Competitive review</div>
-    <h1 class="slide-title">Nobody owns "predictive" + "CX" together. <em>Yet.</em></h1>
+    <div class="eyebrow">08 · Competitive review</div>
+    <h1 class="slide-title">Nobody owns predictive + CX together.<br><em>Yet</em>.</h1>
     <p class="lede">Your watchlist, verified at source, splits into two games. <strong>Qualtrics and Medallia</strong> sell to CX buyers today. <strong>Prior Labs and Fundamental</strong> sell the predictive model layer to data teams: SAP bought Prior Labs in July 2026, Fundamental has raised $255M. Plus the real enemy: in-house Data teams and the status quo. "We have no competitors" is true at the product level; every one of these competes for the same budget line.</p>
     <div class="beats">
       <div class="beat"><h4>The label survives validation</h4><p>CX Today publishes "Predictive CX AI Platforms 2026" rankings and CX Network runs a Predictive CX topic hub, yet <strong>no vendor claims the term</strong>, and no US startup runs it as their H1. Analysts would file Actionable under Voice of the Customer today. <strong>The shelf exists and is empty.</strong></p></div>
       <div class="beat"><h4>The brand map has an empty corner</h4><p>Prior Labs, Fundamental and Hex dress for data scientists; Qualtrics dresses warm for the survey world it owns. <strong>Warm + predictive is the empty corner</strong> (see the brand map in 05). The first brand there takes the champion by default.</p></div>
       <div class="beat"><h4>The window is short</h4><p>The predictive layer is being armed and absorbed by the giants whose suites CX leaders already run, and CX Today reports providers "jostling" for labels in this space. <strong>Publish the category definition first</strong>, with the qualifier only Actionable can claim: 100% of customers, zero surveys.</p></div>
     </div>
-    <div class="todo-block"><span class="todo">TODO</span> Live LLM-answer captures for the room (prompt list agreed with Miri).</div>
     </div></div>
     <div class="slide"><div class="wrap">
-      <div class="eyebrow">07 · Side by side</div>
-      <h1 class="slide-title">Seven players, <em>one empty seat.</em></h1>
+      <div class="eyebrow">08 · What their ads say</div>
+      <h1 class="slide-title">Everyone advertises in the dark.<br>The warm corner costs <em>nothing</em> to enter.</h1>
+      <div class="beats">
+        <div class="beat"><h4>Fear in an engineer's costume</h4><p>Medallia is the heaviest advertiser in the set: messages written for CX leaders ("CX leaders are under pressure", "Nice to have. Necessary to thrive.") dressed in black chrome and neon lime borrowed from dev tooling. <strong>The empathy position argued in the least empathetic visual language on LinkedIn.</strong></p></div>
+        <div class="beat"><h4>One warm ad in twenty-five</h4><p>Across four active advertisers, exactly one creative is warm, human and light-ground: Medallia's Shipt customer story. Fundamental writes only for "enterprise AI teams", <strong>Hex has one ad live in Europe, Prior Labs runs none.</strong> In France, the warm-human position is empty.</p></div>
+        <div class="beat"><h4>Even the empathy leaders slip</h4><p>Two Medallia thought-leader ads render as <strong>"Hi %FIRSTNAME%,"</strong>. A CX platform shipping a broken merge tag in paid media is the gap between claiming empathy and practicing it, on camera.</p></div>
+      </div>
+      <p class="src">Source: vision review of the 25 ad-library screenshots (LinkedIn + Google, FR + US), collected August 10, 2026.</p>
+    </div></div>
+  </section>
+  <!-- 03 · Yes / But -->
+  <section class="slide" id="tension"><div class="wrap">
+    <div class="eyebrow">09 · The synthesis</div>
+    <h1 class="slide-title">Every yes here is real.<br>Every but stands between you and <em>winning</em>.</h1>
+    <div class="tension-list">
+      <div class="tension-row"><div class="yes">Real enterprise proof: Edenred, Cdiscount, millions of customers scored, 80%+ reliability.</div><div class="but">All of it is squeezed into one unrankable page. A buyer who does not scroll, and 85% leave in 41 seconds, <strong>never meets the proof</strong>.</div></div>
+      <div class="tension-row"><div class="yes">A distinctive new brand that nobody forgets.</div><div class="but">It speaks to data engineers. Your champions are <strong>CX and insights people</strong>: empathy professionals walking into a control room.</div></div>
+      <div class="tension-row"><div class="yes">A category being created: Predictive CX.</div><div class="but">The category exists only inside your calls. Search demand for it is <strong>zero</strong>, and you own no surface to build it on.</div></div>
+      <div class="tension-row"><div class="yes">Traffic multiplied by 22 since the May relaunch.</div><div class="but">85% of it bounces in 41 seconds. There is <strong>one page</strong> to see and one thing to do: request a demo.</div></div>
+      <div class="tension-row"><div class="yes">A clear champion motion and a proven sales narrative.</div><div class="but">One bottom-funnel CTA serves a <strong>5-to-6-month cycle</strong>. The curious CX manager who isn't demo-ready has nowhere to go, and no way to be seen again.</div></div>
+      <div class="tension-row"><div class="yes">Partners already bring 30% of opportunities: Ipsos, Kantar, Havas, Capgemini, Vertone.</div><div class="but">The joint "Predictive CX" offer exists, inside the partner portal. Publicly: <strong>zero commitment</strong>, no page, no press release, and Ipsos's logo leads the one-pager. The channel is rented, not owned.</div></div>
+    </div>
+  </div></section>
+  <!-- 09 · The story -->
+  <section class="slide alt" id="story"><div class="wrap">
+    <div class="eyebrow">10 · The strategic conclusion</div>
+    <h1 class="slide-title">One story, two rooms.<br>Everything above points <em>here</em>.</h1>
+    <div class="cols">
+      <div class="card"><h3>The story, told for the right person</h3><p>Prediction puts CX at the center of the company: satisfaction stops being the soft metric and starts driving revenue, pricing and operations (the OUIGO conversation already proves it). A story a CX leader sees their future in, sharpened for the ICP, and defensible up to the C-suite.</p></div>
+      <div class="card"><h3>The story, amplified</h3><p>A proof and content layer Google can rank, LLMs can cite and journalists can quote: case studies as real pages, a category hub, PR and media presence. When a CX director googles you after an event or asks ChatGPT about the category, <strong>the answer is you</strong>.</p></div>
+      <div class="card"><h3>A path for the not-ready-yet</h3><p>Most of the market doesn't know this category exists, let alone that they need it. While they discover, they need journeys: something to read, keep, and send the boss. "Request a demo" is the last step, not the first.</p></div>
+    </div>
+    <p class="lede" style="margin:26px 0 10px"><strong>Where we start: the first 90 days.</strong></p>
+    <div class="beats">
+      <div class="beat"><h4>1 · Rebuild and dress the story</h4><p>Positioning locked, then a rebrand to win: a challenger can get away with an okay brand; <strong>a category leader has to look the part</strong>, especially for enterprise.</p></div>
+      <div class="beat"><h4>2 · Build the foundation</h4><p>A real website: proof pages, category hub, blog with a content engine behind it, and PR for the media presence you asked for on day one.</p></div>
+      <div class="beat"><h4>3 · Show up every day</h4><p>Always-on between events: LinkedIn ABM on the 400 accounts, Nicolas's voice leading, paid support behind it.</p></div>
+    </div>
+  </div></section>
+  <!-- 10 · Priorities -->
+  <section class="slide" id="priority"><div class="wrap">
+    <div class="eyebrow">11 · The action plan</div>
+    <h1 class="slide-title">Here is what I recommend we do,<br>in this <em>order</em>.</h1>
+    <ol class="plist">
+      <li><h3>Lock the story</h3><p>Positioning and messaging for the CX champion and the C-suite signer, plus the brand-warmth layer that makes the champion feel at home. Foundation for everything below.</p></li>
+      <li><h3>Put the proof back</h3><p>Case studies (Edenred, Cdiscount) restored and rebuilt as citable pages. The 10-to-1 ratio of case-study opens to demo clicks says buyers want proof before conversation.</p></li>
+      <li><h3>Build the ABM machine</h3><p>400 nameable target accounts. LinkedIn paid to named CMO/CX personas, founder voice (and other strong profiles) publishing consistently, events activated before, during and after, and the partner channel (already 30% of deals) systematised: a joint press release or a partner page pointing at actionable.live, with Ipsos first and then every partner. No generic inbound chase.</p></li>
+      <li><h3>Be the answer: SEO, GEO, PR</h3><p>A category hub and answer-shaped pages for Google and the LLMs, plus press and media presence. Validated category name, EN-first for the UK/US ambition, FR site for the home advantage. The goal: be the answer when the 400 accounts go looking.</p></li>
+      <li><h3>Middle-funnel paths + measurement</h3><p>CTAs for every stage of a 5-6 month cycle, capture that feeds the CRM, and funnel events you can actually see. A named, context-capturing demo journey instead of a bare Calendly.</p></li>
+    </ol>
+  </div></section>
+  <!-- 11b · Timeline -->
+  <section class="slide alt" id="timeline"><div class="wrap">
+    <div class="eyebrow">11 · The first 90 days, concretely</div>
+    <h1 class="slide-title">The rebrand takes months.<br>Nothing else <em>waits</em> for it.</h1>
+    <div class="beats">
+      <div class="beat"><h4>Days 1-30 · Foundations</h4><p>Positioning and category name locked, messaging matched to the ICP. Quick brand cleanup on the current site (the cockpit goes, the brand stays). G2 profile live. Nicolas's LinkedIn rhythm starts. Rebrand agency brief out.</p></div>
+      <div class="beat"><h4>Days 31-60 · The engine</h4><p>Proof pages and category hub live on the cleaned site, content machine publishing, PR groundwork, LinkedIn ABM on the 400 accounts, partner pages with Ipsos negotiated. Rebrand in build.</p></div>
+      <div class="beat"><h4>Days 61-90 · The splash</h4><p>Rebrand lands on the new domain with a PR moment and the category definition published. Fast track: live in October. More runway if we want it: January, while the cleaned brand holds the line.</p></div>
+    </div>
+    <p class="closer">Two tracks the whole way: the rebrand in build, and the machine already running on the current brand. Nothing waits.</p>
+  </div></section>
+  <!-- 11 · Next -->
+  <section class="slide" id="next"><div class="wrap">
+    <div class="cover-stack">
+      <div class="doc-type">12 · What happens next</div>
+      <h1 class="slide-title" style="font-size:clamp(34px,4.5vw,56px)">The map is done.<br>The road starts <em>now</em>.</h1>
+      <p class="cover-sub">Everything in this audit is yours to execute, with me or without me. Stage 2, when you are ready: scope defined together from this plan, 1 to 2 days a week of senior time, starting with the first 90 days above.</p>
+      <div class="fact-row" style="margin-top:10px">
+        <span class="fact">What success looks like</span>
+        <span class="fact">AI answers name <b>Actionable</b></span>
+        <span class="fact">Category searches <b>exist</b></span>
+        <span class="fact">G2 profile <b>live</b></span>
+        <span class="fact">Inbound enterprise <b>conversations</b></span>
+      </div>
+      <div class="meta-row">
+        <div><div class="l">Deliverables</div><div class="v">This presentation + written synthesis</div></div>
+        <div><div class="l">Contact</div><div class="v">Miri Blum · miri@focus4ward.co</div></div>
+      </div>
+    </div>
+  </div></section>
+  <!-- ===== ANNEX ===== -->
+  <section class="slide short" id="annex" style="background:var(--navy);border-bottom:none"><div class="wrap">
+    <div class="eyebrow" style="color:var(--yellow)">Annex</div>
+    <h1 class="slide-title" style="color:#fff">The data behind the audit.</h1>
+    <p class="lede" style="color:rgba(255,255,255,.7)">Exhibits for the questions in the room: the competitive table, and the source screenshots (GSC, Umami, SEMrush, Trakkr, LLM captures).</p>
+  </div></section>
+  <section class="slide" id="annex-table"><div class="wrap">
+      <div class="eyebrow">Annex A · Side by side</div>
+      <h1 class="slide-title">Seven players, <em>one empty seat</em>.</h1>
       <div class="ctable-wrap"><table class="ctable">
         <tr><th>Company</th><th>Their category, their words</th><th>Sells to</th><th>Layer in the stack</th><th>Brand register</th></tr>
         <tr class="you"><td>Actionable</td><td>Predictive CX · "Prédire la satisfaction, décider l'action"</td><td>CX champion + C-suite signer</td><td>The only predictive CX product in this set</td><td>Dark terminal today; warm is the open move</td></tr>
@@ -423,65 +517,7 @@ footer .fa{color:rgba(255,255,255,.85);font-weight:600}
         <tr><td>Hex</td><td>"The AI Analytics Platform"</td><td>Data teams and analysts</td><td>Analytics tooling</td><td>Technical, notebook-era</td></tr>
       </table></div>
       <p class="src">Sources: each company's own homepage and materials, verified August 11, 2026.</p>
-    </div></div>
-    <div class="slide alt"><div class="wrap">
-      <div class="eyebrow">07 · What their ads say</div>
-      <h1 class="slide-title">Everyone advertises in the dark. <em>The warm corner costs nothing to enter.</em></h1>
-      <div class="beats">
-        <div class="beat"><h4>Fear in an engineer's costume</h4><p>Medallia is the heaviest advertiser in the set: messages written for CX leaders ("CX leaders are under pressure", "Nice to have. Necessary to thrive.") dressed in black chrome and neon lime borrowed from dev tooling. <strong>The empathy position argued in the least empathetic visual language on LinkedIn.</strong></p></div>
-        <div class="beat"><h4>One warm ad in twenty-five</h4><p>Across four active advertisers, exactly one creative is warm, human and light-ground: Medallia's Shipt customer story. Fundamental writes only for "enterprise AI teams", <strong>Hex has one ad live in Europe, Prior Labs runs none.</strong> In France, the warm-human position is empty.</p></div>
-        <div class="beat"><h4>Even the empathy leaders slip</h4><p>Two Medallia thought-leader ads render as <strong>"Hi %FIRSTNAME%,"</strong>. A CX platform shipping a broken merge tag in paid media is the gap between claiming empathy and practicing it, on camera.</p></div>
-      </div>
-      <p class="src">Source: vision review of the 25 ad-library screenshots (LinkedIn + Google, FR + US), collected August 10, 2026.</p>
-    </div></div>
-  </section>
-  <!-- 03 · Yes / But -->
-  <section class="slide" id="tension"><div class="wrap">
-    <div class="eyebrow">08 · The synthesis</div>
-    <h1 class="slide-title">Everything true about Actionable <em>has a "but" the buyer runs into.</em></h1>
-    <div class="tension-list">
-      <div class="tension-row"><div class="yes">Real enterprise proof: Edenred, Cdiscount, millions of customers scored, 80%+ reliability.</div><div class="but">All of it is squeezed into one unrankable page. A buyer who does not scroll, and 85% leave in 41 seconds, <strong>never meets the proof</strong>.</div></div>
-      <div class="tension-row"><div class="yes">A distinctive new brand that nobody forgets.</div><div class="but">It speaks to data engineers. Your champions are <strong>CX and insights people</strong>: empathy professionals walking into a control room.</div></div>
-      <div class="tension-row"><div class="yes">A category being created: Predictive CX.</div><div class="but">The category exists only inside your calls. Search demand for it is <strong>zero</strong>, and you own no surface to build it on.</div></div>
-      <div class="tension-row"><div class="yes">Traffic multiplied by 22 since the May relaunch.</div><div class="but">85% of it bounces in 41 seconds. There is <strong>one page</strong> to see and one thing to do: request a demo.</div></div>
-      <div class="tension-row"><div class="yes">A clear champion motion and a proven sales narrative.</div><div class="but">One bottom-funnel CTA serves a <strong>5-to-6-month cycle</strong>. The curious CX manager who isn't demo-ready has nowhere to go, and no way to be seen again.</div></div>
-      <div class="tension-row"><div class="yes">Partners already bring 30% of opportunities: Ipsos, Kantar, Havas, Capgemini, Vertone.</div><div class="but">Your flagship partner has made <strong>zero public commitment</strong>: no page, no press release, no named joint offer. The channel is rented, not owned.</div></div>
-    </div>
-  </div></section>
-  <!-- 09 · The story -->
-  <section class="slide alt" id="story"><div class="wrap">
-    <div class="eyebrow">09 · The strategic conclusion</div>
-    <h1 class="slide-title">One story, two rooms. <em>Everything above points here.</em></h1>
-    <div class="cols">
-      <div class="card"><h3>Tighter story</h3><p>One narrative a CX manager can fall in love with and a C-suite signer can defend upward: satisfaction tied to revenue, pricing and operations, not image. Today it lives in your calls and nowhere else. Write it, warm it, put it where buyers are before the call.</p></div>
-      <div class="card"><h3>Visible story</h3><p>A proof and content layer that Google can rank and LLMs can cite: case studies as real pages, a category hub, answer-shaped content. Not to chase inbound leads (those skew SMB): <strong>air cover for the enterprise motion</strong>. When a CX director googles you after an event or asks ChatGPT about the category, the answer is you.</p></div>
-      <div class="card"><h3>A path for the not-yet-ready</h3><p>A 5-to-6-month cycle needs middle steps: something to read, something to keep, something to send the boss. "Request a demo" is the last step of the journey, not the only one.</p></div>
-    </div>
-    <p class="lede" style="margin:26px 0 10px"><strong>Where we start: the first 90 days.</strong></p>
-    <div class="beats">
-      <div class="beat"><h4>1 · Rebuild the story</h4><p>Positioning locked and a proper rebrand: one category name on every surface, dressed for the champion.</p></div>
-      <div class="beat"><h4>2 · Build the surface</h4><p>A real website: proof pages, a category hub, a blog with a content engine behind it. Built to rank and to be cited.</p></div>
-      <div class="beat"><h4>3 · Light the bridge</h4><p>Always-on between events: LinkedIn ABM on the 400 accounts with Nicolas's profile leading, paid support behind it.</p></div>
-    </div>
-  </div></section>
-  <!-- 10 · Priorities -->
-  <section class="slide" id="priority"><div class="wrap">
-    <div class="eyebrow">10 · Priorities</div>
-    <h1 class="slide-title">Here is what I recommend focusing on. <em>This list is by order of priority.</em></h1>
-    <ol class="plist">
-      <li><h3>Lock the story</h3><p>Positioning and messaging for the CX champion and the C-suite signer, plus the brand-warmth layer that makes the champion feel at home. Foundation for everything below.</p></li>
-      <li><h3>Put the proof back</h3><p>Case studies (Edenred, Cdiscount) restored and rebuilt as citable pages. The 10-to-1 ratio of case-study opens to demo clicks says buyers want proof before conversation.</p></li>
-      <li><h3>Build the ABM machine</h3><p>400 nameable target accounts. LinkedIn paid to named CMO/CX personas, founder voice (and other strong profiles) publishing consistently, events activated before, during and after, and the partner channel (already 30% of deals) systematised: a joint press release or a partner page pointing at actionable.live, with Ipsos first and then every partner. No generic inbound chase.</p></li>
-      <li><h3>Category air cover: SEO + GEO</h3><p>A category hub and answer-shaped pages built for Google and the LLMs: validated category name, EN-first for the UK/US ambition. The goal is not lead capture; it is being the answer when the 400 accounts go looking.</p></li>
-      <li><h3>Middle-funnel paths + measurement</h3><p>CTAs for every stage of a 5-6 month cycle, capture that feeds the CRM, and funnel events you can actually see. A named, context-capturing demo journey instead of a bare Calendly.</p></li>
-    </ol>
-  </div></section>
-  <!-- 11 · Next -->
-  <section class="slide alt short" id="next"><div class="wrap">
-    <div class="eyebrow">11 · What happens next</div>
-    <h1 class="slide-title">The audit is the map. <em>The build phase is the road.</em></h1>
-    <p class="lede"><span class="todo">TODO</span> 90-day sketch mapped to priorities 1-3, engagement shape, and the "what we'd measure" panel. Kept for after the presentation conversation.</p>
-  </div></section>
+    </div></section>
 
   <footer><div class="wrap">
     <div class="fa">Miri Blum · Focus4ward · miri@focus4ward.co</div>
