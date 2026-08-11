@@ -57,6 +57,18 @@ h1.slide-title em{color:var(--pink);font-style:normal}
 .lede strong{color:var(--ink);font-weight:600}
 
 /* ===== Cover ===== */
+#cover{background:linear-gradient(135deg,#1E2530 0%,#2A3142 100%);position:relative;overflow:hidden;border-bottom:none}
+#cover::before{content:'';position:absolute;right:-140px;top:50%;transform:translateY(-50%);width:520px;height:520px;border-radius:50%;border:1px solid rgba(201,49,110,.35);box-shadow:0 0 0 70px rgba(201,49,110,.12),0 0 0 150px rgba(201,49,110,.05),0 0 0 240px rgba(240,192,64,.04);pointer-events:none}
+#cover .wrap{position:relative;z-index:1}
+#cover .doc-type{color:var(--yellow)}
+#cover .client-name{color:#fff}
+#cover .client-name .dot{color:var(--pink)}
+#cover .strapline{color:#fff}
+#cover .strapline .line2{color:rgba(255,255,255,.85)}
+#cover .cover-sub{color:rgba(255,255,255,.62)}
+#cover .meta-row{border-top:1px solid rgba(255,255,255,.15)}
+#cover .meta-row .l{color:rgba(255,255,255,.45)}
+#cover .meta-row .v{color:#fff}
 .cover-stack{display:flex;flex-direction:column;gap:16px}
 .cover-stack .doc-type{font-size:12.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--pink)}
 .cover-stack .client-name{font-size:clamp(56px,9vw,96px);font-weight:700;letter-spacing:-3px;line-height:.95;color:var(--navy)}
@@ -213,7 +225,7 @@ footer .fa{color:rgba(255,255,255,.85);font-weight:600}
   <section class="slide" id="cover"><div class="wrap">
     <div class="cover-stack">
       <div class="doc-type">Marketing audit · August 12, 2026</div>
-      <div class="client-name">Actionable</div>
+      <div class="client-name">Actionable<span class="dot">.</span></div>
       <p class="strapline">The category is ours to create.<span class="line2">The engine to claim it doesn't exist <em style="font-style:normal;color:var(--pink)">yet.</em></span></p>
       <p class="cover-sub">Predictive CX is a story that wins in the room, every time. This audit is about what happens before and after the room: how buyers find you, what they see, and what carries them through a 5-to-6-month cycle.</p>
       <div class="meta-row">
