@@ -31,6 +31,7 @@ const FALLBACK_PASSWORDS: Record<string, string> = {
   "swan-audit": "swan-audit-audit-2026",
   "salecycle": "salecycle-audit-2026",
   "actionable": "actionable-audit-2026",
+  "npco": "npco-audit-2026",
 };
 
 export default async function handler(req: Request, context: Context) {

@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>NPco × Focus4ward — Marketing Audit (draft)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --pink:#C9316E;
+  --navy:#1E2530;
+  --ink:#0F0D0B;
+  --paper:#F5F0EB;
+  --rule:#E5DFD2;
+  --muted:#6E665A;
+  --card:#FBF8F3;
+  --green:#4F7A53;
+  --amber:#B07B2E;
+  --yellow:#F0C040;
+  --sidebar-w:250px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Space Grotesk',-apple-system,"Helvetica Neue",Arial,sans-serif;background:#fff;color:var(--ink);line-height:1.55;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:var(--pink)}
+
+.app{display:grid;grid-template-columns:var(--sidebar-w) 1fr;min-height:100vh}
+
+/* ===== Sidebar ===== */
+aside.sidebar{background:var(--navy);color:#fff;position:sticky;top:0;height:100vh;overflow-y:auto;padding:30px 0 28px;border-right:1px solid rgba(255,255,255,.06)}
+.sidebar-brand{padding:0 24px 20px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:18px}
+.sidebar-brand .wordmark{font-size:17px;font-weight:700;letter-spacing:-.2px;color:#fff}
+.sidebar-brand .wordmark span{color:var(--pink)}
+.sidebar-brand .label{margin-top:12px;font-size:10.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.sidebar-brand .meta{margin-top:5px;font-size:11.5px;color:rgba(255,255,255,.45)}
+nav.nav-list{padding:0 14px}
+nav.nav-list a{display:flex;align-items:baseline;gap:10px;padding:7px 11px;font-size:13px;font-weight:500;color:rgba(255,255,255,.78);text-decoration:none;border-radius:6px;line-height:1.35;transition:background .12s,color .12s;margin-bottom:1px}
+nav.nav-list a:hover{background:rgba(255,255,255,.06);color:#fff}
+nav.nav-list a.active{background:var(--pink);color:#fff;font-weight:600}
+nav.nav-list a .num{font-size:10px;font-weight:700;color:rgba(255,255,255,.45);letter-spacing:.5px;min-width:18px;flex-shrink:0}
+nav.nav-list a.active .num{color:var(--yellow)}
+.menu-toggle{display:none}
+
+/* ===== Main / slides ===== */
+main{min-width:0}
+.wrap{max-width:1020px;margin:0 auto;padding:0 52px}
+.slide{min-height:92vh;padding:56px 0;display:flex;flex-direction:column;justify-content:center;border-bottom:1px solid var(--rule)}
+.slide.alt{background:var(--paper)}
+.slide.short{min-height:auto;padding:52px 0 56px}
+.eyebrow{font-size:12.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--pink);margin-bottom:16px}
+h1.slide-title{font-size:clamp(28px,3.6vw,42px);font-weight:700;letter-spacing:-1px;line-height:1.1;color:var(--navy);margin-bottom:16px}
+h1.slide-title em{color:var(--pink);font-style:normal}
+.lede{font-size:16.5px;line-height:1.55;color:var(--muted);margin-bottom:26px}
+.lede strong{color:var(--ink);font-weight:600}
+
+/* ===== Cover ===== */
+#cover{background:linear-gradient(135deg,#1E2530 0%,#2A3142 100%);position:relative;overflow:hidden;border-bottom:none}
+#cover::before{content:'';position:absolute;right:-140px;top:50%;transform:translateY(-50%);width:520px;height:520px;border-radius:50%;border:1px solid rgba(201,49,110,.35);box-shadow:0 0 0 70px rgba(201,49,110,.12),0 0 0 150px rgba(201,49,110,.05),0 0 0 240px rgba(240,192,64,.04);pointer-events:none}
+#cover .wrap{position:relative;z-index:1}
+#cover .doc-type{color:var(--yellow)}
+#cover .client-name{color:#fff}
+#cover .client-name .dot{color:var(--pink)}
+#cover .strapline{color:#fff}
+#cover .strapline .line2{color:rgba(255,255,255,.85)}
+#cover .cover-sub{color:rgba(255,255,255,.62)}
+#cover .meta-row{border-top:1px solid rgba(255,255,255,.15)}
+#cover .meta-row .l{color:rgba(255,255,255,.45)}
+#cover .meta-row .v{color:#fff}
+.cover-stack{display:flex;flex-direction:column;gap:16px}
+.cover-stack .doc-type{font-size:12.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--pink)}
+.cover-stack .client-name{font-size:clamp(56px,9vw,96px);font-weight:700;letter-spacing:-3px;line-height:.95;color:var(--navy)}
+.cover-stack .strapline{font-size:clamp(19px,2.4vw,26px);color:var(--navy);line-height:1.3;font-weight:700;max-width:820px}
+.cover-stack .strapline .line2{display:block;color:var(--navy);margin-top:12px}
+.cover-stack .cover-sub{font-size:16.5px;color:var(--muted);max-width:720px;line-height:1.6}
+.cover-stack .meta-row{display:flex;gap:36px;margin-top:16px;flex-wrap:wrap;padding-top:18px;border-top:1px solid var(--rule)}
+.cover-stack .meta-row .l{font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.cover-stack .meta-row .v{font-size:13.5px;font-weight:600;color:var(--ink)}
+
+/* ===== Fact chips ===== */
+.fact-row{display:flex;gap:10px;flex-wrap:wrap;margin:2px 0 22px}
+.fact{background:var(--card);border:1px solid var(--rule);border-radius:999px;padding:8px 16px;font-size:13.5px;font-weight:600;color:var(--navy)}
+.fact b{color:var(--pink)}
+.fact-note{font-size:13.5px;color:var(--muted);margin:-12px 0 22px}
+
+/* ===== Big stats ===== */
+.glance-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:4px 0 22px}
+.glance-stats.three{grid-template-columns:repeat(3,1fr)}
+.glance-stat{background:var(--card);border:1px solid var(--rule);border-radius:14px;padding:26px 22px}
+.slide.alt .glance-stat{background:#fff}
+.glance-stat .stat{font-size:52px;font-weight:700;color:var(--pink);letter-spacing:-2px;line-height:.95;margin-bottom:10px}
+.glance-stat .stat small{font-size:22px;font-weight:700;color:var(--navy);margin-left:2px;letter-spacing:-.5px}
+.glance-stat .label{font-size:13px;color:var(--ink);line-height:1.5}
+
+/* ===== Cards / beats ===== */
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:4px}
+.cols.two{grid-template-columns:1fr 1fr}
+.card{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:17px 20px}
+.slide.alt .card{background:#fff}
+.card h3{margin:0 0 7px;font-size:15.5px;color:var(--navy);letter-spacing:-.2px}
+.card p{margin:0;font-size:13.5px;color:#3d3a35;line-height:1.55}
+.beats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:4px}
+.beat{background:var(--card);border-left:3px solid var(--yellow);padding:18px 20px;border-radius:0 8px 8px 0}
+.slide.alt .beat{background:#fff}
+.beat h4{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:6px;letter-spacing:-.2px}
+.beat p{font-size:13px;color:#3d3a35;line-height:1.55}
+.beat p strong{color:var(--pink)}
+.closer{font-size:14.5px;color:var(--ink);font-style:italic;border-left:3px solid var(--pink);padding-left:18px;max-width:780px;margin-top:22px;line-height:1.6}
+
+/* ===== Quote ===== */
+.quote{font-size:clamp(18px,2vw,21px);font-style:italic;color:var(--navy);border-left:3px solid var(--yellow);padding:6px 0 6px 22px;margin:0 0 20px;max-width:820px;line-height:1.45}
+.quote .who{display:block;font-style:normal;font-size:13.5px;color:var(--muted);margin-top:8px}
+
+/* ===== Yes/But tension rows ===== */
+.tension-list{display:flex;flex-direction:column;gap:8px;margin-top:4px}
+.tension-row{display:grid;grid-template-columns:1fr 1.15fr;border-radius:10px;overflow:hidden;border:1px solid var(--rule)}
+.tension-row .yes,.tension-row .but{padding:11px 16px;font-size:13px;line-height:1.5}
+.tension-row .yes{background:rgba(79,122,83,.07);color:#3d3a35;border-right:1px solid var(--rule)}
+.tension-row .yes::before{content:"YES";font-size:10px;font-weight:700;letter-spacing:1.8px;color:var(--green);display:block;margin-bottom:6px}
+.tension-row .but{background:#fff;color:var(--ink);font-weight:500}
+.slide.alt .tension-row .but{background:var(--card)}
+.tension-row .but::before{content:"BUT";font-size:10px;font-weight:700;letter-spacing:1.8px;color:var(--pink);display:block;margin-bottom:6px}
+.tension-row .but strong{color:var(--pink)}
+
+/* ===== Callout ===== */
+.callout{border-left:3px solid var(--pink);background:var(--card);padding:18px 22px;border-radius:0 10px 10px 0;margin:24px 0 0;font-weight:600;font-size:16px;color:var(--navy);line-height:1.55;max-width:880px}
+.slide.alt .callout{background:#fff}
+.callout em{color:var(--pink);font-style:italic}
+
+/* ===== Priority list ===== */
+.plist{counter-reset:pr;list-style:none;padding:0;margin:4px 0 0}
+.plist li{counter-increment:pr;background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:13px 22px 13px 66px;margin-bottom:9px;position:relative}
+.slide.alt .plist li{background:#fff}
+.plist li::before{content:"0" counter(pr);position:absolute;left:18px;top:13px;color:var(--pink);font-weight:700;font-size:23px;letter-spacing:-1px}
+.plist li{border-left:3px solid var(--yellow)}
+.plist h3{margin:0 0 5px;font-size:16.5px;color:var(--navy)}
+.plist p{margin:0;font-size:13px;color:#3d3a35;line-height:1.5}
+
+/* ===== TODO markers (internal, pre-presentation) ===== */
+.todo{display:inline-block;background:#F6E8CF;color:var(--amber);border:1px solid #E8D3A8;font-size:12px;font-weight:700;border-radius:6px;padding:2px 9px;letter-spacing:.03em;vertical-align:middle}
+.todo-block{background:#FBF4E6;border:1px dashed #E8D3A8;border-radius:10px;padding:18px 20px;color:#7a6a4a;font-size:14.5px;margin-top:22px;line-height:1.6;max-width:880px}
+
+.src{font-size:11.5px;color:var(--muted);margin-top:12px}
+.ctable-wrap{border:1px solid var(--rule);border-radius:12px;overflow:hidden;margin-top:4px;background:#fff}
+table.ctable{width:100%;border-collapse:collapse;font-size:12.5px}
+.ctable th{background:var(--navy);color:#fff;text-align:left;padding:10px 13px;font-size:11.5px;letter-spacing:.4px;font-weight:600}
+.ctable td{padding:9px 13px;border-bottom:1px solid var(--rule);vertical-align:top;color:#3d3a35;line-height:1.45;background:#fff}
+.ctable tr:last-child td{border-bottom:none}
+.ctable tr.you td{background:rgba(201,49,110,.07);color:var(--ink);font-weight:500}
+.ctable td:first-child{font-weight:700;color:var(--navy);white-space:nowrap}
+.brand-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:4px}
+.brand-grid figure{margin:0;border:1px solid var(--rule);border-radius:10px;overflow:hidden;background:#fff}
+.brand-grid img{width:100%;display:block}
+.brand-grid figcaption{font-size:11.5px;color:var(--muted);padding:7px 10px;border-top:1px solid var(--rule);line-height:1.4}
+.brand-grid figcaption strong{color:var(--navy)}
+.sidebar-brand .logo-row img{height:22px;width:auto;display:block}
+.exhibit{padding:44px 0 48px}
+.exhibit .ex-title{font-size:18px;font-weight:700;color:var(--navy);letter-spacing:-.3px;margin-bottom:14px}
+.exhibit img{width:100%;max-height:76vh;object-fit:contain;object-position:left top;border:1px solid var(--rule);border-radius:10px;background:#fff}
+footer{background:var(--navy);color:rgba(255,255,255,.6);padding:34px 0;font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+footer .fa{color:rgba(255,255,255,.85);font-weight:600}
+
+/* ===== Mobile ===== */
+@media (max-width:1024px){
+  .app{grid-template-columns:1fr}
+  aside.sidebar{position:fixed;top:0;left:0;width:100%;height:auto;max-height:58px;overflow:hidden;z-index:50;padding:12px 0;transition:max-height .25s}
+  aside.sidebar.open{max-height:100vh;overflow-y:auto;padding:12px 0 26px}
+  .sidebar-brand{padding:0 20px 10px;border-bottom:none;margin-bottom:0;display:flex;align-items:center;justify-content:space-between;gap:12px}
+  aside.sidebar.open .sidebar-brand{border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:16px;padding-bottom:14px}
+  .sidebar-brand .label,.sidebar-brand .meta{display:none}
+  aside.sidebar.open .sidebar-brand .label,aside.sidebar.open .sidebar-brand .meta{display:block;width:100%}
+  .menu-toggle{display:block;background:rgba(255,255,255,.1);color:#fff;border:none;padding:8px 14px;border-radius:6px;font-family:inherit;font-size:13px;font-weight:600;cursor:pointer}
+  nav.nav-list{display:none}
+  aside.sidebar.open nav.nav-list{display:block}
+  main{padding-top:58px}
+  .wrap{padding:0 22px}
+  .slide{min-height:auto;padding:44px 0 48px}
+  .glance-stats,.glance-stats.three,.cols,.cols.two,.beats{grid-template-columns:1fr}
+  .glance-stat .stat{font-size:42px}
+  .tension-row{grid-template-columns:1fr}
+  .tension-row .yes{border-right:none;border-bottom:1px solid var(--rule)}
+  .cover-stack .client-name{font-size:52px}
+}
+</style>
+
+<style>
+.draft-banner{position:fixed;top:14px;right:-42px;z-index:99;background:var(--yellow);color:var(--navy);font-weight:700;font-size:12px;letter-spacing:2px;padding:6px 48px;transform:rotate(35deg);box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.tofill{display:inline-block;background:rgba(240,192,64,.25);border:1px dashed var(--amber);color:#7a5a1e;font-size:11.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border-radius:6px;padding:3px 10px;margin-left:8px;vertical-align:middle}
+.slide.stub{opacity:.92}
+</style>
+
+</head>
+<body>
+
+<div class="draft-banner">DRAFT · INTERNAL</div>
+<div class="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <div class="wordmark">NPco<span>.</span></div>
+      <div class="label">Marketing audit — draft</div>
+      <div class="meta">Focus4ward · August 2026</div>
+    </div>
+    <nav class="nav-list">
+      <a href="#cover"><span class="num">00</span>Cover</a>
+      <a href="#summary"><span class="num">01</span>Executive summary</a>
+      <a href="#heard"><span class="num">02</span>In your words</a>
+      <a href="#buyer"><span class="num">03</span>The buyer & the motion</a>
+      <a href="#category"><span class="num">04</span>Positioning & category</a>
+      <a href="#naming"><span class="num">05</span>Brand architecture</a>
+      <a href="#website"><span class="num">06</span>Website & measurement</a>
+      <a href="#search"><span class="num">07</span>Organic search</a>
+      <a href="#ai"><span class="num">08</span>AI visibility</a>
+      <a href="#linkedin"><span class="num">09</span>LinkedIn</a>
+      <a href="#competition"><span class="num">10</span>Competitive review</a>
+      <a href="#proof"><span class="num">11</span>Proof & voice of customer</a>
+      <a href="#tension"><span class="num">12</span>The synthesis</a>
+      <a href="#story"><span class="num">13</span>Strategic conclusion</a>
+      <a href="#priority"><span class="num">14</span>Action plan</a>
+      <a href="#next"><span class="num">15</span>What happens next</a>
+    </nav>
+  </aside>
+  <main>
+
+  <section class="slide" id="cover"><div class="wrap">
+    <div class="cover-stack">
+      <div class="doc-type">Marketing audit · DRAFT · August 2026</div>
+      <div class="client-name">NPco<span class="dot">.</span></div>
+      <div class="strapline">Engineering's AI moment has a missing story.
+      <span class="line2">The team that can tell it isn't telling it <em style="color:var(--yellow);font-style:normal">yet.</em></span></div>
+      <div class="cover-sub">NPco wins every technical validation it enters and has never lost to a competitor. This audit is about everything that happens before and around those rooms: what buyers find, what they see, and what carries a 6-to-12-month cycle.</div>
+      <div class="meta-row">
+        <div><div class="l">Prepared by</div><div class="v">Miri Blum · Focus4ward</div></div>
+        <div><div class="l">Presented to</div><div class="v">Emmanuel Menier · Mathieu Nastorg</div></div>
+        <div><div class="l">Sources</div><div class="v">Founder interviews · SEMrush · LinkedIn · Trakkr · Augur deck · Value Messaging doc</div></div>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="slide alt" id="summary"><div class="wrap">
+    <div class="eyebrow">01 · Executive summary <span class="tofill">to finalise</span></div>
+    <h1 class="slide-title">World-class technology.<br>An engine that doesn't exist <em>yet.</em></h1>
+    <div class="fact-row">
+      <span class="fact"><b>€1M</b> revenue target 6-12 mo · ~30% there</span>
+      <span class="fact"><b>0</b> lost deals against competitors</span>
+      <span class="fact"><b>6-12 mo</b> cold sales cycle</span>
+      <span class="fact"><b>2</b> paid engagements: Safran · EDF</span>
+      <span class="fact"><b>EN-only</b> · US-first, locked</span>
+    </div>
+    <div class="beats">
+      <div class="beat"><h4>Three names, one company</h4><p>AUGUR SAS legally, npco.ai in email, augursim.ai in doc footers. A buyer who checks, and enterprise buyers check, meets <strong>a brand that hasn't decided its own name</strong>.</p></div>
+      <div class="beat"><h4>Zero measurement</h4><p>No GA4, no Search Console. The engine can't be steered before it's instrumented. <strong>Finding and fix in one.</strong></p></div>
+      <div class="beat"><h4>The proof is trapped</h4><p>Safran benchmark, 98% accuracy vs Google/DeepMind/Caltech reference models, NeurIPS submission, Boeing/Airbus pilots — all locked inside a fundraising PDF <strong>no buyer will ever see</strong>.</p></div>
+    </div>
+    <div class="callout"><em>The category ("AI simulation", "physical AI") is being written right now by players with $170M+ war chests, all saying the same sentence.</em> NPco can't outspend them. It can out-position them, and the empty seat is the one NPco actually owns: the engineer at the centre of the story.</div>
+  </div></section>
+
+  <section class="slide" id="heard"><div class="wrap">
+    <div class="eyebrow">02 · In your words</div>
+    <h1 class="slide-title">Your framing, in your own words.<br>If this reads right, the audit read <em>you</em> right.</h1>
+    <div class="quote">"Les clients font de la conception paramétrique... c'est une prison pour eux. Ils ont besoin de pouvoir en sortir."<span class="who">Emmanuel · Aug 6 — the product philosophy in one line</span></div>
+    <div class="cols">
+      <div class="card"><h3>Empowerment, not sovereignty</h3><p>Eric's doc says "Physics Sovereignty"; Emmanuel chose <strong>empowerment</strong>: master the physics of your product without paying to test it. The customer word wins.</p></div>
+      <div class="card"><h3>400 → 1,200 → 400,000</h3><p>The buyer's stated need: clear the simulation backlog (1,200 vs 400). The real capacity: <strong>400,000</strong>. From "catch up" to "explore what you'd never have tried".</p></div>
+      <div class="card"><h3>Model-first, on-premise</h3><p>Clients build and own their models; deployment is on-prem, not cloud. In an industry paranoid about design data, <strong>this is a trust asset the story underuses</strong>.</p></div>
+    </div>
+    <p class="closer">The strategy is already locked where it matters: public positioning stays global, GTM execution targets matrix cells (vertical × physics), EN-only, US-first. "Tu peux enlever French et Inria."</p>
+  </div></section>
+
+  <section class="slide alt" id="buyer"><div class="wrap">
+    <div class="eyebrow">03 · The buyer & the motion</div>
+    <h1 class="slide-title">Experts first. Then the top.<br>Never the <em>middle.</em></h1>
+    <p class="lede">The motion that wins: technical validation with the pure expert, then straight to the CTO with "your own expert validated this". At Air Liquide the engineer next to Emmanuel called the executive committee of a €20B group when something was wrong. <strong>In French industrial groups, the expert IS the influencer.</strong></p>
+    <div class="cols">
+      <div class="card"><h3>The champion</h3><p>The simulation engineer / technical expert. Falls in love on the benchmark, validates, escalates.</p></div>
+      <div class="card"><h3>The signature</h3><p>Program director → BU director (Safran pattern). Ambition: comex-level strategic buys.</p></div>
+      <div class="card"><h3>The cycle</h3><p>6-12 months cold; much faster when already known in the group. Almost no RFPs: <strong>this is a need-creation market</strong>, which is precisely what marketing is for.</p></div>
+    </div>
+    <div class="callout">Mathieu interview <span class="tofill">Aug 13</span> feeds this screen: won-deal forensics, the users' verbatims, and the trust workflow. VoC screens depend on it.</div>
+  </div></section>
+
+  <section class="slide" id="category"><div class="wrap">
+    <div class="eyebrow">04 · Positioning & category</div>
+    <h1 class="slide-title">Everyone says "1000x faster".<br>Nobody puts the engineer in the <em>sentence.</em></h1>
+    <p class="lede">PhysicsX: "Accelerating Industrial Innovation with AI". Emmi: "Large Engineering Models". Luminary: "Physics. Encoded in AI." The convergence is total: technology as hero, speed as proof. <strong>"The optimal design already exists" has the same flaw: no one in the sentence designs anything.</strong></p>
+    <div class="cols two">
+      <div class="card"><h3>The open seat</h3><p>The engineer-centred story: escape the parametric prison, explore what you could never test, <strong>change what engineering dares to try</strong>. Empowerment (Emmanuel's word) against everyone else's automation story.</p></div>
+      <div class="card"><h3>The trust pillar</h3><p>Every buyer will ask "when do I trust the surrogate?" — 40 years of solver habits demand an honest public answer. First vendor to answer it head-on owns the conversation. <span class="tofill">pressure-test with Mathieu</span></p></div>
+    </div>
+    <div class="quote">"Candidate altitude: faster and safer products, not faster engineers. More of the design space explored means better, cleaner, safer machines, sooner. Two rooms: the engineer hears freedom, the comex hears competitive advantage."<span class="who">Working hypothesis — validate with both founders before it goes public</span></div>
+  </div></section>
+
+  <section class="slide alt" id="naming"><div class="wrap">
+    <div class="eyebrow">05 · Brand architecture</div>
+    <h1 class="slide-title">Augur, NPco, augursim.ai.<br>Three names for one <em>company.</em></h1>
+    <p class="lede">The legal entity is AUGUR SAS. Email lives at npco.ai. The Value Messaging doc's footer says augursim.ai and titles the baseline "NPco". The fundraising deck is fully Augur-branded. <strong>Enterprise trust is built on coherence; today the first Google check breaks it.</strong></p>
+    <div class="beats">
+      <div class="beat"><h4>Decide the name</h4><p>Complete the Augur→NPco transition or reverse it, but <strong>on purpose, before the US push</strong> — renames only get more expensive.</p></div>
+      <div class="beat"><h4>One domain</h4><p>Consolidate email, site and documents on the chosen domain; redirect the rest.</p></div>
+      <div class="beat"><h4>One boilerplate</h4><p>One company description, everywhere: site, deck, LinkedIn, PR, papers. <span class="tofill">draft in recommendations</span></p></div>
+    </div>
+  </div></section>
+
+  <section class="slide stub" id="website"><div class="wrap">
+    <div class="eyebrow">06 · Website & measurement <span class="tofill">crawler + review pass</span></div>
+    <h1 class="slide-title">The flagship finding is already in:<br>nothing is <em>measured.</em></h1>
+    <div class="glance-stats three">
+      <div class="glance-stat"><div class="stat">0</div><div class="label">analytics properties. No GA4 — traffic, sources and conversions are invisible.</div></div>
+      <div class="glance-stat"><div class="stat">0</div><div class="label">Search Console properties. Google's read of the site has never been seen.</div></div>
+      <div class="glance-stat"><div class="stat">?</div><div class="label">demo/contact conversion — unknowable until instrumented.</div></div>
+    </div>
+    <div class="callout">A content engine without measurement cannot be steered. Instrumentation (GA4 + GSC + basic events) is the first concrete build of the engagement — <em>finding and Stage 2 opportunity in one</em>.</div>
+    <p class="src">To add: crawler pass on npco.ai (structure, messaging, metadata, schema), Webflow review, conversion paths.</p>
+  </div></section>
+
+  <section class="slide alt stub" id="search"><div class="wrap">
+    <div class="eyebrow">07 · Organic search <span class="tofill">SEMrush baseline — screenshots received Aug 12</span></div>
+    <h1 class="slide-title">The category is being searched<br>in English. Where's <em>NPco?</em></h1>
+    <p class="lede">Baseline from Miri's SEMrush captures (Aug 12): authority, keywords, US vs FR visibility, and the gap against PhysicsX / Luminary / Emmi domains. <strong>Numbers land here after the analysis pass.</strong></p>
+    <div class="cols">
+      <div class="card"><h3>Domain authority</h3><p><span class="tofill">from screenshots</span></p></div>
+      <div class="card"><h3>Ranking keywords</h3><p><span class="tofill">from screenshots</span></p></div>
+      <div class="card"><h3>Competitor gap</h3><p><span class="tofill">from screenshots</span></p></div>
+    </div>
+  </div></section>
+
+  <section class="slide stub" id="ai"><div class="wrap">
+    <div class="eyebrow">08 · AI visibility <span class="tofill">Trakkr baseline + live captures</span></div>
+    <h1 class="slide-title">Engineers ask AI first now.<br>Someone else is the <em>answer.</em></h1>
+    <p class="lede">The buyers' new front door: "best AI simulation tools", "PhysicsX alternatives", "AI surrogate models for CFD". Baseline to capture: what ChatGPT, Perplexity and Gemini answer today about the category, NPco and Augur.</p>
+    <div class="cols two">
+      <div class="card"><h3>Trakkr tracking</h3><p>Add NPco as tracked brand, category prompts, competitor set. <span class="tofill">plan-limit check first</span></p></div>
+      <div class="card"><h3>Live captures</h3><p>Miri's ChatGPT/Perplexity screenshots, Actionable-method. <span class="tofill">Miri</span></p></div>
+    </div>
+    <p class="closer">Working hypothesis to verify: the NeurIPS paper and YouTube-able proof are exactly the sources LLMs cite in this space. Research + publishing beats advertising here.</p>
+  </div></section>
+
+  <section class="slide alt stub" id="linkedin"><div class="wrap">
+    <div class="eyebrow">09 · LinkedIn <span class="tofill">company export received Aug 12 + founder profiles</span></div>
+    <h1 class="slide-title">The channel where this category<br>actually <em>lives.</em></h1>
+    <p class="lede">PhysicsX built 27.8k followers, Emmi 9.6k in ~18 months, Luminary 8.7k. The cohort's real marketing happens here: research posts, benchmark drops, founder voices. NPco's page and both founders' profiles: <span class="tofill">analysis from export</span></p>
+    <div class="beats">
+      <div class="beat"><h4>Company page</h4><p><span class="tofill">followers, cadence, content mix, engagement — from export</span></p></div>
+      <div class="beat"><h4>Emmanuel & Mathieu</h4><p><span class="tofill">profile audit: headline, about, activity</span></p></div>
+      <div class="beat"><h4>The Emmi precedent</h4><p>9.6k followers in 18 months proves presence is buildable fast with focused technical content. The door is open.</p></div>
+    </div>
+  </div></section>
+
+  <section class="slide" id="competition"><div class="wrap">
+    <div class="eyebrow">10 · Competitive review · seeded from the June benchmark (clients.focus4ward.co/augur)</div>
+    <h1 class="slide-title">Three players, $370M+, one sentence.<br>And an empty <em>seat.</em></h1>
+    <div class="fact-row">
+      <span class="fact">PhysicsX · <b>$170M</b> · 277 people · 27.8k followers</span>
+      <span class="fact">Emmi AI · <b>Mistral-owned</b> (May 2026) · 9.6k</span>
+      <span class="fact">Luminary · <b>$187M</b> · 8.7k · US-native</span>
+    </div>
+    <div class="beats">
+      <div class="beat"><h4>Convergent messaging</h4><p>All three sell "physics-accurate AI, 1000x faster". Generic messaging in this category is <strong>invisible, not just weak</strong>.</p></div>
+      <div class="beat"><h4>No G2, no reviews</h4><p>Nobody in the cohort is on G2/Capterra — reputation is carried by logos, investors, benchmarks and research. <strong>The proof surfaces are different here</strong> (vs Actionable's market).</p></div>
+      <div class="beat"><h4>The war chest signal</h4><p>Luminary's $72M Series B was raised explicitly to build marketing & sales. The best-funded player is investing in exactly the layer NPco is deciding on.</p></div>
+    </div>
+    <div class="callout">To verify at source before restitution: deck claims about the cohort ("pre-Transformer, can't scale past parts") are the <em>founder's framing</em>, not established fact — PhysicsX/Emmi tech positioning needs an independent read. Plus incumbents (Ansys SimAI, Siemens, Dassault) as the "good enough, already installed" rival. <span class="tofill">verification pass</span></div>
+  </div></section>
+
+  <section class="slide alt" id="proof"><div class="wrap">
+    <div class="eyebrow">11 · Proof & voice of customer</div>
+    <h1 class="slide-title">The proof exists. It lives in a PDF<br>the buyer will never <em>open.</em></h1>
+    <div class="cols two">
+      <div class="card"><h3>What exists today</h3><p>Safran benchmark (98%, vs Google/DeepMind/Caltech reference models) · NeurIPS submission (decision ~Sept) · Safran + EDF paid · Boeing/Airbus pilots · Thales, TotalEnergies, VPLP, Stellantis in discussion · Inria equity + tech-transfer.</p></div>
+      <div class="card"><h3>Where it's visible</h3><p>A fundraising deck and nowhere else. No case pages, no film, no published benchmark, no analyst coverage. The 25%/26% survey (self-run, ~60 FR engineers) needs framing honesty or stronger sources.</p></div>
+    </div>
+    <div class="beats">
+      <div class="beat"><h4>Client films</h4><p>Actionable-proven: half-day shoot, &lt;€5K/film with Miri's crew, feeds sales + YouTube + LLMs at once. <strong>Time the first one to the Safran signature (~Sept, communicable after).</strong></p></div>
+      <div class="beat"><h4>VoC pipeline</h4><p>Emmanuel records his client calls. Plan: access via Léonie → transcript analysis agent → verbatims for content and this audit. <span class="tofill">Léonie ask sent</span></p></div>
+      <div class="beat"><h4>Research as marketing</h4><p>NeurIPS acceptance, published benchmarks, technical YouTube: in this category these ARE the demand engine — the cohort proves it.</p></div>
+    </div>
+  </div></section>
+
+  <section class="slide" id="tension"><div class="wrap">
+    <div class="eyebrow">12 · The synthesis <span class="tofill">draft rows — completes after analysis</span></div>
+    <h1 class="slide-title">Every yes is real. Every but stands<br>between you and the <em>category.</em></h1>
+    <div class="tension-list">
+      <div class="tension-row"><div class="yes">Technology that beats reference models from Google, DeepMind and Caltech on a real client benchmark.</div><div class="but">Published nowhere a buyer looks. The benchmark lives in a fundraising PDF; NeurIPS is still under review.</div></div>
+      <div class="tension-row"><div class="yes">Never lost a deal. Experts fall in love on technical validation.</div><div class="but">Every deal is founder-led need-creation. Nothing feeds the top: no visibility where engineers search, ask AI, or scroll.</div></div>
+      <div class="tension-row"><div class="yes">A locked strategy: EN-only, US-first, global player framing.</div><div class="but">Three names, a French-flagged digital footprint, and zero US presence signals. The story and the surface contradict each other.</div></div>
+      <div class="tension-row"><div class="yes">A real product philosophy — empowerment, out of the parametric prison.</div><div class="but">The public sentence ("the optimal design already exists") removes the engineer the philosophy celebrates.</div></div>
+      <div class="tension-row"><div class="yes">Enterprise-grade trust assets: on-prem, model ownership, Inria lineage.</div><div class="but">Unmeasured site, no analytics, no instrumented funnel: the engine can't even see a buyer arrive.</div></div>
+    </div>
+  </div></section>
+
+  <section class="slide alt" id="story"><div class="wrap">
+    <div class="eyebrow">13 · Strategic conclusion <span class="tofill">to finalise after Mathieu + analysis</span></div>
+    <h1 class="slide-title">One story, two rooms.<br>The engineer hears freedom. The comex hears <em>advantage.</em></h1>
+    <div class="cols two">
+      <div class="card"><h3>Room 1 — the expert</h3><p>Out of the parametric prison: test what you could never test, at the speed of your ideas. The champion motion already works; the story should arm it.</p></div>
+      <div class="card"><h3>Room 2 — the decision</h3><p>Faster and safer products: more of the design space explored means better machines, sooner, before your competitor dares. Category: claim the definition before the $370M cohort does.</p></div>
+    </div>
+    <p class="closer">Working line, to pressure-test: it changes what engineering dares to try.</p>
+  </div></section>
+
+  <section class="slide stub" id="priority"><div class="wrap">
+    <div class="eyebrow">14 · Action plan <span class="tofill">builds after analysis — priority order</span></div>
+    <h1 class="slide-title">Here is what I recommend,<br>in this <em>order.</em></h1>
+    <div class="beats">
+      <div class="beat"><h4>1 · Lock the story & the name</h4><p>Positioning + brand architecture decision + one boilerplate. Everything else declines from it.</p></div>
+      <div class="beat"><h4>2 · Instrument & fix the surface</h4><p>GA4 + GSC + site pass: proof pages, category hub, metadata, schema — the foundation the content engine lands on.</p></div>
+      <div class="beat"><h4>3 · Build the proof engine</h4><p>Client films (Safran-timed) · published benchmark page · NeurIPS moment · VoC pipeline → content machine + founder LinkedIn + AI visibility.</p></div>
+    </div>
+    <p class="src">Detail, owners, budgets and 30/60/90 land here after the analysis passes and the Mathieu interview.</p>
+  </div></section>
+
+  <section class="slide alt" id="next"><div class="wrap">
+    <div class="eyebrow">15 · What happens next</div>
+    <h1 class="slide-title">The map is drafted.<br>Three inputs finish <em>it.</em></h1>
+    <div class="cols">
+      <div class="card"><h3>Mathieu · Aug 13</h3><p>Customer truth, trust workflow, won-deal forensics. Guide ready on the client page.</p></div>
+      <div class="card"><h3>Analysis passes</h3><p>SEMrush + LinkedIn export + crawler + Trakkr + competitive verification — this week.</p></div>
+      <div class="card"><h3>Restitution</h3><p>Week of Aug 24, Emmanuel back — possibly in person at Olivet with all four, per his invitation.</p></div>
+    </div>
+    <div class="callout">Emmanuel, Aug 6: "On voit la conclusion des discussions quand je rentre la dernière semaine." The date is his idea. Let's keep it.</div>
+  </div></section>
+
+  </main>
+</div>
+
+<script>
+const links=document.querySelectorAll('nav.nav-list a');
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.remove('active'));const a=document.querySelector('nav.nav-list a[href="#'+e.target.id+'"]');if(a)a.classList.add('active');}}),{threshold:.4});
+document.querySelectorAll('section[id]').forEach(s=>obs.observe(s));
+</script>
+</body>
+</html>
