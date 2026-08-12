@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>NPco × Focus4ward — Marketing Audit (draft)</title>
+<title>NPCo. — Marketing Audit (draft) · Focus4ward</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -192,6 +192,60 @@ footer .fa{color:rgba(255,255,255,.85);font-weight:600}
 .slide.stub{opacity:.92}
 </style>
 
+
+<style>
+/* ===== NPCo brand skin — cream / near-black / electric blue ===== */
+:root{
+  --pink:#1D4EDB;            /* accent -> NPCo electric blue */
+  --navy:#161613;            /* structure -> near-black */
+  --ink:#161613;
+  --paper:#EFE9D8;           /* bone cream */
+  --card:#F5F0E1;
+  --rule:#D9D2BB;
+  --muted:#6E6A5C;
+  --yellow:#1D4EDB;          /* evidence borders -> blue */
+  --amber:#8A6D2F;
+  --green:#3E5E42;
+}
+body{font-family:'Archivo',-apple-system,"Helvetica Neue",Arial,sans-serif;background:#FBF8EE}
+.slide.alt{background:var(--paper)}
+h1.slide-title{font-weight:800;letter-spacing:-1.2px}
+.eyebrow,.src,.fact,.sidebar-brand .label,.sidebar-brand .meta,nav.nav-list a .num,.cover-stack .doc-type,.cover-stack .meta-row .l{font-family:'IBM Plex Mono',monospace}
+.eyebrow{letter-spacing:1.2px;font-size:12px}
+.sidebar-brand .wordmark{font-family:'Archivo',sans-serif;font-weight:900;letter-spacing:-.5px;font-size:19px}
+.sidebar-brand .wordmark span{color:#EFE9D8}
+aside.sidebar{background:#161613}
+nav.nav-list a.active{background:var(--pink)}
+nav.nav-list a.active .num{color:#EFE9D8}
+/* cover: black ground, blueprint grid, blue wireframe glow */
+#cover{background:#161613;position:relative}
+#cover::before{content:'';position:absolute;inset:0;width:auto;height:auto;transform:none;border-radius:0;border:none;box-shadow:none;
+  background-image:linear-gradient(rgba(239,233,216,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(239,233,216,.055) 1px,transparent 1px);
+  background-size:72px 72px;pointer-events:none}
+#cover::after{content:'';position:absolute;right:-120px;top:50%;transform:translateY(-50%);width:560px;height:560px;border-radius:50%;
+  border:1px solid rgba(29,78,219,.55);box-shadow:0 0 0 70px rgba(29,78,219,.16),0 0 0 150px rgba(29,78,219,.07),0 0 0 240px rgba(29,78,219,.035);pointer-events:none}
+#cover .wrap{position:relative;z-index:1}
+#cover .doc-type{color:#8FA9F2}
+#cover .client-name{color:#EFE9D8;font-weight:900;letter-spacing:-2px}
+#cover .client-name .dot{color:#1D4EDB}
+#cover .strapline,#cover .strapline .line2{color:#EFE9D8}
+#cover .strapline em{color:#8FA9F2 !important}
+#cover .cover-sub{color:rgba(239,233,216,.62)}
+#cover .meta-row{border-top:1px solid rgba(239,233,216,.18)}
+#cover .meta-row .l{color:rgba(239,233,216,.45)}
+#cover .meta-row .v{color:#EFE9D8}
+/* tension rows: blue yes-tint instead of green */
+.tension-row .yes{background:rgba(29,78,219,.06)}
+/* draft ribbon in brand blue */
+.draft-banner{background:#1D4EDB;color:#EFE9D8}
+/* tofill badges: mono, blue-tinted */
+.tofill{font-family:'IBM Plex Mono',monospace;background:rgba(29,78,219,.08);border:1px dashed #1D4EDB;color:#1D4EDB}
+/* annex table */
+table.bench{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px}
+table.bench th,table.bench td{border:1px solid var(--rule);padding:9px 12px;text-align:left;vertical-align:top}
+table.bench thead th{background:#161613;color:#EFE9D8;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.5px;text-transform:uppercase}
+table.bench td.hl{background:rgba(29,78,219,.07);font-weight:600}
+</style>
 </head>
 <body>
 
@@ -199,7 +253,7 @@ footer .fa{color:rgba(255,255,255,.85);font-weight:600}
 <div class="app">
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-brand">
-      <div class="wordmark">NPco<span>.</span></div>
+      <div class="wordmark">NPCo<span>.</span></div>
       <div class="label">Marketing audit — draft</div>
       <div class="meta">Focus4ward · August 2026</div>
     </div>
@@ -220,6 +274,7 @@ footer .fa{color:rgba(255,255,255,.85);font-weight:600}
       <a href="#story"><span class="num">13</span>Strategic conclusion</a>
       <a href="#priority"><span class="num">14</span>Action plan</a>
       <a href="#next"><span class="num">15</span>What happens next</a>
+      <a href="#annex-bench"><span class="num">A</span>Annex · Competitive benchmark</a>
     </nav>
   </aside>
   <main>
@@ -227,7 +282,7 @@ footer .fa{color:rgba(255,255,255,.85);font-weight:600}
   <section class="slide" id="cover"><div class="wrap">
     <div class="cover-stack">
       <div class="doc-type">Marketing audit · DRAFT · August 2026</div>
-      <div class="client-name">NPco<span class="dot">.</span></div>
+      <div class="client-name">NPCo<span class="dot">.</span></div>
       <div class="strapline">Engineering's AI moment has a missing story.
       <span class="line2">The team that can tell it isn't telling it <em style="color:var(--yellow);font-style:normal">yet.</em></span></div>
       <div class="cover-sub">NPco wins every technical validation it enters and has never lost to a competitor. This audit is about everything that happens before and around those rooms: what buyers find, what they see, and what carries a 6-to-12-month cycle.</div>
@@ -361,6 +416,7 @@ footer .fa{color:rgba(255,255,255,.85);font-weight:600}
       <div class="beat"><h4>No G2, no reviews</h4><p>Nobody in the cohort is on G2/Capterra — reputation is carried by logos, investors, benchmarks and research. <strong>The proof surfaces are different here</strong> (vs Actionable's market).</p></div>
       <div class="beat"><h4>The war chest signal</h4><p>Luminary's $72M Series B was raised explicitly to build marketing & sales. The best-funded player is investing in exactly the layer NPco is deciding on.</p></div>
     </div>
+    <div class="quote">"NPCO is entering a young but well-funded category where three players are converging on a single promise: physics-accurate AI simulation, ~1000x faster. All three are larger and better capitalised. NPCO will not win on spend or scale. Its opening is a sharper, differentiated position the others have left vacant, paired with an automated content engine that lets a small team punch above its weight."<span class="who">Executive summary · Focus4ward competitive benchmark, June 2026 — full version in Annex A</span></div>
     <div class="callout">To verify at source before restitution: deck claims about the cohort ("pre-Transformer, can't scale past parts") are the <em>founder's framing</em>, not established fact — PhysicsX/Emmi tech positioning needs an independent read. Plus incumbents (Ansys SimAI, Siemens, Dassault) as the "good enough, already installed" rival. <span class="tofill">verification pass</span></div>
   </div></section>
 
@@ -420,6 +476,27 @@ footer .fa{color:rgba(255,255,255,.85);font-weight:600}
       <div class="card"><h3>Restitution</h3><p>Week of Aug 24, Emmanuel back — possibly in person at Olivet with all four, per his invitation.</p></div>
     </div>
     <div class="callout">Emmanuel, Aug 6: "On voit la conclusion des discussions quand je rentre la dernière semaine." The date is his idea. Let's keep it.</div>
+  </div></section>
+
+
+  <section class="slide" id="annex-bench"><div class="wrap">
+    <div class="eyebrow">Annex A · Competitive benchmark — condensed from the June 2026 full study</div>
+    <h1 class="slide-title">Four players, side by <em>side.</em></h1>
+    <div style="overflow-x:auto"><table class="bench">
+      <thead><tr><th></th><th>NPCo</th><th>PhysicsX</th><th>Emmi AI</th><th>Luminary Cloud</th></tr></thead>
+      <tbody>
+        <tr><th>Founded · HQ</th><td class="hl">~2024 · France (Inria founders)</td><td>2019 · London + NY</td><td>Dec 2024 · Linz (JKU/NXAI)</td><td>2019 · San Mateo, US</td></tr>
+        <tr><th>Capital</th><td class="hl">Round to announce</td><td>~$170M (NVentures/NVIDIA)</td><td>€15M seed → acquired by Mistral AI, May 2026</td><td>$187M (Sutter Hill)</td></tr>
+        <tr><th>Team</th><td class="hl">~6</td><td>~277</td><td>~32</td><td>~71</td></tr>
+        <tr><th>Tagline</th><td class="hl">(rebranding in progress)</td><td>"Accelerating Industrial Innovation with AI"</td><td>"Large Engineering Models"</td><td>"Physics. Encoded in AI."</td></tr>
+        <tr><th>Positioning</th><td class="hl">Model-first, on-prem: the client builds and owns the model</td><td>Full-lifecycle enterprise platform</td><td>Pre-trained models replacing solvers</td><td>End-to-end "Physics AI Factory", cloud</td></tr>
+        <tr><th>Logos</th><td class="hl">Safran · EDF · Boeing/Airbus pilots</td><td>Siemens · NVIDIA · Microsoft</td><td>NVIDIA · AWS · Oracle · ETH</td><td>Northrop · Joby · Honda</td></tr>
+        <tr><th>LinkedIn</th><td class="hl">near zero</td><td>~27,800</td><td>~9,600 (in ~18 months)</td><td>~8,700</td></tr>
+        <tr><th>Reviews (G2 etc.)</th><td class="hl">N/A</td><td>N/A</td><td>N/A</td><td>N/A — reputation = logos, investors, research</td></tr>
+      </tbody>
+    </table></div>
+    <p class="src">Condensed from the Focus4ward benchmark (June 2026), every figure cited at source there — full version: clients.focus4ward.co/augur/ · figures re-verified before restitution. Incumbents (Ansys SimAI, Siemens, Dassault) tracked separately in the verification pass.</p>
+    <p class="closer">Emmi reached 9,600 followers in eighteen months. The presence gap is real, and it is closable.</p>
   </div></section>
 
   </main>
