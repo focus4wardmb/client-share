@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Actionable × Focus4ward — Collaboration proposal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --pink:#C9316E;
+  --navy:#1E2530;
+  --ink:#0F0D0B;
+  --paper:#F5F0EB;
+  --rule:#E5DFD2;
+  --muted:#6E665A;
+  --card:#FBF8F3;
+  --green:#4F7A53;
+  --amber:#B07B2E;
+  --yellow:#F0C040;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Space Grotesk',-apple-system,"Helvetica Neue",Arial,sans-serif;background:#fff;color:var(--ink);line-height:1.55;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:var(--pink)}
+
+/* ===== DRAFT banner (delete before sending) ===== */
+#draft-banner{position:sticky;top:0;z-index:99;background:var(--yellow);color:var(--ink);font-size:13px;font-weight:600;text-align:center;padding:8px 16px;border-bottom:2px solid var(--ink)}
+
+.wrap{max-width:980px;margin:0 auto;padding:0 48px}
+.slide{min-height:88vh;padding:64px 0;display:flex;flex-direction:column;justify-content:center;border-bottom:1px solid var(--rule)}
+.slide.alt{background:var(--paper)}
+.slide.short{min-height:auto;padding:56px 0}
+.eyebrow{font-size:12.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--pink);margin-bottom:16px}
+h1.slide-title{font-size:clamp(28px,3.6vw,42px);font-weight:700;letter-spacing:-1px;line-height:1.12;color:var(--navy);margin-bottom:16px}
+h1.slide-title em{color:var(--pink);font-style:normal}
+.lede{font-size:16.5px;line-height:1.55;color:var(--muted);margin-bottom:26px;max-width:56ch}
+.lede strong{color:var(--ink);font-weight:600}
+
+/* cover */
+#cover{background:linear-gradient(135deg,#1E2530 0%,#2A3142 100%);color:#fff;border-bottom:none}
+#cover .eyebrow{color:var(--yellow)}
+#cover h1{font-size:clamp(34px,5vw,56px);font-weight:700;letter-spacing:-1.5px;line-height:1.08;margin-bottom:22px}
+#cover h1 em{color:var(--pink);font-style:normal}
+#cover .cover-meta{font-size:14px;color:rgba(255,255,255,.65);line-height:1.7;max-width:60ch}
+
+/* cards + grids */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:22px 24px}
+.card h3{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:10px}
+.card p,.card li{font-size:14px;color:var(--muted)}
+.card ul{padding-left:18px}
+.card li{margin-bottom:6px}
+.card .big{font-size:30px;font-weight:700;color:var(--navy);letter-spacing:-.5px;line-height:1.1}
+.card .big.pink{color:var(--pink)}
+.card .cap{font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-top:6px}
+
+/* tables */
+table{width:100%;border-collapse:collapse;font-size:14px;margin:18px 0}
+th{font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);text-align:left;padding:10px 12px;border-bottom:2px solid var(--navy)}
+td{padding:11px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+tr.total td{font-weight:700;color:var(--navy);border-top:2px solid var(--navy);border-bottom:none}
+.tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;padding:2px 8px;border-radius:20px;vertical-align:middle}
+.tag.miri{background:var(--pink);color:#fff}
+.tag.team{background:var(--navy);color:#fff}
+.tag.partner{background:var(--rule);color:var(--ink)}
+.tag.free{background:var(--amber);color:#fff}
+.todo{background:#FFF7DF;border:1px dashed var(--amber);border-radius:8px;padding:12px 16px;font-size:13.5px;color:var(--ink);margin:14px 0}
+.todo strong{color:var(--amber)}
+
+/* two curves visual */
+.curves{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--rule);border-radius:12px;overflow:hidden;margin:8px 0 20px}
+.curve{padding:26px 28px}
+.curve.now{background:var(--navy);color:#fff}
+.curve.machine{background:var(--card)}
+.curve h3{font-size:17px;font-weight:700;margin-bottom:4px}
+.curve.now h3{color:var(--yellow)}
+.curve.machine h3{color:var(--pink)}
+.curve .horizon{font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;opacity:.65;margin-bottom:14px}
+.curve ul{padding-left:18px}
+.curve li{font-size:14px;margin-bottom:7px}
+.curve.now li{color:rgba(255,255,255,.85)}
+.curve.machine li{color:var(--muted)}
+.curve .kpi{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.2);font-size:13px}
+.curve.machine .kpi{border-top:1px solid var(--rule);color:var(--muted)}
+
+/* timeline */
+.phase{display:grid;grid-template-columns:130px 1fr;gap:18px;padding:18px 0;border-bottom:1px solid var(--rule)}
+.phase:last-child{border-bottom:none}
+.phase .when{font-size:14px;font-weight:700;color:var(--pink)}
+.phase .what{font-size:14.5px;color:var(--muted)}
+.phase .what strong{color:var(--ink)}
+
+footer{padding:38px 0 60px;font-size:12.5px;color:var(--muted)}
+
+@media (max-width:760px){
+  .wrap{padding:0 22px}
+  .grid2,.grid3,.curves{grid-template-columns:1fr}
+  .phase{grid-template-columns:1fr;gap:4px}
+}
+</style>
+</head>
+<body>
+
+<div id="draft-banner">INTERNAL DRAFT — skeleton for Miri's review. Yellow boxes = placeholders to resolve before this goes to Nicolas. Delete this banner before sending.</div>
+
+<!-- ============ 01 COVER ============ -->
+<section class="slide" id="cover">
+  <div class="wrap">
+    <div class="eyebrow">Actionable × Focus4ward · Stage 2 proposal</div>
+    <h1>One story, two rooms.<br>Now let's build the <em>engine</em>.</h1>
+    <p class="cover-meta">
+      Collaboration proposal · Stage 2 — Build &amp; Scale · Appendix to agreement D-2026-003<br>
+      Prepared by Miri Blum, Focus4ward · for Nicolas Rieul, Co-Founder &amp; Co-CEO, Actionable · August 2026<br>
+      Follows the marketing audit presented August 12 · clients.focus4ward.co/actionable/audit/
+    </p>
+  </div>
+</section>
+
+<!-- ============ 02 THE MANDATE ============ -->
+<section class="slide short">
+  <div class="wrap">
+    <div class="eyebrow">02 · The mandate</div>
+    <h1 class="slide-title">What you asked for on August 12</h1>
+    <p class="lede">You validated the audit direction and asked for one document to take into your ARR-plan re-sync: <strong>timeline, budgets, roles and KPIs</strong>, events included, and clearly <strong>what is Miri versus the other actions</strong>. This is that document.</p>
+    <div class="grid3">
+      <div class="card"><h3>Timeline</h3><p>September to December 2026, then the 2027 run-rate. Sequenced from the 30/60/90 in the audit.</p></div>
+      <div class="card"><h3>Budget</h3><p>Four blocks, so every euro has an owner and a job: my retainer, freelance resources, activities and tools, and one-off project investments.</p></div>
+      <div class="card"><h3>Roles + KPIs</h3><p>A single table of who owns what, and success criteria per curve so we know the machine is working before the pipeline says so.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 REALITY CHECK ============ -->
+<section class="slide alt">
+  <div class="wrap">
+    <div class="eyebrow">03 · The spine of this plan</div>
+    <h1 class="slide-title">Your plan is a <em>pipeline</em> plan</h1>
+    <p class="lede">The €7M ambition for 2027 stands on one number: pipeline must reach <strong>~€8.5M per year, 2.7x today's rhythm</strong>. Founder-carried acquisition built the first €1.7M. It does not 2.7x. That is the gap this engagement closes.</p>
+    <div class="grid3">
+      <div class="card"><div class="big">2.7x</div><div class="cap">pipeline multiple required</div><p>€8.5M/yr pipeline to carry the base case (€6.6M) and reach for €7M.</p></div>
+      <div class="card"><div class="big pink">10% → 30-40%</div><div class="cap">outbound share of pipeline</div><p>Your own plan's shift, at today's 11% conversion. It only holds if the 80 real Tier 1-2 accounts already know the category when sales calls.</p></div>
+      <div class="card"><div class="big">80 / 340</div><div class="cap">real Tier 1-2 accounts</div><p>The ICP work says the true battlefield is 80 accounts. Small enough to name. Big enough to need a machine, not a founder's calendar.</p></div>
+    </div>
+    <p class="lede" style="margin-top:22px">S1 2026 proved the motion works when a conversation exists: 50 meetings, 19 opportunities, 5 logos, €102K ACV. The constraint is not conversion. It is how many of the 80 accounts enter a conversation, and how warm they arrive.</p>
+    <div class="card" style="margin-top:8px;border-left:4px solid var(--pink)">
+      <h3>The tension worth naming out loud</h3>
+      <p>The plan moves outbound from 10% to 30-40% of pipeline. The one outbound experiment run so far, the Lemlist sequences, did not work at all. That is not an argument against the target, and outbound stays where it belongs: <strong>with sales, who own the prospecting and the number</strong>. But cold sequences into 80 enterprise accounts that have never heard of the category will keep converting badly, because the problem is not the sequence. It is that nobody on the other end recognises what Actionable is.</p>
+      <p style="margin-top:10px">That is the job on this side of the line. Marketing makes those 80 accounts arrive warm: category content they have already read, an event they were invited to, a partner who has publicly vouched, a name they have seen before the email lands. <strong>Sales runs outbound. Marketing decides what outbound walks into.</strong> Same target, two motions, and they have to be built to meet.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 TWO CURVES ============ -->
+<section class="slide">
+  <div class="wrap">
+    <div class="eyebrow">04 · The shape of the work</div>
+    <h1 class="slide-title">Two curves, one engine</h1>
+    <p class="lede">Everything in this proposal sits on one of two curves. They run in parallel from day one, but they pay back on different clocks. Confusing them is how marketing budgets die; separating them is how we defend this one to PA.</p>
+    <div class="curves">
+      <div class="curve now">
+        <h3>Curve 1 — Support what sells now</h3>
+        <div class="horizon">Pays back inside FY2026-27</div>
+        <ul>
+          <li>ABM on the 80 real Tier 1-2 accounts, LinkedIn-led, Nicolas's voice in front</li>
+          <li>Events activated before / during / after (Sept 9, All4Customer, Q4 list)</li>
+          <li>Proof restored: case-study pages sales can send and buyers can cite</li>
+          <li>Decks proofed and unified on one story</li>
+          <li>Ipsos pointer made public; partner channel owned, not rented</li>
+        </ul>
+        <div class="kpi"><strong>KPI:</strong> marketing-touched pipeline on the 80 accounts · meetings sourced or warmed · event-to-opportunity conversion</div>
+      </div>
+      <div class="curve machine">
+        <h3>Curve 2 — Build the machine</h3>
+        <div class="horizon">Compounds into 2027 and beyond</div>
+        <ul>
+          <li>Category creation: "Predictive CX" defined, published, defended</li>
+          <li>Rebrand + domain landed by year-end with a PR moment</li>
+          <li>Category hub, answer-shaped pages, SEO + GEO, G2 presence</li>
+          <li>Middle-funnel journeys for the not-ready-yet, captured in the CRM</li>
+          <li>Persona doc from won-deal forensics (deliverable #1, with PA)</li>
+        </ul>
+        <div class="kpi"><strong>KPI:</strong> category searches exist and grow · AI engines name Actionable on buyer questions (Trakkr, monthly) · inbound enterprise conversations arriving knowing the category</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 FUNNEL SCENARIOS ============ -->
+<section class="slide alt">
+  <div class="wrap">
+    <div class="eyebrow">05 · What it produces</div>
+    <h1 class="slide-title">Three scenarios, benchmarked on <em>your own</em> funnel</h1>
+    <p class="lede">No invented industry benchmarks. The conversion logic below is your S1 2026 actuals (meetings → 38% opportunity → 26% close, €102K ACV). What the scenarios vary is one thing only: how much of the required €8.5M pipeline marketing sources or warms.</p>
+    <table>
+      <thead><tr><th>Scenario</th><th class="num">Marketing-sourced/warmed share</th><th class="num">Pipeline €</th><th class="num">Opportunities</th><th class="num">Logos (at S1 conv.)</th><th class="num">New ARR</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Worst</strong> — machine builds, founders still carry</td><td class="num">~10%</td><td class="num">€0.9M</td><td class="num">~8</td><td class="num">2</td><td class="num">~€0.2M</td></tr>
+        <tr><td><strong>Mid</strong> — curve 1 lands, curve 2 starting to cite</td><td class="num">~20%</td><td class="num">€1.7M</td><td class="num">~16</td><td class="num">4</td><td class="num">~€0.4M</td></tr>
+        <tr><td><strong>Best</strong> — your plan's own outbound target hit</td><td class="num">30-40%</td><td class="num">€2.6-3.4M</td><td class="num">~24-32</td><td class="num">6-8</td><td class="num">€0.6-0.8M</td></tr>
+      </tbody>
+    </table>
+    <div class="todo"><strong>DRAFT NUMBERS:</strong> scenario math derived from Bilan S1 + Plan ARR v3; Miri to validate the conversion chain and the share definitions with Nicolas's data before sending. Definition question for the PA session: "sourced" vs "warmed" attribution.</div>
+    <p class="lede">The honest read: even the best case does not close the 2.7x alone in year one. It is not supposed to. It makes the founders' 2.7x possible by warming the 80 accounts, and it builds the inbound engine that changes the 2028 math entirely.</p>
+  </div>
+</section>
+
+<!-- ============ 06 TIMELINE ============ -->
+<section class="slide">
+  <div class="wrap">
+    <div class="eyebrow">06 · Timeline</div>
+    <h1 class="slide-title">September to December, then run-rate</h1>
+    <div class="phase"><div class="when">Sept 1-30</div><div class="what"><strong>Foundations + first wins.</strong> Positioning and messaging locked (champion + signer). Persona doc from won-deal forensics with PA. Quick brand cleanup on the current site. G2 profile live. Nicolas's LinkedIn rhythm starts. Rebrand brief out. Sept 9 event activated. CRM decision made (see 09).</div></div>
+    <div class="phase"><div class="when">Oct 1-31</div><div class="what"><strong>The machine goes public.</strong> Proof pages + category hub live. Content machine publishing. LinkedIn ABM running on the 80. PR groundwork. Ipsos public pointer negotiated. Rebrand in build. All4Customer activated.</div></div>
+    <div class="phase"><div class="when">Nov 1 - Dec 31</div><div class="what"><strong>The category has an address.</strong> Rebrand lands on the new domain with a PR moment and the published category definition. Event follow-up sequences running. First Trakkr movement expected. 2027 plan written from live funnel data.</div></div>
+    <div class="phase"><div class="when">2027</div><div class="what"><strong>Run-rate.</strong> Machine operates: content, ABM, events, partner co-marketing. US stream opens with its own lead (see 08). Quarterly strategy checkpoints against the scenario table.</div></div>
+    <div class="eyebrow" style="margin-top:34px">The calendar is already full</div>
+    <p class="lede">Nicolas's own read, and it matches curve 1 exactly: the job is not adding events, it is <strong>maximising each one commercially</strong>. Target accounts, prospect invitations, outreach before, client testimonials during, systematic follow-up after.</p>
+    <table>
+      <thead><tr><th>Date</th><th>Moment</th><th>Status</th><th class="num">Budget</th></tr></thead>
+      <tbody>
+        <tr><td>Sept 9</td><td>Funding announcement + press release</td><td>Planned</td><td class="num">—</td></tr>
+        <tr><td>Sept 10</td><td>Client event, new offices</td><td>To confirm</td><td class="num">—</td></tr>
+        <tr><td>Sept 23</td><td>CX breakfast, Carré Édouard VII</td><td>Confirmed</td><td class="num">~€10K</td></tr>
+        <tr><td>Oct 1</td><td>Vertone B2B CX lab + Google Startup Day (Nans keynote, ~800 people)</td><td>Confirmed</td><td class="num">—</td></tr>
+        <tr><td>Oct 5</td><td>Palmes de la Relation Client, AFRC</td><td>To explore fast</td><td class="num">—</td></tr>
+        <tr><td>Oct 6-8</td><td>One to One IA x Expérience Client, Biarritz (3 passes)</td><td>Confirmed</td><td class="num">~€25K</td></tr>
+        <tr><td>Oct 7</td><td>SNCF Connect x Actionable workshop, Biarritz</td><td>Confirmed</td><td class="num">included</td></tr>
+        <tr><td>Oct 13</td><td>Medallia World Tour, Paris</td><td>To explore</td><td class="num">—</td></tr>
+        <tr><td>Nov 17</td><td>Argus Factory, insurance panel</td><td>Confirmed</td><td class="num">—</td></tr>
+        <tr><td>Dec 3</td><td>Tendances Clients 2027, Thierry Spencer</td><td>To explore</td><td class="num">—</td></tr>
+        <tr class="total"><td>Mar 9-11, 2027</td><td>One to One Retail E-commerce, Monaco</td><td>Strategic priority</td><td class="num">~€50K</td></tr>
+      </tbody>
+    </table>
+    <p class="lede"><strong>Not doing:</strong> All for Customer and Tech for Retail, both declined on bandwidth-to-ROI. The preference is clear and it is the right one: prequalified one-to-one formats over stands. <strong>Two new sales people start Sept 28</strong>, and Biarritz is their first outing.</p>
+  </div>
+</section>
+
+<!-- ============ 07 ROLES ============ -->
+<section class="slide alt">
+  <div class="wrap">
+    <div class="eyebrow">07 · Roles</div>
+    <h1 class="slide-title">Clearly: what is <em>me</em>, what is not</h1>
+    <p class="lede">Your words: "clairement ce qui est toi versus les autres actions." The honest answer is that <strong>I direct all of it</strong>. That is what a CMO does, including where a supplier is already in place: I brief them, supervise the work and answer for whether it was done well. What varies from line to line is not whether I am on it, but <strong>who does the doing</strong> and what I am accountable for.</p>
+    <table>
+      <thead><tr><th>Workstream</th><th>Who executes</th><th>My accountability</th></tr></thead>
+      <tbody>
+        <tr><td>Positioning, messaging, category definition</td><td><span class="tag miri">Me</span></td><td>I produce it</td></tr>
+        <tr><td>Marketing strategy, the plan, the budget, KPI reporting</td><td><span class="tag miri">Me</span></td><td>I produce it and I answer for the spend</td></tr>
+        <tr><td>Persona work from won-deal forensics</td><td><span class="tag miri">Me</span> with <span class="tag partner">PA</span></td><td>I produce it, PA brings the data</td></tr>
+        <tr><td>Content system: category hub, proof pages, SEO and GEO</td><td><span class="tag free">Freelance</span></td><td>Architecture, brief, editorial standard, acceptance</td></tr>
+        <tr><td>Rebrand and new site</td><td><span class="tag free">Agency</span></td><td>Brief, agency selection, direction, acceptance</td></tr>
+        <tr><td>Nicolas's LinkedIn and the company page</td><td><span class="tag team">Nicolas</span> publishes</td><td>Editorial system, drafts, cadence, measurement</td></tr>
+        <tr><td>ABM on the 80 accounts</td><td><span class="tag free">Freelance</span> + <span class="tag miri">Me</span></td><td>Target selection, messaging, orchestration</td></tr>
+        <tr><td>Events, including where a supplier already runs logistics</td><td><span class="tag team">Presta</span> + <span class="tag free">Freelance</span></td><td>Commercial plan before, during and after. Logistics is not the hard part; converting the room is</td></tr>
+        <tr><td>PR, from the Sept 9 announcement onward</td><td><span class="tag free">Agency</span></td><td>Story, brief, agency selection, sign-off</td></tr>
+        <tr><td>Partner channel, starting with the public Ipsos pointer</td><td><span class="tag team">Actionable</span></td><td>Playbook, co-marketing plan, negotiation support</td></tr>
+        <tr><td>CRM and funnel instrumentation</td><td><span class="tag team">Actionable</span></td><td>Requirements, implementation direction, the reporting that comes out of it</td></tr>
+        <tr><td>US stream</td><td>Own US lead <span class="tag partner">(not James's retainer)</span></td><td>Framework and oversight, see 08</td></tr>
+        <tr><td>Product marketing as features ship</td><td><span class="tag free">PMM</span></td><td>Brief and standard. Joins the mandate in the build phase</td></tr>
+        <tr><td><strong>Outbound prospecting</strong>: sequences, calls, the pipeline number</td><td><span class="tag team">Sales</span></td><td><strong>The one line that is not mine.</strong> I own what outbound walks into: target selection, messaging, content, invitations</td></tr>
+      </tbody>
+    </table>
+    <p class="lede" style="margin-top:18px">Read the middle column as the answer to "what am I paying others for" and the right column as the answer to "what am I paying Miri for". Nothing in this plan runs without someone senior holding the standard across all of it. That is the job.</p>
+  </div>
+</section>
+
+<!-- ============ 08 US STREAM ============ -->
+<section class="slide short">
+  <div class="wrap">
+    <div class="eyebrow">08 · The US stream</div>
+    <h1 class="slide-title">The US is a market, not a translation</h1>
+    <p class="lede">US CTR on brand terms is 0.37% against France's 22.8%: the US doesn't know you yet, and it will not learn from a copy-pasted French playbook. The US stream gets its <strong>own lead, own sequencing, own budget line</strong>, opened once the category foundation (EN-first by design) is live.</p>
+    <div class="grid2">
+      <div class="card"><h3>What the foundation already gives the US</h3><p>Category hub, proof pages, G2 presence and AI-answer visibility are built EN-first. By the time the US stream opens, the shelf is stocked.</p></div>
+      <div class="card"><h3>James's retainer</h3><p>Sits adjacent to this plan as its own spend line, not inside these four blocks. Scope and sequencing to be aligned when the US stream opens, so the two mandates meet instead of overlapping.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 09 CRM ============ -->
+<section class="slide alt short">
+  <div class="wrap">
+    <div class="eyebrow">09 · One requirement</div>
+    <h1 class="slide-title">The CRM exists. It isn't <em>seeing</em> the funnel</h1>
+    <p class="lede">The stack question is settled: <strong>Attio is the CRM</strong>, LinkedIn Ads has run campaigns, Lemlist ran outbound sequences. So this is not a buying decision, which is good news. It is an instrumentation job: everything in curve 2 produces signals (page visits on the 80 accounts, capture events, mid-funnel journeys, intent) and today those signals have nowhere to land.</p>
+    <div class="grid2">
+      <div class="card"><h3>What Attio has to do that it isn't doing</h3><ul><li>Named-account tracking on the 80: visits, opens, event attendance</li><li>Capture that feeds sales, not a spreadsheet</li><li>Funnel events end to end, so the scenario table in 05 is measured rather than estimated</li></ul></div>
+      <div class="card"><h3>What this must not become</h3><ul><li>A six-month implementation project</li><li>A migration. The tool is fine, the wiring is missing</li></ul></div>
+    </div>
+    <div class="todo"><strong>MIRI'S DECISION, still open:</strong> this screen currently argues "keep Attio, instrument it." The alternative is a move to HubSpot for native marketing automation (nurture, forms, landing pages, scoring, attribution reporting), which Attio is thinner on. My read is written up separately: keep Attio through the launch window, add the marketing layer, set a three-part test, and revisit at 2027 planning rather than migrating during a rebrand, a category launch and two sales onboardings. Your call, and the screen changes either way. Access to LinkedIn Ads and Lemlist is promised but not received: a week-one blocker, not a proposal one.</div>
+  </div>
+</section>
+
+<!-- ============ 10 BUDGET ============ -->
+<section class="slide">
+  <div class="wrap">
+    <div class="eyebrow">10 · Budget</div>
+    <h1 class="slide-title">Four blocks, every euro with a job</h1>
+    <p class="lede">Structured so PA reads it the way finance reads budgets: recurring vs one-off, my time vs bought capacity, run vs build.</p>
+    <table>
+      <thead><tr><th>Block</th><th>What it buys</th><th class="num">Sept-Dec 2026</th><th class="num">2027 run-rate /mo</th></tr></thead>
+      <tbody>
+        <tr><td><strong>1 · Focus4ward retainer</strong></td><td>Marketing leadership and delivered work, per D-2026-003: €1,350 HT/day. Pace: <strong>2 days per week</strong>, so €2,700 a week. One day does not carry this calendar; three would be a full-time role wearing a part-time name.</td><td class="num">€10,800<br><small>per 4-week month</small></td><td class="num">€10,800<br><small>per 4-week month</small></td></tr>
+        <tr><td><strong>2 · Resources (freelance)</strong></td><td>Events and field marketing, content and design, paid social, product marketing. Under my direction, billed at their rate, no markup from me. Scoped and costed in the budget build.</td><td class="num">budget build</td><td class="num">budget build</td></tr>
+        <tr><td><strong>3 · Activities, media, tools</strong></td><td>Events already committed: ~€10K (Sept 23 breakfast) + ~€25K (Biarritz) = <strong>~€35K</strong>. Plus LinkedIn ABM media, PR, and the tooling that makes the funnel visible.</td><td class="num">~€35K committed<br>+ budget build</td><td class="num">budget build</td></tr>
+        <tr><td style="padding-left:26px"><em>2027 commitment decided now</em></td><td>One to One Retail E-commerce, Monaco, March 2027. Booked far in advance, so it lands in the 2026 decision even though the spend is 2027.</td><td class="num">—</td><td class="num">~€50K</td></tr>
+        <tr><td><strong>4 · Project investments (one-off)</strong></td><td>Rebrand and new site, sized by the brief. Domain acquisition: broker quote in hand, a separate decision, amortised over the years it serves.</td><td class="num">separate decision</td><td class="num">—</td></tr>
+      </tbody>
+    </table>
+    <div class="card" style="margin-top:8px;border-left:4px solid var(--navy)">
+      <h3>What this table is, and what comes next</h3>
+      <p>You asked for the budget to be built <em>backwards from the commercial objectives</em> rather than forward from a fixed envelope: "pour atteindre nos objectifs, quelles actions devons-nous mettre en place et quel budget serait cohérent pour y arriver ?" That is the right instruction, and it is also why what follows is <strong>orders of magnitude, not a line-by-line budget</strong>.</p>
+      <p style="margin-top:10px">A real budget of that kind is built from inside: actual event economics, quotes from the agencies we choose together, the funnel data the CRM is not yet producing, and a resourcing plan agreed with sales. <strong>Building it is the first deliverable of the engagement, in month one</strong>, not a document that precedes it. What this table gives you now is enough to decide: the committed spend, the shape of what gets added, and the ranges each line sits inside.</p>
+    </div>
+    <div class="eyebrow" style="margin-top:32px">What the plan will need resourcing for</div>
+    <p class="lede">The capabilities, so the shape is decidable now. The numbers attached to each come from the budget build, because they come from real quotes and a real plan, not from an estimate made from outside the company.</p>
+    <div class="grid2">
+      <div class="card">
+        <h3>People</h3>
+        <ul>
+          <li><strong>Events and field marketing.</strong> Ten moments between September and December, each needing target lists, invitations, outreach before, testimonials during, follow-up with sales after. On its own this is a full-time job.</li>
+          <li><strong>Content and design.</strong> Category content in English and French, event assets, pages, decks.</li>
+          <li><strong>Paid social.</strong> Someone running LinkedIn ABM properly rather than occasionally.</li>
+          <li><strong>Product marketing.</strong> Sharpening product messaging as features ship, and keeping the category story and the roadmap in the same sentence.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Partners and programmes</h3>
+        <ul>
+          <li><strong>Events</strong> themselves: the committed calendar plus whatever 2027 becomes.</li>
+          <li><strong>PR</strong>, starting with the September 9 announcement and continuing around the event calendar.</li>
+          <li><strong>Analyst relations</strong>, deliberately later. There is no Predictive CX quadrant to climb yet, so this is a 2027 conversation, not a Q4 one.</li>
+          <li><strong>Rebrand and new domain</strong>, sized by the brief we write together.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="lede" style="margin-top:20px">I work with a network of freelancers and agencies I have used for years and can vouch for. Naming them, scoping them and pricing them is part of the budget build, not a guess made in advance.</p>
+    <div class="card" style="margin-top:8px;border-left:4px solid var(--pink)">
+      <h3>The offer on timing</h3>
+      <p>If we agree the engagement now, I will use <strong>the last two weeks of August to build the budget and the plan</strong>, and you have both on your desk by <strong>1 September</strong>: costed, sourced, and tied to the pipeline maths in screen 05. That puts a real number in front of PA at the right moment, and it means September starts executing rather than scoping.</p>
+    </div>
+    <div class="todo"><strong>MIRI TO RESOLVE before sending:</strong> (1) how to present the domain figure (order of magnitude vs the named broker quote); (2) confirm the CRM position in screen 09 (see the note there).</div>
+  </div>
+</section>
+
+<!-- ============ 11 KPIs ============ -->
+<section class="slide alt short">
+  <div class="wrap">
+    <div class="eyebrow">11 · How we know it's working</div>
+    <h1 class="slide-title">KPIs on two clocks</h1>
+    <div class="grid2">
+      <div class="card"><h3>Curve 1 — read monthly</h3><ul>
+        <li>Marketing-touched pipeline on the 80 accounts (CRM-measured)</li>
+        <li>Meetings sourced or warmed; event-to-opportunity conversion</li>
+        <li>LinkedIn engagement on category content (Nicolas + page)</li>
+      </ul></div>
+      <div class="card"><h3>Curve 2 — read monthly, judged quarterly</h3><ul>
+        <li>Category searches exist and grow (GSC)</li>
+        <li>AI engines name Actionable on buyer questions (Trakkr baseline: 0 of 23 prompts)</li>
+        <li>G2 live with enterprise reviews</li>
+        <li>Inbound enterprise conversations arriving already knowing the category. Your own 12-month test: "We need Predictive CX, and we think Actionable is the leader."</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 12 NEXT STEP ============ -->
+<section class="slide">
+  <div class="wrap">
+    <div class="eyebrow">12 · Next step</div>
+    <h1 class="slide-title">Before your PA re-sync</h1>
+    <p class="lede">You re-sync with PA on the ARR plan the week of August 24. The sequence that serves you: <strong>(1)</strong> 30 minutes together on this document early that week, <strong>(2)</strong> the PA working session (persona forensics + attribution definitions), <strong>(3)</strong> Stage 2 Appendix signed so September starts on day one, not day fifteen.</p>
+    <p class="lede">Terms: Stage 2 runs as a signed Appendix to D-2026-003 at the contractual €1,350 HT/day. Delivered work and advisory time split explicitly, monthly tally shared, so the budget PA approves is the budget PA sees consumed.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Confidential · prepared for Actionable · Focus4ward, August 2026 · Companion to the Stage 1 audit and written synthesis (agreement D-2026-003).</div>
+</footer>
+
+</body>
+</html>
