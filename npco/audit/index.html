@@ -359,7 +359,7 @@ table.bench td.hl{background:rgba(29,78,219,.07);font-weight:600}
   </div></section>
 
   <section class="slide stub" id="website"><div class="wrap">
-    <div class="eyebrow">06 · Website & measurement <span class="tofill">crawler + review pass</span></div>
+    <div class="eyebrow">06 · Website & measurement <span class="tofill">Webflow review + conversion paths</span></div>
     <h1 class="slide-title">The flagship finding is already in:<br>nothing is <em>measured.</em></h1>
     <div class="glance-stats">
       <div class="glance-stat"><div class="stat">0</div><div class="label">analytics or Search Console properties. Traffic, sources and conversions are invisible.</div></div>
@@ -367,8 +367,14 @@ table.bench td.hl{background:rgba(29,78,219,.07);font-weight:600}
       <div class="glance-stat"><div class="stat">4<small>+7</small></div><div class="label">pages with invalid structured data + duplicate title tags — schema is broken where it matters for AI.</div></div>
       <div class="glance-stat"><div class="stat">0</div><div class="label">llms.txt. The good news: AI crawlers (ChatGPT, Googlebot, Google-Extended) are NOT blocked.</div></div>
     </div>
+    <div class="glance-stats">
+      <div class="glance-stat"><div class="stat">0</div><div class="label">URLs in the sitemap. sitemap.xml exists and declares nothing — Google is left to guess the site's shape.</div></div>
+      <div class="glance-stat"><div class="stat">10<small>/10</small></div><div class="label">pages with no H1. Every crawled page skips the one tag that names what the page is about.</div></div>
+      <div class="glance-stat"><div class="stat">2</div><div class="label">distinct title tags across 9 pages — most of the site introduces itself to Google with the same sentence.</div></div>
+      <div class="glance-stat"><div class="stat">9<small>/10</small></div><div class="label">pages with zero JSON-LD schema (7 also missing meta descriptions, 3 thin at &lt;300 words).</div></div>
+    </div>
     <div class="callout">A content engine without measurement cannot be steered. Instrumentation (GA4 + GSC + basic events) is the first concrete build of the engagement — <em>finding and Stage 2 opportunity in one</em>.</div>
-    <p class="src">To add: crawler pass on npco.ai (structure, messaging, metadata, schema), Webflow review, conversion paths.</p>
+    <p class="src">Crawler pass on npco.ai, Aug 13 (Focus4ward audit crawler, 10 pages, all HTTP 200). To add: Webflow review, conversion paths.</p>
   </div></section>
 
   <section class="slide alt stub" id="search"><div class="wrap">
@@ -397,11 +403,17 @@ table.bench td.hl{background:rgba(29,78,219,.07);font-weight:600}
   </div></section>
 
   <section class="slide alt stub" id="linkedin"><div class="wrap">
-    <div class="eyebrow">09 · LinkedIn <span class="tofill">company export received Aug 12 + founder profiles</span></div>
+    <div class="eyebrow">09 · LinkedIn <span class="tofill">founder profiles pass pending</span></div>
     <h1 class="slide-title">The channel where this category<br>actually <em>lives.</em></h1>
-    <p class="lede">PhysicsX built 27.8k followers, Emmi 9.6k in ~18 months, Luminary 8.7k. The cohort's real marketing happens here: research posts, benchmark drops, founder voices. NPco's page and both founders' profiles: <span class="tofill">analysis from export</span></p>
+    <p class="lede">PhysicsX built 27.8k followers, Emmi 9.6k in ~18 months, Luminary 8.7k. The cohort's real marketing happens here: research posts, benchmark drops, founder voices. NPco's own 90 days (company export, May 13 – Aug 10): <strong>9 posts, 49.0k impressions — and 67% of those impressions came from a single post.</strong></p>
+    <div class="glance-stats">
+      <div class="glance-stat"><div class="stat">0.75<small>/wk</small></div><div class="label">posting cadence — 9 posts in 90 days, all published by Léonie. The founders' voices are absent from the company's own channel.</div></div>
+      <div class="glance-stat"><div class="stat">67<small>%</small></div><div class="label">of 90-day impressions came from one post: the €6M pre-seed announcement (32.7k impressions, 200 reactions, 36 comments). Baseline posts reach 400–1,000.</div></div>
+      <div class="glance-stat"><div class="stat">69.7<small>%</small></div><div class="label">CTR on the NAFEMS/TERATEC "AI &amp; numerical simulation" paper post — 714 clicks on 1,025 impressions. When NPco publishes research, this audience clicks.</div></div>
+      <div class="glance-stat"><div class="stat">1.6<small>%</small></div><div class="label">CTR on the pure event announcements (Eurosatory, VivaTech) — the weakest content in the mix. Presence posts don't carry the category.</div></div>
+    </div>
     <div class="beats">
-      <div class="beat"><h4>Company page</h4><p><span class="tofill">followers, cadence, content mix, engagement — from export</span></p></div>
+      <div class="beat"><h4>What the export says</h4><p>Two spikes prove the audience exists: funding news and research content. Everything between the spikes is event announcements to a quiet room. The channel rewards exactly what NPco has most of — benchmarks, papers, technical proof — and gets it least.</p></div>
       <div class="beat"><h4>Emmanuel & Mathieu</h4><p><span class="tofill">profile audit: headline, about, activity</span></p></div>
       <div class="beat"><h4>The Emmi precedent</h4><p>9.6k followers in 18 months proves presence is buildable fast with focused technical content. The door is open.</p></div>
     </div>

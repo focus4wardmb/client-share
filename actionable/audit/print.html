@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Actionable × Focus4ward — Marketing Audit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --pink:#C9316E;
+  --navy:#1E2530;
+  --ink:#0F0D0B;
+  --paper:#F5F0EB;
+  --rule:#E5DFD2;
+  --muted:#6E665A;
+  --card:#FBF8F3;
+  --green:#4F7A53;
+  --amber:#B07B2E;
+  --yellow:#F0C040;
+  --sidebar-w:250px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Space Grotesk',-apple-system,"Helvetica Neue",Arial,sans-serif;background:#fff;color:var(--ink);line-height:1.55;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:var(--pink)}
+
+.app{display:grid;grid-template-columns:var(--sidebar-w) 1fr;min-height:100vh}
+
+/* ===== Sidebar ===== */
+aside.sidebar{background:var(--navy);color:#fff;position:sticky;top:0;height:100vh;overflow-y:auto;padding:30px 0 28px;border-right:1px solid rgba(255,255,255,.06)}
+.sidebar-brand{padding:0 24px 20px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:18px}
+.sidebar-brand .wordmark{font-size:17px;font-weight:700;letter-spacing:-.2px;color:#fff}
+.sidebar-brand .wordmark span{color:var(--pink)}
+.sidebar-brand .label{margin-top:12px;font-size:10.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.sidebar-brand .meta{margin-top:5px;font-size:11.5px;color:rgba(255,255,255,.45)}
+nav.nav-list{padding:0 14px}
+nav.nav-list a{display:flex;align-items:baseline;gap:10px;padding:7px 11px;font-size:13px;font-weight:500;color:rgba(255,255,255,.78);text-decoration:none;border-radius:6px;line-height:1.35;transition:background .12s,color .12s;margin-bottom:1px}
+nav.nav-list a:hover{background:rgba(255,255,255,.06);color:#fff}
+nav.nav-list a.active{background:var(--pink);color:#fff;font-weight:600}
+nav.nav-list a .num{font-size:10px;font-weight:700;color:rgba(255,255,255,.45);letter-spacing:.5px;min-width:18px;flex-shrink:0}
+nav.nav-list a.active .num{color:var(--yellow)}
+.menu-toggle{display:none}
+
+/* ===== Main / slides ===== */
+main{min-width:0}
+.wrap{max-width:1020px;margin:0 auto;padding:0 52px}
+.slide{min-height:92vh;padding:56px 0;display:flex;flex-direction:column;justify-content:center;border-bottom:1px solid var(--rule)}
+.slide.alt{background:var(--paper)}
+.slide.short{min-height:auto;padding:52px 0 56px}
+.eyebrow{font-size:12.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--pink);margin-bottom:16px}
+h1.slide-title{font-size:clamp(28px,3.6vw,42px);font-weight:700;letter-spacing:-1px;line-height:1.1;color:var(--navy);margin-bottom:16px}
+h1.slide-title em{color:var(--pink);font-style:normal}
+.lede{font-size:16.5px;line-height:1.55;color:var(--muted);margin-bottom:26px}
+.lede strong{color:var(--ink);font-weight:600}
+
+/* ===== Cover ===== */
+#cover{background:linear-gradient(135deg,#1E2530 0%,#2A3142 100%);position:relative;overflow:hidden;border-bottom:none}
+#cover::before{content:'';position:absolute;right:-140px;top:50%;transform:translateY(-50%);width:520px;height:520px;border-radius:50%;border:1px solid rgba(201,49,110,.35);box-shadow:0 0 0 70px rgba(201,49,110,.12),0 0 0 150px rgba(201,49,110,.05),0 0 0 240px rgba(240,192,64,.04);pointer-events:none}
+#cover .wrap{position:relative;z-index:1}
+#cover .doc-type{color:var(--yellow)}
+#cover .client-name{color:#fff}
+#cover .client-name .dot{color:var(--pink)}
+#cover .strapline{color:#fff}
+#cover .strapline .line2{color:rgba(255,255,255,.85)}
+#cover .cover-sub{color:rgba(255,255,255,.62)}
+#cover .meta-row{border-top:1px solid rgba(255,255,255,.15)}
+#cover .meta-row .l{color:rgba(255,255,255,.45)}
+#cover .meta-row .v{color:#fff}
+.cover-stack{display:flex;flex-direction:column;gap:16px}
+.cover-stack .doc-type{font-size:12.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--pink)}
+.cover-stack .client-name{font-size:clamp(56px,9vw,96px);font-weight:700;letter-spacing:-3px;line-height:.95;color:var(--navy)}
+.cover-stack .strapline{font-size:clamp(19px,2.4vw,26px);color:var(--navy);line-height:1.3;font-weight:700;max-width:820px}
+.cover-stack .strapline .line2{display:block;color:var(--navy);margin-top:12px}
+.cover-stack .cover-sub{font-size:16.5px;color:var(--muted);max-width:720px;line-height:1.6}
+.cover-stack .meta-row{display:flex;gap:36px;margin-top:16px;flex-wrap:wrap;padding-top:18px;border-top:1px solid var(--rule)}
+.cover-stack .meta-row .l{font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.cover-stack .meta-row .v{font-size:13.5px;font-weight:600;color:var(--ink)}
+
+/* ===== Fact chips ===== */
+.fact-row{display:flex;gap:10px;flex-wrap:wrap;margin:2px 0 22px}
+.fact{background:var(--card);border:1px solid var(--rule);border-radius:999px;padding:8px 16px;font-size:13.5px;font-weight:600;color:var(--navy)}
+.fact b{color:var(--pink)}
+.fact-note{font-size:13.5px;color:var(--muted);margin:-12px 0 22px}
+
+/* ===== Big stats ===== */
+.glance-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:4px 0 22px}
+.glance-stats.three{grid-template-columns:repeat(3,1fr)}
+.glance-stat{background:var(--card);border:1px solid var(--rule);border-radius:14px;padding:26px 22px}
+.slide.alt .glance-stat{background:#fff}
+.glance-stat .stat{font-size:52px;font-weight:700;color:var(--pink);letter-spacing:-2px;line-height:.95;margin-bottom:10px}
+.glance-stat .stat small{font-size:22px;font-weight:700;color:var(--navy);margin-left:2px;letter-spacing:-.5px}
+.glance-stat .label{font-size:13px;color:var(--ink);line-height:1.5}
+
+/* ===== Cards / beats ===== */
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:4px}
+.cols.two{grid-template-columns:1fr 1fr}
+.card{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:17px 20px}
+.slide.alt .card{background:#fff}
+.card h3{margin:0 0 7px;font-size:15.5px;color:var(--navy);letter-spacing:-.2px}
+.card p{margin:0;font-size:13.5px;color:#3d3a35;line-height:1.55}
+.beats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:4px}
+.beat{background:var(--card);border-left:3px solid var(--yellow);padding:18px 20px;border-radius:0 8px 8px 0}
+.slide.alt .beat{background:#fff}
+.beat h4{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:6px;letter-spacing:-.2px}
+.beat p{font-size:13px;color:#3d3a35;line-height:1.55}
+.beat p strong{color:var(--pink)}
+.closer{font-size:14.5px;color:var(--ink);font-style:italic;border-left:3px solid var(--pink);padding-left:18px;max-width:780px;margin-top:22px;line-height:1.6}
+
+/* ===== Quote ===== */
+.quote{font-size:clamp(18px,2vw,21px);font-style:italic;color:var(--navy);border-left:3px solid var(--yellow);padding:6px 0 6px 22px;margin:0 0 20px;max-width:820px;line-height:1.45}
+.quote .who{display:block;font-style:normal;font-size:13.5px;color:var(--muted);margin-top:8px}
+
+/* ===== Yes/But tension rows ===== */
+.tension-list{display:flex;flex-direction:column;gap:8px;margin-top:4px}
+.tension-row{display:grid;grid-template-columns:1fr 1.15fr;border-radius:10px;overflow:hidden;border:1px solid var(--rule)}
+.tension-row .yes,.tension-row .but{padding:11px 16px;font-size:13px;line-height:1.5}
+.tension-row .yes{background:rgba(79,122,83,.07);color:#3d3a35;border-right:1px solid var(--rule)}
+.tension-row .yes::before{content:"YES";font-size:10px;font-weight:700;letter-spacing:1.8px;color:var(--green);display:block;margin-bottom:6px}
+.tension-row .but{background:#fff;color:var(--ink);font-weight:500}
+.slide.alt .tension-row .but{background:var(--card)}
+.tension-row .but::before{content:"BUT";font-size:10px;font-weight:700;letter-spacing:1.8px;color:var(--pink);display:block;margin-bottom:6px}
+.tension-row .but strong{color:var(--pink)}
+
+/* ===== Callout ===== */
+.callout{border-left:3px solid var(--pink);background:var(--card);padding:18px 22px;border-radius:0 10px 10px 0;margin:24px 0 0;font-weight:600;font-size:16px;color:var(--navy);line-height:1.55;max-width:880px}
+.slide.alt .callout{background:#fff}
+.callout em{color:var(--pink);font-style:italic}
+
+/* ===== Priority list ===== */
+.plist{counter-reset:pr;list-style:none;padding:0;margin:4px 0 0}
+.plist li{counter-increment:pr;background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:13px 22px 13px 66px;margin-bottom:9px;position:relative}
+.slide.alt .plist li{background:#fff}
+.plist li::before{content:"0" counter(pr);position:absolute;left:18px;top:13px;color:var(--pink);font-weight:700;font-size:23px;letter-spacing:-1px}
+.plist li{border-left:3px solid var(--yellow)}
+.plist h3{margin:0 0 5px;font-size:16.5px;color:var(--navy)}
+.plist p{margin:0;font-size:13px;color:#3d3a35;line-height:1.5}
+
+/* ===== TODO markers (internal, pre-presentation) ===== */
+.todo{display:inline-block;background:#F6E8CF;color:var(--amber);border:1px solid #E8D3A8;font-size:12px;font-weight:700;border-radius:6px;padding:2px 9px;letter-spacing:.03em;vertical-align:middle}
+.todo-block{background:#FBF4E6;border:1px dashed #E8D3A8;border-radius:10px;padding:18px 20px;color:#7a6a4a;font-size:14.5px;margin-top:22px;line-height:1.6;max-width:880px}
+
+.src{font-size:11.5px;color:var(--muted);margin-top:12px}
+.ctable-wrap{border:1px solid var(--rule);border-radius:12px;overflow:hidden;margin-top:4px;background:#fff}
+table.ctable{width:100%;border-collapse:collapse;font-size:12.5px}
+.ctable th{background:var(--navy);color:#fff;text-align:left;padding:10px 13px;font-size:11.5px;letter-spacing:.4px;font-weight:600}
+.ctable td{padding:9px 13px;border-bottom:1px solid var(--rule);vertical-align:top;color:#3d3a35;line-height:1.45;background:#fff}
+.ctable tr:last-child td{border-bottom:none}
+.ctable tr.you td{background:rgba(201,49,110,.07);color:var(--ink);font-weight:500}
+.ctable td:first-child{font-weight:700;color:var(--navy);white-space:nowrap}
+.brand-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:4px}
+.brand-grid figure{margin:0;border:1px solid var(--rule);border-radius:10px;overflow:hidden;background:#fff}
+.brand-grid img{width:100%;display:block}
+.brand-grid figcaption{font-size:11.5px;color:var(--muted);padding:7px 10px;border-top:1px solid var(--rule);line-height:1.4}
+.brand-grid figcaption strong{color:var(--navy)}
+.sidebar-brand .logo-row img{height:22px;width:auto;display:block}
+.exhibit{padding:44px 0 48px}
+.exhibit .ex-title{font-size:18px;font-weight:700;color:var(--navy);letter-spacing:-.3px;margin-bottom:14px}
+.exhibit img{width:100%;max-height:76vh;object-fit:contain;object-position:left top;border:1px solid var(--rule);border-radius:10px;background:#fff}
+footer{background:var(--navy);color:rgba(255,255,255,.6);padding:34px 0;font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+footer .fa{color:rgba(255,255,255,.85);font-weight:600}
+
+/* ===== Mobile ===== */
+@media (max-width:1024px){
+  .app{grid-template-columns:1fr}
+  aside.sidebar{position:fixed;top:0;left:0;width:100%;height:auto;max-height:58px;overflow:hidden;z-index:50;padding:12px 0;transition:max-height .25s}
+  aside.sidebar.open{max-height:100vh;overflow-y:auto;padding:12px 0 26px}
+  .sidebar-brand{padding:0 20px 10px;border-bottom:none;margin-bottom:0;display:flex;align-items:center;justify-content:space-between;gap:12px}
+  aside.sidebar.open .sidebar-brand{border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:16px;padding-bottom:14px}
+  .sidebar-brand .label,.sidebar-brand .meta{display:none}
+  aside.sidebar.open .sidebar-brand .label,aside.sidebar.open .sidebar-brand .meta{display:block;width:100%}
+  .menu-toggle{display:block;background:rgba(255,255,255,.1);color:#fff;border:none;padding:8px 14px;border-radius:6px;font-family:inherit;font-size:13px;font-weight:600;cursor:pointer}
+  nav.nav-list{display:none}
+  aside.sidebar.open nav.nav-list{display:block}
+  main{padding-top:58px}
+  .wrap{padding:0 22px}
+  .slide{min-height:auto;padding:44px 0 48px}
+  .glance-stats,.glance-stats.three,.cols,.cols.two,.beats{grid-template-columns:1fr}
+  .glance-stat .stat{font-size:42px}
+  .tension-row{grid-template-columns:1fr}
+  .tension-row .yes{border-right:none;border-bottom:1px solid var(--rule)}
+  .cover-stack .client-name{font-size:52px}
+}
+</style>
+
+<style media="print">
+@page { size: 297mm 260mm; margin: 0; }
+html, body { background: #fff !important; }
+body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+aside.sidebar, .menu-toggle { display: none !important; }
+.app { display: block !important; }
+main { min-width: 0; }
+.wrap { max-width: 1020px; padding: 0 46px; }
+.slide {
+  min-height: 96vh !important;
+  height: auto !important;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px 0 !important;
+  border-bottom: none !important;
+  page-break-before: always;
+  break-before: page;
+}
+#cover { page-break-before: auto !important; break-before: auto !important; }
+.card, .beat, .glance-stat, .tension-row, .quote, figure, tr { break-inside: avoid; page-break-inside: avoid; }
+.slide.exhibit img { max-width: 100%; max-height: 200mm; object-fit: contain; display: block; }
+img { max-width: 100%; }
+footer { display: none !important; }
+</style>
+</head>
+<body>
+
+<div class="app">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <div>
+        <div class="logo-row"><img src="img/actionable-logo-light.svg" alt="Actionable"></div>
+        <div class="label">Marketing audit · Focus4ward</div>
+        <div class="meta">August 12, 2026 · Miri Blum</div>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">Menu</button>
+    </div>
+    <nav class="nav-list">
+      <a href="#cover"><span class="num">00</span>Cover</a>
+      <a href="#summary"><span class="num">01</span>Executive summary</a>
+      <a href="#heard"><span class="num">02</span>In your words</a>
+      <a href="#funnel"><span class="num">03</span>Website &amp; funnel</a>
+      <a href="#search"><span class="num">04</span>Organic search</a>
+      <a href="#brand"><span class="num">05</span>Brand &amp; positioning</a>
+      <a href="#ai"><span class="num">06</span>AI visibility</a>
+      <a href="#g2"><span class="num">6b</span>The G2 play</a>
+      <a href="#linkedin"><span class="num">07</span>LinkedIn</a>
+      <a href="#competition"><span class="num">08</span>Competition</a>
+      <a href="#tension"><span class="num">09</span>Yes / But</a>
+      <a href="#story"><span class="num">10</span>Strategic conclusion</a>
+      <a href="#priority"><span class="num">11</span>Action plan</a>
+      <a href="#timeline"><span class="num">11b</span>30 / 60 / 90</a>
+      <a href="#next"><span class="num">12</span>Next</a>
+      <a href="#annex"><span class="num">A</span>Annex</a>
+    </nav>
+  </aside>
+
+  <main>
+
+  <!-- 00 · Cover -->
+  <section class="slide" id="cover"><div class="wrap">
+    <div class="cover-stack">
+      <div class="doc-type">Marketing audit · August 12, 2026</div>
+      <div class="client-name">Actionable<span class="dot">.</span></div>
+      <p class="strapline">The category is ours to create.<span class="line2">The engine to claim it doesn't exist <em style="font-style:normal;color:var(--pink)">yet.</em></span></p>
+      <p class="cover-sub">Predictive CX is a story that wins in the room, every time. This audit is about what happens before and after the room: how buyers find you, what they see, and what carries them through a 5-to-6-month cycle.</p>
+      <div class="meta-row">
+        <div><div class="l">Prepared by</div><div class="v">Miri Blum · Focus4ward</div></div>
+        <div><div class="l">Presented to</div><div class="v">Nicolas Rieul · Co-Founder &amp; Co-CEO</div></div>
+        <div><div class="l">Sources</div><div class="v">Umami (90 days) · GSC (3 months) · SEMrush · Trakkr · discovery interview</div></div>
+      </div>
+    </div>
+  </div></section>
+  <!-- 01 · Executive summary -->
+  <section class="slide alt" id="summary"><div class="wrap">
+    <div class="eyebrow">01 · Executive summary</div>
+    <h1 class="slide-title">A real business with real proof.<br>And an engine that still needs to be <em>built.</em></h1>
+    <div class="fact-row">
+      <span class="fact"><b>€1.6M</b> ARR</span>
+      <span class="fact"><b>6</b> active enterprise clients</span>
+      <span class="fact"><b>~15</b> large logos delivered</span>
+      <span class="fact"><b>5-6 mo</b> sales cycle</span>
+      <span class="fact"><b>10-25%</b> first-meeting-to-signature on ICP</span>
+      <span class="fact"><b>50 / 30 / 20</b> events · partners · network</span>
+      <span class="fact"><b>~15</b> inbound from the one press spike</span>
+    </div>
+    <div class="glance-stats" style="margin-bottom:16px">
+      <div class="glance-stat" style="padding:20px 20px"><div class="stat" style="font-size:44px">100<small>%</small></div><div class="label">of search clicks come from people already typing "Actionable".</div></div>
+      <div class="glance-stat" style="padding:20px 20px"><div class="stat" style="font-size:44px">1</div><div class="label">demo click tracked in 90 days, on 2,470 visits.</div></div>
+      <div class="glance-stat" style="padding:20px 20px"><div class="stat" style="font-size:44px">0<small>/23</small></div><div class="label">buyer questions where any AI engine names Actionable.</div></div>
+      <div class="glance-stat" style="padding:20px 20px"><div class="stat" style="font-size:44px">4</div><div class="label">different category labels across the site and decks, for one category.</div></div>
+    </div>
+    <div class="beats">
+      <div class="beat"><h4>Invisible where buyers look</h4><p>Brand-only search, absent from AI answers, no G2 profile, one founder post a week. Buyers shortlist; Actionable is not on the shelf.</p></div>
+      <div class="beat"><h4>Dressed for the wrong room</h4><p>Site, brand and decks speak to the Data team. The champion is a CX leader: an empathy professional greeted by a control room.</p></div>
+      <div class="beat"><h4>The assets already exist</h4><p>Blue-chip proof, the film's story, a 29,000-follower founder, partners at 30% of deals. Nothing is plugged in.</p></div>
+    </div>
+    <div class="callout"><em>Actionable is creating a category on calls, with nowhere for that category to live between the calls.</em> Getting on the enterprise shortlist takes visibility where buyers look, and trust built along the whole cycle: proof, website, thought leadership.</div>
+  </div></section>
+  <!-- 02 · What Nicolas told us -->
+  <section class="slide" id="heard"><div class="wrap">
+    <div class="eyebrow">02 · In your words</div>
+    <h1 class="slide-title">Your framing, in your own words.<br>If this reads right, the rest <em>follows.</em></h1>
+    <div class="quote">"Avec Actionable, je peux enfin agir proactivement, plutôt que constater a posteriori ce qui s'est passé."<span class="who">The customer sentence, in your own words</span></div>
+    <div class="cols">
+      <div class="card"><h3>The goal</h3><p>Enterprise pipeline generated inbound: prospects arriving already knowing the category. "We need Predictive CX, and we think Actionable is the leader."</p></div>
+      <div class="card"><h3>The buying committee</h3><p>CX / Customer Insights teams champion. The C-suite signs: the CMO at Cdiscount, Customer Strategy with Data at Edenred. The deal climbs from one room to the other over 5 to 6 months.</p></div>
+      <div class="card"><h3>The real enemy</h3><p>Deals rarely die against a named competitor. They die against the status quo: surveys, the Data queue, "not now". In buyers' words: <em>"dès qu'on veut aller plus loin, on dépend de la Data et ça prend des semaines."</em></p></div>
+      <div class="card"><h3>The machine today</h3><p>Marketing is founder-led with one apprentice. Events cost €8-15k for 1-3 immediate leads each. Partners (Ipsos, Kantar, Havas, Capgemini, Vertone) bring 30% of opportunities: the strongest under-invested channel.</p></div>
+      <div class="card"><h3>The pitch that wins the room</h3><p>Surveys reach 2 to 5% of customers and get challenged on representativity. Actionable reads 100% of customers, individually, at 80%+ reliability, industrialised at Edenred and Cdiscount scale.</p></div>
+    </div>
+  </div></section>
+  <!-- 04 · Website & funnel -->
+  <section class="slide alt" id="funnel"><div class="wrap">
+    <div class="eyebrow">03 · Website &amp; funnel</div>
+    <h1 class="slide-title">2,140 people came.<br>What they see is only <em>one page.</em></h1>
+    <div class="glance-stats">
+      <div class="glance-stat"><div class="stat">2,140</div><div class="label">visitors · 2,470 visits · 2,980 views</div></div>
+      <div class="glance-stat"><div class="stat">92<small>%</small></div><div class="label">of all views land on the homepage. The rest is privacy and legal pages.</div></div>
+      <div class="glance-stat"><div class="stat">1.2</div><div class="label">pages per visit. There is nowhere else to go.</div></div>
+      <div class="glance-stat"><div class="stat">10:1</div><div class="label">case-study opens vs demo clicks. Proof pulls; the CTA doesn't.</div></div>
+    </div>
+    <div class="beats">
+      <div class="beat"><h4>The proof has no pages</h4><p>Carrefour (x7 incremental ROI, two Cas d'Or), OUIGO (+390k€ in 6 months) live as sections of a single page: <strong>Google cannot rank them, LLMs cannot cite them, a champion cannot send them upstairs</strong>. And Google still holds 10 dead URLs returning 404.</p></div>
+      <div class="beat"><h4>Buyers are already asking AI</h4><p>Referral mix: Google 84% (almost all branded navigation), VivaTech, LinkedIn, your investor's own site. And <strong>chatgpt.com already appears as a referrer</strong>: buyers ask AI tools about you before you have anything for AI tools to read.</p></div>
+      <div class="beat"><h4>After the click, it works</h4><p>Tested: a demo request gets an instant confirmation and a personal email from the head of sales. The problem is not what happens after the click. It is that <strong>almost nobody clicks</strong>, and everyone who does not click is invisible.</p></div>
+    </div>
+    <p class="src">Source: Umami, last 90 days (May 12 to August 10, since the site relaunch).</p>
+  </div></section>
+  <!-- 05 · Search -->
+  <section class="slide" id="search"><div class="wrap">
+    <div class="eyebrow">04 · Organic search</div>
+    <h1 class="slide-title">People who already know you, find you.<br>Nobody else <em>does.</em></h1>
+    <div class="glance-stats">
+      <div class="glance-stat"><div class="stat">735</div><div class="label">clicks on 35,700 impressions, average position 7.</div></div>
+      <div class="glance-stat"><div class="stat">100<small>%</small></div><div class="label">of clicking queries are brand terms: "actionable", "actionable ai", "actionable startup".</div></div>
+      <div class="glance-stat"><div class="stat">1</div><div class="label">page doing all the work: 725 of 735 clicks. Every ranking signal rides on one URL.</div></div>
+      <div class="glance-stat"><div class="stat">0.37<small>%</small></div><div class="label">CTR in the US on 15,800 impressions (France: 22.8%). Where the ambition is, the brand is invisible.</div></div>
+    </div>
+    <div class="beats">
+      <div class="beat"><h4>An authority asset, unused</h4><p>SEMrush registers Authority Score 23 and 255 referring domains: partly fundraise press, possibly partly the app subdomain (verify before quoting). Either way, <strong>only 2 pages earn organic traffic</strong>.</p></div>
+      <div class="beat"><h4>Category search is zero</h4><p><strong>Not one click from a problem or category query</strong>, because no page answers one. Google Trends: a faint US rise, nothing in France. The name is still claimable.</p></div>
+      <div class="beat"><h4>Presence, not mass advertising</h4><p>Category creation with a small team means being the answer wherever the 400 accounts look: search, AI, G2, LinkedIn, events. And at home first: 22.8% CTR in France vs 0.37% in the US, <strong>yet the site speaks only English</strong>. An advantage they shouldn't walk away from.</p></div>
+    </div>
+    <div class="callout">The index is a ghost town: Google knows 35 URLs, indexes 6. <em>10 are relaunch ghosts returning 404</em> (the deleted blog, cases, about). The sitemap declares 3 pages, two of them legal.</div>
+    <p class="src">Sources: Google Search Console (3 months) · GSC Coverage + sitemap-0.xml · SEMrush domain overview, August 11, 2026.</p>
+  </div></section>
+  <!-- 07 · Brand & positioning (two screens) -->
+  <section id="brand">
+    <div class="slide alt"><div class="wrap">
+      <div class="eyebrow">05 · Brand, look &amp; feel</div>
+      <h1 class="slide-title">The brand is dressed for the Data team.<br>Your champion is the <em>CX leader.</em></h1>
+      <p class="lede">The identity is a retro control room: terminal typography, CRT glitch, "// CAUSAL AI PREDICTION PLATFORM". Distinctive and technically credible, real assets. But the champion is a <strong>customer experience professional</strong>, empathy at scale as a job, greeted with surveillance aesthetics and "act before it's too late". The strongest Predictive CX brand would feel the way the product makes a CX leader feel: <strong>finally seeing their customers clearly</strong>. Human, warm, confident, technical depth one layer down.</p>
+      <div class="cols two">
+        <div class="card"><h3>A domain that invokes trust</h3><p>You ask banks and retailers for their customer data; .live reads entertainment, not AI SaaS. Checked August 11: <strong>getactionable.tech is available cheap; actionable.ai and actionable.io are six figures</strong> and worth it. The domain only gets harder to change.</p></div>
+        <div class="card"><h3>Start from the film</h3><p>The film already tells it right: positive urgency, human, "satisfaction is no longer a mystery, it's a science", and a tagline-grade closer, <em>"Prédire la satisfaction, décider l'action."</em> The look around it is generic, which is normal: category creators get to set the look everyone else copies. That part is still to build.</p></div>
+      </div>
+      <div class="callout">The recommendation is a rebrand, not a repaint. The current identity was built from the inside (what we find cool) rather than from the champion (what makes them feel seen). And it isn't an invention job; <em>it's an alignment job</em>: the film already found the voice.</div>
+    </div></div>
+    <div class="slide"><div class="wrap">
+      <div class="eyebrow">05 · The brand map, seen</div>
+      <h1 class="slide-title">Five neighbours, one costume.<br>The warm seat is <em>open.</em></h1>
+      <div class="brand-grid">
+        <figure><img src="img/actionable.jpg" alt="actionable.live homepage"><figcaption><strong>Actionable</strong> · dark terminal, data-team language</figcaption></figure>
+        <figure><img src="img/qualtrics.jpg" alt="Qualtrics homepage"><figcaption><strong>Qualtrics</strong> · warm, but selling the survey world you replace</figcaption></figure>
+        <figure><img src="img/medallia.jpg" alt="Medallia homepage"><figcaption><strong>Medallia</strong> · black chrome, "leaders" language</figcaption></figure>
+        <figure><img src="img/fundamental.jpg" alt="Fundamental homepage"><figcaption><strong>Fundamental</strong> · synthwave, for AI teams</figcaption></figure>
+        <figure><img src="img/priorlabs.jpg" alt="Prior Labs homepage"><figcaption><strong>Prior Labs (SAP)</strong> · benchmarks, for ML teams</figcaption></figure>
+        <figure><img src="img/perspective.jpg" alt="Perspective AI homepage"><figcaption><strong>Perspective AI</strong> · clean and light, closest to warm, and not predictive</figcaption></figure>
+      </div>
+      <p class="closer">Nobody pairs CX-leader warmth with real predictive AI. That corner is the territory to own, and today it costs nothing to enter.</p>
+      <p class="src">Homepage captures, August 11, 2026.</p>
+    </div></div>
+    <div class="slide alt"><div class="wrap">
+      <div class="eyebrow">05 · What warm looks like</div>
+      <h1 class="slide-title">Serious AI with a human face exists.<br>Just not in <em>CX prediction.</em></h1>
+      <div class="brand-grid">
+        <figure><img src="img/ref-sierra.jpg" alt="Sierra homepage"><figcaption><strong>Sierra</strong> · enterprise AI agents, sold through a human face and calm confidence</figcaption></figure>
+        <figure><img src="img/ref-fin.jpg" alt="Fin by Intercom homepage"><figcaption><strong>Fin (Intercom)</strong> · "perfect customer experiences", serif warmth, light ground</figcaption></figure>
+        <figure><img src="img/ref-anthropic.jpg" alt="Anthropic homepage"><figcaption><strong>Anthropic</strong> · frontier AI in cream and serif: technical depth, zero cockpit</figcaption></figure>
+      </div>
+      <p class="closer">Three proofs that technical credibility does not need the dark cockpit. The register the brand film already found is the register these brands ship every day.</p>
+      <p class="src">Homepage captures, August 11, 2026.</p>
+    </div></div>
+    <div class="slide"><div class="wrap">
+      <div class="eyebrow">05 · The positioning, in their own words</div>
+      <h1 class="slide-title">Three names for one category,<br>written for the <em>wrong reader.</em></h1>
+      <div class="beats">
+        <div class="beat"><h4>Three labels at once</h4><p>The homepage runs "Causal AI prediction platform" (kicker), "The Predictive Customer Experience AI" (headline), and Predictive CX (the category the company says it is creating). A category-creation strategy cannot afford three names. Pick one, make every surface repeat it.</p></div>
+        <div class="beat"><h4>Aimed at the wrong reader</h4><p>"AI your data has been waiting for", "understand why your KPIs move", +15B transactions analysed: written for the Data team, the very status quo the product displaces. The single best line on the page, <strong>"Score 100% of your customer base, not a 5% survey sample"</strong>, the exact wedge customers themselves describe, sits buried in module three.</p></div>
+        <div class="beat"><h4>Fear where delight should be</h4><p>"Act before it's too late" (twice), "before they break": the founder's own internal language, and it is honest. But a CX leader lives in positive-sum language. Same urgency, flipped: <strong>act while you can still change the outcome</strong>. Delight, don't dread.</p></div>
+      </div>
+      <div class="callout">The name is the story, untold: customers describe getting a list each morning of clients at risk, and acting before anything breaks. <em>"Actionable" is that promise.</em> It appears nowhere on the website.</div>
+    </div></div>
+    <div class="slide alt"><div class="wrap">
+      <div class="eyebrow">05 · The sales materials</div>
+      <h1 class="slide-title">Four decks, four framings.<br>The category lives in <em>one</em> of them.</h1>
+      <div class="fact-row">
+        <span class="fact">AFRC one-pager · <b>keep</b></span>
+        <span class="fact">Generic sales deck · <b>rework</b></span>
+        <span class="fact">Predictive CX event deck · <b>make it the master</b></span>
+        <span class="fact">Investor pitch · <b>retire from sales</b></span>
+      </div>
+      <div class="beats">
+        <div class="beat"><h4>Four framings for one company</h4><p>"Prédire la satisfaction client grâce à l'IA" (AFRC), a "Predictive era" of CRM (generic deck), "Predictive CX" (the September event deck), "causal AI platform" (the investor deck, where the homepage's kicker comes from). Only the event deck builds the category the company says it is creating.</p></div>
+        <div class="beat"><h4>The best line is already written</h4><p>Carrefour: <strong>5% respondents, 82% of the base predicted, 80% reliability</strong>, next to x7 incremental revenue (generic deck). Category, wedge and blue-chip proof in one breath, sitting on slide 23 of 24. Promote it to slide 1 of everything.</p></div>
+        <div class="beat"><h4>Unproofed decks are a trust leak</h4><p>"Template" still visible on four slides of the September deck, a broken hero sentence in the generic deck, French bleeding into EN slides. <strong>A vendor selling precision and reliability ships typos in its hero claims.</strong> Proofing is positioning.</p></div>
+      </div>
+      <p class="closer">And the committee's second room is unserved: no deck speaks the signer's language, brand, growth and budget defense for the C-suite. CX champions get served, data teams get served, the signature gets case-study ROI at best.</p>
+    </div></div>
+  </section>
+  <!-- 06 · AI visibility -->
+  <section class="slide" id="ai"><div class="wrap">
+    <div class="eyebrow">06 · AI visibility</div>
+    <h1 class="slide-title">Buyers already ask AI about the category.<br>The answer is never <em>Actionable.</em></h1>
+    <div class="glance-stats">
+      <div class="glance-stat"><div class="stat">0<small>/23</small></div><div class="label">category prompts where any AI model names Actionable.</div></div>
+      <div class="glance-stat"><div class="stat">1</div><div class="label">mention of Actionable across 1,845 source citations behind those answers.</div></div>
+      <div class="glance-stat"><div class="stat">151</div><div class="label">competitor mentions in the same answers. Salesforce, Adobe, Qualtrics and Medallia lead.</div></div>
+      <div class="glance-stat"><div class="stat">#1</div><div class="label">cited source: YouTube (59), then LinkedIn (36). You already make videos.</div></div>
+    </div>
+    <div class="beats">
+      <div class="beat"><h4>Each label fights a different arena</h4><p>"Causal AI" is owned by the causaLens cluster. Data language lands you against Segment and Palantir. The CX prompts go to Medallia, Qualtrics and Adobe. <strong>Only the CX arena is winnable.</strong></p></div>
+      <div class="beat"><h4>A startup already proved it's winnable</h4><p>The survey-alternatives answers are led by <strong>Perspective AI</strong>: conversational forms, no prediction at all. In the live check, Gemini built its "measure without surveys" answer on <strong>their blog, cited six times</strong>. Wrong product, right content, and the buyer meets them first.</p></div>
+      <div class="beat"><h4>The sources are reachable with what you have</h4><p>The answers are built from YouTube, LinkedIn, vendor blogs, Reddit and CX roundups (thecxlead.com, G2, Gartner). <strong>The videos and the film exist; the citable pages and roundup presence don't.</strong></p></div>
+    </div>
+    <p class="src">Sources: Trakkr baseline (23 buyer-intent prompts) and SEMrush, August 11, 2026. A manual spot-check on ChatGPT, Perplexity and Gemini matches: asked by name, all three answer well; asked as a buyer, none names Actionable.</p>
+  </div></section>
+  <!-- 06b · G2 -->
+  <section class="slide alt" id="g2"><div class="wrap">
+    <div class="eyebrow">06 · The G2 play</div>
+    <h1 class="slide-title">G2 is a shortlist and a source.<br>That makes it <em>strategic.</em></h1>
+    <p class="lede">One profile feeds two audiences at once: enterprise buyers building shortlists, and the LLMs that lean on G2 when they answer category questions. Actionable sits in neither today.</p>
+    <div class="beats">
+      <div class="beat"><h4>Pick the right shelf</h4><p>"Experience Management Software" is where Medallia and Qualtrics sit: that is the conversation to enter. "Feedback Analytics" is survey land (SurveyMonkey). <strong>Steer clear of survey-automation and AI-for-surveys categories: they are the opposite of the product.</strong></p></div>
+      <div class="beat"><h4>It counts twice</h4><p>learn.g2.com is already among the top-cited sources behind your category prompts (14 citations in the Trakkr baseline), and G2's weight has only grown since it absorbed its main rivals. <strong>A G2 profile is enterprise proof and AI visibility in one move.</strong></p></div>
+      <div class="beat"><h4>The reviews already exist</h4><p>Six enterprise clients, ~15 delivered logos. Reviews from Carrefour, OUIGO and Audiens-level names are proof listicle writers cannot fake, and competitors are already writing the listicles: <strong>Perspective AI publishes its own "10 AI CX platforms compared"</strong>.</p></div>
+    </div>
+  </div></section>
+  <!-- 06c · LinkedIn -->
+  <section class="slide" id="linkedin"><div class="wrap">
+    <div class="eyebrow">07 · The LinkedIn read</div>
+    <h1 class="slide-title">The strongest channel is Nicolas,<br>at <em>one post a week.</em></h1>
+    <div class="glance-stats">
+      <div class="glance-stat"><div class="stat">29,000</div><div class="label">followers on Nicolas's profile. The company page has 2,460: the founder is 12x the company.</div></div>
+      <div class="glance-stat"><div class="stat">1<small>/wk</small></div><div class="label">Nicolas's posting cadence (~2/wk for the company page). Below always-on for category creation.</div></div>
+      <div class="glance-stat"><div class="stat">106</div><div class="label">reactions on his best post (Boulanger client case). Proof stories outperform announcements 25 to 1.</div></div>
+      <div class="glance-stat"><div class="stat">~0</div><div class="label">comments on company posts. Broadcast, not conversation, and the FR/EN mix splits a small audience.</div></div>
+    </div>
+    <div class="beats">
+      <div class="beat"><h4>People beat logos, now more than ever</h4><p>AI made content abundant; what cuts through is authority and authenticity, and those live with people, not company pages. <strong>The follower base is already there</strong>: the play is Nicolas posting as the category voice (more team voices to follow), not as the company amplifier.</p></div>
+      <div class="beat"><h4>Even here, the label drifts</h4><p>Site says "Predictive Customer Experience AI" and "Causal AI", the company tagline says "predict satisfaction", posts say "Predictive CX", his headline says "Actionable AI ⚡️ Predictive...". Four surfaces, four variants of the name.</p></div>
+      <div class="beat"><h4>Scale check</h4><p>Qualtrics: 332,000 followers. Medallia: 143,000. Perspective AI: <strong>766</strong>. On LinkedIn, unlike search and AI answers, Actionable is ahead of the startup set. This channel is winnable now with cadence alone.</p></div>
+    </div>
+    <p class="src">Source: public LinkedIn pages, captured August 11, 2026. Public feeds truncate; cadence read from the last 2-3 weeks.</p>
+  </div></section>
+  <!-- 08 · Competition (two screens) -->
+  <section id="competition">
+    <div class="slide alt"><div class="wrap">
+    <div class="eyebrow">08 · Competitive review</div>
+    <h1 class="slide-title">Nobody owns predictive + CX together.<br><em>Yet.</em></h1>
+    <p class="lede">Your watchlist, verified at source, splits into two games. <strong>Qualtrics and Medallia</strong> sell to CX buyers today. <strong>Prior Labs and Fundamental</strong> sell the predictive model layer to data teams: SAP bought Prior Labs in July 2026, Fundamental has raised $255M. Plus the real enemy: in-house Data teams and the status quo. "We have no competitors" is true at the product level; every one of these competes for the same budget line.</p>
+    <div class="beats">
+      <div class="beat"><h4>The label survives validation</h4><p>CX Today publishes "Predictive CX AI Platforms 2026" rankings and CX Network runs a Predictive CX topic hub, yet <strong>no vendor claims the term</strong>, and no US startup runs it as their H1. Analysts would file Actionable under Voice of the Customer today. <strong>The shelf exists and is empty.</strong></p></div>
+      <div class="beat"><h4>The brand map has an empty corner</h4><p>Prior Labs, Fundamental and Hex dress for data scientists; Qualtrics dresses warm for the survey world it owns. <strong>Warm + predictive is the empty corner</strong> (see the brand map in 05). The first brand there takes the champion by default.</p></div>
+      <div class="beat"><h4>The window is short</h4><p>The predictive layer is being armed and absorbed by the giants whose suites CX leaders already run, and CX Today reports providers "jostling" for labels in this space. <strong>Publish the category definition first</strong>, with the qualifier only Actionable can claim: 100% of customers, zero surveys.</p></div>
+    </div>
+    </div></div>
+    <div class="slide"><div class="wrap">
+      <div class="eyebrow">08 · What their ads say</div>
+      <h1 class="slide-title">Everyone advertises in the dark.<br>The warm corner costs <em>nothing</em> to enter.</h1>
+      <div class="beats">
+        <div class="beat"><h4>Fear in an engineer's costume</h4><p>Medallia is the heaviest advertiser in the set: messages written for CX leaders ("CX leaders are under pressure", "Nice to have. Necessary to thrive.") dressed in black chrome and neon lime borrowed from dev tooling. <strong>The empathy position argued in the least empathetic visual language on LinkedIn.</strong></p></div>
+        <div class="beat"><h4>One warm ad in the whole set</h4><p>Across the 25 ad captures and four active advertisers, exactly one creative is warm, human and light-ground: Medallia's Shipt customer story. Fundamental writes only for "enterprise AI teams", <strong>Hex has one ad live in Europe, Prior Labs runs none.</strong> In France, the warm-human position is empty.</p></div>
+        <div class="beat"><h4>All authority, no warmth</h4><p>Medallia runs webinars and analyst reports; Qualtrics runs Gartner credentials and acquisition news; Fundamental runs benchmarks for AI teams. Authority plays, all of them. <strong>Nobody talks to the CX leader like a human.</strong></p></div>
+      </div>
+      <p class="src">Source: vision review of the 25 ad-library screenshots (LinkedIn + Google, FR + US), collected August 10, 2026.</p>
+    </div></div>
+  </section>
+  <!-- 03 · Yes / But -->
+  <section class="slide" id="tension"><div class="wrap">
+    <div class="eyebrow">09 · The synthesis</div>
+    <h1 class="slide-title">Every yes here is real.<br>Every but stands between you and <em>winning.</em></h1>
+    <div class="tension-list">
+      <div class="tension-row"><div class="yes">Real enterprise proof: Edenred, Cdiscount, millions of customers scored, 80%+ reliability.</div><div class="but">All of it is squeezed into one unrankable page. A buyer who does not scroll, and 85% leave in 41 seconds, <strong>never meets the proof</strong>.</div></div>
+      <div class="tension-row"><div class="yes">A distinctive new brand that nobody forgets.</div><div class="but">It speaks to data engineers. Your champions are <strong>CX and insights people</strong>: empathy professionals walking into a control room.</div></div>
+      <div class="tension-row"><div class="yes">A category being created: Predictive CX.</div><div class="but">The category exists only inside your calls. Search demand for it is <strong>zero</strong>, and you own no surface to build it on.</div></div>
+      <div class="tension-row"><div class="yes">Traffic multiplied by 22 since the May relaunch.</div><div class="but">85% of it bounces in 41 seconds. There is <strong>one page</strong> to see and one thing to do: request a demo.</div></div>
+      <div class="tension-row"><div class="yes">A clear champion motion and a proven sales narrative.</div><div class="but">One bottom-funnel CTA serves a <strong>5-to-6-month cycle</strong>. The CX manager who isn't demo-ready has nowhere to go and no nurture to keep them warm: no content journey, no retargeting, no reason to come back.</div></div>
+      <div class="tension-row"><div class="yes">Partners already bring 30% of opportunities: Ipsos, Kantar, Havas, Capgemini, Vertone.</div><div class="but">The joint "Predictive CX" offer exists, inside the partner portal. Publicly: <strong>zero commitment</strong>, no page, no press release, and Ipsos's logo leads the one-pager. The channel is rented, not owned.</div></div>
+    </div>
+  </div></section>
+  <!-- 09 · The story -->
+  <section class="slide alt" id="story"><div class="wrap">
+    <div class="eyebrow">10 · The strategic conclusion</div>
+    <h1 class="slide-title">One story, two rooms.<br>Everything above points <em>here.</em></h1>
+    <div class="cols">
+      <div class="card"><h3>The right story, told to the right person</h3><p>Prediction puts CX at the center of the company: satisfaction stops being the soft metric and starts driving revenue, pricing and operations (the OUIGO conversation already proves it). A story a CX leader sees their future in, sharpened for the ICP, and defensible up to the C-suite.</p></div>
+      <div class="card"><h3>The story, amplified</h3><p>A proof and content layer Google can rank, LLMs can cite and journalists can quote: case studies as real pages, a category hub, PR and media presence. When a CX director googles you after an event or asks ChatGPT about the category, <strong>the answer is you</strong>.</p></div>
+      <div class="card"><h3>A path for the not-ready-yet</h3><p>Most of the market doesn't know this category exists, let alone that they need it. While they discover, they need journeys: something to read, keep, and send the boss. "Request a demo" is the last step, not the first.</p></div>
+    </div>
+    <p class="lede" style="margin:26px 0 10px"><strong>Where we start: the first 90 days.</strong></p>
+    <div class="beats">
+      <div class="beat"><h4>1 · Rebuild and dress the story</h4><p>Positioning locked, then a rebrand to win: a challenger can get away with an okay brand; <strong>a category leader has to look the part</strong>, especially for enterprise.</p></div>
+      <div class="beat"><h4>2 · Build the foundation</h4><p>A real website: proof pages, category hub, blog with a content engine behind it, and PR for the media presence you asked for on day one.</p></div>
+      <div class="beat"><h4>3 · Show up every day</h4><p>Always-on between events: LinkedIn ABM on the 400 accounts, Nicolas's voice leading, paid support behind it.</p></div>
+    </div>
+  </div></section>
+  <!-- 10 · Priorities -->
+  <section class="slide" id="priority"><div class="wrap">
+    <div class="eyebrow">11 · The action plan</div>
+    <h1 class="slide-title">Here is what I recommend we do,<br>in this <em>order.</em></h1>
+    <ol class="plist">
+      <li><h3>Lock the story</h3><p>Positioning and messaging for the CX champion and the C-suite signer, plus the brand-warmth layer that makes the champion feel at home. Foundation for everything below.</p></li>
+      <li><h3>Put the proof back</h3><p>Case studies (Edenred, Cdiscount) restored and rebuilt as citable pages. The 10-to-1 ratio of case-study opens to demo clicks says buyers want proof before conversation.</p></li>
+      <li><h3>Build the ABM machine</h3><p>400 nameable target accounts. LinkedIn paid to named CMO/CX personas, founder voice (and other strong profiles) publishing consistently, events activated before, during and after, and the partner channel (already 30% of deals) systematised: a joint press release or a partner page pointing at actionable.live, with Ipsos first and then every partner. No generic inbound chase.</p></li>
+      <li><h3>Be the answer: SEO, GEO, PR</h3><p>A category hub and answer-shaped pages for Google and the LLMs, plus press and media presence. Validated category name, EN-first for the UK/US ambition, FR site for the home advantage. The goal: be the answer when the 400 accounts go looking.</p></li>
+      <li><h3>Middle-funnel paths + measurement</h3><p>CTAs for every stage of a 5-6 month cycle, capture that feeds the CRM, and funnel events you can actually see. A named, context-capturing demo journey instead of a bare Calendly.</p></li>
+    </ol>
+  </div></section>
+  <!-- 11b · Timeline -->
+  <section class="slide alt" id="timeline"><div class="wrap">
+    <div class="eyebrow">11 · The first 90 days, concretely</div>
+    <h1 class="slide-title">The rebrand takes months.<br>Nothing else <em>waits</em> for it.</h1>
+    <div class="beats">
+      <div class="beat"><h4>Days 1-30 · Foundations</h4><p>Positioning and category name locked, messaging matched to the ICP. A quick brand cleanup on the current site while the rebrand is in the works. G2 profile live. Nicolas's LinkedIn rhythm starts. Rebrand agency brief out.</p></div>
+      <div class="beat"><h4>Days 31-60 · The engine</h4><p>Proof pages and category hub live on the cleaned site, content machine publishing, PR groundwork, LinkedIn ABM on the 400 accounts, partner pages with Ipsos negotiated. Rebrand in build.</p></div>
+      <div class="beat"><h4>Days 61-90 · The splash</h4><p>Rebrand lands on the new domain with a PR moment and the category definition published. Fast track: live in October. More runway if we want it: January, while the cleaned brand holds the line.</p></div>
+    </div>
+    <p class="closer">Two tracks the whole way: the rebrand in build, and the machine already running on the current brand. Nothing waits.</p>
+  </div></section>
+  <!-- 11 · Next -->
+  <section class="slide" id="next"><div class="wrap">
+    <div class="cover-stack">
+      <div class="doc-type">12 · What happens next</div>
+      <h1 class="slide-title" style="font-size:clamp(34px,4.5vw,56px)">The map is done.<br>The road starts <em>now.</em></h1>
+      <p class="cover-sub">Everything in this audit is ready to execute, starting with the first 90 days. Stage 2, when you are ready: scope and pace defined together from this plan, with senior leadership staying on it every week.</p>
+      <p class="cover-sub" style="margin-top:4px">One thing this audit left out on purpose: the sales side. Sales process, enablement, product marketing: we didn't sit with sales, so it isn't judged here. In the build phase it is part of the same mandate. <strong>Marketing end-to-end, from first visibility to the closed deal.</strong></p>
+      <div class="fact-row" style="margin-top:10px">
+        <span class="fact">What success looks like</span>
+        <span class="fact">AI answers name <b>Actionable</b></span>
+        <span class="fact">Category searches <b>exist</b></span>
+        <span class="fact">G2 profile <b>live</b></span>
+        <span class="fact">Inbound enterprise <b>conversations</b></span>
+      </div>
+      <div class="meta-row">
+        <div><div class="l">Deliverables</div><div class="v">This presentation + written synthesis</div></div>
+        <div><div class="l">Contact</div><div class="v">Miri Blum · miri@focus4ward.co</div></div>
+      </div>
+    </div>
+  </div></section>
+  <!-- ===== ANNEX ===== -->
+  <section class="slide short" id="annex" style="background:var(--navy);border-bottom:none"><div class="wrap">
+    <div class="eyebrow" style="color:var(--yellow)">Annex</div>
+    <h1 class="slide-title" style="color:#fff">The data behind the audit.</h1>
+    <p class="lede" style="color:rgba(255,255,255,.7)">Exhibits for the questions in the room: the competitive table, and the source screenshots (GSC, Umami, SEMrush, Trakkr, LLM captures).</p>
+  </div></section>
+  <section class="slide" id="annex-table"><div class="wrap">
+      <div class="eyebrow">Annex A · Side by side</div>
+      <h1 class="slide-title">Seven players, <em>one empty seat.</em></h1>
+      <div class="ctable-wrap"><table class="ctable">
+        <tr><th>Company</th><th>Their category, their words</th><th>Sells to</th><th>Layer in the stack</th><th>Brand register</th></tr>
+        <tr class="you"><td>Actionable</td><td>Predictive CX · "Prédire la satisfaction, décider l'action"</td><td>CX champion + C-suite signer</td><td>The only predictive CX product in this set</td><td>Dark terminal today; warm is the open move</td></tr>
+        <tr><td>Qualtrics</td><td>"The leader in experience management" (XM)</td><td>CX, research, EX teams</td><td>Survey / VoC incumbent</td><td>Warm and human, for the survey world</td></tr>
+        <tr><td>Medallia</td><td>"Experience management software platform"</td><td>CX leaders, contact center, C-suite</td><td>Survey / VoC incumbent</td><td>Black chrome, neon lime, urgency</td></tr>
+        <tr><td>Perspective AI</td><td>AI concierge that turns forms into conversations</td><td>CX and research teams</td><td>Survey-adjacent, no prediction</td><td>Clean, light, content-rich</td></tr>
+        <tr><td>Prior Labs (SAP)</td><td>"One Model, Infinite Predictions"</td><td>Data science teams</td><td>Model layer (tabular foundation models)</td><td>Dark, benchmark-heavy</td></tr>
+        <tr><td>Fundamental</td><td>"The Power to Predict" (Large Tabular Model)</td><td>Enterprise AI teams</td><td>Model layer, $255M raised</td><td>Synthwave, technical</td></tr>
+        <tr><td>Hex</td><td>"The AI Analytics Platform"</td><td>Data teams and analysts</td><td>Analytics tooling</td><td>Technical, notebook-era</td></tr>
+      </table></div>
+      <p class="src">Sources: each company's own homepage and materials, verified August 11, 2026.</p>
+    </div></section>
+
+  <section class="slide short exhibit" id="ex-umami-traffic"><div class="wrap">
+    <div class="eyebrow">Annex · Exhibit</div>
+    <h2 class="ex-title">Umami · Traffic, last 90 days</h2>
+    <img src="img/exhibits/umami-traffic.jpg" alt="Umami · Traffic, last 90 days">
+  </div></section>
+  <section class="slide short exhibit" id="ex-umami-pages"><div class="wrap">
+    <div class="eyebrow">Annex · Exhibit</div>
+    <h2 class="ex-title">Umami · Pages</h2>
+    <img src="img/exhibits/umami-pages.jpg" alt="Umami · Pages">
+  </div></section>
+  <section class="slide short exhibit" id="ex-umami-sources"><div class="wrap">
+    <div class="eyebrow">Annex · Exhibit</div>
+    <h2 class="ex-title">Umami · Sources</h2>
+    <img src="img/exhibits/umami-sources.jpg" alt="Umami · Sources">
+  </div></section>
+  <section class="slide short exhibit" id="ex-umami-countries"><div class="wrap">
+    <div class="eyebrow">Annex · Exhibit</div>
+    <h2 class="ex-title">Umami · Countries</h2>
+    <img src="img/exhibits/umami-countries.jpg" alt="Umami · Countries">
+  </div></section>
+  <section class="slide short exhibit" id="ex-gsc-performance"><div class="wrap">
+    <div class="eyebrow">Annex · Exhibit</div>
+    <h2 class="ex-title">Google Search Console · Performance, 3 months</h2>
+    <img src="img/exhibits/gsc-performance.jpg" alt="Google Search Console · Performance, 3 months">
+  </div></section>
+  <section class="slide short exhibit" id="ex-gsc-pages"><div class="wrap">
+    <div class="eyebrow">Annex · Exhibit</div>
+    <h2 class="ex-title">Google Search Console · Indexing coverage</h2>
+    <img src="img/exhibits/gsc-pages.jpg" alt="Google Search Console · Indexing coverage">
+  </div></section>
+  <section class="slide short exhibit" id="ex-semrush-us"><div class="wrap">
+    <div class="eyebrow">Annex · Exhibit</div>
+    <h2 class="ex-title">SEMrush · SEO dashboard, US</h2>
+    <img src="img/exhibits/semrush-us.jpg" alt="SEMrush · SEO dashboard, US">
+  </div></section>
+  <section class="slide short exhibit" id="ex-semrush-fr"><div class="wrap">
+    <div class="eyebrow">Annex · Exhibit</div>
+    <h2 class="ex-title">SEMrush · SEO dashboard, France</h2>
+    <img src="img/exhibits/semrush-fr.jpg" alt="SEMrush · SEO dashboard, France">
+  </div></section>
+  <section class="slide short exhibit" id="ex-semrush-rankings"><div class="wrap">
+    <div class="eyebrow">Annex · Exhibit</div>
+    <h2 class="ex-title">SEMrush · Organic rankings, US</h2>
+    <img src="img/exhibits/semrush-rankings.jpg" alt="SEMrush · Organic rankings, US">
+  </div></section>
+  <section class="slide short exhibit" id="ex-qualtrics-lk"><div class="wrap">
+    <div class="eyebrow">Annex · Exhibit</div>
+    <h2 class="ex-title">Qualtrics · LinkedIn ads</h2>
+    <img src="img/exhibits/qualtrics-lk.jpg" alt="Qualtrics · LinkedIn ads">
+  </div></section>
+  <section class="slide short exhibit" id="ex-qualtrics-search-fr"><div class="wrap">
+    <div class="eyebrow">Annex · Exhibit</div>
+    <h2 class="ex-title">Qualtrics · Search ads, France</h2>
+    <img src="img/exhibits/qualtrics-search-fr.jpg" alt="Qualtrics · Search ads, France">
+  </div></section>
+  <section class="slide short exhibit" id="ex-medallia-lk"><div class="wrap">
+    <div class="eyebrow">Annex · Exhibit</div>
+    <h2 class="ex-title">Medallia · LinkedIn ads</h2>
+    <img src="img/exhibits/medallia-lk.jpg" alt="Medallia · LinkedIn ads">
+  </div></section>
+  <section class="slide short exhibit" id="ex-medallia-search-fr"><div class="wrap">
+    <div class="eyebrow">Annex · Exhibit</div>
+    <h2 class="ex-title">Medallia · Search ads, France</h2>
+    <img src="img/exhibits/medallia-search-fr.jpg" alt="Medallia · Search ads, France">
+  </div></section>
+  <section class="slide short exhibit" id="ex-medallia-search-us"><div class="wrap">
+    <div class="eyebrow">Annex · Exhibit</div>
+    <h2 class="ex-title">Medallia · Search ads, US</h2>
+    <img src="img/exhibits/medallia-search-us.jpg" alt="Medallia · Search ads, US">
+  </div></section>
+  <section class="slide short exhibit" id="ex-fundamental-lk"><div class="wrap">
+    <div class="eyebrow">Annex · Exhibit</div>
+    <h2 class="ex-title">Fundamental · LinkedIn ads</h2>
+    <img src="img/exhibits/fundamental-lk.jpg" alt="Fundamental · LinkedIn ads">
+  </div></section>
+  <section class="slide short exhibit" id="ex-fundamental-search-fr"><div class="wrap">
+    <div class="eyebrow">Annex · Exhibit</div>
+    <h2 class="ex-title">Fundamental · Search ads, France</h2>
+    <img src="img/exhibits/fundamental-search-fr.jpg" alt="Fundamental · Search ads, France">
+  </div></section>
+
+  <footer><div class="wrap">
+    <div class="fa">Miri Blum · Focus4ward · miri@focus4ward.co</div>
+    <div>Confidential · prepared for Actionable, August 2026</div>
+  </div></footer>
+
+  </main>
+</div>
+
+<script>
+const mt=document.getElementById('menuToggle');
+if(mt){mt.addEventListener('click',()=>document.getElementById('sidebar').classList.toggle('open'))}
+document.querySelectorAll('nav.nav-list a').forEach(a=>a.addEventListener('click',()=>document.getElementById('sidebar').classList.remove('open')));
+const links=document.querySelectorAll('nav.nav-list a');
+const map={};
+links.forEach(a=>map[a.getAttribute('href').slice(1)]=a);
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      links.forEach(a=>a.classList.remove('active'));
+      const a=map[e.target.id];
+      if(a)a.classList.add('active');
+    }
+  });
+},{rootMargin:'-30% 0px -60% 0px'});
+document.querySelectorAll('section[id]').forEach(s=>obs.observe(s));
+</script>
+</body>
+</html>
