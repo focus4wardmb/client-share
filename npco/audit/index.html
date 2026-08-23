@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>NPCo. · Go-to-Market Audit · Focus4ward</title>
+<title>NPco. · Go-to-Market Audit · Focus4ward</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -194,9 +194,9 @@ footer .fa{color:rgba(255,255,255,.85);font-weight:600}
 
 
 <style>
-/* ===== NPCo brand skin — cream / near-black / electric blue ===== */
+/* ===== NPco brand skin — cream / near-black / electric blue ===== */
 :root{
-  --pink:#1D4EDB;            /* accent -> NPCo electric blue */
+  --pink:#1D4EDB;            /* accent -> NPco electric blue */
   --navy:#161613;            /* structure -> near-black */
   --ink:#161613;
   --paper:#EFE9D8;           /* bone cream */
@@ -245,6 +245,15 @@ table.bench{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px}
 table.bench th,table.bench td{border:1px solid var(--rule);padding:9px 12px;text-align:left;vertical-align:top}
 table.bench thead th{background:#161613;color:#EFE9D8;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.5px;text-transform:uppercase}
 table.bench td.hl{background:rgba(29,78,219,.07);font-weight:600}
+/* ===== Review pass 2: verdict band + data band ===== */
+.verdict{position:relative;margin-top:28px;background:#161613;color:#EFE9D8;border-radius:12px;border-left:4px solid #1D4EDB;padding:20px 26px;font-size:16.5px;font-weight:600;line-height:1.55;max-width:920px;overflow:hidden}
+.verdict::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(239,233,216,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(239,233,216,.05) 1px,transparent 1px);background-size:36px 36px;pointer-events:none}
+.verdict>*{position:relative}
+.verdict .v-label{display:block;font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#8FA9F2;margin-bottom:7px}
+.verdict em{color:#8FA9F2;font-style:normal}
+.data-band{background:rgba(29,78,219,.05);border:1px solid rgba(29,78,219,.14);border-radius:14px;padding:16px;margin-top:20px}
+.data-band .card,.slide.alt .data-band .card{background:#fff}
+.data-band .cols{margin-top:0}
 </style>
 </head>
 <body>
@@ -253,7 +262,7 @@ table.bench td.hl{background:rgba(29,78,219,.07);font-weight:600}
 <div class="app">
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-brand">
-      <div class="wordmark">NPCo<span>.</span></div>
+      <div class="wordmark">NPco<span>.</span></div>
       <div class="label">Go-to-market audit</div>
       <div class="meta">Focus4ward · August 2026</div>
     </div>
@@ -275,6 +284,7 @@ table.bench td.hl{background:rgba(29,78,219,.07);font-weight:600}
       <a href="#priority"><span class="num">14</span>Action plan</a>
       <a href="#next"><span class="num">15</span>What happens next</a>
       <a href="#annex-bench"><span class="num">A</span>Annex · Competitive benchmark</a>
+      <a href="#annex-detail"><span class="num">B</span>Annex · Technical detail</a>
     </nav>
   </aside>
   <main>
@@ -282,7 +292,7 @@ table.bench td.hl{background:rgba(29,78,219,.07);font-weight:600}
   <section class="slide" id="cover"><div class="wrap">
     <div class="cover-stack">
       <div class="doc-type">Go-to-market audit · August 2026</div>
-      <div class="client-name">NPCo<span class="dot">.</span></div>
+      <div class="client-name">NPco<span class="dot">.</span></div>
       <div class="strapline">The category is being written right now.
       <span class="line2">The founders have the story to lead it. They're not telling it at full size <em style="color:var(--yellow);font-style:normal">yet.</em></span></div>
       <div class="cover-sub">NPco wins every technical validation it enters and has never lost to a competitor. This audit is about everything that happens before and around those rooms: what buyers find, what they see, and what carries a 6-to-12-month cycle.</div>
@@ -306,7 +316,7 @@ table.bench td.hl{background:rgba(29,78,219,.07);font-weight:600}
     </div>
     <div class="beats">
       <div class="beat"><h4>The story is told at half size</h4><p>Both founders already tell the engineer-centred story in the room: empowerment, out of the parametric prison. The public surface says "1000x faster" like everyone else. <strong>The positioning can be sharper, and pushed much further.</strong></p></div>
-      <div class="beat"><h4>Measurement is dark</h4><p>A GA4 tag fires on the site, but nobody can act on it: no access shared, both Search Console properties unvalidated, no tag manager, no conversion defined. <strong>Data collects; nothing steers. Finding and fix in one.</strong></p></div>
+      <div class="beat"><h4>There is no funnel</h4><p>The live site offers a buyer two actions: careers and a mailto. No form worth filling, no content worth finding, nothing tagged to learn from. <strong>The engine and its instruments both remain to be built</strong>, and the next site, already drafted, still points at the wrong reader.</p></div>
       <div class="beat"><h4>The proof is trapped</h4><p>Safran benchmark, 98% accuracy vs Google/DeepMind/Caltech reference models, NeurIPS submission, Boeing/Airbus pilots: all locked inside a fundraising PDF <strong>no buyer will ever see</strong>.</p></div>
     </div>
     <div class="callout"><em>Zero lost deals is not safety. It's a category nobody has claimed yet.</em> The definition is being written right now by players with $170M+ war chests, and this is an equipment market: seats filled today stay filled. When European buyers come in-market, they'll ask for whoever educated them. NPco can't outspend that cohort. It needs the right story, and the engine that tells it at scale, before the window closes.</div>
@@ -344,56 +354,57 @@ table.bench td.hl{background:rgba(29,78,219,.07);font-weight:600}
       <div class="card"><h3>The open seat</h3><p>The engineer-centred story: escape the parametric prison, explore what you could never test, <strong>change what engineering dares to try</strong>. Empowerment (Emmanuel's word) against everyone else's automation story. Matthieu lands on the same word unprompted: <strong>"empowering the engineers"</strong>, not replacing them; both founders already tell this story; only the public surface doesn't.</p></div>
       <div class="card"><h3>The trust pillar</h3><p>Every buyer will ask "when do I trust the surrogate?" Matthieu's answer is already built into the product: a <strong>confidence index on every prediction</strong>, and a clean line: NPco doesn't replace certified simulation, it explores the design space upstream so you validate <strong>one final design instead of 50–100</strong>. Say it publicly, first, and own the conversation. NPco's own NAFEMS/Teratec survey proves the stakes: trust &amp; validation is the #3 adoption barrier (47%), and only 26.2% of teams exploring AI are satisfied. Market maturity helps: buyers no longer ask whether AI is useful, only whether NPco solves <em>their</em> problem.</p></div>
     </div>
-    <div class="quote">"Candidate altitude: faster and safer products, not faster engineers. More of the design space explored means better, cleaner, safer machines, sooner. Two rooms: the engineer hears freedom, the comex hears competitive advantage."<span class="who">Working hypothesis · validate with both founders before it goes public</span></div>
+    <div class="quote">"Candidate altitude: faster and safer products, not faster engineers. More of the design space explored means better, cleaner, safer machines, sooner. One story, two listeners: the engineer hears freedom, the comex hears competitive advantage."<span class="who">Working hypothesis · validate with both founders before it goes public</span></div>
   </div></section>
 
   <section class="slide alt" id="naming"><div class="wrap">
     <div class="eyebrow">05 · Brand architecture</div>
-    <h1 class="slide-title">Augur, NPco, augursim.ai.<br>Three names for one <em>company.</em></h1>
-    <p class="lede">The legal entity is AUGUR SAS. Email lives at npco.ai. The Value Messaging doc's footer says augursim.ai and titles the baseline "NPco". The fundraising deck is fully Augur-branded. <strong>Enterprise trust is built on coherence; today the first Google check breaks it, and the first AI check is worse:</strong> Perplexity resolves "NPCO" to a Saudi aviation-services company and "Augur" to a robotics digital twin. Whichever name wins needs an entity footprint that owns it.</p>
-    <div class="beats">
-      <div class="beat"><h4>Decide the name</h4><p>Complete the Augur→NPco transition or reverse it, but <strong>on purpose, before the US push</strong>. Renames only get more expensive. And note: linkedin.com/company/npco already belongs to a different French company; NPco lives at /npcompanysim, as "NPco" on the page and "NPCo" on the founders' profiles.</p></div>
-      <div class="beat"><h4>One domain</h4><p>Consolidate email, site and documents on the chosen domain; redirect the rest.</p></div>
+    <h1 class="slide-title">Four pillars hold this brand.<br>Every surface still says <em>faster.</em></h1>
+    <p class="lede">Distilled from the founders' interviews and the brand-house work: four pillars, each one true, each one provable. The surfaces (site, LinkedIn, deck) currently tell one story, speed, which is the story the whole cohort already tells.</p>
+    <div class="cols two">
+      <div class="card"><h3>1 · Empowerment</h3><p>The engineer at the centre, out of the parametric prison. <strong>Emmanuel's own word</strong>, chosen over abstractions like "sovereignty". Nobody else in the cohort puts the person in the sentence.</p></div>
+      <div class="card"><h3>2 · Dare to go beyond</h3><p>The emotional lift: <strong>it changes what engineering dares to try</strong>. From clearing the backlog (1,200 vs 400) to exploring the 400,000 designs nobody would have tested.</p></div>
+      <div class="card"><h3>3 · Trust in AI</h3><p>The predictable objection, answered head-on: <strong>a confidence index on every prediction</strong>, and AI replacing the iterations, never the final verification. Certification unchanged. First to say this publicly owns the conversation.</p></div>
+      <div class="card"><h3>4 · Yours, not rented</h3><p><strong>Trained on your simulations, owned by you, on-premise.</strong> The one differentiation line the competitive verification left standing, and the trust asset this industry actually buys.</p></div>
+    </div>
+    <div class="callout" style="margin-top:18px">The reason to believe is the founders themselves: <em>they came from simulation into AI, not the reverse.</em> Emmanuel, ten years in simulation across academia and industry, PhD at Inria. Matthieu, applied mathematician, PhD Paris-Saclay/Inria, NeurIPS workshop 2022. Behind them: 98% on Safran's benchmark, the NeurIPS submission, Inria lineage. Trust pillar and proof, in two bios.</div>
+    <div class="beats" style="margin-top:22px">
+      <div class="beat"><h4>Finish the rebrand</h4><p>Not three names by choice: <strong>an unfinished transition</strong>. The old name is still live across the footprint (AI engines cite augursim.ai; the fundraising deck is fully Augur), the draft site mixes NP Co. / NP AI / NPCO.ai, and its T&C names "NP Co. SAS" where the legal entity is AUGUR SAS. Buyers and machines keep meeting two companies.</p></div>
+      <div class="beat"><h4>One domain, one slug</h4><p>Consolidate email, site and documents on the chosen domain; redirect the rest. Note: linkedin.com/company/npco belongs to a different French company; NPco lives at /npcompanysim. Perplexity resolves "NPCO" to a Saudi aviation firm and "Augur" to a robotics digital twin: the name decision is also an AI-visibility decision.</p></div>
       <div class="beat"><h4>One boilerplate</h4><p>One company description, everywhere: site, deck, LinkedIn, PR, papers. V1 to react to: <strong>"NPco builds AI physics models that let engineers explore the full design space at the speed of their ideas. Founded by Inria researchers, its models run on-premise, learn from your simulations, and let you validate one final design instead of fifty. Safran and EDF already engineer with NPco."</strong> <span class="tofill">V1 · validate at restitution</span></p></div>
     </div>
-    <div class="callout">One decision hiding inside this one: <em>the flag.</em> Emmanuel's instruction was "tu peux enlever French et Inria" (US-first, global framing). Matthieu, independently, names <em>European and French sovereignty</em> as a differentiator to integrate. Both can be true (sovereignty as a sales argument in EU accounts, invisible in the US surface), but that split has to be chosen, not left to drift. To resolve with both founders at restitution.</div>
+    <div class="verdict"><span class="v-label">The point</span>The pillars are extracted and provable. What's left is saying them, <em>everywhere, under one name.</em> One open call for the founders: the flag. Emmanuel says drop French and Inria (US-first); Matthieu names European sovereignty as a differentiator. Both can be true, per market, but it must be chosen, not drift.</div>
   </div></section>
 
   <section class="slide" id="website"><div class="wrap">
     <div class="eyebrow">06 · Website & measurement</div>
-    <h1 class="slide-title">The flagship finding is already in:<br>the lights are on, nobody is <em>watching.</em></h1>
+    <h1 class="slide-title">Today's site recruits.<br>The drafted one still doesn't <em>sell.</em></h1>
+    <p class="lede">The live site is a placeholder, so the audit's real object is the <strong>next site, already drafted in Figma</strong>. Reviewed page by page: strong architecture, real product proof, and the same story gap the brand has everywhere. The moment to fix it is now, before it ships.</p>
     <div class="glance-stats">
-      <div class="glance-stat"><div class="stat">2<small> wks</small></div><div class="label">of measurement history, total, in both tools. The Search Console domain property came alive Aug 8; GA4 (G-4XJHQM9XGR) shows its first users Aug 9. Before that, the digital surface ran with no instruments at all. Still missing: tag manager, defined conversions, qualified-lead events.</div></div>
-      <div class="glance-stat"><div class="stat">74<small>%</small></div><div class="label">SEMrush site health; top-10% sites score 92%. 12 errors, 43 warnings on 16 pages.</div></div>
-      <div class="glance-stat"><div class="stat">4<small>+7</small></div><div class="label">pages with invalid structured data + duplicate title tags: schema is broken where it matters for AI.</div></div>
-      <div class="glance-stat"><div class="stat">0</div><div class="label">llms.txt. The good news: AI crawlers (ChatGPT, Googlebot, Google-Extended) are NOT blocked.</div></div>
+      <div class="glance-stat"><div class="stat">2</div><div class="label"><strong>actions on the live site: careers, and a bare mailto.</strong> No form a buyer can fill, no path a 6–12 month cycle can start on.</div></div>
+      <div class="glance-stat"><div class="stat">8<small>/9</small></div><div class="label"><strong>pages are recruiting.</strong> The company story a buyer needs (Inria heritage, the Transformer argument) sits inside the job ads.</div></div>
+      <div class="glance-stat"><div class="stat">1</div><div class="label"><strong>form submission ever, and it was a candidate.</strong> The funnel didn't underperform. It never existed.</div></div>
+      <div class="glance-stat"><div class="stat">0</div><div class="label"><strong>pages ready to be found or cited</strong>: no H1s, empty sitemap, no schema, no llms.txt. Not GEO-optimized; detail in Annex B.</div></div>
     </div>
-    <div class="glance-stats">
-      <div class="glance-stat"><div class="stat">0</div><div class="label">URLs in the sitemap. sitemap.xml exists and declares nothing. Google is left to guess the site's shape.</div></div>
-      <div class="glance-stat"><div class="stat">10<small>/10</small></div><div class="label">pages with no H1. Every crawled page skips the one tag that names what the page is about.</div></div>
-      <div class="glance-stat"><div class="stat">2</div><div class="label">distinct title tags across 9 pages: most of the site introduces itself to Google with the same sentence.</div></div>
-      <div class="glance-stat"><div class="stat">9<small>/10</small></div><div class="label">pages with zero JSON-LD schema (7 also missing meta descriptions, 3 thin at &lt;300 words).</div></div>
+    <div class="data-band">
+    <div class="cols two">
+      <div class="card"><h3>What the draft already fixes</h3><p>A real architecture (Product, Industries, About, Newsroom, Contact with a form) · a newsroom whose six planned articles are <strong>exactly the right content pillars</strong> (data efficiency, trust in production, transformers, scale, aerospace-first) · the traditional-solvers-vs-NPco comparison table · lines with real bones: "Every industry has its bottleneck. Tell us yours."</p></div>
+      <div class="card"><h3>It still sells the wrong action</h3><p>Home and About close on <strong>"Explore careers"</strong>; no "book a demo" exists anywhere; the contact form asks name, email and "share your thoughts": <strong>zero qualification for an enterprise buyer</strong>. Unless recruiting outranks revenue, buyers get the front door and the closing CTA, candidates get a link in the nav.</p></div>
     </div>
-    <div class="glance-stats">
-      <div class="glance-stat"><div class="stat">73<small>%</small></div><div class="label">of new users arrive Direct (207 of 284): traffic with no trail. Nothing is tagged, so the engine can't tell what brought anyone.</div></div>
-      <div class="glance-stat"><div class="stat">1</div><div class="label">form submission in GA4's entire history (2 form starts, 0 qualified leads configured). And the only form on the site is the job application: that submit was a candidate, not a buyer.</div></div>
-      <div class="glance-stat"><div class="stat">64</div><div class="label">views of "Not Found" pages: 13% of ALL page views land on a 404. Broken paths are a double-digit share of the experience.</div></div>
-      <div class="glance-stat"><div class="stat">~50<small>+</small></div><div class="label">of the 133 "US users" resolve to data-center towns (Council Bluffs, Boardman, The Dalles, Ashburn): crawler traffic, much of it AI crawlers reading the site. Real human reach is smaller, and more French, than the topline says.</div></div>
+    <div class="cols" style="margin-top:14px">
+      <div class="card"><h3>The pillars are missing</h3><p>The hero is still "The optimal design already exists. We help you find it": <strong>nobody in the sentence designs anything</strong>. "Test more. Iterate faster. Get to optimal sooner" speaks to one listener only; optimal is never defined (safer, cleaner, certifiable). Ownership/on-premise and the confidence index appear <strong>nowhere on the draft</strong>.</p></div>
+      <div class="card"><h3>Facts that break trust</h3><p>"Founded in 2023" and "Seed round €34M" <strong>contradict the public record</strong> (2025, €6M pre-seed). The T&C names "NP Co. SAS"; the legal entity is AUGUR SAS. The logo bar mixes clients (Safran, EDF) with investors and alumni employers (Mistral, DeepMind, Dataiku). "AUTOMATIVE", "MESSSAGE". Enterprise buyers notice.</p></div>
+      <div class="card"><h3>Copy to sharpen</h3><p>"A team that ships" and "cutting-edge AI" read as template filler next to the good lines ("We refuse to accept that great engineering has to be slow"). And the strongest proof on the product page, the <strong>traditional-vs-NPco table, sits at the bottom</strong>: move it up where a skeptic lands.</p></div>
     </div>
-    <div class="cols" style="margin-top:18px">
-      <div class="card"><h3>Two links. One is a mailto.</h3><p>Walked page by page (Webflow, 9 pages): the entire site offers exactly two actions, CAREERS and CONTACT. Contact is a bare mailto:contact@npco.ai: no form, no questions, no analytics event possible. A 6–12 month enterprise cycle begins, and the site captures nothing: no name, no company, no use case.</p></div>
-      <div class="card"><h3>Careers IS the site</h3><p>8 of 9 pages are recruiting. The strongest company story on the property (Inria heritage, the Transformer-vs-legacy-solvers argument, the ex-DeepMind/Mistral/Dataiku talent line) lives <strong>inside the job ads</strong>. A buyer who never clicks a job posting never learns what NPco builds. It also explains screen 07: 57% of search impressions are job seekers.</p></div>
-      <div class="card"><h3>The one capture machine is orphaned</h3><p>The Teratec survey page holds the only working lead capture NPco owns: a gated "get the results by email" form, GDPR consent and all. It sits on a hand-built subdomain, on a separate stack, linked from nowhere on npco.ai. The best conversion asset is unreachable from the front door.</p></div>
     </div>
-    <p class="closer">Even the recruiting funnel leaks: the application form is unnamed in Webflow with no visible notification routing, and asks research scientists for no CV. Small tells everywhere: "Dev0ps", "NP Co.exists", an author's note leaking as visible text on /careers, no meta description or preview image, so a shared link renders blank.</p>
-    <div class="callout">A content engine without usable measurement cannot be steered. The lights came on mid-audit (GSC validated Aug 8, GA4 collecting since Aug 9), and the first two weeks already show the shape of the fix. One more signal hiding in the channel report: <em>4 users arrived from ChatGPT ("AI Assistant" channel)</em>. The AI front door is already delivering visitors, before NPco has furnished the room. Next: Tag Manager, defined conversions, and the 404 cleanup (Matthieu's own recommendation, Aug 13): <em>finding and Stage 2 opportunity in one</em>.</div>
-    <p class="src">Crawler pass on npco.ai, Aug 13 (Focus4ward audit crawler, 10 pages, all HTTP 200) · GA4 tag verified in page source Aug 21 · GSC export Aug 22 (domain property, data from Aug 8) · GA4 overview exports Aug 22 (284 users, 326 sessions, 490 page views since Aug 9) · Webflow conversion-path walk Aug 23: 9 pages, every CTA mapped, forms + subdomain stack verified in page source.</p>
+    <div class="verdict"><span class="v-label">The verdict</span>The draft is most of a good site pointed at the wrong reader. <em>Rewire every CTA to the buyer, add the missing pillars, fix the facts</em>: then ship it.</div>
+    <p class="src">Live-site walk Aug 23: Webflow, 9 pages, every CTA mapped; only working lead-capture = the orphaned Teratec survey form; measurement history 2 weeks (GSC Aug 8, GA4 Aug 9), no tag manager, no conversions defined · Figma draft "EXT · NP Co. Website" (13 pages) reviewed Aug 23 · Current-site technical + traffic detail: Annex B.</p>
   </div></section>
 
   <section class="slide alt stub" id="search"><div class="wrap">
     <div class="eyebrow">07 · Organic search</div>
     <h1 class="slide-title">The category is being searched<br>in English. Where's <em>NPco?</em></h1>
-    <p class="lede">Two views, same verdict. Outside view: SEMrush baseline, August 12: <strong>npco.ai ranks for exactly zero organic keywords</strong> while the cohort harvests the category's young search demand. Inside view: Search Console's first 13 days of data (Aug 8–20) confirm it from NPco's own console.</p>
+    <p class="lede">npco.ai ranks for <strong>exactly zero organic keywords</strong> while the cohort harvests the category's young search demand. NPco's own Search Console confirms it: every clicked query is the brand name. Search recruits nobody new.</p>
     <div class="glance-stats">
       <div class="glance-stat"><div class="stat">0</div><div class="label">organic keywords for npco.ai. Not few. Zero. Exhibits, Annex.</div></div>
       <div class="glance-stat"><div class="stat">275</div><div class="label">keywords for physicsx.ai · Authority 34 · ~8.2K organic visits/mo · 1K referring domains.</div></div>
@@ -401,32 +412,34 @@ table.bench td.hl{background:rgba(29,78,219,.07);font-weight:600}
       <div class="glance-stat"><div class="stat">0</div><div class="label">paid search across the whole cohort. Nobody buys this traffic; they earn it with content.</div></div>
     </div>
     <div class="glance-stats">
-      <div class="glance-stat"><div class="stat">100<small>%</small></div><div class="label">of NPco's own search clicks are branded. Every clicked query in Search Console is a name variant ("npco", "np company", "np co"). Search only brings people who already know the name.</div></div>
-      <div class="glance-stat"><div class="stat">1</div><div class="label">category impression in 13 days: "ai simulation company", position 6, zero clicks. The demand exists; NPco isn't in it.</div></div>
-      <div class="glance-stat"><div class="stat">4</div><div class="label">clicks from the US (262 impressions, CTR 1.5%). France delivers 30 of 57 total clicks. For a US-first strategy, the front door barely opens where it matters.</div></div>
-      <div class="glance-stat"><div class="stat">57<small>%</small></div><div class="label">of all impressions come from India, nearly all on careers and job-position pages. Much of the visible "traffic" is job seekers, not buyers.</div></div>
+      <div class="glance-stat"><div class="stat">100<small>%</small></div><div class="label"><strong>of NPco's own search clicks are branded</strong>: every clicked query is a name variant ("npco", "np company", "np co").</div></div>
+      <div class="glance-stat"><div class="stat">1</div><div class="label"><strong>category impression in 13 days</strong>: "ai simulation company", position 6, zero clicks. The demand exists; NPco isn't in it.</div></div>
+      <div class="glance-stat"><div class="stat">4</div><div class="label"><strong>clicks from the US</strong> (262 impressions). For a US-first strategy, the front door barely opens where it matters.</div></div>
+      <div class="glance-stat"><div class="stat">57<small>%</small></div><div class="label"><strong>of all impressions come from India</strong>, nearly all on careers pages: job seekers, not buyers.</div></div>
     </div>
     <div class="callout">And one door NPco built, then left unconnected: <em>teratecsurvey.npco.ai</em>, the "AI in Simulation: The Adoption Paradox" survey report, lives on an orphaned subdomain. Not linked from the homepage, absent from the (empty) sitemap: 46 impressions and 2 clicks in 13 days. The strongest content asset NPco owns is unreachable from its own front door.</div>
-    <p class="closer">The door: PhysicsX also has measurable AI-answer visibility (65 mentions, 59 cited pages across ChatGPT/Gemini). Visibility here is won with published, structured content: exactly the engine NPCo doesn't have yet.</p>
-    <p class="src">SEMrush baseline Aug 12 · GSC export Aug 22, domain property, data Aug 8–20 (57 clicks, 1,527 impressions).</p>
+    <div class="verdict"><span class="v-label">The verdict</span>The category is being searched, in English, and NPco isn't in the results. <em>Visibility here is won with published, structured content</em>: exactly the engine NPco doesn't have yet. PhysicsX proves it works: 275 keywords, 65 AI-answer mentions.</div>
+    <p class="src">SEMrush baseline Aug 12 · GSC export Aug 22, domain property, data Aug 8–20 (57 clicks, 1,527 impressions) · Geographic + history detail: Annex B.</p>
   </div></section>
 
   <section class="slide stub" id="ai"><div class="wrap">
     <div class="eyebrow">08 · AI visibility</div>
     <h1 class="slide-title">Engineers ask AI first now.<br>Someone else is the <em>answer.</em></h1>
-    <p class="lede">The buyers' new front door, captured live (ChatGPT + Perplexity, Aug 23, 12 screenshots): the category questions all have confident answers today, and they are full of other people's names. Trakkr's first structured baseline (21 prompts, 8 engines, Aug 23) puts numbers on it. GA4 confirms the door is real: 4 visitors already arrived from ChatGPT in two weeks.</p>
+    <p class="lede">Engineers ask AI before they ask Google now, and the category questions already have confident answers, <strong>full of other people's names</strong>. This is a channel, and it deserves deliberate investment: ChatGPT already knows NPco's story, and already sends it visitors.</p>
     <div class="glance-stats">
-      <div class="glance-stat"><div class="stat">0</div><div class="label">NPco appearances in the category prompts ("best AI simulation software", "PhysicsX alternatives", "speed up CFD with ML") on both engines. Perplexity answers them with incumbents only: Ansys, Siemens, Altair, COMSOL.</div></div>
-      <div class="glance-stat"><div class="stat">1</div><div class="label">prompt where NPco shows up: ChatGPT's "European AI simulation companies": "very interesting new French entrant", cited via CentraleSupélec. The European lens is the open door today.</div></div>
-      <div class="glance-stat"><div class="stat">#1</div><div class="label">source ChatGPT cites about NPco: the Teratec survey subdomain. The orphaned page from screen 07 is quietly doing the brand's whole GEO job. Published research is what LLMs pick up. Hypothesis confirmed.</div></div>
-      <div class="glance-stat"><div class="stat">2</div><div class="label">name collisions in AI answers: Perplexity resolves "NPCO" to a Saudi aviation-services company, and "Augur" to a robotics digital twin (PULSAR HRI). The naming decision on screen 05 is also an AI-visibility decision.</div></div>
+      <div class="glance-stat"><div class="stat">0</div><div class="label"><strong>NPco appearances in the category prompts</strong> ("best AI simulation software", "PhysicsX alternatives") on both engines. Perplexity answers with incumbents only.</div></div>
+      <div class="glance-stat"><div class="stat">1</div><div class="label">prompt where NPco shows up: ChatGPT's "European AI simulation companies": "very interesting new French entrant". <strong>The European lens is the open door today.</strong></div></div>
+      <div class="glance-stat"><div class="stat">#1</div><div class="label">source ChatGPT cites about NPco: <strong>the orphaned Teratec survey page</strong>, quietly doing the brand's whole GEO job. Published research is what LLMs pick up.</div></div>
+      <div class="glance-stat"><div class="stat">2</div><div class="label"><strong>name collisions in AI answers</strong>: "NPCO" resolves to a Saudi aviation firm, "Augur" to a robotics digital twin. The naming decision is an AI-visibility decision.</div></div>
     </div>
+    <div class="data-band">
     <div class="cols">
-      <div class="card"><h3>Two engines, two verdicts</h3><p>ChatGPT tells NPco's story richly and accurately: GEMs, the €6M Partech round, the foundation-model ambition. Why? The Teratec survey, LinkedIn and funding press exist for it to read. Perplexity, with almost nothing to cite, barely knows the company. <strong>Where content exists, LLMs use it; where it doesn't, incumbents fill the space.</strong></p></div>
-      <div class="card"><h3>The bar, measured</h3><p>Trakkr baseline, Aug 23: NPco visibility <strong>8.1/100</strong>, present in <strong>1.2%</strong> of tracked answers, <strong>#31 of 330</strong> companies the engines name on NPco's own 21 prompts. The top of the table is incumbents (Ansys 72, Siemens 64, COMSOL 50), and the AI-native cohort already sits mid-table: Neural Concept 37, PhysicsX 36, Luminary 17. The gap is now measured, and re-measured weekly.</p></div>
-      <div class="card"><h3>What moves the needle</h3><p>Two levers, straight from the captures: an entity cleanup (one name, one domain, schema that disambiguates NPco from its namesakes: the baseline caught engines still citing <strong>augursim.ai</strong>, the leftover domain, in category answers) and published research: benchmarks, the NeurIPS moment, the survey pattern repeated.</p></div>
+      <div class="card"><h3>The bar, measured</h3><p>Trakkr baseline, Aug 23: NPco visibility <strong>8.1/100, #31 of 330</strong> companies the engines name on NPco's own 21 prompts. Incumbents own the top (Ansys 72, Siemens 64); the AI-native cohort is already mid-table (Neural Concept 37, PhysicsX 36). <strong>The gap is now measured, and re-measured weekly.</strong></p></div>
+      <div class="card"><h3>Two engines, two verdicts</h3><p>ChatGPT tells NPco's story richly: the round, the science, the ambition, because the survey, LinkedIn and funding press exist for it to read. Perplexity, with almost nothing to cite, barely knows the company. <strong>Where content exists, LLMs use it; where it doesn't, incumbents fill the space.</strong></p></div>
+      <div class="card"><h3>What moves the needle</h3><p><strong>Technical</strong>: one name, one domain, schema and markup that disambiguate NPco (the baseline caught engines still citing augursim.ai), the same story on site, LinkedIn and press. <strong>Content</strong>: near zero exists today for engines to read. Published research, benchmarks, the survey pattern repeated is what fills the answers.</p></div>
     </div>
-    <p class="closer">The verdict in one line: the buyers' new front door is open, the incumbents are standing in it, and the one page NPco published is the one page the machines read.</p>
+    </div>
+    <div class="verdict"><span class="v-label">The verdict</span>The buyers' new front door is open, <em>the incumbents are standing in it</em>, and the one page NPco published is the one page the machines read.</div>
     <p class="src">Live captures: ChatGPT + Perplexity, Aug 23, 6 prompts each (category, intercepts, problem, European, brand new-name, brand old-name) · Trakkr baseline Aug 23: 21 prompts × 8 engines, visibility 8.1, presence 1.2%, rank 31/330; NPco surfaced by Google AI Overviews + Perplexity only · SEMrush AI-visibility Aug 12 · GA4 "AI Assistant" channel Aug 9–21.</p>
   </div></section>
 
@@ -436,16 +449,17 @@ table.bench td.hl{background:rgba(29,78,219,.07);font-weight:600}
     <p class="lede">PhysicsX built 27.8k followers, Neural Concept 21.1k, Emmi 9.6k in ~18 months, Luminary 9.2k. NPco's page: <strong>816</strong>. The cohort's real marketing happens here: research posts, benchmark drops, founder voices. NPco's own 90 days (company export, May 13 – Aug 10): <strong>9 posts, 49.0k impressions, and 67% of those impressions came from a single post.</strong></p>
     <div class="glance-stats">
       <div class="glance-stat"><div class="stat">0.75<small>/wk</small></div><div class="label">posting cadence: 9 posts in 90 days, all published by Léonie. The founders' voices are absent from the company's own channel.</div></div>
-      <div class="glance-stat"><div class="stat">67<small>%</small></div><div class="label">of 90-day impressions came from one post: the €6M pre-seed announcement (32.7k impressions, 200 reactions, 36 comments). Baseline posts reach 400–1,000.</div></div>
+      <div class="glance-stat"><div class="stat">67<small>%</small></div><div class="label">of 90-day impressions came from one post: the €6M announcement (32.7k impressions). Funding news always travels; <strong>the tell is the silence between spikes</strong>: baseline posts reach 400–1,000.</div></div>
       <div class="glance-stat"><div class="stat">69.7<small>%</small></div><div class="label">CTR on the NAFEMS/TERATEC "AI &amp; numerical simulation" paper post: 714 clicks on 1,025 impressions. When NPco publishes research, this audience clicks.</div></div>
       <div class="glance-stat"><div class="stat">1.6<small>%</small></div><div class="label">CTR on the pure event announcements (Eurosatory, VivaTech): the weakest content in the mix. Presence posts don't carry the category.</div></div>
     </div>
     <div class="beats">
       <div class="beat"><h4>What the export says</h4><p>Two spikes prove the audience exists: funding news and research content. Everything between the spikes is event announcements to a quiet room. The channel rewards exactly what NPco has most of (benchmarks, papers, technical proof) and gets it least.</p></div>
-      <div class="beat"><h4>The founders, in public</h4><p>Emmanuel's headline: "Co-Founder, Researcher, using AI to accelerate simulation". No CEO, no company name. 1,571 followers, and his one indexed original post (Feb 2026, 176 reactions) announces the company as <strong>Augur</strong>. Matthieu's headline names NPCo; no post of his surfaces at all. The intent is already agreed (2–3 posts/week for Emmanuel, logged as a Phase 2 action). The profiles haven't caught up to it: headlines that say who they are, About sections that tell the story, one post that says the new name.</p></div>
+      <div class="beat"><h4>The founders, in public</h4><p>Emmanuel's headline: "Co-Founder, Researcher". <strong>No CEO, no company name, About empty</strong>, one original post, and it says Augur. Matthieu: About empty, no posts at all. They treat the company page as the channel; in this category <strong>the founder profiles ARE the channel</strong>. The 2–3 posts/week intent is already agreed; the profiles just haven't caught up.</p></div>
       <div class="beat"><h4>The Emmi precedent</h4><p>9.6k followers in 18 months proves presence is buildable fast with focused technical content. The door is open.</p></div>
     </div>
-    <p class="src">Company export May 13 – Aug 10 (9 posts, 49.0k impressions) · Cohort + NPco follower counts: live page pulls Aug 23 · Founder-profile pass Aug 23 via the public index (LinkedIn blocks anonymous fetches: headlines, follower counts and indexed posts verified; About sections not fully visible from outside).</p>
+    <div class="verdict"><span class="v-label">The verdict</span>The audience shows up for research and funding news. <em>The two voices it most wants to hear haven't started speaking.</em></div>
+    <p class="src">Company export May 13 – Aug 10 (9 posts, 49.0k impressions) · Cohort + NPco follower counts: live page pulls Aug 23 · Founder-profile pass Aug 23 via the public index (headlines, follower counts and indexed posts verified).</p>
   </div></section>
 
   <section class="slide" id="competition"><div class="wrap">
@@ -459,10 +473,11 @@ table.bench td.hl{background:rgba(29,78,219,.07);font-weight:600}
     </div>
     <div class="beats">
       <div class="beat"><h4>Convergent messaging</h4><p>All three sell "physics-accurate AI, 1000x faster". Generic messaging in this category is <strong>invisible, not just weak</strong>.</p></div>
-      <div class="beat"><h4>No G2, no reviews</h4><p>Nobody in the cohort is on G2/Capterra; reputation is carried by logos, investors, benchmarks and research. <strong>The proof surfaces are different here</strong> (vs Actionable's market).</p></div>
-      <div class="beat"><h4>How they actually advertise</h4><p>Ad Library, Aug 12: PhysicsX runs <strong>only recruitment ads</strong>. Emmi promotes its open-source framework and founder posts; Luminary promotes benchmark charts. <strong>Research and founders ARE the advertising here.</strong></p></div>
+      <div class="beat"><h4>No G2, no reviews</h4><p>Nobody in the cohort is on G2/Capterra; reputation is carried by logos, investors, benchmarks and research. <strong>The proof surfaces are different in this category.</strong></p></div>
+      <div class="beat"><h4>Where the money goes</h4><p>Zero paid search cohort-wide; PhysicsX's only LinkedIn ads are recruitment. So where does a $300M war chest market itself? <strong>Working hypothesis: events and trade shows, research partnerships, personal networks, founder-led moments.</strong> To pressure-test with Léonie and the founders at restitution.</p></div>
     </div>
-    <div class="quote">"NPCO is entering a young but well-funded category where three players are converging on a single promise: physics-accurate AI simulation, ~1000x faster. All three are larger and better capitalised. NPCO will not win on spend or scale. Its opening is a sharper, differentiated position the others have left vacant, paired with an automated content engine that lets a small team punch above its weight."<span class="who">Executive summary · Focus4ward competitive benchmark, June 2026 · full version in Annex A</span></div>
+    <div class="quote">"NPco is entering a young but well-funded category where three players are converging on a single promise: physics-accurate AI simulation, ~1000x faster. All three are larger and better capitalised. NPco will not win on spend or scale. Its opening is a sharper, differentiated position the others have left vacant, paired with an automated content engine that lets a small team punch above its weight."<span class="who">Executive summary · Focus4ward competitive benchmark, June 2026 · full version in Annex A</span></div>
+    <p class="closer">What June couldn't yet say: the vacant position now has a name (screen 05's four pillars), the story has two listeners, and the channel mix in this category is events, research and founders, not ad auctions.</p>
     <div class="callout">Matthieu's map of the market, Aug 13: it splits into <em>solvers</em> and the <em>application layer</em>, with NPco on the solver core. The verification pass (Aug 23, each company's own site) says: hold that map more carefully. Emmi sells "pre-trained engineering intelligence that <em>replaces solvers</em>". PhysicsX ships LGM-Aero, a 100M-parameter physics foundation model. Luminary ships SHIFT foundation models on its own GPU-native solver. Nobody in this cohort concedes the core. The axis that actually separates NPco is a different one: <em>pre-trained generic models versus models built on your own simulations, owned by you, on-premise.</em> That line is verifiable, defensible, and nobody else's sentence. "We own the solver layer" would not survive a technical buyer's first search. "Your physics, your model, your machines" would. One more verified signal: PhysicsX's $300M round was led by Temasek with Siemens and NVIDIA among the investors: the incumbents are buying into this category, not fighting it.</div>
   </div></section>
 
@@ -474,34 +489,36 @@ table.bench td.hl{background:rgba(29,78,219,.07);font-weight:600}
       <div class="card"><h3>Where it's visible</h3><p>A fundraising deck, plus one orphaned exception: the NAFEMS/Teratec survey report ("AI in Simulation: The Adoption Paradox": 85% exploring AI, only 26.2% satisfied, trust the #3 barrier at 47%). It's the proof pattern working: research content this audience clicks (69.7% CTR on its LinkedIn post). But it sits on an unlinked subdomain, and the self-run sample (~60 FR engineers) needs framing honesty. No case pages, no film, no published benchmark, no analyst coverage.</p></div>
     </div>
     <div class="beats">
-      <div class="beat"><h4>Client films</h4><p>Actionable-proven: half-day shoot, &lt;€5K/film with Miri's crew, feeds sales + YouTube + LLMs at once. <strong>Time the first one to the Safran signature (~Sept, communicable after).</strong></p></div>
-      <div class="beat"><h4>VoC pipeline</h4><p>Emmanuel records his client calls. Plan: access via Léonie → transcript analysis agent → verbatims for content and this audit. <span class="tofill">Léonie ask sent</span></p></div>
+      <div class="beat"><h4>Client films</h4><p>Half-day shoot, under €5K per film with the crew Miri brings; one asset feeds sales, YouTube and the LLMs at once. <strong>Time the first to the Safran signature (~Sept, communicable after).</strong></p></div>
+      <div class="beat"><h4>Industrialize the capture</h4><p>Emmanuel already records his client calls: a proof mine nobody is mining. Build the standing system: recordings → automated transcript analysis → a living library of verbatims, quotes and case-study raw material. <strong>Not a one-time collection. A system that captures proof as it happens.</strong> <span class="tofill">Léonie ask sent</span></p></div>
       <div class="beat"><h4>Research as marketing</h4><p>NeurIPS acceptance, published benchmarks, technical YouTube: in this category these ARE the demand engine; the cohort proves it.</p></div>
     </div>
+    <div class="verdict"><span class="v-label">The verdict</span>Proof is not a folder. <em>It's a system</em>: quotes, films and benchmarks captured as they happen, published where buyers and machines actually read.</div>
   </div></section>
 
   <section class="slide" id="tension"><div class="wrap">
     <div class="eyebrow">12 · The synthesis</div>
-    <h1 class="slide-title">Every yes is real. Every but stands<br>between you and the <em>category.</em></h1>
+    <h1 class="slide-title">Every yes is real. Every "but" stands<br>between you and <em>leading the category.</em></h1>
     <div class="tension-list">
-      <div class="tension-row"><div class="yes">Technology that beats reference models from Google, DeepMind and Caltech on a real client benchmark.</div><div class="but">Published nowhere a buyer looks. The benchmark lives in a fundraising PDF; NeurIPS is still under review.</div></div>
-      <div class="tension-row"><div class="yes">Never lost a deal. Experts fall in love on technical validation.</div><div class="but">Every deal is founder-led need-creation. Nothing feeds the top: no visibility where engineers search, ask AI, or scroll.</div></div>
-      <div class="tension-row"><div class="yes">A locked strategy: English-first, US-first, global player framing.</div><div class="but">Three names, a French-flagged digital footprint, and zero US presence signals. The story and the surface contradict each other.</div></div>
-      <div class="tension-row"><div class="yes">A real product philosophy: empowerment, out of the parametric prison.</div><div class="but">The public sentence ("the optimal design already exists") removes the engineer the philosophy celebrates.</div></div>
-      <div class="tension-row"><div class="yes">Trust assets built for this industry: on-prem, model ownership, Inria lineage.</div><div class="but">A GA4 tag firing into an account nobody opens, two unvalidated Search Console properties, no instrumented funnel: the engine can't see a buyer arrive.</div></div>
-      <div class="tension-row"><div class="yes">ChatGPT already tells the NPco story richly: the round, the science, the ambition.</div><div class="but">On the 21 category prompts buyers actually ask, NPco ranks #31 of the 330 names the engines surface, and they still cite augursim.ai, the abandoned domain, as a source.</div></div>
+      <div class="tension-row"><div class="yes">A real product philosophy: empowerment, out of the parametric prison, safer products sooner.</div><div class="but">The public sentence removes the engineer, and the safer-products story is told nowhere. <strong>The category-defining story runs at half size.</strong></div></div>
+      <div class="tension-row"><div class="yes">Technology that beats reference models from Google, DeepMind and Caltech on a real client benchmark.</div><div class="but">Published nowhere a buyer looks: the benchmark lives in a fundraising PDF, NeurIPS is under review, and <strong>no system captures the proof that keeps arriving</strong>.</div></div>
+      <div class="tension-row"><div class="yes">Never lost a deal. Experts fall in love on technical validation.</div><div class="but">Every deal is founder-led need-creation. <strong>Nothing feeds the top</strong>: no content where engineers search, ask AI or scroll, and nothing on the site captures the ones who arrive.</div></div>
+      <div class="tension-row"><div class="yes">Trust assets this industry buys: on-prem, model ownership, a confidence index, Inria lineage.</div><div class="but">Almost no published content tells that story. <strong>What exists says "faster", like everyone else.</strong></div></div>
+      <div class="tension-row"><div class="yes">A locked strategy: English-first, US-first, global player framing.</div><div class="but">The rebrand is unfinished on the digital footprint (AI engines still cite augursim.ai) and there are <strong>zero US presence signals</strong>.</div></div>
+      <div class="tension-row"><div class="yes">ChatGPT already tells the NPco story richly: the round, the science, the ambition.</div><div class="but">On the prompts buyers actually ask, NPco is <strong>#31 of the 330 names</strong> the engines surface.</div></div>
     </div>
   </div></section>
 
   <section class="slide alt" id="story"><div class="wrap">
     <div class="eyebrow">13 · Strategic conclusion</div>
-    <h1 class="slide-title">One story, two rooms.<br>The engineer hears freedom. The comex hears <em>advantage.</em></h1>
+    <h1 class="slide-title">One story, two listeners.<br>The engineer hears freedom. The comex hears <em>advantage.</em></h1>
     <div class="cols two">
-      <div class="card"><h3>Room 1 · the expert</h3><p>Out of the parametric prison: test what you could never test, at the speed of your ideas. The champion motion already works; the story should arm it.</p></div>
-      <div class="card"><h3>Room 2 · the decision</h3><p>Faster and safer products: more of the design space explored means better machines, sooner, before your competitor dares. Category: claim the definition before the $370M cohort does.</p></div>
+      <div class="card"><h3>Listener 1 · the engineer</h3><p>Out of the parametric prison: test what you could never test, at the speed of your ideas. The champion motion already works; the story should arm it.</p></div>
+      <div class="card"><h3>Listener 2 · the decision</h3><p>Faster and safer products: more of the design space explored means better machines, sooner, before your competitor dares. Claim the category's definition before the $750M cohort does.</p></div>
     </div>
-    <div class="quote" style="margin-top:26px">"For engineering teams whose simulation capacity caps what they dare to design, NPco is the AI physics solver that lets engineers explore the whole design space at the speed of their ideas. It runs on-premise, on models the client owns, with a confidence index on every prediction: validate one final design instead of fifty, and ship better, safer products sooner."<span class="who">Positioning statement V1, built from the founders' own words (Emmanuel: empowerment, the parametric prison · Matthieu: the confidence index, one design instead of 50–100, safer products). To pressure-test and lock together at restitution. Rolling it across every surface is Stage 2, workstream one. <span class="tofill">V1 · validate at restitution</span></span></div>
-    <p class="closer">Working line, to pressure-test: it changes what engineering dares to try. And Matthieu adds the room behind both rooms: more of the design space explored means safer planes, cars and bridges. Products that are optimal, not just "satisfaisants". The story scales from the engineer's screen to the world without changing its spine. The verification pass backs it: everyone in the cohort claims the solver core, but nobody else can say <em>your simulations, your model, your machines</em>. That sentence is NPco's alone.</p>
+    <div class="quote" style="margin-top:26px">"For engineering teams whose simulation capacity caps what they dare to design, NPco builds the AI physics model they own: trained on their simulations, run on their machines, with a confidence index on every prediction. Engineers explore the whole design space at the speed of their ideas, validate one final design instead of fifty, and ship better, safer products sooner." <span class="tofill">V1 · validate at restitution</span></div>
+    <p class="closer">Working line, to pressure-test: it changes what engineering dares to try. And Matthieu names who stands behind both listeners: the rest of us. More of the design space explored means safer planes, cars and bridges. Products that are optimal, not just "satisfaisants". The story scales from the engineer's screen to the world without changing its spine, and the competitive verification backs it: everyone in the cohort claims the solver core, but nobody else can say <em>your simulations, your model, your machines</em>.</p>
+    <p class="src">Positioning statement V1, built from the founders' own words (Emmanuel: empowerment, the parametric prison · Matthieu: the confidence index, one design instead of 50–100, safer products). To pressure-test and lock together at restitution; rolling it across every surface is Stage 2, workstream one.</p>
   </div></section>
 
   <section class="slide" id="priority"><div class="wrap">
@@ -534,7 +551,7 @@ table.bench td.hl{background:rgba(29,78,219,.07);font-weight:600}
     <div class="eyebrow">Annex A · Competitive benchmark · condensed from the June 2026 full study</div>
     <h1 class="slide-title">Four players, side by <em>side.</em></h1>
     <div style="overflow-x:auto"><table class="bench">
-      <thead><tr><th></th><th>NPCo</th><th>PhysicsX</th><th>Emmi AI</th><th>Luminary Cloud</th><th>Neural Concept</th></tr></thead>
+      <thead><tr><th></th><th>NPco</th><th>PhysicsX</th><th>Emmi AI</th><th>Luminary Cloud</th><th>Neural Concept</th></tr></thead>
       <tbody>
         <tr><th>Founded · HQ</th><td class="hl">2025 · Paris (Inria spin-out)</td><td>2019 · London + NY</td><td>Dec 2024 · Linz (JKU/NXAI)</td><td>2019 · San Mateo, US</td><td>2019 · Lausanne (EPFL spin-out)</td></tr>
         <tr><th>Capital</th><td class="hl">€6M pre-seed, June 2026 (Partech; Mistral co-founders as angels)</td><td>$300M Series C, June 2026 (Temasek; Siemens + NVIDIA investors) · ~$2.4B valuation</td><td>€15M seed → acquired by Mistral AI, May 2026</td><td>$187M (Sutter Hill)</td><td>$100M Series C, Dec 2025 (Goldman Sachs)</td></tr>
@@ -548,6 +565,17 @@ table.bench td.hl{background:rgba(29,78,219,.07);font-weight:600}
     </table></div>
     <p class="src">Condensed from the Focus4ward benchmark (June 2026); full version: clients.focus4ward.co/augur/ · Funding figures re-verified at source Aug 23 (PhysicsX Series C: physicsx.ai/newsroom + Bloomberg; Neural Concept Series C: Business Wire; NPco pre-seed: funding press) · Team + LinkedIn figures: live company-page pulls Aug 23 · Tech positioning verified on each company's own site Aug 23 (Emmi "replaces solvers"; PhysicsX LGM-Aero foundation model; Luminary SHIFT models + own GPU-native solver; Neural Concept per-customer surrogates trained on classical-solver data). Incumbents (Ansys SimAI, Siemens Simcenter PhysicsAI, Dassault) tracked separately; note Siemens now invests in PhysicsX. Emerging watch-list per ChatGPT's own market map: BeyondMath (London, "first foundational AI model of physics", claims 1,000×).</p>
     <p class="closer">Emmi reached 9,600 followers in eighteen months. The presence gap is real, and it is closable.</p>
+  </div></section>
+
+  <section class="slide" id="annex-detail"><div class="wrap">
+    <div class="eyebrow">Annex B · Current site & traffic · technical detail</div>
+    <h1 class="slide-title" style="font-size:28px">The secondary numbers, for the record.</h1>
+    <p class="lede">Everything here supports screens 06–07 and feeds the Stage 2 fix list. None of it changes the verdicts.</p>
+    <div class="cols two">
+      <div class="card"><h3>Technical / GEO readiness</h3><p>SEMrush site health 74% (top-10% benchmark 92%; 12 errors, 43 warnings on 16 pages) · 10/10 pages without an H1 · 2 distinct title tags across 9 pages · 9/10 pages without structured data, 7 without meta descriptions, 3 thin (&lt;300 words) · sitemap.xml declares 0 URLs · no llms.txt · AI crawlers not blocked (the good news) · no meta description or preview image on the homepage: shared links render blank.</p></div>
+      <div class="card"><h3>Traffic & measurement detail</h3><p>Measurement history starts mid-audit: GSC domain property Aug 8, GA4 first users Aug 9; no Tag Manager, no conversions defined · 73% of new users arrive Direct (207 of 284): untagged traffic with no trail · 64 views on 404 pages, 13% of all page views · ~50 of 133 "US users" resolve to data-center towns (crawler traffic): real reach is smaller, and more French, than the topline · the one live form is unnamed in Webflow with no visible notification routing and no CV field · copy defects on live pages: "Dev0ps", "NP Co.exists", an author's note visible on /careers.</p></div>
+    </div>
+    <p class="src">Sources: SEMrush site audit Aug 12 · Focus4ward crawler Aug 13 · GSC export Aug 22 · GA4 exports Aug 22 · page-source walk Aug 23.</p>
   </div></section>
 
 
