@@ -359,8 +359,8 @@ table.bench td.hl{background:rgba(29,78,219,.07);font-weight:600}
     <div class="callout">One decision hiding inside this one: <em>the flag.</em> Emmanuel's instruction was "tu peux enlever French et Inria" (US-first, global framing). Matthieu, independently, names <em>European and French sovereignty</em> as a differentiator to integrate. Both can be true (sovereignty as a sales argument in EU accounts, invisible in the US surface), but that split has to be chosen, not left to drift. To resolve with both founders at restitution.</div>
   </div></section>
 
-  <section class="slide stub" id="website"><div class="wrap">
-    <div class="eyebrow">06 · Website & measurement <span class="tofill">Webflow review + conversion paths</span></div>
+  <section class="slide" id="website"><div class="wrap">
+    <div class="eyebrow">06 · Website & measurement</div>
     <h1 class="slide-title">The flagship finding is already in:<br>the lights are on, nobody is <em>watching.</em></h1>
     <div class="glance-stats">
       <div class="glance-stat"><div class="stat">2<small> wks</small></div><div class="label">of measurement history, total, in both tools. The Search Console domain property came alive Aug 8; GA4 (G-4XJHQM9XGR) shows its first users Aug 9. Before that, the digital surface ran with no instruments at all. Still missing: tag manager, defined conversions, qualified-lead events.</div></div>
@@ -376,12 +376,18 @@ table.bench td.hl{background:rgba(29,78,219,.07);font-weight:600}
     </div>
     <div class="glance-stats">
       <div class="glance-stat"><div class="stat">73<small>%</small></div><div class="label">of new users arrive Direct (207 of 284): traffic with no trail. Nothing is tagged, so the engine can't tell what brought anyone.</div></div>
-      <div class="glance-stat"><div class="stat">1</div><div class="label">form submission in GA4's entire history (2 form starts, 0 qualified leads configured). The site has visitors and no funnel.</div></div>
+      <div class="glance-stat"><div class="stat">1</div><div class="label">form submission in GA4's entire history (2 form starts, 0 qualified leads configured). And the only form on the site is the job application: that submit was a candidate, not a buyer.</div></div>
       <div class="glance-stat"><div class="stat">64</div><div class="label">views of "Not Found" pages: 13% of ALL page views land on a 404. Broken paths are a double-digit share of the experience.</div></div>
       <div class="glance-stat"><div class="stat">~50<small>+</small></div><div class="label">of the 133 "US users" resolve to data-center towns (Council Bluffs, Boardman, The Dalles, Ashburn): crawler traffic, much of it AI crawlers reading the site. Real human reach is smaller, and more French, than the topline says.</div></div>
     </div>
+    <div class="cols" style="margin-top:18px">
+      <div class="card"><h3>Two links. One is a mailto.</h3><p>Walked page by page (Webflow, 9 pages): the entire site offers exactly two actions, CAREERS and CONTACT. Contact is a bare mailto:contact@npco.ai: no form, no questions, no analytics event possible. A 6–12 month enterprise cycle begins, and the site captures nothing: no name, no company, no use case.</p></div>
+      <div class="card"><h3>Careers IS the site</h3><p>8 of 9 pages are recruiting. The strongest company story on the property (Inria heritage, the Transformer-vs-legacy-solvers argument, the ex-DeepMind/Mistral/Dataiku talent line) lives <strong>inside the job ads</strong>. A buyer who never clicks a job posting never learns what NPco builds. It also explains screen 07: 57% of search impressions are job seekers.</p></div>
+      <div class="card"><h3>The one capture machine is orphaned</h3><p>The Teratec survey page holds the only working lead capture NPco owns: a gated "get the results by email" form, GDPR consent and all. It sits on a hand-built subdomain, on a separate stack, linked from nowhere on npco.ai. The best conversion asset is unreachable from the front door.</p></div>
+    </div>
+    <p class="closer">Even the recruiting funnel leaks: the application form is unnamed in Webflow with no visible notification routing, and asks research scientists for no CV. Small tells everywhere: "Dev0ps", "NP Co.exists", an author's note leaking as visible text on /careers, no meta description or preview image, so a shared link renders blank.</p>
     <div class="callout">A content engine without usable measurement cannot be steered. The lights came on mid-audit (GSC validated Aug 8, GA4 collecting since Aug 9), and the first two weeks already show the shape of the fix. One more signal hiding in the channel report: <em>4 users arrived from ChatGPT ("AI Assistant" channel)</em>. The AI front door is already delivering visitors, before NPco has furnished the room. Next: Tag Manager, defined conversions, and the 404 cleanup (Matthieu's own recommendation, Aug 13): <em>finding and Stage 2 opportunity in one</em>.</div>
-    <p class="src">Crawler pass on npco.ai, Aug 13 (Focus4ward audit crawler, 10 pages, all HTTP 200) · GA4 tag verified in page source Aug 21 · GSC export Aug 22 (domain property, data from Aug 8) · GA4 overview exports Aug 22 (284 users, 326 sessions, 490 page views since Aug 9). To add: Webflow review, conversion paths.</p>
+    <p class="src">Crawler pass on npco.ai, Aug 13 (Focus4ward audit crawler, 10 pages, all HTTP 200) · GA4 tag verified in page source Aug 21 · GSC export Aug 22 (domain property, data from Aug 8) · GA4 overview exports Aug 22 (284 users, 326 sessions, 490 page views since Aug 9) · Webflow conversion-path walk Aug 23: 9 pages, every CTA mapped, forms + subdomain stack verified in page source.</p>
   </div></section>
 
   <section class="slide alt stub" id="search"><div class="wrap">
@@ -502,8 +508,8 @@ table.bench td.hl{background:rgba(29,78,219,.07);font-weight:600}
     <h1 class="slide-title">Here is what I recommend,<br>in this <em>order.</em></h1>
     <ol class="plist">
       <li><h3>Lock the story and the name</h3><p>The restitution decisions: positioning statement, Augur→NPco completed or reversed, the flag question, one boilerplate. Four calls, made in the room, by the founders. Everything below declines from them.</p></li>
-      <li><h3>Turn the lights on</h3><p>GA4 access shared + Tag Manager + two defined conversions (contact, survey download) · both Search Console properties validated · the 404 cleanup (Matthieu's own recommendation) · a sitemap that declares the site. Days of work on a Webflow site, and every later move becomes measurable.</p></li>
-      <li><h3>Fix the front door</h3><p>One H1 and a unique title per page, schema that says who NPco is, the Teratec survey linked from the homepage, llms.txt, the boilerplate on every surface. The entity cleanup the AI answers are waiting for: the engines still cite augursim.ai today.</p></li>
+      <li><h3>Turn the lights on</h3><p>A real contact form to replace the bare mailto · GA4 access + Tag Manager + two defined conversions (contact, survey download) · both Search Console properties validated · the 404 cleanup (Matthieu's own recommendation) · a sitemap that declares the site. Days of work on a Webflow site, and every later move becomes measurable.</p></li>
+      <li><h3>Fix the front door</h3><p>The company story lifted out of the job ads onto a page a buyer can find · one H1 and a unique title per page · schema that says who NPco is · the Teratec survey linked from the homepage · llms.txt · the boilerplate on every surface. The entity cleanup the AI answers are waiting for: the engines still cite augursim.ai today.</p></li>
       <li><h3>Publish the proof</h3><p>The Safran benchmark as a page, not a PDF page 12 · the NeurIPS moment when it lands (~Sept) · the survey pattern repeated. In this category, published research is the advertising; the cohort proves it weekly.</p></li>
       <li><h3>Founders on the channel</h3><p>Emmanuel at the 2–3 posts/week already agreed in the interviews, profile pass shipped, company cadence past 0.75/week. Emmi built 9.6k followers in 18 months on exactly this motion.</p></li>
       <li><h3>Run the engine</h3><p>The standing Stage 2 workstream: VoC pipeline (Emmanuel's recorded calls → verbatims) feeding a content machine that serves the site, LinkedIn and the AI engines at once. Starts once 1–3 are locked; runs weekly after.</p></li>
