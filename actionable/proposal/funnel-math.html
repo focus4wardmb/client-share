@@ -58,13 +58,14 @@ td.num{color:var(--navy);font-weight:700;white-space:nowrap;font-variant-numeric
 @media print{
 @page{size:A4 portrait;margin:0}
 html,body{background:#fff!important}
-body{-webkit-print-color-adjust:exact;print-color-adjust:exact;padding:0}
+body{-webkit-print-color-adjust:exact;print-color-adjust:exact;padding:0;zoom:.64}
 .page{box-shadow:none;max-width:none;margin:0}
 .band{padding:30px 44px 26px}
-.content{padding:28px 44px 34px}
-.foot{padding:20px 44px 22px}
-tr,.box,.honest,.takeaway{break-inside:avoid}
+.content{padding:28px 44px 150px}
+.foot{padding:20px 44px 22px;position:fixed;bottom:0;left:0;right:0}
+tr,.box,.honest,.takeaway,.foot{break-inside:avoid}
 h2{margin-top:22px}
+h2.pbreak{break-before:page;border-top:0;padding-top:30px}
 }
 @media screen and (max-width:860px){.band{padding:26px 22px}.content{padding:26px 22px}.foot{padding:20px 22px;flex-direction:column;align-items:flex-start}.econ{grid-template-columns:1fr 1fr}}
 </style>
@@ -112,7 +113,7 @@ h2{margin-top:22px}
   </table>
   <div class="takeaway"><p>Expansion (3 of the 19 S1 opps) sits outside this mix: it's the €1.1M line, owned by sales on existing accounts. And one honest arithmetic check: at S1's €31K of pipeline per demo, €2.1M a quarter would mean ~68 demos a quarter. In category creation, on this territory, that is not a number anyone should promise. <strong>The prudent read: the plan only balances if deals get bigger and conversion improves, not just if volume grows.</strong> That's what the outbound bet needs marketing for: a sequence that lands on an account that has already seen Actionable two or three times converts differently than 11%.</p></div>
 
-  <h2>4 · The LinkedIn ABM program <span>— the heavy lift, how it actually runs</span></h2>
+  <h2 class="pbreak">4 · The LinkedIn ABM program <span>— the heavy lift, how it actually runs</span></h2>
   <p class="intro">Built and pressure-tested with a LinkedIn-ABM specialist who runs these programs on enterprise accounts, and who is lined up for the execution. His rules, not theory:</p>
   <table>
     <tr><th>Rule</th><th>How it works</th></tr>
