@@ -14,18 +14,23 @@
 --muted:#6E665A;--card:#FBF8F3;--amber:#B07B2E;--yellow:#F0C040;
 }
 body{font-family:'Space Grotesk',-apple-system,"Helvetica Neue",Arial,sans-serif;background:#3a4152;color:var(--ink);line-height:1.5;font-size:16px;-webkit-font-smoothing:antialiased}
-.page{max-width:1100px;margin:0 auto 20px;background:#fff;padding:50px 60px 40px;position:relative}
-.eyebrow{font-size:13px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--pink);margin-bottom:14px}
-h1{font-size:31px;font-weight:700;letter-spacing:-.8px;line-height:1.12;color:var(--navy);margin-bottom:10px}
+.page{max-width:1100px;margin:0 auto 20px;background:#fff}
+.band{background:var(--navy);color:#fff;padding:34px 60px 30px}
+.band .topline{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:16px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--yellow)}
+.band img.logo{height:30px;width:auto;display:block}
+h1{font-size:31px;font-weight:700;letter-spacing:-.8px;line-height:1.12;color:#fff;margin:0}
 h1 em{color:var(--pink);font-style:normal}
-h2{font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--navy);margin:28px 0 8px}
+.tag{display:inline-block;border:1px solid rgba(255,255,255,.45);color:#fff;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border-radius:20px;padding:3px 12px;vertical-align:middle;margin-left:12px}
+.content{padding:34px 60px 40px}
+h2{font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--navy);margin:30px 0 8px;border-top:1px solid var(--rule);padding-top:20px}
+h2:first-child{border-top:0;margin-top:0;padding-top:0}
 h2 span{color:var(--muted);font-weight:500;text-transform:none;letter-spacing:0}
-.lede{font-size:14.5px;line-height:1.5;color:var(--muted);max-width:82ch}
+.lede{font-size:14.5px;line-height:1.5;color:var(--muted);max-width:82ch;margin-bottom:22px}
 .lede strong{color:var(--ink);font-weight:600}
 .intro{font-size:13px;line-height:1.5;color:var(--muted);max-width:88ch;margin-bottom:8px}
 .intro strong{color:var(--ink)}
 .econ{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:8px}
-.econ.three{grid-template-columns:repeat(3,1fr)}
 .econ .box{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:11px 14px}
 .econ .box .big{font-size:20px;font-weight:700;color:var(--pink);letter-spacing:-.5px;line-height:1.15}
 .econ .box .cap{font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--navy);margin-top:4px}
@@ -37,32 +42,44 @@ td:first-child{color:var(--ink);font-weight:600}
 td.num{color:var(--navy);font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums}
 .plain{font-size:13px;line-height:1.55;color:var(--muted);max-width:88ch;margin-top:10px}
 .plain strong{color:var(--ink)}
+.takeaway{background:var(--paper);border-radius:10px;padding:13px 18px;margin-top:14px}
+.takeaway p{font-size:13px;line-height:1.55;color:var(--muted);max-width:100%}
+.takeaway strong{color:var(--ink)}
 .honest{background:var(--paper);border-left:4px solid var(--amber);border-radius:0 10px 10px 0;padding:13px 18px;margin-top:18px}
 .honest p{font-size:12.5px;color:var(--muted);margin-bottom:6px;line-height:1.55}
 .honest p:last-child{margin-bottom:0}
 .honest strong{color:var(--ink)}
 .payoff{border-left-color:var(--pink)}
-.small-note{font-size:11px;color:var(--muted);font-style:italic;margin-top:14px;line-height:1.45}
-.tag{display:inline-block;background:var(--navy);color:#fff;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border-radius:20px;padding:3px 12px;vertical-align:middle;margin-left:10px}
-.brand-mark{position:absolute;bottom:20px;right:28px;height:28px;opacity:.7}
-.brand-mark img{height:100%;width:auto;display:block}
+.foot{padding:24px 60px 26px;display:flex;justify-content:space-between;align-items:flex-end;gap:30px}
+.foot .rights{font-size:11.5px;font-weight:600;color:#fff;line-height:1.5;max-width:72ch}
+.foot .sources{font-size:10px;color:rgba(255,255,255,.55);line-height:1.5;margin-top:6px;font-weight:400}
+.foot img.logo{height:26px;width:auto;display:block;flex-shrink:0}
 @media screen{body{padding:34px 0}.page{box-shadow:0 8px 30px rgba(0,0,0,.35)}}
 @media print{
 @page{size:A4 portrait;margin:0}
 html,body{background:#fff!important}
 body{-webkit-print-color-adjust:exact;print-color-adjust:exact;padding:0}
-.page{box-shadow:none;max-width:none;padding:38px 44px 32px;margin:0}
-tr,.box,.honest{break-inside:avoid}
-h2{margin-top:18px}
+.page{box-shadow:none;max-width:none;margin:0}
+.band{padding:30px 44px 26px}
+.content{padding:28px 44px 34px}
+.foot{padding:20px 44px 22px}
+tr,.box,.honest,.takeaway{break-inside:avoid}
+h2{margin-top:22px}
 }
-@media screen and (max-width:860px){.page{padding:36px 22px}.econ{grid-template-columns:1fr 1fr}.econ.three{grid-template-columns:1fr}}
+@media screen and (max-width:860px){.band{padding:26px 22px}.content{padding:26px 22px}.foot{padding:20px 22px;flex-direction:column;align-items:flex-start}.econ{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
 <div class="page">
-  <div class="eyebrow">Actionable × Focus4ward · Spend → output <span class="tag">France numbers</span></div>
-  <h1>From Actionable's targets, <em>backwards.</em></h1>
-  <p class="lede">The 2027 plan says: <strong>€3M ARR at the end of 2026, €7M at the end of 2027.</strong> This page turns that company goal into marketing numbers: what €7M is made of, what marketing must feed, where demos come from, and what it costs. Every figure is Actionable's own data (2027 ARR plan, S1 2026 sales review) or a named benchmark. Ranges, not promises: we recalibrate on the first 30-60 days of real activity.</p>
+  <header class="band">
+    <div class="topline">
+      <div class="eyebrow">Actionable × Focus4ward · Spend → output <span class="tag">France numbers</span></div>
+      <img class="logo" src="img/focus4ward-logo.png" alt="Focus4ward">
+    </div>
+    <h1>From Actionable's targets, <em>backwards.</em></h1>
+  </header>
+  <div class="content">
+  <p class="lede">The 2027 plan says: <strong>€3M ARR at the end of 2026, €7M at the end of 2027.</strong> This page turns that company goal into marketing numbers: what €7M is made of, what marketing must feed, where demos come from, and what it costs. Every figure is Actionable's own data (2027 ARR plan, S1 2026 sales review) or a named benchmark. <strong>Ranges, not promises: we recalibrate on the first 30-60 days of real activity.</strong></p>
 
   <h2>1 · How €7M is built <span>— the plan's own bridge, base case</span></h2>
   <div class="econ">
@@ -71,7 +88,7 @@ h2{margin-top:18px}
     <div class="box"><div class="big">+ €2.8M</div><div class="cap">New business to sign</div><div class="src">The sales team's 2027 quotas. This is the line marketing feeds</div></div>
     <div class="box"><div class="big">= €6.6M</div><div class="cap">95% of the €7M target</div><div class="src">Base case. High case: €7.4M</div></div>
   </div>
-  <p class="plain">So marketing's number is not €7M. It's the <strong>€2.8M of new business</strong>, and the pipeline that produces it: the plan's own rule is ×3 coverage → <strong>€8.5M of new pipeline to create in 2027, €2.1M per quarter.</strong> S1 2026 created €1.57M in six months, €0.78M per quarter: the plan asks for <strong>2.7x today's pace</strong>. (×3 coverage implies one pipeline euro in three closes; S1's actual was 26% of opportunities signed. The plan itself lists this assumption as "to be validated.")</p>
+  <div class="takeaway"><p>So marketing's number is not €7M. It's the <strong>€2.8M of new business</strong>, and the pipeline that produces it: the plan's own rule is ×3 coverage → <strong>€8.5M of new pipeline to create in 2027, €2.1M per quarter.</strong> S1 2026 created €1.57M in six months, €0.78M per quarter: the plan asks for <strong>2.7x today's pace</strong>. (×3 coverage implies one pipeline euro in three closes; S1's actual was 26% of opportunities signed. The plan itself lists this assumption as "to be validated.")</p></div>
 
   <h2>2 · The funnel today <span>— S1 2026 actuals, January–June</span></h2>
   <p class="intro">Enterprise accounts don't fill demo forms. The chain runs: repeated touches on an account, then a <strong>demo booked</strong> (by a rep, at an event, through a partner, always marketing-touched), then an opportunity, then a signature.</p>
@@ -82,7 +99,7 @@ h2{margin-top:18px}
     <tr><td>Opportunities created</td><td class="num">19 · €1.57M</td><td class="num">38% of demos</td><td>Average opportunity: €82K</td></tr>
     <tr><td>New logos signed</td><td class="num">5 · €682K</td><td class="num">26% of opps</td><td>One at €407K, four between €34K and €90K</td></tr>
   </table>
-  <p class="plain"><strong>Deal size is a mix of whales and mid-size, not an average.</strong> The signed base runs ~€102K per client, but that hides SNCF Voyageurs at €573K and Carrefour at €190K against a majority at €27-90K. Whether 2027's €2.8M comes as ~27 mid-size deals or a handful of whales plus a dozen mid-size is a steering decision, and it changes what marketing aims at.</p>
+  <div class="takeaway"><p><strong>Deal size is a mix of whales and mid-size, not an average.</strong> The signed base runs ~€102K per client, but that hides SNCF Voyageurs at €573K and Carrefour at €190K against a majority at €27-90K. Whether 2027's €2.8M comes as ~27 mid-size deals or a handful of whales plus a dozen mid-size is a steering decision, and it changes what marketing aims at.</p></div>
 
   <h2>3 · Where pipeline comes from <span>— the shift the plan itself calls for</span></h2>
   <p class="intro">The territory: 340 France accounts in the database, 80 of them Tier 1-2 after scoring, 40 already addressed. Demos come from the whole machine, not only the 80: partners bring their own accounts (Banco de Chile came through the channel). The plan's own source mix, today → 2027:</p>
@@ -93,7 +110,7 @@ h2{margin-top:18px}
     <tr><td>Channel (Ipsos, Havas)</td><td class="num">10%</td><td class="num">20%</td><td>Generates deals off standard flow; being formalized into a co-sell motion</td></tr>
     <tr><td>Outbound</td><td class="num">10% · 2 opps</td><td class="num">35%</td><td>The scaling bet: the only channel that grows with headcount (2 AEs join late September). Converts 11% cold today</td></tr>
   </table>
-  <p class="plain">Expansion (3 of the 19 S1 opps) sits outside this mix: it's the €1.1M line, owned by sales on existing accounts. And one honest arithmetic check: at S1's €31K of pipeline per demo, €2.1M a quarter would mean ~68 demos a quarter. Nobody books 68 enterprise demos a quarter on this territory. <strong>The plan only balances if deals get bigger and conversion improves, not just if volume grows.</strong> That's what the outbound bet needs marketing for: a sequence that lands on an account that has already seen Actionable two or three times converts differently than 11%.</p>
+  <div class="takeaway"><p>Expansion (3 of the 19 S1 opps) sits outside this mix: it's the €1.1M line, owned by sales on existing accounts. And one honest arithmetic check: at S1's €31K of pipeline per demo, €2.1M a quarter would mean ~68 demos a quarter. In category creation, on this territory, that is not a number anyone should promise. <strong>The prudent read: the plan only balances if deals get bigger and conversion improves, not just if volume grows.</strong> That's what the outbound bet needs marketing for: a sequence that lands on an account that has already seen Actionable two or three times converts differently than 11%.</p></div>
 
   <h2>4 · The LinkedIn ABM program <span>— the heavy lift, how it actually runs</span></h2>
   <p class="intro">Built and pressure-tested with a LinkedIn-ABM specialist who runs these programs on enterprise accounts, and who is lined up for the execution. His rules, not theory:</p>
@@ -112,8 +129,9 @@ h2{margin-top:18px}
     <p><strong>The economics.</strong> At cruising speed the program costs ~€90K a year of media. One signed client at Actionable's average ACV (~€100K, recurring) pays for the entire year of the ABM program by itself, and renews. The Sept-Dec slice costs €25-35K and produces the pipeline that signs in Q1-Q2 2027. A demo count gets debated every month. This equation doesn't.</p>
   </div>
 
-  <h2>5 · The website <span>— nobody books through it, everybody checks it</span></h2>
+  <h2>5 · The website and the brand <span>— nobody books through it, everybody checks it</span></h2>
   <p class="plain">No enterprise buyer fills a demo form. But every warmed account visits the site before replying to a rep, and every LLM a buyer asks pulls from what's published. Benchmarks for an established B2B SaaS site: <strong>1.4-2.1% of visitors identify themselves</strong> (10,000 visits a year → 140-210 identified contacts feeding the touch machine). Today actionable.live is 3 pages with its strongest proof (Carrefour ×7 ROI, OUIGO +€390K) locked on one of them, and nobody searches the category yet. The 2027 inbound engine starts with the page that names the category and proof pages worth citing; until search exists, paid search covers brand and competitor terms only.</p>
+  <p class="plain"><strong>And what a warmed account finds has to look like it was built for them.</strong> Today the brand speaks to data engineers: a dark cockpit aesthetic, a hero line that files Actionable in the crowded AI-analytics shelf, and the category it claims nowhere in sight. The buyers are CMOs, CX directors and customer-knowledge teams. That mismatch between the story and the look is why the rebrand + new site sits in the 2027 budget below, chosen through a proper agency shortlist: not cosmetics, but making the category claim believable to the people who sign.</p>
 
   <h2>6 · The budget <span>— everything in one place</span></h2>
   <table>
@@ -134,11 +152,14 @@ h2{margin-top:18px}
   <div class="honest">
     <p><strong>France only.</strong> Every number on this page is a France number. The US will convert lower and start smaller: more competitors, a brand nobody knows yet. When the US stream opens, it gets its own version of this page with its own assumptions, not a copy of this one.</p>
   </div>
-
-  <p class="small-note">Actionable data: 2027 ARR Plan v3 (July 2026 working session) · Bilan Sales/GTM S1 2026. Benchmarks: LinkedIn-ABM specialist validation 2026-08-28 · ITSMA / Forrester / Demandbase ABM aggregates 2025-26 · First Page Sage B2B SaaS conversion benchmarks 2025-26.</p>
-  <p class="small-note" style="font-style:normal;font-weight:600;color:var(--navy)">© 2026 Focus4ward · Miri Blum · All rights reserved. Prepared for Actionable; methodology and plan not for distribution outside Actionable.</p>
-
-  <div class="brand-mark"><img src="img/focus4ward-logo.png" alt="Focus4ward"></div>
+  </div>
+  <footer class="band foot">
+    <div>
+      <div class="rights">© 2026 Focus4ward · Miri Blum · All rights reserved. Prepared for Actionable; methodology and plan not for distribution outside Actionable.</div>
+      <div class="sources">Actionable data: 2027 ARR Plan v3 (July 2026 working session) · Bilan Sales/GTM S1 2026. Benchmarks: LinkedIn-ABM specialist validation 2026-08-28 · ITSMA / Forrester / Demandbase ABM aggregates 2025-26 · First Page Sage B2B SaaS conversion benchmarks 2025-26.</div>
+    </div>
+    <img class="logo" src="img/focus4ward-logo.png" alt="Focus4ward">
+  </footer>
 </div>
 </body>
 </html>
