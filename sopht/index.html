@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Sopht: after the first conversation · Focus4ward</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pink: #C9316E;
+    --navy: #1E2530;
+    --text: #0F0D0B;
+    --paper: #F5F0EB;
+    --rule: #E5DFD2;
+    --muted: #6E665A;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--paper);
+    color: var(--text);
+    font-family: 'Source Serif 4', Georgia, 'Iowan Old Style', serif;
+    font-size: 18px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  /* Dark top bar */
+  .top {
+    background: var(--navy);
+    width: 100%;
+    padding: 18px 0;
+  }
+  .top-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .top .logo {
+    height: 22px;
+    width: auto;
+    display: block;
+  }
+
+  /* Left sidebar navigation */
+  .nav {
+    position: fixed;
+    top: 140px;
+    left: max(32px, calc((100vw - 1100px) / 2));
+    width: 200px;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  .nav-title {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    margin-bottom: 24px;
+    font-weight: 500;
+  }
+  .nav-title .dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: var(--pink);
+    border-radius: 50%;
+    margin-right: 8px;
+    vertical-align: middle;
+    margin-top: -2px;
+  }
+  .nav-list { list-style: none; padding: 0; margin: 0; }
+  .nav-item {
+    display: block;
+    font-size: 13px;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 10px 0 10px 18px;
+    border-left: 2px solid var(--rule);
+    margin-bottom: 2px;
+    line-height: 1.4;
+    transition: color 0.2s, border-color 0.2s, padding-left 0.2s;
+  }
+  .nav-item:hover {
+    color: var(--text);
+    border-left-color: var(--muted);
+  }
+  .nav-item.active {
+    color: var(--text);
+    border-left-color: var(--pink);
+    font-weight: 500;
+    padding-left: 20px;
+  }
+  .nav-num {
+    display: block;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+    margin-bottom: 3px;
+    text-transform: uppercase;
+  }
+
+  /* Page content */
+  .page {
+    max-width: 640px;
+    margin-left: max(296px, calc((100vw - 1100px) / 2 + 264px));
+    padding: 80px 28px 80px;
+  }
+
+  h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 42px;
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+    margin: 0 0 10px;
+    color: var(--text);
+  }
+  h1 .accent { color: var(--pink); }
+  .meta {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+    margin: 0 0 52px;
+  }
+  .section-num {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    color: var(--pink);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 1.22;
+    letter-spacing: -0.005em;
+    margin: 0 0 22px;
+    scroll-margin-top: 60px;
+  }
+  hr {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 44px 0 36px;
+  }
+  p { margin: 0 0 18px; }
+  p strong { font-weight: 600; }
+  .callout {
+    border-left: 3px solid var(--pink);
+    padding: 4px 0 4px 20px;
+    margin: 26px 0 30px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--navy);
+  }
+  .callout .q { font-weight: 500; }
+  .pill {
+    display: inline-block;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--pink);
+    border: 1px solid var(--pink);
+    border-radius: 999px;
+    padding: 3px 10px;
+    margin-bottom: 14px;
+  }
+  ul.plain { padding-left: 20px; margin: 0 0 18px; }
+  ul.plain li { margin-bottom: 8px; }
+  table.grid {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    margin: 8px 0 26px;
+  }
+  table.grid th, table.grid td {
+    text-align: left;
+    vertical-align: top;
+    padding: 10px 12px 10px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  table.grid th {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  table.grid td.k { font-weight: 500; width: 34%; color: var(--navy); }
+  footer {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+    margin-top: 56px;
+    padding-top: 26px;
+    border-top: 1px solid var(--rule);
+  }
+  footer a { color: var(--muted); text-decoration: underline; }
+
+  /* Mobile-only horizontal nav (replaces fixed left sidebar under 1024px) */
+  .mobile-nav { display: none; }
+
+  @media (max-width: 1024px) {
+    .nav { display: none; }
+    .page {
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 32px 24px 56px;
+    }
+    h1 { font-size: 34px; }
+    h2 { font-size: 22px; scroll-margin-top: 92px; }
+
+    .mobile-nav {
+      display: flex;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--paper);
+      border-bottom: 1px solid var(--rule);
+      padding: 0 20px;
+      gap: 22px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    .mobile-nav-item {
+      font-size: 12px;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 14px 0 12px;
+      border-bottom: 2px solid transparent;
+      white-space: nowrap;
+      letter-spacing: 0.04em;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .mobile-nav-item.active {
+      color: var(--text);
+      border-bottom-color: var(--pink);
+      font-weight: 500;
+    }
+    .mobile-nav-num {
+      color: var(--pink);
+      font-weight: 500;
+      margin-right: 6px;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+    }
+  }
+  @media (max-width: 480px) {
+    body { font-size: 17px; }
+    .page { padding: 24px 20px 48px; }
+    h1 { font-size: 28px; }
+    .mobile-nav { gap: 16px; padding: 0 16px; }
+    .mobile-nav-item { font-size: 11px; padding: 12px 0 10px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-inner">
+    <img src="/images/logo-light.png" class="logo" alt="Focus4ward">
+  </div>
+</header>
+
+<nav class="mobile-nav">
+  <a class="mobile-nav-item" href="#heard"><span class="mobile-nav-num">01</span>Heard</a>
+  <a class="mobile-nav-item" href="#may"><span class="mobile-nav-num">02</span>May</a>
+  <a class="mobile-nav-item" href="#missing"><span class="mobile-nav-num">03</span>Two gaps</a>
+  <a class="mobile-nav-item" href="#thoughts"><span class="mobile-nav-num">04</span>Food for thought</a>
+  <a class="mobile-nav-item" href="#shape"><span class="mobile-nav-num">05</span>Shape</a>
+  <a class="mobile-nav-item" href="#next"><span class="mobile-nav-num">06</span>Next</a>
+</nav>
+
+<nav class="nav">
+  <div class="nav-title"><span class="dot"></span>Sopht / after the call</div>
+  <ul class="nav-list">
+    <li><a class="nav-item" href="#heard"><span class="nav-num">01</span>What we heard</a></li>
+    <li><a class="nav-item" href="#may"><span class="nav-num">02</span>The May read</a></li>
+    <li><a class="nav-item" href="#missing"><span class="nav-num">03</span>Two gaps</a></li>
+    <li><a class="nav-item" href="#thoughts"><span class="nav-num">04</span>Food for thought</a></li>
+    <li><a class="nav-item" href="#shape"><span class="nav-num">05</span>Shape of the work</a></li>
+    <li><a class="nav-item" href="#next"><span class="nav-num">06</span>Next</a></li>
+  </ul>
+</nav>
+
+<main class="page">
+  <h1>Sopht: after the first <span class="accent">conversation.</span></h1>
+  <p class="meta">Recap of 2 September 2026 · pre-read for the 9 September meeting · 4 min read</p>
+
+  <div class="section-num">01 · What we heard</div>
+  <h2 id="heard">Where Sopht is, in your words</h2>
+  <p>Thirty minutes with Corentin and Jesy. Jérémie to join on the 9th. What stood out:</p>
+  <p><strong>The ambition is a doubling.</strong> Series A of €7.5M announced in June. ARR at €1.2M, target €3M, new business and renewals combined, on a European footprint with the UK and Germany next.</p>
+  <p><strong>The channel is a real bet, not a side door.</strong> A global partnership with Infosys, now in phase 2, with co-marketing on their audience coming in phase 3. Yet the LVMH deal started direct: the operational team pulled EY in, EY pulled Sopht in. The channel carries deals it did not originate.</p>
+  <p><strong>The champion is a Green IT manager with a small budget.</strong> Sensitive to the climate topic, holding a modest decarbonisation line inside a bigger IT job. When budgets tighten, that line is the first one questioned.</p>
+  <p><strong>Renewals are where the story gets tested.</strong> Three contracts saved this year. The objection each time: budget pressure, and a sales team that struggles to show ROI in numbers the customer will approve. No client has yet signed off a figure, in percent or in absolute value, for external use.</p>
+  <p><strong>Happy customers buy something the site doesn't sell.</strong> Automated data collection, help getting the data clean, a methodology at the state of the art. Clean data is the friction Sopht removes. It appears nowhere in the current narrative.</p>
+  <p><strong>The product was never carbon-only.</strong> The vision from day one was the full IT estate: cloud, on-prem, devices, applications, cost and CO2 together. Carbon led the story because it opened doors in 2022. Cost has been in the product since 2023.</p>
+  <p><strong>Two people carry marketing.</strong> Four years of building from nothing, a website hacked in May and rebuilt in ten days, a new one due 15 September with a demo CTA. And a team already running contextual AI skills on product, market and tone of voice.</p>
+
+  <hr>
+
+  <div class="section-num">02 · The May read</div>
+  <h2 id="may">What was already visible, and still holds</h2>
+  <p>In May, from public sources only, three observations went to Eric Burdier for the Axeleo portfolio. They still hold:</p>
+  <ul class="plain">
+    <li>Three category words on three surfaces: ITOps, GreenOps, Green IT. Three frames, three buyer types.</li>
+    <li>The enterprise logos are the strongest asset, and the messaging leads with features instead.</li>
+    <li>The regulatory tailwind, CSRD scope 3 and France's REEN law, is not used anywhere.</li>
+  </ul>
+  <p>What the brief adds is the pivot itself: a cost-first story live on the website and LinkedIn since late 2025, while the master deck and the sales team still say "ITOps through sustainability." The new story was a desk read of the market. It has not yet met a customer.</p>
+
+  <hr>
+
+  <div class="section-num">03 · Two gaps</div>
+  <h2 id="missing">The two things the brief doesn't cover</h2>
+  <p>The brief is strong on competitors and honest about its own doubts. It is silent on the two dimensions that decide a category.</p>
+  <p><strong>What the channel can carry.</strong> Roughly 70% of pipeline runs through Infosys, Capgemini and EY. A consultant recommends Sopht inside their own client engagement with no Sopht person in the room. The narrative's hardest job is surviving being retold by someone who doesn't work for you. The brief's persona list has no integrator in it.</p>
+  <div class="callout"><span class="q">The one question that resolves most of it:</span> when Capgemini or EY brings Sopht into an account, what is the program called on their side, and which practice does the consultant sit in?</div>
+  <p><strong>How analysts frame the shelf.</strong> Thorough competitor research, no analyst research. Gartner and Forrester name categories, and they work with the same integrators. If Sopht's story matches how they see the market moving, the wind is behind it. If it doesn't, every sales conversation starts with a translation. That conversation belongs to the CEO, and it is already on Jérémie and Julien's radar.</p>
+
+  <hr>
+
+  <div class="section-num">04 · Food for thought</div>
+  <h2 id="thoughts">Five questions before choosing a category</h2>
+  <p>No conclusions here. These are the questions the work would answer, with data, in the first three weeks.</p>
+  <p><strong>1. New buyer, or bigger business case?</strong> Customers said carbon alone doesn't fund a budget. They did not say "become a cost tool." Those are two different problems. One means changing who you sell to. The other means handing the champion you already have the arithmetic their CIO or CFO needs to sign.</p>
+  <p><strong>2. Which fight can a 40-person company win?</strong> Cost-first puts Sopht on a shelf where Apptio under IBM, Flexera and CloudHealth under Broadcom already sit. Sustainability-first puts it next to Verdikt and Fruggr, with demand that has cooled. Aguaro and Greenpixie bracket both flanks. The brief's own hunch, that the durable edge is scope plus operational action plus auditable method, may be the third option.</p>
+  <p><strong>3. Did regulation disappear, or move?</strong> The 2025 Omnibus pushed the next CSRD waves back two years and raised the threshold to roughly 1,000 employees. The mid-market fell out of scope. Sopht's wave-one enterprise customers are still fully in, REEN still stands, and AI is adding energy demand nobody planned for. Worth checking whether the Omnibus showed up in the pipeline this year.</p>
+  <p><strong>4. Is "budget" an objection, or a timing?</strong> A renewal under budget pressure is a delay, not a stop, if sales can show what stops when Sopht stops. The three saved renewals hold the arguments. They are worth writing down before they are forgotten.</p>
+  <p><strong>5. Whose decision is this?</strong> Category is not a marketing deliverable. If sales sells A, product builds B and marketing says C, no story survives. The choice has to be a company decision, made once, with sales and product in the room.</p>
+
+  <hr>
+
+  <div class="section-num">05 · Shape of the work</div>
+  <h2 id="shape">How the mission would run</h2>
+  <p>The brief's shape fits: one day a week, mid-September to early November, in English first. What changes is the front end. Before writing a narrative, three weeks of evidence on the four things that decide the category.</p>
+  <table class="grid">
+    <tr><th>Element</th><th>Status</th><th>How</th></tr>
+    <tr><td class="k">Product strength</td><td>Partly in the brief</td><td>What Sopht can credibly own: full-estate modelling, simulation, auditable method</td></tr>
+    <tr><td class="k">Channel</td><td>Not covered</td><td>Two conversations with integrator consultants who carry Sopht today</td></tr>
+    <tr><td class="k">Analysts</td><td>Not covered</td><td>How Gartner, Forrester and IDC frame the shelf, and where Sopht lands</td></tr>
+    <tr><td class="k">Market and competitors</td><td>Well covered</td><td>Verified at source, not accepted from the brief</td></tr>
+  </table>
+  <p>Five to six conversations in weeks one to three: two integrator consultants, two or three customers, one lost deal. The category memo that comes out of it becomes the spine. Then, in order: master narrative, message hierarchy, messaging per persona including the integrator, and the structure and copy of the new master deck.</p>
+  <p><strong>One deliverable the brief didn't ask for.</strong> The team already runs AI skills on product, market and tone of voice. Those skills will be out of date the day the new story lands. The positioning work ships as a Claude-ready GTM Brain: the narrative, the vocabulary, the competitive read and the voice of customer in one repository, so every draft the team writes afterwards starts from the same story. It is how the work keeps running after the mission ends.</p>
+
+  <hr>
+
+  <div class="section-num">06 · Next</div>
+  <h2 id="next">What happens before the 9th</h2>
+  <table class="grid">
+    <tr><th>Who</th><th>What</th></tr>
+    <tr><td class="k">Focus4ward</td><td>Proposal to Jérémie: approach, roadmap, timeline, pricing. Before the meeting.</td></tr>
+    <tr><td class="k">Focus4ward</td><td>Introduction Sopht ↔ Aprovall (adjacent domain, likely partner).</td></tr>
+    <tr><td class="k">Sopht</td><td>The arguments sales used on the three saved renewals.</td></tr>
+    <tr><td class="k">Sopht</td><td>Confirm Wednesday 9 September, 14:00 to 15:00, in person, with Jérémie.</td></tr>
+  </table>
+  <p>The meeting on the 9th has one purpose: hear how Jérémie sees marketing's role in the roadmap, and agree on the questions the work should answer. The category stays open until the evidence is in.</p>
+
+  <footer>
+    Focus4ward · Working document · Not a proposal · <a href="mailto:miri@focus4ward.co">miri@focus4ward.co</a>
+  </footer>
+</main>
+
+<script>
+  const sections = document.querySelectorAll('h2[id]');
+  const navItems = document.querySelectorAll('.nav-item, .mobile-nav-item');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navItems.forEach(item => {
+          item.classList.toggle('active', item.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
