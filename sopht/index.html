@@ -199,6 +199,15 @@
     font-weight: 500;
   }
   table.grid td.k { font-weight: 500; width: 34%; color: var(--navy); }
+  .tiles { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin:0 0 40px; }
+  .tile { background:#fff; border:1px solid var(--rule); border-radius:6px; padding:14px 14px 12px; font-family:'Space Grotesk',sans-serif; }
+  .tile .v { font-size:22px; font-weight:500; color:var(--pink); line-height:1; }
+  .tile .l { font-size:11px; color:var(--muted); margin-top:7px; line-height:1.35; }
+  .qcard { border:1px solid var(--rule); border-radius:6px; padding:14px 16px; margin:0 0 12px; background:#fff; }
+  .qcard .qn { font-family:'Space Grotesk',sans-serif; font-size:11px; letter-spacing:.14em; color:var(--pink); font-weight:500; margin-bottom:4px; }
+  .qcard .qt { font-family:'Space Grotesk',sans-serif; font-weight:500; font-size:16px; color:var(--navy); margin-bottom:6px; line-height:1.3; }
+  .qcard p { margin:0; font-size:16px; line-height:1.55; }
+  @media (max-width: 640px) { .tiles { grid-template-columns:repeat(2,1fr); } }
   footer {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 12px;
@@ -279,99 +288,89 @@
 
 <nav class="mobile-nav">
   <a class="mobile-nav-item" href="#heard"><span class="mobile-nav-num">01</span>Heard</a>
-  <a class="mobile-nav-item" href="#may"><span class="mobile-nav-num">02</span>May</a>
-  <a class="mobile-nav-item" href="#missing"><span class="mobile-nav-num">03</span>Two gaps</a>
-  <a class="mobile-nav-item" href="#thoughts"><span class="mobile-nav-num">04</span>Food for thought</a>
-  <a class="mobile-nav-item" href="#shape"><span class="mobile-nav-num">05</span>Shape</a>
-  <a class="mobile-nav-item" href="#next"><span class="mobile-nav-num">06</span>Next</a>
+  <a class="mobile-nav-item" href="#missing"><span class="mobile-nav-num">02</span>Two gaps</a>
+  <a class="mobile-nav-item" href="#thoughts"><span class="mobile-nav-num">03</span>Questions</a>
+  <a class="mobile-nav-item" href="#shape"><span class="mobile-nav-num">04</span>Shape</a>
+  <a class="mobile-nav-item" href="#next"><span class="mobile-nav-num">05</span>Next</a>
 </nav>
 
 <nav class="nav">
   <div class="nav-title"><span class="dot"></span>Sopht / after the call</div>
   <ul class="nav-list">
     <li><a class="nav-item" href="#heard"><span class="nav-num">01</span>What we heard</a></li>
-    <li><a class="nav-item" href="#may"><span class="nav-num">02</span>The May read</a></li>
-    <li><a class="nav-item" href="#missing"><span class="nav-num">03</span>Two gaps</a></li>
-    <li><a class="nav-item" href="#thoughts"><span class="nav-num">04</span>Food for thought</a></li>
-    <li><a class="nav-item" href="#shape"><span class="nav-num">05</span>Shape of the work</a></li>
-    <li><a class="nav-item" href="#next"><span class="nav-num">06</span>Next</a></li>
+    <li><a class="nav-item" href="#missing"><span class="nav-num">02</span>Two gaps</a></li>
+    <li><a class="nav-item" href="#thoughts"><span class="nav-num">03</span>Five questions</a></li>
+    <li><a class="nav-item" href="#shape"><span class="nav-num">04</span>Shape of the work</a></li>
+    <li><a class="nav-item" href="#next"><span class="nav-num">05</span>Next</a></li>
   </ul>
 </nav>
 
 <main class="page">
   <h1>Sopht: after the first <span class="accent">conversation.</span></h1>
-  <p class="meta">Recap of 2 September 2026 · pre-read for the 9 September meeting · 4 min read</p>
+  <p class="meta">Recap of 2 September 2026 · pre-read for the 9 September meeting · 3 min read</p>
+
+  <div class="tiles">
+    <div class="tile"><div class="v">€1.2M → €3M</div><div class="l">ARR today, and the target</div></div>
+    <div class="tile"><div class="v">~70%</div><div class="l">of pipeline through Infosys, Capgemini, EY</div></div>
+    <div class="tile"><div class="v">3</div><div class="l">renewals saved this year on a budget objection</div></div>
+    <div class="tile"><div class="v">2</div><div class="l">people carrying marketing</div></div>
+  </div>
 
   <div class="section-num">01 · What we heard</div>
   <h2 id="heard">Where Sopht is, in your words</h2>
-  <p>Thirty minutes with Corentin and Jesy. Jérémie to join on the 9th. What stood out:</p>
-  <p><strong>The ambition is a doubling.</strong> Series A of €7.5M announced in June. ARR at €1.2M, target €3M, new business and renewals combined, on a European footprint with the UK and Germany next.</p>
-  <p><strong>The channel is a real bet, not a side door.</strong> A global partnership with Infosys, now in phase 2, with co-marketing on their audience coming in phase 3. Yet the LVMH deal started direct: the operational team pulled EY in, EY pulled Sopht in. The channel carries deals it did not originate.</p>
-  <p><strong>The champion is a Green IT manager with a small budget.</strong> Sensitive to the climate topic, holding a modest decarbonisation line inside a bigger IT job. When budgets tighten, that line is the first one questioned.</p>
-  <p><strong>Renewals are where the story gets tested.</strong> Three contracts saved this year. The objection each time: budget pressure, and a sales team that struggles to show ROI in numbers the customer will approve. No client has yet signed off a figure, in percent or in absolute value, for external use.</p>
-  <p><strong>Happy customers buy something the site doesn't sell.</strong> Automated data collection, help getting the data clean, a methodology at the state of the art. Clean data is the friction Sopht removes. It appears nowhere in the current narrative.</p>
-  <p><strong>The product was never carbon-only.</strong> The vision from day one was the full IT estate: cloud, on-prem, devices, applications, cost and CO2 together. Carbon led the story because it opened doors in 2022. Cost has been in the product since 2023.</p>
-  <p><strong>Two people carry marketing.</strong> Four years of building from nothing, a website hacked in May and rebuilt in ten days, a new one due 15 September with a demo CTA. And a team already running contextual AI skills on product, market and tone of voice.</p>
+  <p><strong>The channel is a real bet.</strong> A global partnership with Infosys, phase 3 co-marketing ahead. Yet the LVMH deal started direct: the operational team pulled EY in, EY pulled Sopht in. The channel carries deals it didn't originate.</p>
+  <p><strong>The champion is a Green IT manager with a small budget.</strong> When budgets tighten, that line is the first one questioned. Sales then struggles to show ROI in numbers the customer will sign off, in percent or in euros.</p>
+  <p><strong>Happy customers buy something the site doesn't sell.</strong> Automated data collection, help getting the data clean, a methodology at the state of the art. Clean data is the friction Sopht removes, and it appears nowhere in the current story.</p>
+  <p><strong>The product was never carbon-only.</strong> Full IT estate from day one, cost in the product since 2023. Carbon led because it opened doors in 2022.</p>
+  <p><strong>What May already showed still holds.</strong> Three category words on three surfaces (ITOps, GreenOps, Green IT). Enterprise logos as the strongest asset, messaging leading with features. The regulatory tailwind unused. The brief adds the pivot itself: a cost-first story live on the site since late 2025 that the master deck and the sales team don't yet carry, and that no customer has yet heard.</p>
 
   <hr>
 
-  <div class="section-num">02 · The May read</div>
-  <h2 id="may">What was already visible, and still holds</h2>
-  <p>In May, from public sources only, three observations went to Eric Burdier for the Axeleo portfolio. They still hold:</p>
-  <ul class="plain">
-    <li>Three category words on three surfaces: ITOps, GreenOps, Green IT. Three frames, three buyer types.</li>
-    <li>The enterprise logos are the strongest asset, and the messaging leads with features instead.</li>
-    <li>The regulatory tailwind, CSRD scope 3 and France's REEN law, is not used anywhere.</li>
-  </ul>
-  <p>What the brief adds is the pivot itself: a cost-first story live on the website and LinkedIn since late 2025, while the master deck and the sales team still say "ITOps through sustainability." The new story was a desk read of the market. It has not yet met a customer.</p>
-
-  <hr>
-
-  <div class="section-num">03 · Two gaps</div>
-  <h2 id="missing">The two things the brief doesn't cover</h2>
-  <p>The brief is strong on competitors and honest about its own doubts. It is silent on the two dimensions that decide a category.</p>
-  <p><strong>What the channel can carry.</strong> Roughly 70% of pipeline runs through Infosys, Capgemini and EY. A consultant recommends Sopht inside their own client engagement with no Sopht person in the room. The narrative's hardest job is surviving being retold by someone who doesn't work for you. The brief's persona list has no integrator in it.</p>
+  <div class="section-num">02 · Two gaps</div>
+  <h2 id="missing">What the brief doesn't cover</h2>
+  <p>The brief is strong on competitors and honest about its doubts. It is silent on the two things that decide a category.</p>
+  <p><strong>What the channel can carry.</strong> A Capgemini consultant recommends Sopht inside their own engagement with no Sopht person in the room. The narrative's hardest job is surviving being retold by someone who doesn't work for you. The brief's persona list has no integrator in it.</p>
   <div class="callout"><span class="q">The one question that resolves most of it:</span> when Capgemini or EY brings Sopht into an account, what is the program called on their side, and which practice does the consultant sit in?</div>
-  <p><strong>How analysts frame the shelf.</strong> Thorough competitor research, no analyst research. Gartner and Forrester name categories, and they work with the same integrators. If Sopht's story matches how they see the market moving, the wind is behind it. If it doesn't, every sales conversation starts with a translation. That conversation belongs to the CEO, and it is already on Jérémie and Julien's radar.</p>
+  <p><strong>How analysts frame the shelf.</strong> Gartner and Forrester name categories, and they work with the same integrators. If Sopht's story matches how they see the market moving, the wind is behind it. If not, every sales conversation starts with a translation. A CEO conversation, and already on Jérémie's radar.</p>
 
   <hr>
 
-  <div class="section-num">04 · Food for thought</div>
-  <h2 id="thoughts">Five questions before choosing a category</h2>
-  <p>No conclusions here. These are the questions the work would answer, with data, in the first three weeks.</p>
-  <p><strong>1. New buyer, or bigger business case?</strong> Customers said carbon alone doesn't fund a budget. They did not say "become a cost tool." Those are two different problems. One means changing who you sell to. The other means handing the champion you already have the arithmetic their CIO or CFO needs to sign.</p>
-  <p><strong>2. Which fight can a 40-person company win?</strong> Cost-first puts Sopht on a shelf where Apptio under IBM, Flexera and CloudHealth under Broadcom already sit. Sustainability-first puts it next to Verdikt and Fruggr, with demand that has cooled. Aguaro and Greenpixie bracket both flanks. The brief's own hunch, that the durable edge is scope plus operational action plus auditable method, may be the third option.</p>
-  <p><strong>3. Did regulation disappear, or move?</strong> The 2025 Omnibus pushed the next CSRD waves back two years and raised the threshold to roughly 1,000 employees. The mid-market fell out of scope. Sopht's wave-one enterprise customers are still fully in, REEN still stands, and AI is adding energy demand nobody planned for. Worth checking whether the Omnibus showed up in the pipeline this year.</p>
-  <p><strong>4. Is "budget" an objection, or a timing?</strong> A renewal under budget pressure is a delay, not a stop, if sales can show what stops when Sopht stops. The three saved renewals hold the arguments. They are worth writing down before they are forgotten.</p>
-  <p><strong>5. Whose decision is this?</strong> Category is not a marketing deliverable. If sales sells A, product builds B and marketing says C, no story survives. The choice has to be a company decision, made once, with sales and product in the room.</p>
+  <div class="section-num">03 · Five questions</div>
+  <h2 id="thoughts">Before choosing a category</h2>
+  <p>No conclusions here. These are the questions the work would answer, with evidence, in the first three weeks.</p>
+  <div class="qcard"><div class="qn">01</div><div class="qt">New buyer, or bigger business case?</div><p>Customers said carbon alone doesn't fund a budget. They did not say "become a cost tool." One means changing who you sell to. The other means handing the champion you have the arithmetic their CIO needs to sign.</p></div>
+  <div class="qcard"><div class="qn">02</div><div class="qt">Which fight can a 40-person company win?</div><p>Cost-first puts Sopht on a shelf with Apptio under IBM, Flexera and Broadcom. Sustainability-first puts it next to Verdikt and Fruggr, with cooler demand. The brief's own hunch, scope plus operational action plus auditable method, may be the third option.</p></div>
+  <div class="qcard"><div class="qn">03</div><div class="qt">Did regulation disappear, or move?</div><p>The Omnibus pushed CSRD back two years and took the mid-market out of scope. Sopht's enterprise customers are still fully in, REEN still stands, and AI is adding energy demand nobody planned for.</p></div>
+  <div class="qcard"><div class="qn">04</div><div class="qt">Is "budget" an objection, or a timing?</div><p>A renewal under pressure is a delay, not a stop, if sales can show what stops when Sopht stops. The three saved renewals hold the arguments. Worth writing down before they're forgotten.</p></div>
+  <div class="qcard"><div class="qn">05</div><div class="qt">Whose decision is this?</div><p>Category is not a marketing deliverable. If sales sells A, product builds B and marketing says C, no story survives. Made once, with sales and product in the room.</p></div>
 
   <hr>
 
-  <div class="section-num">05 · Shape of the work</div>
+  <div class="section-num">04 · Shape of the work</div>
   <h2 id="shape">How the mission would run</h2>
-  <p>The brief's shape fits: one day a week, mid-September to early November, in English first. What changes is the front end. Before writing a narrative, three weeks of evidence on the four things that decide the category.</p>
+  <p>The brief's shape fits: one day a week, mid-September to early November, English first. What changes is the front end: three weeks of evidence before a word of narrative is written.</p>
   <table class="grid">
     <tr><th>Element</th><th>Status</th><th>How</th></tr>
     <tr><td class="k">Product strength</td><td>Partly in the brief</td><td>What Sopht can credibly own: full-estate modelling, simulation, auditable method</td></tr>
     <tr><td class="k">Channel</td><td>Not covered</td><td>Two conversations with integrator consultants who carry Sopht today</td></tr>
     <tr><td class="k">Analysts</td><td>Not covered</td><td>How Gartner, Forrester and IDC frame the shelf, and where Sopht lands</td></tr>
-    <tr><td class="k">Market and competitors</td><td>Well covered</td><td>Verified at source, not accepted from the brief</td></tr>
+    <tr><td class="k">Market and competitors</td><td>Well covered</td><td>Verified at source</td></tr>
   </table>
-  <p>Five to six conversations in weeks one to three: two integrator consultants, two or three customers, one lost deal. The category memo that comes out of it becomes the spine. Then, in order: master narrative, message hierarchy, messaging per persona including the integrator, and the structure and copy of the new master deck.</p>
-  <p><strong>One deliverable the brief didn't ask for.</strong> The team already runs AI skills on product, market and tone of voice. Those skills will be out of date the day the new story lands. The positioning work ships as a Claude-ready GTM Brain: the narrative, the vocabulary, the competitive read and the voice of customer in one repository, so every draft the team writes afterwards starts from the same story. It is how the work keeps running after the mission ends.</p>
+  <p>Five to six conversations in weeks one to three: two integrator consultants, two or three customers, one lost deal. The category memo becomes the spine. Then, in order: master narrative, message hierarchy, messaging per persona including the integrator, structure and copy of the new master deck.</p>
+  <p><strong>One deliverable the brief didn't ask for.</strong> The team already runs AI skills on product, market and tone of voice. They'll be out of date the day the new story lands. So the positioning ships as a Claude-ready GTM Brain: narrative, vocabulary, competitive read and voice of customer in one repository every future draft starts from. It's how the work keeps running after the mission ends.</p>
 
   <hr>
 
-  <div class="section-num">06 · Next</div>
-  <h2 id="next">What happens before the 9th</h2>
+  <div class="section-num">05 · Next</div>
+  <h2 id="next">Before the 9th</h2>
   <table class="grid">
     <tr><th>Who</th><th>What</th></tr>
-    <tr><td class="k">Focus4ward</td><td>Proposal to Jérémie: approach, roadmap, timeline, pricing. Before the meeting.</td></tr>
-    <tr><td class="k">Focus4ward</td><td>Introduction Sopht ↔ Aprovall (adjacent domain, likely partner).</td></tr>
+    <tr><td class="k">Focus4ward</td><td>Proposal to Jérémie: approach, roadmap, timeline, pricing.</td></tr>
+    <tr><td class="k">Focus4ward</td><td>Introduction Sopht ↔ Aprovall.</td></tr>
     <tr><td class="k">Sopht</td><td>The arguments sales used on the three saved renewals.</td></tr>
     <tr><td class="k">Sopht</td><td>Confirm Wednesday 9 September, 14:00 to 15:00, in person, with Jérémie.</td></tr>
   </table>
-  <p>The meeting on the 9th has one purpose: hear how Jérémie sees marketing's role in the roadmap, and agree on the questions the work should answer. The category stays open until the evidence is in.</p>
+  <p>One purpose for the 9th: hear how Jérémie sees marketing's role in the roadmap, and agree on the questions the work should answer. The category stays open until the evidence is in.</p>
 
   <footer>
     Focus4ward · Working document · Not a proposal · <a href="mailto:miri@focus4ward.co">miri@focus4ward.co</a>
