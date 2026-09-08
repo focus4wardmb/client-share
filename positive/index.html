@@ -282,6 +282,15 @@
   .tiles.facts .tile .l { font-size:13px; color:var(--text); margin-top:8px; line-height:1.4; flex:1; }
   .tiles.facts .tile .s { font-size:10px; color:var(--muted); letter-spacing:0.08em; text-transform:uppercase; margin-top:10px; }
   @media (max-width: 480px) { .tiles.facts { grid-template-columns:1fr; } }
+  .phases { display:grid; grid-template-columns:1fr auto 1fr auto 1fr; align-items:stretch; gap:10px; margin:0 0 44px; font-family:'Space Grotesk',sans-serif; }
+  .phase { background:#fff; border:1px solid var(--rule); border-radius:6px; padding:12px 14px; }
+  .phase.now { border-color:var(--pink); box-shadow:0 0 0 2px rgba(201,49,110,0.08); }
+  .phase .k { font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--pink); font-weight:500; margin-bottom:4px; }
+  .phase.later .k { color:var(--muted); }
+  .phase .t { font-size:14px; font-weight:500; color:var(--navy); line-height:1.3; }
+  .phase .d { font-size:12px; color:var(--muted); margin-top:4px; line-height:1.4; }
+  .phase-arrow { align-self:center; color:var(--pink); font-size:18px; line-height:1; }
+  @media (max-width: 640px) { .phases { grid-template-columns:1fr; } .phase-arrow { transform:rotate(90deg); justify-self:center; } }
 </style>
 </head>
 <body>
@@ -325,6 +334,14 @@
   </div>
 
   <div class="callout"><span class="q">Where this sits.</span> You have six months in mind. This audit is phase 1 of those six months: the first five days, the decisions the rest is built on. Starting here is how we align on what the six months should look like, on facts rather than on a job description, before either of us commits to a cadence.</div>
+
+  <div class="phases">
+    <div class="phase now"><div class="k">Phase 1 · this proposal</div><div class="t">The audit</div><div class="d">5 days, 3 to 4 weeks, from 28 Sept. Read, decisions, action plan.</div></div>
+    <div class="phase-arrow">→</div>
+    <div class="phase"><div class="k">Together</div><div class="t">Validate</div><div class="d">In the room with you and Paul. The six months get their shape here.</div></div>
+    <div class="phase-arrow">→</div>
+    <div class="phase later"><div class="k">Phase 2 and beyond</div><div class="t">Fractional, to March</div><div class="d">Cadence and scope set on the validated plan. Running from day one.</div></div>
+  </div>
 
   <div class="section-num">01 · What I heard</div>
   <h2 id="heard">Positive, in your words</h2>
