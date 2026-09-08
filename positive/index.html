@@ -276,6 +276,12 @@
     .mobile-nav { gap: 16px; padding: 0 16px; }
     .mobile-nav-item { font-size: 11px; padding: 12px 0 10px; }
   }
+  .tiles.facts { grid-template-columns:repeat(2,1fr); gap:12px; margin:0 0 44px; }
+  .tiles.facts .tile { border-top:3px solid var(--pink); border-radius:0 0 6px 6px; padding:16px 16px 14px; display:flex; flex-direction:column; min-height:118px; }
+  .tiles.facts .tile .v { font-size:30px; letter-spacing:-0.01em; color:var(--navy); }
+  .tiles.facts .tile .l { font-size:13px; color:var(--text); margin-top:8px; line-height:1.4; flex:1; }
+  .tiles.facts .tile .s { font-size:10px; color:var(--muted); letter-spacing:0.08em; text-transform:uppercase; margin-top:10px; }
+  @media (max-width: 480px) { .tiles.facts { grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
@@ -311,11 +317,11 @@
   <h1>Positive: the first <span class="accent">step.</span></h1>
   <p class="meta">Scoping proposed after our conversation of 2 September 2026 · 4 min read</p>
 
-  <div class="tiles">
-    <div class="tile"><div class="v">6 + 1</div><div class="l">products plus Uma on positivegroup.com</div></div>
-    <div class="tile"><div class="v">4</div><div class="l">different brand states across five product sites</div></div>
-    <div class="tile"><div class="v">€106M</div><div class="l">refinancing closed on 7 Sept, to buy more companies</div></div>
-    <div class="tile"><div class="v" style="font-size:18px;white-space:nowrap">28 Sept</div><div class="l">proposed start</div></div>
+  <div class="tiles facts">
+    <div class="tile"><div class="v">6 + Uma</div><div class="l">products under the Positive name, plus the AI co-pilot across four of them</div><div class="s">positivegroup.com</div></div>
+    <div class="tile"><div class="v">40,000+</div><div class="l">companies, 800,000+ users, in five countries</div><div class="s">positivegroup.com</div></div>
+    <div class="tile"><div class="v">400+</div><div class="l">people across France, Germany, Italy and Poland, one marketing function to reorganise</div><div class="s">press release, 26 May 2026</div></div>
+    <div class="tile"><div class="v">€70M</div><div class="l">revenue, mostly recurring; €106M refinancing closed on 7 Sept to keep acquiring</div><div class="s">Maddyness, 7 Sept 2026</div></div>
   </div>
 
   <div class="section-num">01 · What I heard</div>
