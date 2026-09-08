@@ -33,6 +33,7 @@ const FALLBACK_PASSWORDS: Record<string, string> = {
   "actionable": "actionable-audit-2026",
   "npco": "npco-audit-2026",
   "sopht": "sopht-recap-2026",
+  "positive": "positive-cadrage-2026",
 };
 
 export default async function handler(req: Request, context: Context) {
